@@ -1,0 +1,795 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3D97E00A-33EC-3189-8348-94EBA884009E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ex_cjson</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\6b9505acb1190dd2851c82d77d6f1a3b\ex_cjson-mkdir.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Creating directories for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -Dcfgdir=/Debug -P /.taos_odbc/cjson/tmp/ex_cjson-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/Debug/ex_cjson-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Creating directories for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -Dcfgdir=/Release -P /.taos_odbc/cjson/tmp/ex_cjson-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/Release/ex_cjson-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Creating directories for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -Dcfgdir=/MinSizeRel -P /.taos_odbc/cjson/tmp/ex_cjson-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/MinSizeRel/ex_cjson-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Creating directories for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -Dcfgdir=/RelWithDebInfo -P /.taos_odbc/cjson/tmp/ex_cjson-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/RelWithDebInfo/ex_cjson-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\6b9505acb1190dd2851c82d77d6f1a3b\ex_cjson-download.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing download step (git clone) for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd \.taos_odbc\cjson\src
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -P /.taos_odbc/cjson/tmp/ex_cjson-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/Debug/ex_cjson-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\ex_cjson-gitinfo.txt;\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing download step (git clone) for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd \.taos_odbc\cjson\src
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -P /.taos_odbc/cjson/tmp/ex_cjson-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/Release/ex_cjson-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\ex_cjson-gitinfo.txt;\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Performing download step (git clone) for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd \.taos_odbc\cjson\src
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -P /.taos_odbc/cjson/tmp/ex_cjson-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/MinSizeRel/ex_cjson-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\ex_cjson-gitinfo.txt;\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Performing download step (git clone) for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd \.taos_odbc\cjson\src
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -P /.taos_odbc/cjson/tmp/ex_cjson-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/RelWithDebInfo/ex_cjson-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\ex_cjson-gitinfo.txt;\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\6b9505acb1190dd2851c82d77d6f1a3b\ex_cjson-update.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing update step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -P /.taos_odbc/cjson/tmp/ex_cjson-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing update step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -P /.taos_odbc/cjson/tmp/ex_cjson-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Performing update step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -P /.taos_odbc/cjson/tmp/ex_cjson-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Performing update step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -P /.taos_odbc/cjson/tmp/ex_cjson-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</VerifyInputsAndOutputsExist>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\6b9505acb1190dd2851c82d77d6f1a3b\ex_cjson-patch.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No patch step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/Debug/ex_cjson-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-update;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No patch step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/Release/ex_cjson-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-update;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No patch step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/MinSizeRel/ex_cjson-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-update;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No patch step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/RelWithDebInfo/ex_cjson-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-update;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</VerifyInputsAndOutputsExist>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\6b9505acb1190dd2851c82d77d6f1a3b\ex_cjson-configure.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing configure step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -DCMAKE_INSTALL_PREFIX=/.taos_odbc/.install "-GVisual Studio 16 2019" "-DCMAKE_GENERATOR_INSTANCE:INTERNAL=C:/Program Files (x86)/Microsoft Visual Studio/2019/Community" /.taos_odbc/cjson/src/ex_cjson
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/Debug/ex_cjson-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\.taos_odbc\cjson\tmp\ex_cjson-cfgcmd.txt;\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing configure step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -DCMAKE_INSTALL_PREFIX=/.taos_odbc/.install "-GVisual Studio 16 2019" "-DCMAKE_GENERATOR_INSTANCE:INTERNAL=C:/Program Files (x86)/Microsoft Visual Studio/2019/Community" /.taos_odbc/cjson/src/ex_cjson
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/Release/ex_cjson-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\.taos_odbc\cjson\tmp\ex_cjson-cfgcmd.txt;\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Performing configure step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -DCMAKE_INSTALL_PREFIX=/.taos_odbc/.install "-GVisual Studio 16 2019" "-DCMAKE_GENERATOR_INSTANCE:INTERNAL=C:/Program Files (x86)/Microsoft Visual Studio/2019/Community" /.taos_odbc/cjson/src/ex_cjson
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/MinSizeRel/ex_cjson-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\.taos_odbc\cjson\tmp\ex_cjson-cfgcmd.txt;\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Performing configure step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -DCMAKE_INSTALL_PREFIX=/.taos_odbc/.install "-GVisual Studio 16 2019" "-DCMAKE_GENERATOR_INSTANCE:INTERNAL=C:/Program Files (x86)/Microsoft Visual Studio/2019/Community" /.taos_odbc/cjson/src/ex_cjson
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/RelWithDebInfo/ex_cjson-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\.taos_odbc\cjson\tmp\ex_cjson-cfgcmd.txt;\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\6b9505acb1190dd2851c82d77d6f1a3b\ex_cjson-build.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing build step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe --build . --config Debug
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/Debug/ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing build step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe --build . --config Release
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/Release/ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Performing build step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe --build . --config MinSizeRel
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/MinSizeRel/ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Performing build step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe --build . --config RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/RelWithDebInfo/ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\6b9505acb1190dd2851c82d77d6f1a3b\ex_cjson-install.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing install step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe --install . --config Debug
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/Debug/ex_cjson-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing install step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe --install . --config Release
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/Release/ex_cjson-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Performing install step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe --install . --config MinSizeRel
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/MinSizeRel/ex_cjson-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Performing install step for 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd \.taos_odbc\cjson\src\ex_cjson-build
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe --install . --config RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/RelWithDebInfo/ex_cjson-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\1f0075998bd69884a70925254663b984\ex_cjson-complete.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Completed 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -E make_directory D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/Debug
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/Debug/ex_cjson-complete
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/Debug/ex_cjson-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-install;\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-mkdir;\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-download;\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-update;\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-patch;\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-configure;\.taos_odbc\cjson\src\ex_cjson-stamp\Debug\ex_cjson-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\Debug\ex_cjson-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Completed 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -E make_directory D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/Release
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/Release/ex_cjson-complete
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/Release/ex_cjson-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-install;\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-mkdir;\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-download;\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-update;\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-patch;\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-configure;\.taos_odbc\cjson\src\ex_cjson-stamp\Release\ex_cjson-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\Release\ex_cjson-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Completed 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -E make_directory D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/MinSizeRel
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/MinSizeRel/ex_cjson-complete
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/MinSizeRel/ex_cjson-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-install;\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-mkdir;\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-download;\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-update;\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-patch;\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-configure;\.taos_odbc\cjson\src\ex_cjson-stamp\MinSizeRel\ex_cjson-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\MinSizeRel\ex_cjson-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Completed 'ex_cjson'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -E make_directory D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/RelWithDebInfo/ex_cjson-complete
+if %errorlevel% neq 0 goto :cmEnd
+C:\App\CMake\bin\cmake.exe -E touch /.taos_odbc/cjson/src/ex_cjson-stamp/RelWithDebInfo/ex_cjson-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-install;\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-mkdir;\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-download;\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-update;\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-patch;\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-configure;\.taos_odbc\cjson\src\ex_cjson-stamp\RelWithDebInfo\ex_cjson-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\RelWithDebInfo\ex_cjson-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</VerifyInputsAndOutputsExist>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\e027f089dae67892c6e7e308d0c3b6e7\ex_cjson.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\Debug\ex_cjson-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\ex_cjson</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\Release\ex_cjson-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\ex_cjson</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\MinSizeRel\ex_cjson-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\ex_cjson</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\RelWithDebInfo\ex_cjson-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\ex_cjson</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</VerifyInputsAndOutputsExist>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\workspaces\taos_odbc\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/workspaces/taos_odbc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -SD:/workspaces/taos_odbc -BD:/workspaces/taos_odbc/cmake-build-debug-visual-studio --check-stamp-file D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\.taos_odbc\cjson\tmp\ex_cjson-mkdirs.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\App\CMake\share\cmake-3.25\Modules\CTest.cmake;C:\App\CMake\share\cmake-3.25\Modules\CTestTargets.cmake;C:\App\CMake\share\cmake-3.25\Modules\CTestUseLaunchers.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckSymbolExists.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\App\CMake\share\cmake-3.25\Modules\DartConfiguration.tcl.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject.cmake;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\RepositoryInfo.txt.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\cfgcmd.txt.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\gitclone.cmake.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\gitupdate.cmake.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\mkdirs.cmake.in;C:\App\CMake\share\cmake-3.25\Modules\FindBISON.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindFLEX.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindGit.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeCCompiler.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeCXXCompiler.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeRCCompiler.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeSystem.cmake;D:\workspaces\taos_odbc\cmake\macros.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/workspaces/taos_odbc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -SD:/workspaces/taos_odbc -BD:/workspaces/taos_odbc/cmake-build-debug-visual-studio --check-stamp-file D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\.taos_odbc\cjson\tmp\ex_cjson-mkdirs.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\App\CMake\share\cmake-3.25\Modules\CTest.cmake;C:\App\CMake\share\cmake-3.25\Modules\CTestTargets.cmake;C:\App\CMake\share\cmake-3.25\Modules\CTestUseLaunchers.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckSymbolExists.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\App\CMake\share\cmake-3.25\Modules\DartConfiguration.tcl.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject.cmake;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\RepositoryInfo.txt.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\cfgcmd.txt.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\gitclone.cmake.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\gitupdate.cmake.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\mkdirs.cmake.in;C:\App\CMake\share\cmake-3.25\Modules\FindBISON.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindFLEX.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindGit.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeCCompiler.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeCXXCompiler.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeRCCompiler.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeSystem.cmake;D:\workspaces\taos_odbc\cmake\macros.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/workspaces/taos_odbc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -SD:/workspaces/taos_odbc -BD:/workspaces/taos_odbc/cmake-build-debug-visual-studio --check-stamp-file D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\.taos_odbc\cjson\tmp\ex_cjson-mkdirs.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\App\CMake\share\cmake-3.25\Modules\CTest.cmake;C:\App\CMake\share\cmake-3.25\Modules\CTestTargets.cmake;C:\App\CMake\share\cmake-3.25\Modules\CTestUseLaunchers.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckSymbolExists.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\App\CMake\share\cmake-3.25\Modules\DartConfiguration.tcl.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject.cmake;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\RepositoryInfo.txt.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\cfgcmd.txt.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\gitclone.cmake.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\gitupdate.cmake.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\mkdirs.cmake.in;C:\App\CMake\share\cmake-3.25\Modules\FindBISON.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindFLEX.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindGit.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeCCompiler.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeCXXCompiler.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeRCCompiler.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeSystem.cmake;D:\workspaces\taos_odbc\cmake\macros.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/workspaces/taos_odbc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -SD:/workspaces/taos_odbc -BD:/workspaces/taos_odbc/cmake-build-debug-visual-studio --check-stamp-file D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\.taos_odbc\cjson\tmp\ex_cjson-mkdirs.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\App\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\App\CMake\share\cmake-3.25\Modules\CTest.cmake;C:\App\CMake\share\cmake-3.25\Modules\CTestTargets.cmake;C:\App\CMake\share\cmake-3.25\Modules\CTestUseLaunchers.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckSymbolExists.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\App\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\App\CMake\share\cmake-3.25\Modules\DartConfiguration.tcl.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject.cmake;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\RepositoryInfo.txt.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\cfgcmd.txt.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\gitclone.cmake.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\gitupdate.cmake.in;C:\App\CMake\share\cmake-3.25\Modules\ExternalProject\mkdirs.cmake.in;C:\App\CMake\share\cmake-3.25\Modules\FindBISON.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindFLEX.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindGit.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\App\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\App\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeCCompiler.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeCXXCompiler.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeRCCompiler.cmake;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CMakeSystem.cmake;D:\workspaces\taos_odbc\cmake\macros.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\ex_cjson">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\ZERO_CHECK.vcxproj">
+      <Project>{3ED71B63-65E8-3E20-B5A6-CE4CFBD37FCA}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

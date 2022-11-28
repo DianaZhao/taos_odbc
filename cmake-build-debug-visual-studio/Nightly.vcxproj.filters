@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\e027f089dae67892c6e7e308d0c3b6e7\Nightly.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\workspaces\taos_odbc\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\Nightly" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{D5965401-F9AB-30EF-8410-3A84BFCFFF28}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

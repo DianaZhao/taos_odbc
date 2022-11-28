@@ -1,0 +1,1852 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						7,
+						8
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						13
+					]
+				},
+				{
+					"build" : "common",
+					"jsonFile" : "directory-common-Debug-df8a23303754f0cfc2e1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "common",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src-Debug-f26e082317dc902d0312.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						15,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "src/core",
+					"jsonFile" : "directory-src.core-Debug-27980f60b5df84566cd6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/core",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "src/parser",
+					"jsonFile" : "directory-src.parser-Debug-e1b4ae65dc2227fb8dae.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/parser",
+					"targetIndexes" : 
+					[
+						17
+					]
+				},
+				{
+					"build" : "src/utils",
+					"jsonFile" : "directory-src.utils-Debug-63aae164cb9969211904.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/utils",
+					"targetIndexes" : 
+					[
+						21
+					]
+				},
+				{
+					"build" : "src/tests",
+					"jsonFile" : "directory-src.tests-Debug-5754f03761777cfcdbde.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/tests",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "templates",
+					"jsonFile" : "directory-templates-Debug-24734d1b1533eac47197.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "templates",
+					"targetIndexes" : 
+					[
+						14
+					]
+				},
+				{
+					"build" : "tests",
+					"childIndexes" : 
+					[
+						9,
+						10,
+						11,
+						12,
+						14
+					],
+					"jsonFile" : "directory-tests-Debug-70e4927a02b591d5c1f8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests"
+				},
+				{
+					"build" : "tests/c",
+					"jsonFile" : "directory-tests.c-Debug-436afbf6491883bf5731.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/c",
+					"targetIndexes" : 
+					[
+						7,
+						10,
+						12,
+						16
+					]
+				},
+				{
+					"build" : "tests/cpp",
+					"jsonFile" : "directory-tests.cpp-Debug-e0e83e080e79f34a7014.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/cpp",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "tests/node",
+					"jsonFile" : "directory-tests.node-Debug-4bedd788bc787c9f6415.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/node"
+				},
+				{
+					"build" : "tests/rust",
+					"childIndexes" : 
+					[
+						13
+					],
+					"jsonFile" : "directory-tests.rust-Debug-d91111337b6a68c35227.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/rust"
+				},
+				{
+					"build" : "tests/rust/main",
+					"jsonFile" : "directory-tests.rust.main-Debug-c6378efff57a27524399.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 12,
+					"projectIndex" : 0,
+					"source" : "tests/rust/main"
+				},
+				{
+					"build" : "tests/taos",
+					"jsonFile" : "directory-tests.taos-Debug-a9610ba1a3682ae957eb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/taos",
+					"targetIndexes" : 
+					[
+						20
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					],
+					"name" : "taos_odbc",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-79d5e0b565932647b621.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Continuous::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Continuous-Debug-c877a5f6c84031f0628f.json",
+					"name" : "Continuous",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Experimental::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Experimental-Debug-ad73ae5a759cc425d4e4.json",
+					"name" : "Experimental",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Nightly::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Nightly-Debug-d91398cee0fccc2ccab6.json",
+					"name" : "Nightly",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "NightlyMemoryCheck::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NightlyMemoryCheck-Debug-f2a22da5dc89f3097441.json",
+					"name" : "NightlyMemoryCheck",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "SQLBindCol::@f56ed7056a7e6ed029be",
+					"jsonFile" : "target-SQLBindCol-Debug-e773a1050f76e2d97632.json",
+					"name" : "SQLBindCol",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-a7d7d224ae69e8fe2ed7.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "api_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-api_test-Debug-51ff6a260d37373421b0.json",
+					"name" : "api_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "basic::@08b4cb1648a15a99be29",
+					"jsonFile" : "target-basic-Debug-1ca0834b18b3bbd29ba0.json",
+					"name" : "basic",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "common_obj::@bfc844598bd03e848b3c",
+					"jsonFile" : "target-common_obj-Debug-73160f8177a7b5b9afc8.json",
+					"name" : "common_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "conformance_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-conformance_test-Debug-c560f77d0edd86036f12.json",
+					"name" : "conformance_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "core_obj::@0618756b1ff51bca1a0e",
+					"jsonFile" : "target-core_obj-Debug-0f1f4d6fbb8329ddd912.json",
+					"name" : "core_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "edge_cases_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-edge_cases_test-Debug-25d3f7bda5174588c949.json",
+					"name" : "edge_cases_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ex_cjson::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ex_cjson-Debug-db0ebd83f130495cdc80.json",
+					"name" : "ex_cjson",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "install_templates::@9ed9d281467a41a1df88",
+					"jsonFile" : "target-install_templates-Debug-667d5a228e6f9c1d02a9.json",
+					"name" : "install_templates",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "odbc_obj::@145eef247bfb46b6828c",
+					"jsonFile" : "target-odbc_obj-Debug-cc54849c3f25c216faf1.json",
+					"name" : "odbc_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "odbc_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-odbc_test-Debug-bcaeba58eab8e66157d1.json",
+					"name" : "odbc_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "parser_obj::@980325688ee7b2ed96bc",
+					"jsonFile" : "target-parser_obj-Debug-1272eaef935a4236c9cb.json",
+					"name" : "parser_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "taos_odbc::@145eef247bfb46b6828c",
+					"jsonFile" : "target-taos_odbc-Debug-7304cc46a8e3c3237281.json",
+					"name" : "taos_odbc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "taos_odbc_a::@145eef247bfb46b6828c",
+					"jsonFile" : "target-taos_odbc_a-Debug-34240f5d165c4e2350e0.json",
+					"name" : "taos_odbc_a",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "taos_test::@f2ec54556d78491b4300",
+					"jsonFile" : "target-taos_test-Debug-faea9b2bcff7e0eb2abc.json",
+					"name" : "taos_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "utils_obj::@f1b38b22aeb65474a6c5",
+					"jsonFile" : "target-utils_obj-Debug-f10361166cfdc14ad483.json",
+					"name" : "utils_obj",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						7,
+						8
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						13
+					]
+				},
+				{
+					"build" : "common",
+					"jsonFile" : "directory-common-Release-df8a23303754f0cfc2e1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "common",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src-Release-e4d049111b243d7c7a8e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						15,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "src/core",
+					"jsonFile" : "directory-src.core-Release-27980f60b5df84566cd6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/core",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "src/parser",
+					"jsonFile" : "directory-src.parser-Release-e1b4ae65dc2227fb8dae.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/parser",
+					"targetIndexes" : 
+					[
+						17
+					]
+				},
+				{
+					"build" : "src/utils",
+					"jsonFile" : "directory-src.utils-Release-63aae164cb9969211904.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/utils",
+					"targetIndexes" : 
+					[
+						21
+					]
+				},
+				{
+					"build" : "src/tests",
+					"jsonFile" : "directory-src.tests-Release-5754f03761777cfcdbde.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/tests",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "templates",
+					"jsonFile" : "directory-templates-Release-24734d1b1533eac47197.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "templates",
+					"targetIndexes" : 
+					[
+						14
+					]
+				},
+				{
+					"build" : "tests",
+					"childIndexes" : 
+					[
+						9,
+						10,
+						11,
+						12,
+						14
+					],
+					"jsonFile" : "directory-tests-Release-70e4927a02b591d5c1f8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests"
+				},
+				{
+					"build" : "tests/c",
+					"jsonFile" : "directory-tests.c-Release-436afbf6491883bf5731.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/c",
+					"targetIndexes" : 
+					[
+						7,
+						10,
+						12,
+						16
+					]
+				},
+				{
+					"build" : "tests/cpp",
+					"jsonFile" : "directory-tests.cpp-Release-e0e83e080e79f34a7014.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/cpp",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "tests/node",
+					"jsonFile" : "directory-tests.node-Release-4bedd788bc787c9f6415.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/node"
+				},
+				{
+					"build" : "tests/rust",
+					"childIndexes" : 
+					[
+						13
+					],
+					"jsonFile" : "directory-tests.rust-Release-d91111337b6a68c35227.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/rust"
+				},
+				{
+					"build" : "tests/rust/main",
+					"jsonFile" : "directory-tests.rust.main-Release-c6378efff57a27524399.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 12,
+					"projectIndex" : 0,
+					"source" : "tests/rust/main"
+				},
+				{
+					"build" : "tests/taos",
+					"jsonFile" : "directory-tests.taos-Release-a9610ba1a3682ae957eb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/taos",
+					"targetIndexes" : 
+					[
+						20
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					],
+					"name" : "taos_odbc",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-79d5e0b565932647b621.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Continuous::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Continuous-Release-c877a5f6c84031f0628f.json",
+					"name" : "Continuous",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Experimental::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Experimental-Release-ad73ae5a759cc425d4e4.json",
+					"name" : "Experimental",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Nightly::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Nightly-Release-d91398cee0fccc2ccab6.json",
+					"name" : "Nightly",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "NightlyMemoryCheck::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NightlyMemoryCheck-Release-f2a22da5dc89f3097441.json",
+					"name" : "NightlyMemoryCheck",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "SQLBindCol::@f56ed7056a7e6ed029be",
+					"jsonFile" : "target-SQLBindCol-Release-832f638074e59731ae57.json",
+					"name" : "SQLBindCol",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-a7d7d224ae69e8fe2ed7.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "api_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-api_test-Release-a80553512e91bd9ef94c.json",
+					"name" : "api_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "basic::@08b4cb1648a15a99be29",
+					"jsonFile" : "target-basic-Release-185f524c9e2a979521c6.json",
+					"name" : "basic",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "common_obj::@bfc844598bd03e848b3c",
+					"jsonFile" : "target-common_obj-Release-2bf50f24166885495439.json",
+					"name" : "common_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "conformance_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-conformance_test-Release-5a9e32d5aaea576d8e33.json",
+					"name" : "conformance_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "core_obj::@0618756b1ff51bca1a0e",
+					"jsonFile" : "target-core_obj-Release-c7ec89d3f5b63562a718.json",
+					"name" : "core_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "edge_cases_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-edge_cases_test-Release-bea823e2ced898127215.json",
+					"name" : "edge_cases_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ex_cjson::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ex_cjson-Release-db0ebd83f130495cdc80.json",
+					"name" : "ex_cjson",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "install_templates::@9ed9d281467a41a1df88",
+					"jsonFile" : "target-install_templates-Release-667d5a228e6f9c1d02a9.json",
+					"name" : "install_templates",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "odbc_obj::@145eef247bfb46b6828c",
+					"jsonFile" : "target-odbc_obj-Release-c884e97927d02b3d7aa4.json",
+					"name" : "odbc_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "odbc_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-odbc_test-Release-98969b162230ca5dd8f0.json",
+					"name" : "odbc_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "parser_obj::@980325688ee7b2ed96bc",
+					"jsonFile" : "target-parser_obj-Release-47efe2c5e935f569bc58.json",
+					"name" : "parser_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "taos_odbc::@145eef247bfb46b6828c",
+					"jsonFile" : "target-taos_odbc-Release-25a0956cd42c44257825.json",
+					"name" : "taos_odbc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "taos_odbc_a::@145eef247bfb46b6828c",
+					"jsonFile" : "target-taos_odbc_a-Release-d9902bfd12c7f7a302e6.json",
+					"name" : "taos_odbc_a",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "taos_test::@f2ec54556d78491b4300",
+					"jsonFile" : "target-taos_test-Release-2efa3a4e13a21f99318e.json",
+					"name" : "taos_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "utils_obj::@f1b38b22aeb65474a6c5",
+					"jsonFile" : "target-utils_obj-Release-8c5d64c9dcbb6c6d93f2.json",
+					"name" : "utils_obj",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						7,
+						8
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-MinSizeRel-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						13
+					]
+				},
+				{
+					"build" : "common",
+					"jsonFile" : "directory-common-MinSizeRel-df8a23303754f0cfc2e1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "common",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src-MinSizeRel-1654cad554b312b790fa.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						15,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "src/core",
+					"jsonFile" : "directory-src.core-MinSizeRel-27980f60b5df84566cd6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/core",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "src/parser",
+					"jsonFile" : "directory-src.parser-MinSizeRel-e1b4ae65dc2227fb8dae.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/parser",
+					"targetIndexes" : 
+					[
+						17
+					]
+				},
+				{
+					"build" : "src/utils",
+					"jsonFile" : "directory-src.utils-MinSizeRel-63aae164cb9969211904.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/utils",
+					"targetIndexes" : 
+					[
+						21
+					]
+				},
+				{
+					"build" : "src/tests",
+					"jsonFile" : "directory-src.tests-MinSizeRel-5754f03761777cfcdbde.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/tests",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "templates",
+					"jsonFile" : "directory-templates-MinSizeRel-24734d1b1533eac47197.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "templates",
+					"targetIndexes" : 
+					[
+						14
+					]
+				},
+				{
+					"build" : "tests",
+					"childIndexes" : 
+					[
+						9,
+						10,
+						11,
+						12,
+						14
+					],
+					"jsonFile" : "directory-tests-MinSizeRel-70e4927a02b591d5c1f8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests"
+				},
+				{
+					"build" : "tests/c",
+					"jsonFile" : "directory-tests.c-MinSizeRel-436afbf6491883bf5731.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/c",
+					"targetIndexes" : 
+					[
+						7,
+						10,
+						12,
+						16
+					]
+				},
+				{
+					"build" : "tests/cpp",
+					"jsonFile" : "directory-tests.cpp-MinSizeRel-e0e83e080e79f34a7014.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/cpp",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "tests/node",
+					"jsonFile" : "directory-tests.node-MinSizeRel-4bedd788bc787c9f6415.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/node"
+				},
+				{
+					"build" : "tests/rust",
+					"childIndexes" : 
+					[
+						13
+					],
+					"jsonFile" : "directory-tests.rust-MinSizeRel-d91111337b6a68c35227.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/rust"
+				},
+				{
+					"build" : "tests/rust/main",
+					"jsonFile" : "directory-tests.rust.main-MinSizeRel-c6378efff57a27524399.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 12,
+					"projectIndex" : 0,
+					"source" : "tests/rust/main"
+				},
+				{
+					"build" : "tests/taos",
+					"jsonFile" : "directory-tests.taos-MinSizeRel-a9610ba1a3682ae957eb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/taos",
+					"targetIndexes" : 
+					[
+						20
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					],
+					"name" : "taos_odbc",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-79d5e0b565932647b621.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Continuous::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Continuous-MinSizeRel-c877a5f6c84031f0628f.json",
+					"name" : "Continuous",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Experimental::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Experimental-MinSizeRel-ad73ae5a759cc425d4e4.json",
+					"name" : "Experimental",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Nightly::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Nightly-MinSizeRel-d91398cee0fccc2ccab6.json",
+					"name" : "Nightly",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "NightlyMemoryCheck::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NightlyMemoryCheck-MinSizeRel-f2a22da5dc89f3097441.json",
+					"name" : "NightlyMemoryCheck",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "SQLBindCol::@f56ed7056a7e6ed029be",
+					"jsonFile" : "target-SQLBindCol-MinSizeRel-54a8b5e08575588b2367.json",
+					"name" : "SQLBindCol",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-a7d7d224ae69e8fe2ed7.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "api_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-api_test-MinSizeRel-f77d68008e71d97e7811.json",
+					"name" : "api_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "basic::@08b4cb1648a15a99be29",
+					"jsonFile" : "target-basic-MinSizeRel-f31ea992127b1f042f4e.json",
+					"name" : "basic",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "common_obj::@bfc844598bd03e848b3c",
+					"jsonFile" : "target-common_obj-MinSizeRel-50a3b3aa22772f060823.json",
+					"name" : "common_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "conformance_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-conformance_test-MinSizeRel-dc1bbdf49364cd967790.json",
+					"name" : "conformance_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "core_obj::@0618756b1ff51bca1a0e",
+					"jsonFile" : "target-core_obj-MinSizeRel-9824865563a85ea3aee8.json",
+					"name" : "core_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "edge_cases_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-edge_cases_test-MinSizeRel-32f9be277afb13b097f8.json",
+					"name" : "edge_cases_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ex_cjson::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ex_cjson-MinSizeRel-db0ebd83f130495cdc80.json",
+					"name" : "ex_cjson",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "install_templates::@9ed9d281467a41a1df88",
+					"jsonFile" : "target-install_templates-MinSizeRel-667d5a228e6f9c1d02a9.json",
+					"name" : "install_templates",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "odbc_obj::@145eef247bfb46b6828c",
+					"jsonFile" : "target-odbc_obj-MinSizeRel-889819eca103c0faa171.json",
+					"name" : "odbc_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "odbc_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-odbc_test-MinSizeRel-2ba70513a652e383c266.json",
+					"name" : "odbc_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "parser_obj::@980325688ee7b2ed96bc",
+					"jsonFile" : "target-parser_obj-MinSizeRel-15d08f9638279e8d1005.json",
+					"name" : "parser_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "taos_odbc::@145eef247bfb46b6828c",
+					"jsonFile" : "target-taos_odbc-MinSizeRel-94bfbfde8af7b447010c.json",
+					"name" : "taos_odbc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "taos_odbc_a::@145eef247bfb46b6828c",
+					"jsonFile" : "target-taos_odbc_a-MinSizeRel-2ea3b142f3d423ca67bc.json",
+					"name" : "taos_odbc_a",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "taos_test::@f2ec54556d78491b4300",
+					"jsonFile" : "target-taos_test-MinSizeRel-bb1fc578dc0f274c539c.json",
+					"name" : "taos_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "utils_obj::@f1b38b22aeb65474a6c5",
+					"jsonFile" : "target-utils_obj-MinSizeRel-1833f435c6f050d3790c.json",
+					"name" : "utils_obj",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						7,
+						8
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						13
+					]
+				},
+				{
+					"build" : "common",
+					"jsonFile" : "directory-common-RelWithDebInfo-df8a23303754f0cfc2e1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "common",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src-RelWithDebInfo-1b180e625d7a10a0b3ad.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						15,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "src/core",
+					"jsonFile" : "directory-src.core-RelWithDebInfo-27980f60b5df84566cd6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/core",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "src/parser",
+					"jsonFile" : "directory-src.parser-RelWithDebInfo-e1b4ae65dc2227fb8dae.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/parser",
+					"targetIndexes" : 
+					[
+						17
+					]
+				},
+				{
+					"build" : "src/utils",
+					"jsonFile" : "directory-src.utils-RelWithDebInfo-63aae164cb9969211904.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/utils",
+					"targetIndexes" : 
+					[
+						21
+					]
+				},
+				{
+					"build" : "src/tests",
+					"jsonFile" : "directory-src.tests-RelWithDebInfo-5754f03761777cfcdbde.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "src/tests",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "templates",
+					"jsonFile" : "directory-templates-RelWithDebInfo-24734d1b1533eac47197.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "templates",
+					"targetIndexes" : 
+					[
+						14
+					]
+				},
+				{
+					"build" : "tests",
+					"childIndexes" : 
+					[
+						9,
+						10,
+						11,
+						12,
+						14
+					],
+					"jsonFile" : "directory-tests-RelWithDebInfo-70e4927a02b591d5c1f8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests"
+				},
+				{
+					"build" : "tests/c",
+					"jsonFile" : "directory-tests.c-RelWithDebInfo-436afbf6491883bf5731.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/c",
+					"targetIndexes" : 
+					[
+						7,
+						10,
+						12,
+						16
+					]
+				},
+				{
+					"build" : "tests/cpp",
+					"jsonFile" : "directory-tests.cpp-RelWithDebInfo-e0e83e080e79f34a7014.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/cpp",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "tests/node",
+					"jsonFile" : "directory-tests.node-RelWithDebInfo-4bedd788bc787c9f6415.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/node"
+				},
+				{
+					"build" : "tests/rust",
+					"childIndexes" : 
+					[
+						13
+					],
+					"jsonFile" : "directory-tests.rust-RelWithDebInfo-d91111337b6a68c35227.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/rust"
+				},
+				{
+					"build" : "tests/rust/main",
+					"jsonFile" : "directory-tests.rust.main-RelWithDebInfo-c6378efff57a27524399.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 12,
+					"projectIndex" : 0,
+					"source" : "tests/rust/main"
+				},
+				{
+					"build" : "tests/taos",
+					"jsonFile" : "directory-tests.taos-RelWithDebInfo-a9610ba1a3682ae957eb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 0,
+					"source" : "tests/taos",
+					"targetIndexes" : 
+					[
+						20
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					],
+					"name" : "taos_odbc",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-79d5e0b565932647b621.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Continuous::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Continuous-RelWithDebInfo-c877a5f6c84031f0628f.json",
+					"name" : "Continuous",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Experimental::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Experimental-RelWithDebInfo-ad73ae5a759cc425d4e4.json",
+					"name" : "Experimental",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Nightly::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Nightly-RelWithDebInfo-d91398cee0fccc2ccab6.json",
+					"name" : "Nightly",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "NightlyMemoryCheck::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NightlyMemoryCheck-RelWithDebInfo-f2a22da5dc89f3097441.json",
+					"name" : "NightlyMemoryCheck",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "SQLBindCol::@f56ed7056a7e6ed029be",
+					"jsonFile" : "target-SQLBindCol-RelWithDebInfo-0d7157584ecfa6f08da3.json",
+					"name" : "SQLBindCol",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-a7d7d224ae69e8fe2ed7.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "api_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-api_test-RelWithDebInfo-58e0a0db6c5b424b117a.json",
+					"name" : "api_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "basic::@08b4cb1648a15a99be29",
+					"jsonFile" : "target-basic-RelWithDebInfo-9822ecb4bf14f5433cfb.json",
+					"name" : "basic",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "common_obj::@bfc844598bd03e848b3c",
+					"jsonFile" : "target-common_obj-RelWithDebInfo-93af7ef49f1ab6df7d14.json",
+					"name" : "common_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "conformance_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-conformance_test-RelWithDebInfo-5e4d00d2837143fd6930.json",
+					"name" : "conformance_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "core_obj::@0618756b1ff51bca1a0e",
+					"jsonFile" : "target-core_obj-RelWithDebInfo-f38c7c989428af4f945c.json",
+					"name" : "core_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "edge_cases_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-edge_cases_test-RelWithDebInfo-e42c64f5af86bb3ade28.json",
+					"name" : "edge_cases_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ex_cjson::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ex_cjson-RelWithDebInfo-db0ebd83f130495cdc80.json",
+					"name" : "ex_cjson",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "install_templates::@9ed9d281467a41a1df88",
+					"jsonFile" : "target-install_templates-RelWithDebInfo-667d5a228e6f9c1d02a9.json",
+					"name" : "install_templates",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "odbc_obj::@145eef247bfb46b6828c",
+					"jsonFile" : "target-odbc_obj-RelWithDebInfo-7935b08e71e74cd7c195.json",
+					"name" : "odbc_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "odbc_test::@2afd0996a0d457cf88f3",
+					"jsonFile" : "target-odbc_test-RelWithDebInfo-5996c89b9b1abfb5b30f.json",
+					"name" : "odbc_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "parser_obj::@980325688ee7b2ed96bc",
+					"jsonFile" : "target-parser_obj-RelWithDebInfo-148952bc7f97000134f2.json",
+					"name" : "parser_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "taos_odbc::@145eef247bfb46b6828c",
+					"jsonFile" : "target-taos_odbc-RelWithDebInfo-c7badddce472c76746fe.json",
+					"name" : "taos_odbc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "taos_odbc_a::@145eef247bfb46b6828c",
+					"jsonFile" : "target-taos_odbc_a-RelWithDebInfo-cddc7c1cd2b9d45de45c.json",
+					"name" : "taos_odbc_a",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "taos_test::@f2ec54556d78491b4300",
+					"jsonFile" : "target-taos_test-RelWithDebInfo-bb443abfc58f033e1fb1.json",
+					"name" : "taos_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "utils_obj::@f1b38b22aeb65474a6c5",
+					"jsonFile" : "target-utils_obj-RelWithDebInfo-84fdf339a734ea6a65a8.json",
+					"name" : "utils_obj",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/workspaces/taos_odbc/cmake-build-debug-visual-studio",
+		"source" : "D:/workspaces/taos_odbc"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

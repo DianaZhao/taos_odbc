@@ -1,0 +1,191 @@
+C:\App\CMake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -S D:\workspaces\taos_odbc -B D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
+-- Selecting Windows SDK version 10.0.19041.0 to target Windows 10.0.19044.
+-- `valgrind` tool not found, thus valgrind-related-test-cases would be eliminated, you may refer to https://valgrind.org/
+-- `node` found -- v14.15.1, please be noted, nodejs v12 and above are expected compatible
+-- `rustc` not found, thus rustc-related-test-cases would be eliminated, you may refer to https://rust-lang.org/
+-- `cargo` not found, thus cargo-related-test-cases would be eliminated, you may refer to https://rust-lang.org/
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio
+
+Cannot get compiler information:
+	Compiler exited with error code 2: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe" @C:\Users\diana\AppData\Local\Temp\response-file5846123025761348281 C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757 | @response-file5846123025761348281=/TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30147 for x64
+	Copyright (C) Microsoft Corporation.  All rights reserved.
+	
+	all:
+		@cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\common
+		@set INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt
+		@set LIB=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\lib\x64;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\lib\x64;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x64
+		@set CL=
+		@set _CL_=
+		@set LINK=
+		C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe @<< C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757
+	/TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP<<
+	
+	cl /TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	cl : Command line error D8021 : invalid numeric argument '/Wextra'
+	
+	
+	Compiler exited with error code 2: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe" @C:\Users\diana\AppData\Local\Temp\response-file5846123025761348281 C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757 | @response-file5846123025761348281=/TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30147 for x64
+	Copyright (C) Microsoft Corporation.  All rights reserved.
+	
+	all:
+		@cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\src
+		@set INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt
+		@set LIB=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\lib\x64;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\lib\x64;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x64
+		@set CL=
+		@set _CL_=
+		@set LINK=
+		C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe @<< C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757
+	/TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP<<
+	
+	cl /TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	cl : Command line error D8021 : invalid numeric argument '/Wextra'
+	
+	
+	Compiler exited with error code 2: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe" @C:\Users\diana\AppData\Local\Temp\response-file5846123025761348281 C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757 | @response-file5846123025761348281=/TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30147 for x64
+	Copyright (C) Microsoft Corporation.  All rights reserved.
+	
+	all:
+		@cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\src\core
+		@set INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt
+		@set LIB=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\lib\x64;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\lib\x64;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x64
+		@set CL=
+		@set _CL_=
+		@set LINK=
+		C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe @<< C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757
+	/TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP<<
+	
+	cl /TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	cl : Command line error D8021 : invalid numeric argument '/Wextra'
+	
+	
+	Compiler exited with error code 2: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe" @C:\Users\diana\AppData\Local\Temp\response-file5846123025761348281 C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757 | @response-file5846123025761348281=/TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30147 for x64
+	Copyright (C) Microsoft Corporation.  All rights reserved.
+	
+	all:
+		@cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\src\parser
+		@set INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt
+		@set LIB=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\lib\x64;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\lib\x64;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x64
+		@set CL=
+		@set _CL_=
+		@set LINK=
+		C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe @<< C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757
+	/TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP<<
+	
+	cl /TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	cl : Command line error D8021 : invalid numeric argument '/Wextra'
+	
+	
+	Compiler exited with error code 2: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe" @C:\Users\diana\AppData\Local\Temp\response-file5846123025761348281 C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757 | @response-file5846123025761348281=/TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30147 for x64
+	Copyright (C) Microsoft Corporation.  All rights reserved.
+	
+	all:
+		@cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\src\tests
+		@set INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt
+		@set LIB=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\lib\x64;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\lib\x64;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x64
+		@set CL=
+		@set _CL_=
+		@set LINK=
+		C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe @<< C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757
+	/TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP<<
+	
+	cl /TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	cl : Command line error D8021 : invalid numeric argument '/Wextra'
+	
+	
+	Compiler exited with error code 2: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe" @C:\Users\diana\AppData\Local\Temp\response-file5846123025761348281 C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757 | @response-file5846123025761348281=/TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30147 for x64
+	Copyright (C) Microsoft Corporation.  All rights reserved.
+	
+	all:
+		@cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\src\utils
+		@set INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt
+		@set LIB=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\lib\x64;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\lib\x64;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x64
+		@set CL=
+		@set _CL_=
+		@set LINK=
+		C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe @<< C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757
+	/TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP<<
+	
+	cl /TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	cl : Command line error D8021 : invalid numeric argument '/Wextra'
+	
+	
+	Compiler exited with error code 2: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe" @C:\Users\diana\AppData\Local\Temp\response-file5846123025761348281 C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757 | @response-file5846123025761348281=/TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30147 for x64
+	Copyright (C) Microsoft Corporation.  All rights reserved.
+	
+	all:
+		@cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\tests\c
+		@set INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt
+		@set LIB=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\lib\x64;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\lib\x64;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x64
+		@set CL=
+		@set _CL_=
+		@set LINK=
+		C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe @<< C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757
+	/TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP<<
+	
+	cl /TC /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	cl : Command line error D8021 : invalid numeric argument '/Wextra'
+	
+	
+	Compiler exited with error code 2: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe" @C:\Users\diana\AppData\Local\Temp\response-file11564443667964721806 C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757 | @response-file11564443667964721806=/TC /I/.taos_odbc/.install/include /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30147 for x64
+	Copyright (C) Microsoft Corporation.  All rights reserved.
+	
+	all:
+		@cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\tests\c
+		@set INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt
+		@set LIB=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\lib\x64;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\lib\x64;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x64
+		@set CL=
+		@set _CL_=
+		@set LINK=
+		C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe @<< C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757
+	/TC /I/.taos_odbc/.install/include /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP<<
+	
+	cl /TC /I/.taos_odbc/.install/include /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	cl : Command line error D8021 : invalid numeric argument '/Wextra'
+	
+	
+	Compiler exited with error code 2: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe" @C:\Users\diana\AppData\Local\Temp\response-file15393054219704275645 C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757 | @response-file15393054219704275645=/TP /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 /Be /Bd /EP
+	Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30147 for x64
+	Copyright (C) Microsoft Corporation.  All rights reserved.
+	
+	all:
+		@cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\tests\cpp
+		@set INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt
+		@set LIB=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\lib\x64;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\lib\x64;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x64
+		@set CL=
+		@set _CL_=
+		@set LINK=
+		C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe @<< C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757
+	/TP /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 /Be /Bd /EP<<
+	
+	cl /TP /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 /Be /Bd /EP
+	cl : Command line error D8021 : invalid numeric argument '/Wextra'
+	
+	
+	Compiler exited with error code 2: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe" @C:\Users\diana\AppData\Local\Temp\response-file11564443667964721806 C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757 | @response-file11564443667964721806=/TC /I/.taos_odbc/.install/include /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30147 for x64
+	Copyright (C) Microsoft Corporation.  All rights reserved.
+	
+	all:
+		@cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\tests\taos
+		@set INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt
+		@set LIB=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\lib\x64;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\lib\x64;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x64
+		@set CL=
+		@set _CL_=
+		@set LINK=
+		C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe @<< C:\Users\diana\AppData\Local\Temp\compiler-file14120774761753523757
+	/TC /I/.taos_odbc/.install/include /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP<<
+	
+	cl /TC /I/.taos_odbc/.install/include /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -Wall -Wextra -Werror -O0 -std:c11 /Be /Bd /EP
+	cl : Command line error D8021 : invalid numeric argument '/Wextra'
+	
+	

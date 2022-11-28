@@ -1,0 +1,78 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "common_obj::@bfc844598bd03e848b3c"
+		},
+		{
+			"id" : "odbc_obj::@145eef247bfb46b6828c"
+		},
+		{
+			"id" : "taos_odbc_a::@145eef247bfb46b6828c"
+		},
+		{
+			"id" : "taos_odbc::@145eef247bfb46b6828c"
+		},
+		{
+			"id" : "core_obj::@0618756b1ff51bca1a0e"
+		},
+		{
+			"id" : "ex_cjson::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "basic::@08b4cb1648a15a99be29"
+		},
+		{
+			"id" : "utils_obj::@f1b38b22aeb65474a6c5"
+		},
+		{
+			"id" : "parser_obj::@980325688ee7b2ed96bc"
+		},
+		{
+			"id" : "SQLBindCol::@f56ed7056a7e6ed029be"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "odbc_test::@2afd0996a0d457cf88f3"
+		},
+		{
+			"id" : "api_test::@2afd0996a0d457cf88f3"
+		},
+		{
+			"id" : "edge_cases_test::@2afd0996a0d457cf88f3"
+		},
+		{
+			"id" : "taos_test::@f2ec54556d78491b4300"
+		},
+		{
+			"id" : "conformance_test::@2afd0996a0d457cf88f3"
+		}
+	],
+	"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

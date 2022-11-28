@@ -57,21 +57,29 @@ macro(check_requirements)
       CMAKE_ARGS "-DCMAKE_INSTALL_PREFIX=${CJSON_INSTALL_PATH}"
       )
 
-  ## check `taos`
-  find_library(TAOS NAMES taos)
-  if(${TAOS} STREQUAL TAOS-NOTFOUND)
-    message(FATAL_ERROR "${Red}`libtaos.so` is required but not found, you may refer to https://github.com/taosdata/TDengine${ColorReset}")
-  endif()
+  if(TODBC_WINDOWS)
+    set(CMAKE_REQUIRED_INCLUDES C:\\TDengine\\include)
 
+#    find_library(TAOS NAMES taos)
+#    if(${TAOS} STREQUAL TAOS-NOTFOUND)
+#      message(FATAL_ERROR "${Red}`taos.dll` is required but not found, you may refer to https://github.com/taosdata/TDengine${ColorReset}")
+#    endif()
+  else()
+    ## check `taos`
+    find_library(TAOS NAMES taos)
+    if(${TAOS} STREQUAL TAOS-NOTFOUND)
+      message(FATAL_ERROR "${Red}`libtaos.so` is required but not found, you may refer to https://github.com/taosdata/TDengine${ColorReset}")
+    endif()
+  endif()
   set(CMAKE_REQUIRED_LIBRARIES taos)
   if(TODBC_DARWIN)
     set(CMAKE_REQUIRED_INCLUDES /usr/local/include)
     set(CMAKE_REQUIRED_LINK_OPTIONS -L/usr/local/lib)
   endif()
-  check_symbol_exists(taos_query "taos.h" HAVE_TAOS)
-  if(NOT HAVE_TAOS)
-    message(FATAL_ERROR "${Red}`taos.h` is required but not found, you may refer to https://github.com/taosdata/TDengine${ColorReset}")
-  endif()
+#  check_symbol_exists(taos_query "taos.h" HAVE_TAOS)
+#  if(NOT HAVE_TAOS)
+#    message(FATAL_ERROR "${Red}`taos.h` is required but not found, you may refer to https://github.com/taosdata/TDengine${ColorReset}")
+#  endif()
 
   if(TODBC_DARWIN)
     ## check `iconv`
@@ -99,59 +107,60 @@ macro(check_requirements)
     message(FATAL_ERROR "${Red}gcc 4.8.0 will complain too much about bison-generated code, we just bypass building ODBC driver in such case${ColorReset}")
   endif()
 
-  ## check `odbcinst`
-  find_program(TAOS_ODBC_ODBCINST_INSTALLED NAMES odbcinst)
-  if(NOT TAOS_ODBC_ODBCINST_INSTALLED)
-    if(TAOS_ODBC_DARWIN)
-      message(FATAL_ERROR "${Red}unixodbc is not installed yet, you may install it under macOS by typing: brew install unixodbc${ColorReset}")
-    else()
-      message(FATAL_ERROR "${Red}odbcinst is not installed yet, you may install it under Ubuntu by typing: sudo apt install odbcinst${ColorReset}")
+  if(TODBC_WINDOWS)
+  else()
+    ## check `odbcinst`
+    find_program(TAOS_ODBC_ODBCINST_INSTALLED NAMES odbcinst)
+    if(NOT TAOS_ODBC_ODBCINST_INSTALLED)
+      if(TAOS_ODBC_DARWIN)
+        message(FATAL_ERROR "${Red}unixodbc is not installed yet, you may install it under macOS by typing: brew install unixodbc${ColorReset}")
+      else()
+        message(FATAL_ERROR "${Red}odbcinst is not installed yet, you may install it under Ubuntu by typing: sudo apt install odbcinst${ColorReset}")
+      endif()
     endif()
-  endif()
-
-  ## check `isql`
-  find_program(TAOS_ODBC_ISQL_INSTALLED NAMES isql)
-  if(NOT TAOS_ODBC_ISQL_INSTALLED)
-    if(TAOS_ODBC_DARWIN)
-      message(FATAL_ERROR "${Red}unixodbc is not installed yet, you may install it under macOS by typing: brew install unixodbc${ColorReset}")
-    else()
-      message(FATAL_ERROR "${Red}unixodbc is not installed yet, you may install it under Ubuntu by typing: sudo apt install unixodbc${ColorReset}")
+    ## check `isql`
+    find_program(TAOS_ODBC_ISQL_INSTALLED NAMES isql)
+    if(NOT TAOS_ODBC_ISQL_INSTALLED)
+      if(TAOS_ODBC_DARWIN)
+        message(FATAL_ERROR "${Red}unixodbc is not installed yet, you may install it under macOS by typing: brew install unixodbc${ColorReset}")
+      else()
+        message(FATAL_ERROR "${Red}unixodbc is not installed yet, you may install it under Ubuntu by typing: sudo apt install unixodbc${ColorReset}")
+      endif()
     endif()
-  endif()
 
-  ## check `pkg-config`
-  find_program(TAOS_ODBC_PKG_CONFIG_INSTALLED NAMES pkg-config)
-  if(NOT TAOS_ODBC_PKG_CONFIG_INSTALLED)
-    if(TAOS_ODBC_DARWIN)
-      message(FATAL_ERROR "${Red}pkg-config is not installed yet, you may install it under macOS by typing: brew install pkg-config${ColorReset}")
-    else()
-      message(FATAL_ERROR "${Red}pkg-config is not installed yet, you may install it under Ubuntu by typing: sudo apt install pkg-config${ColorReset}")
+    ## check `pkg-config`
+    find_program(TAOS_ODBC_PKG_CONFIG_INSTALLED NAMES pkg-config)
+    if(NOT TAOS_ODBC_PKG_CONFIG_INSTALLED)
+      if(TAOS_ODBC_DARWIN)
+        message(FATAL_ERROR "${Red}pkg-config is not installed yet, you may install it under macOS by typing: brew install pkg-config${ColorReset}")
+      else()
+        message(FATAL_ERROR "${Red}pkg-config is not installed yet, you may install it under Ubuntu by typing: sudo apt install pkg-config${ColorReset}")
+      endif()
     endif()
-  endif()
+    ## get `odbc/odbcinst` info via `pkg-config`
+    execute_process(COMMAND pkg-config --variable=includedir odbc ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE ODBC_INCLUDE_DIRECTORY)
+    execute_process(COMMAND pkg-config --variable=libdir odbc ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE ODBC_LIBRARY_DIRECTORY)
+    execute_process(COMMAND pkg-config --libs-only-L odbc ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE ODBC_LINK_OPTIONS)
 
-  ## get `odbc/odbcinst` info via `pkg-config`
-  execute_process(COMMAND pkg-config --variable=includedir odbc ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE ODBC_INCLUDE_DIRECTORY)
-  execute_process(COMMAND pkg-config --variable=libdir odbc ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE ODBC_LIBRARY_DIRECTORY)
-  execute_process(COMMAND pkg-config --libs-only-L odbc ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE ODBC_LINK_OPTIONS)
+    execute_process(COMMAND pkg-config --variable=includedir odbcinst ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE ODBCINST_INCLUDE_DIRECTORY)
+    execute_process(COMMAND pkg-config --variable=libdir odbcinst ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE ODBCINST_LIBRARY_DIRECTORY)
+    execute_process(COMMAND pkg-config --libs-only-L odbcinst ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE ODBCINST_LINK_OPTIONS)
 
-  execute_process(COMMAND pkg-config --variable=includedir odbcinst ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE ODBCINST_INCLUDE_DIRECTORY)
-  execute_process(COMMAND pkg-config --variable=libdir odbcinst ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE ODBCINST_LIBRARY_DIRECTORY)
-  execute_process(COMMAND pkg-config --libs-only-L odbcinst ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE ODBCINST_LINK_OPTIONS)
+    set(CMAKE_REQUIRED_LIBRARIES odbc odbcinst)
+    set(CMAKE_REQUIRED_INCLUDES ${ODBC_INCLUDE_DIRECTORY} ${ODBCINST_INCLUDE_DIRECTORY})
+    set(CMAKE_REQUIRED_LINK_OPTIONS ${ODBC_LINK_OPTIONS} ${ODBCINST_LINK_OPTIONS})
 
-  set(CMAKE_REQUIRED_LIBRARIES odbc odbcinst)
-  set(CMAKE_REQUIRED_INCLUDES ${ODBC_INCLUDE_DIRECTORY} ${ODBCINST_INCLUDE_DIRECTORY})
-  set(CMAKE_REQUIRED_LINK_OPTIONS ${ODBC_LINK_OPTIONS} ${ODBCINST_LINK_OPTIONS})
+    ## check `sql.h`
+    check_symbol_exists(SQLExecute "sql.h" HAVE_ODBC_DEV)
+    if(NOT HAVE_ODBC_DEV)
+      message(FATAL_ERROR "${Red}odbc requirement not satisfied, please install unixodbc-dev. Check detail in ${CMAKE_BINARY_DIR}/CMakeFiles/CMakeError.log${ColorReset}")
+    endif()
 
-  ## check `sql.h`
-  check_symbol_exists(SQLExecute "sql.h" HAVE_ODBC_DEV)
-  if(NOT HAVE_ODBC_DEV)
-    message(FATAL_ERROR "${Red}odbc requirement not satisfied, please install unixodbc-dev. Check detail in ${CMAKE_BINARY_DIR}/CMakeFiles/CMakeError.log${ColorReset}")
-  endif()
-
-  ## check `odbcinst.h`
-  check_symbol_exists(SQLInstallODBC "odbcinst.h" HAVE_ODBCINST_DEV)
-  if(NOT HAVE_ODBCINST_DEV)
-    message(FATAL_ERROR "${Red}odbc requirement not satisfied, check detail in ${CMAKE_BINARY_DIR}/CMakeFiles/CMakeError.log${ColorReset}")
+    ## check `odbcinst.h`
+    check_symbol_exists(SQLInstallODBC "odbcinst.h" HAVE_ODBCINST_DEV)
+    if(NOT HAVE_ODBCINST_DEV)
+      message(FATAL_ERROR "${Red}odbc requirement not satisfied, check detail in ${CMAKE_BINARY_DIR}/CMakeFiles/CMakeError.log${ColorReset}")
+    endif()
   endif()
 
   ## check `valgrind`

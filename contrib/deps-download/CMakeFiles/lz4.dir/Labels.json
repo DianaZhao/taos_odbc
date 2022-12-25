@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/lz4"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/lz4.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/lz4-complete.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/lz4-prefix/src/lz4-stamp/lz4-build.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/lz4-prefix/src/lz4-stamp/lz4-configure.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/lz4-prefix/src/lz4-stamp/lz4-download.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/lz4-prefix/src/lz4-stamp/lz4-install.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/lz4-prefix/src/lz4-stamp/lz4-mkdir.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/lz4-prefix/src/lz4-stamp/lz4-patch.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/lz4-prefix/src/lz4-stamp/lz4-test.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/lz4-prefix/src/lz4-stamp/lz4-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"lz4"
+		],
+		"name" : "lz4"
+	}
+}

@@ -1,0 +1,14 @@
+# Target labels
+ libuv
+# Source files and their labels
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/libuv
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/libuv.rule
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/libuv-complete.rule
+D:/workspaces/taos_odbc/contrib/deps-download/libuv-prefix/src/libuv-stamp/libuv-build.rule
+D:/workspaces/taos_odbc/contrib/deps-download/libuv-prefix/src/libuv-stamp/libuv-configure.rule
+D:/workspaces/taos_odbc/contrib/deps-download/libuv-prefix/src/libuv-stamp/libuv-download.rule
+D:/workspaces/taos_odbc/contrib/deps-download/libuv-prefix/src/libuv-stamp/libuv-install.rule
+D:/workspaces/taos_odbc/contrib/deps-download/libuv-prefix/src/libuv-stamp/libuv-mkdir.rule
+D:/workspaces/taos_odbc/contrib/deps-download/libuv-prefix/src/libuv-stamp/libuv-patch.rule
+D:/workspaces/taos_odbc/contrib/deps-download/libuv-prefix/src/libuv-stamp/libuv-test.rule
+D:/workspaces/taos_odbc/contrib/deps-download/libuv-prefix/src/libuv-stamp/libuv-update.rule

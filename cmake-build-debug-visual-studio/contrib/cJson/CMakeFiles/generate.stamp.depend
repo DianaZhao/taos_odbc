@@ -1,0 +1,13 @@
+# CMake generation dependency list for this directory.
+C:/App/CMake/share/cmake-3.25/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
+C:/App/CMake/share/cmake-3.25/Modules/CheckCCompilerFlag.cmake
+C:/App/CMake/share/cmake-3.25/Modules/CheckCSourceCompiles.cmake
+C:/App/CMake/share/cmake-3.25/Modules/GNUInstallDirs.cmake
+C:/App/CMake/share/cmake-3.25/Modules/Internal/CheckCompilerFlag.cmake
+C:/App/CMake/share/cmake-3.25/Modules/Internal/CheckFlagCommonConfig.cmake
+C:/App/CMake/share/cmake-3.25/Modules/Internal/CheckSourceCompiles.cmake
+D:/workspaces/taos_odbc/cmake/EnableCMP0048.txt.in
+D:/workspaces/taos_odbc/contrib/cJson/CMakeLists.txt
+D:/workspaces/taos_odbc/contrib/cJson/library_config/cJSONConfig.cmake.in
+D:/workspaces/taos_odbc/contrib/cJson/library_config/cJSONConfigVersion.cmake.in
+D:/workspaces/taos_odbc/contrib/cJson/library_config/libcjson.pc.in

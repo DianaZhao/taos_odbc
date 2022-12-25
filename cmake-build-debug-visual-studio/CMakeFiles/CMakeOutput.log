@@ -1,119 +1,422 @@
 The system is: Windows - 10.0.19044 - AMD64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler:  
+Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/cl.exe 
 Build flags: 
 Id flags:  
 
 The output was:
 0
-Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
-Copyright (C) Microsoft Corporation. All rights reserved.
+Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30147 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
 
-Build started 11/26/2022 10:52:03 AM.
-Project "D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CompilerIdC\CompilerIdC.vcxproj" on node 1 (default targets).
-PrepareForBuild:
-  Creating directory "Debug\".
-  Creating directory "Debug\CompilerIdC.tlog\".
-InitializeBuildStatus:
-  Creating "Debug\CompilerIdC.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
-ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc142.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
-  CMakeCCompilerId.c
-Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib" /MACHINE:X64 Debug\CMakeCCompilerId.obj
-  CompilerIdC.vcxproj -> D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CompilerIdC\CompilerIdC.exe
-PostBuildEvent:
-  for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
-  :VCEnd
-  CMAKE_C_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe
-FinalizeBuildStatus:
-  Deleting file "Debug\CompilerIdC.tlog\unsuccessfulbuild".
-  Touching "Debug\CompilerIdC.tlog\CompilerIdC.lastbuildstate".
-Done Building Project "D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CompilerIdC\CompilerIdC.vcxproj" (default targets).
+CMakeCCompilerId.c
+Microsoft (R) Incremental Linker Version 14.29.30147.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
 
-Build succeeded.
-    0 Warning(s)
-    0 Error(s)
-
-Time Elapsed 00:00:00.64
+/out:CMakeCCompilerId.exe 
+CMakeCCompilerId.obj 
 
 
-Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.exe"
 
-Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
 
-The C compiler identification is MSVC, found in "D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/3.25.0/CompilerIdC/CompilerIdC.exe"
+The C compiler identification is MSVC, found in "D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/3.25.0/CompilerIdC/CMakeCCompilerId.exe"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler:  
+Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/cl.exe 
 Build flags: 
 Id flags:  
 
 The output was:
 0
-Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
-Copyright (C) Microsoft Corporation. All rights reserved.
+Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30147 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
 
-Build started 11/26/2022 10:52:04 AM.
-Project "D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CompilerIdCXX\CompilerIdCXX.vcxproj" on node 1 (default targets).
-PrepareForBuild:
-  Creating directory "Debug\".
-  Creating directory "Debug\CompilerIdCXX.tlog\".
-InitializeBuildStatus:
-  Creating "Debug\CompilerIdCXX.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
-ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc142.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
-  CMakeCXXCompilerId.cpp
-Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdCXX.lib" /MACHINE:X64 Debug\CMakeCXXCompilerId.obj
-  CompilerIdCXX.vcxproj -> D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CompilerIdCXX\CompilerIdCXX.exe
-PostBuildEvent:
-  for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
-  :VCEnd
-  CMAKE_CXX_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe
-FinalizeBuildStatus:
-  Deleting file "Debug\CompilerIdCXX.tlog\unsuccessfulbuild".
-  Touching "Debug\CompilerIdCXX.tlog\CompilerIdCXX.lastbuildstate".
-Done Building Project "D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\3.25.0\CompilerIdCXX\CompilerIdCXX.vcxproj" (default targets).
+CMakeCXXCompilerId.cpp
+Microsoft (R) Incremental Linker Version 14.29.30147.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
 
-Build succeeded.
-    0 Warning(s)
-    0 Error(s)
-
-Time Elapsed 00:00:00.49
+/out:CMakeCXXCompilerId.exe 
+CMakeCXXCompilerId.obj 
 
 
-Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.exe"
 
-Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
 
-The CXX compiler identification is MSVC, found in "D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/3.25.0/CompilerIdCXX/CompilerIdCXX.exe"
+The CXX compiler identification is MSVC, found in "D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/3.25.0/CompilerIdCXX/CMakeCXXCompilerId.exe"
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-7amf40
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-j90gro
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_64755.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30147 for x64
-  Copyright (C) Microsoft Corporation.  All rights reserved.
-  CMakeCCompilerABI.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_64755.dir\Debug\\" /Fd"cmTC_64755.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\App\CMake\share\cmake-3.25\Modules\CMakeCCompilerABI.c"
-  cmTC_64755.vcxproj -> D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-7amf40\Debug\cmTC_64755.exe
+Run Build Command(s):nmake -f Makefile /nologo cmTC_f672f\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_f672f.dir\build.make /nologo -L                  CMakeFiles\cmTC_f672f.dir\build
+Building C object CMakeFiles/cmTC_f672f.dir/CMakeCCompilerABI.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_f672f.dir\CMakeCCompilerABI.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-j90gro --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nmB173.tmp
+CMakeCCompilerABI.c
+Linking C executable cmTC_f672f.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_f672f.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_f672f.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nmB2CC.tmp
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-qojsky
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-axmlvz
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_a9cba.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30147 for x64
-  Copyright (C) Microsoft Corporation.  All rights reserved.
-  CMakeCXXCompilerABI.cpp
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a9cba.dir\Debug\\" /Fd"cmTC_a9cba.dir\Debug\vc142.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\App\CMake\share\cmake-3.25\Modules\CMakeCXXCompilerABI.cpp"
-  cmTC_a9cba.vcxproj -> D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-qojsky\Debug\cmTC_a9cba.exe
+Run Build Command(s):nmake -f Makefile /nologo cmTC_e5171\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_e5171.dir\build.make /nologo -L                  CMakeFiles\cmTC_e5171.dir\build
+Building CXX object CMakeFiles/cmTC_e5171.dir/CMakeCXXCompilerABI.cpp.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_e5171.dir\CMakeCXXCompilerABI.cpp.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-axmlvz --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nmB461.tmp
+CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_e5171.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_e5171.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_e5171.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nmB4B0.tmp
 
 
+
+Performing C SOURCE FILE Test FLAG_SUPPORTED_GS succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-ltqyja
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_3076c\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_3076c.dir\build.make /nologo -L                  CMakeFiles\cmTC_3076c.dir\build
+Building C object CMakeFiles/cmTC_3076c.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_3076c.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-ltqyja --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm29FE.tmp
+src.c
+Linking C executable cmTC_3076c.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_3076c.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_3076c.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm2ABB.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test FLAG_SUPPORTED_Za succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-ehye22
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_49b76\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_49b76.dir\build.make /nologo -L                  CMakeFiles\cmTC_49b76.dir\build
+Building C object CMakeFiles/cmTC_49b76.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_49b76.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-ehye22 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm2C02.tmp
+src.c
+Linking C executable cmTC_49b76.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_49b76.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_49b76.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm2C42.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test FLAG_SUPPORTED_sdl succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-fre563
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_cd507\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_cd507.dir\build.make /nologo -L                  CMakeFiles\cmTC_cd507.dir\build
+Building C object CMakeFiles/cmTC_cd507.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_cd507.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-fre563 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm2D79.tmp
+src.c
+Linking C executable cmTC_cd507.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_cd507.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_cd507.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm2DB9.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test FLAG_SUPPORTED_W4 succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-g4nb0f
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_e0123\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_e0123.dir\build.make /nologo -L                  CMakeFiles\cmTC_e0123.dir\build
+Building C object CMakeFiles/cmTC_e0123.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_e0123.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-g4nb0f --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm2EF0.tmp
+cl : Command line warning D9025 : overriding '/W3' with '/W4'
+src.c
+Linking C executable cmTC_e0123.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_e0123.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_e0123.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm2F4F.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test FLAG_SUPPORTED_wd4001 succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-e7drbr
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_32524\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_32524.dir\build.make /nologo -L                  CMakeFiles\cmTC_32524.dir\build
+Building C object CMakeFiles/cmTC_32524.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_32524.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-e7drbr --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm30A6.tmp
+cl : Command line warning D9025 : overriding '/W3' with '/W4'
+src.c
+Linking C executable cmTC_32524.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_32524.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_32524.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm30E5.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test FLAG_SUPPORTED_DCRTSECURENOWARNINGS succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-2jqr0i
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_a1c57\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_a1c57.dir\build.make /nologo -L                  CMakeFiles\cmTC_a1c57.dir\build
+Building C object CMakeFiles/cmTC_a1c57.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_a1c57.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-2jqr0i --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm321D.tmp
+cl : Command line warning D9025 : overriding '/W3' with '/W4'
+src.c
+Linking C executable cmTC_a1c57.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_a1c57.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_a1c57.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm325C.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test CFLAG_Wall succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-bvjd72
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_80592\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_80592.dir\build.make /nologo -L                  CMakeFiles\cmTC_80592.dir\build
+Building C object CMakeFiles/cmTC_80592.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_80592.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-bvjd72 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm3549.tmp
+src.c
+Linking C executable cmTC_80592.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_80592.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_80592.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm35A8.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test CFLAG_W4 succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-pbbylu
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_92ec0\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_92ec0.dir\build.make /nologo -L                  CMakeFiles\cmTC_92ec0.dir\build
+Building C object CMakeFiles/cmTC_92ec0.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_92ec0.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-pbbylu --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm3AE7.tmp
+cl : Command line warning D9025 : overriding '/W3' with '/W4'
+src.c
+Linking C executable cmTC_92ec0.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_92ec0.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_92ec0.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm3B36.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-qfr21w
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_9ce11\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_9ce11.dir\build.make /nologo -L                  CMakeFiles\cmTC_9ce11.dir\build
+Building C object CMakeFiles/cmTC_9ce11.dir/CheckIncludeFile.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_9ce11.dir\CheckIncludeFile.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-qfr21w --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm3C7D.tmp
+CheckIncludeFile.c
+Linking C executable cmTC_9ce11.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_9ce11.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_9ce11.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm3CBC.tmp
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-hybz9q
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_05d5b\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_05d5b.dir\build.make /nologo -L                  CMakeFiles\cmTC_05d5b.dir\build
+Building C object CMakeFiles/cmTC_05d5b.dir/CheckIncludeFile.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_05d5b.dir\CheckIncludeFile.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-hybz9q --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm3DF4.tmp
+CheckIncludeFile.c
+Linking C executable cmTC_05d5b.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_05d5b.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_05d5b.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm3E33.tmp
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-lkjn8g
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_ca038\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_ca038.dir\build.make /nologo -L                  CMakeFiles\cmTC_ca038.dir\build
+Building C object CMakeFiles/cmTC_ca038.dir/CheckIncludeFile.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_ca038.dir\CheckIncludeFile.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-lkjn8g --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm3F7A.tmp
+CheckIncludeFile.c
+Linking C executable cmTC_ca038.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_ca038.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_ca038.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm3FBA.tmp
+
+
+
+Performing C SOURCE FILE Test UV_LINT_W4 succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-phai3o
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_93a52\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_93a52.dir\build.make /nologo -L                  CMakeFiles\cmTC_93a52.dir\build
+Building C object CMakeFiles/cmTC_93a52.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_93a52.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-phai3o --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm4585.tmp
+cl : Command line warning D9025 : overriding '/W3' with '/W4'
+src.c
+Linking C executable cmTC_93a52.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_93a52.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_93a52.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm45C5.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test UV_LINT_NO_UNUSED_PARAMETER_MSVC succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-01h9f8
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_4514c\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_4514c.dir\build.make /nologo -L                  CMakeFiles\cmTC_4514c.dir\build
+Building C object CMakeFiles/cmTC_4514c.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_4514c.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-01h9f8 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm46FC.tmp
+src.c
+Linking C executable cmTC_4514c.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_4514c.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_4514c.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm473C.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test UV_LINT_NO_CONDITIONAL_CONSTANT_MSVC succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-a84o7p
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_4019a\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_4019a.dir\build.make /nologo -L                  CMakeFiles\cmTC_4019a.dir\build
+Building C object CMakeFiles/cmTC_4019a.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_4019a.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-a84o7p --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm48A2.tmp
+src.c
+Linking C executable cmTC_4019a.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_4019a.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_4019a.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm48E2.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test UV_LINT_NO_NONSTANDARD_MSVC succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-2fatlj
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_d702a\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_d702a.dir\build.make /nologo -L                  CMakeFiles\cmTC_d702a.dir\build
+Building C object CMakeFiles/cmTC_d702a.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_d702a.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-2fatlj --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm4A29.tmp
+src.c
+Linking C executable cmTC_d702a.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_d702a.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_d702a.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm4AD6.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test UV_LINT_NO_NONSTANDARD_EMPTY_TU_MSVC succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-1rgudc
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_2d799\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_2d799.dir\build.make /nologo -L                  CMakeFiles\cmTC_2d799.dir\build
+Building C object CMakeFiles/cmTC_2d799.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_2d799.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-1rgudc --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm4BFE.tmp
+src.c
+Linking C executable cmTC_2d799.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_2d799.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_2d799.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm4C4D.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test UV_LINT_NO_NONSTANDARD_FILE_SCOPE_MSVC succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-da618d
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_353aa\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_353aa.dir\build.make /nologo -L                  CMakeFiles\cmTC_353aa.dir\build
+Building C object CMakeFiles/cmTC_353aa.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_353aa.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-da618d --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm4DA3.tmp
+src.c
+Linking C executable cmTC_353aa.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_353aa.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_353aa.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm4DD3.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test UV_LINT_NO_NONSTANDARD_NONSTATIC_DLIMPORT_MSVC succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-vrn831
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_b670c\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_b670c.dir\build.make /nologo -L                  CMakeFiles\cmTC_b670c.dir\build
+Building C object CMakeFiles/cmTC_b670c.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_b670c.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-vrn831 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm4F1A.tmp
+src.c
+Linking C executable cmTC_b670c.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_b670c.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_b670c.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm4F5A.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test UV_LINT_NO_HIDES_LOCAL succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-kqy5ck
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_f6259\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_f6259.dir\build.make /nologo -L                  CMakeFiles\cmTC_f6259.dir\build
+Building C object CMakeFiles/cmTC_f6259.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_f6259.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-kqy5ck --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm50B1.tmp
+src.c
+Linking C executable cmTC_f6259.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_f6259.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_f6259.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm50F0.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test UV_LINT_NO_HIDES_PARAM succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-3kks35
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_b9a4b\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_b9a4b.dir\build.make /nologo -L                  CMakeFiles\cmTC_b9a4b.dir\build
+Building C object CMakeFiles/cmTC_b9a4b.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_b9a4b.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-3kks35 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm5237.tmp
+src.c
+Linking C executable cmTC_b9a4b.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_b9a4b.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_b9a4b.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm5286.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test UV_LINT_NO_HIDES_GLOBAL succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-ygjozx
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_4adff\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_4adff.dir\build.make /nologo -L                  CMakeFiles\cmTC_4adff.dir\build
+Building C object CMakeFiles/cmTC_4adff.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_4adff.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-ygjozx --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm53CE.tmp
+src.c
+Linking C executable cmTC_4adff.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_4adff.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_4adff.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm540D.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test UV_LINT_NO_CONDITIONAL_ASSIGNMENT_MSVC succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-64l6n6
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_9c7e7\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_9c7e7.dir\build.make /nologo -L                  CMakeFiles\cmTC_9c7e7.dir\build
+Building C object CMakeFiles/cmTC_9c7e7.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_9c7e7.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-64l6n6 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm5554.tmp
+src.c
+Linking C executable cmTC_9c7e7.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_9c7e7.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_9c7e7.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm5594.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test UV_LINT_NO_UNSAFE_MSVC succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-hzsp3g
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_e2570\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_e2570.dir\build.make /nologo -L                  CMakeFiles\cmTC_e2570.dir\build
+Building C object CMakeFiles/cmTC_e2570.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_e2570.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-hzsp3g --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm56CB.tmp
+src.c
+Linking C executable cmTC_e2570.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_e2570.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_e2570.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm570B.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test UV_LINT_WALL succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-b711j8
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_d12f8\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_d12f8.dir\build.make /nologo -L                  CMakeFiles\cmTC_d12f8.dir\build
+Building C object CMakeFiles/cmTC_d12f8.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_d12f8.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-b711j8 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm5842.tmp
+src.c
+Linking C executable cmTC_d12f8.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_d12f8.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_d12f8.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm5891.tmp
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test UV_LINT_UTF8_MSVC succeeded with the following output:
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-nyrves
+
+Run Build Command(s):nmake -f Makefile /nologo cmTC_5499c\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_5499c.dir\build.make /nologo -L                  CMakeFiles\cmTC_5499c.dir\build
+Building C object CMakeFiles/cmTC_5499c.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_5499c.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-nyrves --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm5B40.tmp
+src.c
+Linking C executable cmTC_5499c.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_5499c.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_5499c.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm5B7F.tmp
+
+
+Source file was:
+int main(void) { return 0; }
 

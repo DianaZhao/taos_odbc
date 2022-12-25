@@ -1,0 +1,13 @@
+# CMake generation dependency list for this directory.
+C:/App/CMake/share/cmake-3.25/Modules/CMakeDependentOption.cmake
+C:/App/CMake/share/cmake-3.25/Modules/CMakePackageConfigHelpers.cmake
+C:/App/CMake/share/cmake-3.25/Modules/CTest.cmake
+C:/App/CMake/share/cmake-3.25/Modules/CTestTargets.cmake
+C:/App/CMake/share/cmake-3.25/Modules/CTestUseLaunchers.cmake
+C:/App/CMake/share/cmake-3.25/Modules/CheckCCompilerFlag.cmake
+C:/App/CMake/share/cmake-3.25/Modules/DartConfiguration.tcl.in
+C:/App/CMake/share/cmake-3.25/Modules/GNUInstallDirs.cmake
+C:/App/CMake/share/cmake-3.25/Modules/WriteBasicConfigVersionFile.cmake
+D:/workspaces/taos_odbc/contrib/libuv/CMakeLists.txt
+D:/workspaces/taos_odbc/contrib/libuv/libuv-static.pc.in
+D:/workspaces/taos_odbc/contrib/libuv/libuv.pc.in

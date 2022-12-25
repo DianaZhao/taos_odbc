@@ -28,7 +28,7 @@
 #include "macros.h"
 
 #include <inttypes.h>
-#include <libgen.h>
+//#include <libgen.h>
 #include <stdio.h>
 #include <time.h>
 
@@ -136,7 +136,7 @@ static inline const char* color_reset(void)
   }                                                                            \
 } while (0)
 
-char *tod_strptime(const char *s, const char *format, struct tm *tm) FA_HIDDEN;
+char *tod_strptime(const char *s, const char *format, struct tm *tm);
 
 EXTERN_C_END
 

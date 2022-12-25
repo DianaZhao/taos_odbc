@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2022 freemine <freemine@yeah.net>
+ * Copyright (c) 2022 Diana Zhao <dianaz@outlook.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,116 +26,118 @@
 
 #include "desc.h"
 
-static void _desc_init(desc_t *desc, conn_t *conn)
-{
-  desc->conn = conn_ref(conn);
-  int prev = atomic_fetch_add(&conn->descs, 1);
-  OA_ILE(prev >= 0);
+static void _desc_init(desc_t *desc, conn_t *conn) {
+    desc->conn = conn_ref(conn);
+    int prev = atomic_fetch_add(&conn->descs, 1);
+    OA_ILE(prev >= 0);
 
-  INIT_TOD_LIST_HEAD(&desc->associated_stmts_as_ARD);
-  INIT_TOD_LIST_HEAD(&desc->associated_stmts_as_APD);
+    INIT_TOD_LIST_HEAD(&desc->associated_stmts_as_ARD);
+    INIT_TOD_LIST_HEAD(&desc->associated_stmts_as_APD);
 
-  desc->refc = 1;
+    desc->refc = 1;
 }
 
-static void _desc_release(desc_t *desc)
-{
-  int prev = atomic_fetch_sub(&desc->conn->descs, 1);
-  OA_ILE(prev >= 1);
+static void _desc_release(desc_t *desc) {
+    int prev = atomic_fetch_sub(&desc->conn->descs, 1);
+    OA_ILE(prev >= 1);
 
-  descriptor_release(&desc->descriptor);
+    descriptor_release(&desc->descriptor);
 
-  conn_unref(desc->conn);
-  desc->conn = NULL;
+    conn_unref(desc->conn);
+    desc->conn = NULL;
 
-  return;
+    return;
 }
 
-desc_t* desc_create(conn_t *conn)
-{
-  desc_t *desc = (desc_t*)calloc(1, sizeof(*desc));
-  if (!desc) {
-    conn_oom(conn);
+desc_t *desc_create(conn_t *conn) {
+    desc_t *desc = (desc_t *) calloc(1, sizeof(*desc));
+    if (!desc) {
+        conn_oom(conn);
+        return NULL;
+    }
+
+    _desc_init(desc, conn);
+
+    return desc;
+}
+
+desc_t *desc_ref(desc_t *desc) {
+    OA_ILE(desc);
+    int prev = atomic_fetch_add(&desc->refc, 1);
+    OA_ILE(prev > 0);
+    return desc;
+}
+
+desc_t *desc_unref(desc_t *desc) {
+    int prev = atomic_fetch_sub(&desc->refc, 1);
+    if (prev > 1) return desc;
+    OA_ILE(prev == 1);
+
+    _desc_release(desc);
+    free(desc);
+
     return NULL;
-  }
-
-  _desc_init(desc, conn);
-
-  return desc;
 }
 
-desc_t* desc_ref(desc_t *desc)
-{
-  OA_ILE(desc);
-  int prev = atomic_fetch_add(&desc->refc, 1);
-  OA_ILE(prev>0);
-  return desc;
+SQLRETURN desc_free(desc_t *desc) {
+    stmt_t *p, *n;
+    unsigned char *__mptr = (unsigned char *) ((&desc->associated_stmts_as_ARD)->next);
+    p = (stmt_t *) (__mptr - ((size_t) &(((stmt_t *) 0)->associated_ARD_node)));
+    __mptr = (unsigned char *) ((p)->associated_ARD_node.next);
+    n = ((stmt_t *) (__mptr - ((size_t) &(((stmt_t *) 0)->associated_ARD_node))));
+
+    for (; !(&p->associated_ARD_node == (&desc->associated_stmts_as_ARD));) {
+        p = n;
+        *__mptr = (unsigned char *) ((n)->associated_ARD_node.next);
+        n = ((stmt_t *) (__mptr - ((size_t) &(((stmt_t *) 0)->associated_ARD_node))));
+        stmt_dissociate_ARD(p);
+    }
+
+    *__mptr = (unsigned char *) ((&desc->associated_stmts_as_APD)->next);
+    p = ((stmt_t *) (__mptr - ((size_t) &(((stmt_t *) 0)->associated_APD_node))));
+    *__mptr = (unsigned char *) ((p)->associated_APD_node.next);
+    n = ((stmt_t *) (__mptr - ((size_t) &(((stmt_t *) 0)->associated_APD_node))));
+    for (; !(&p->associated_APD_node == (&desc->associated_stmts_as_APD));) {
+        p = n;
+        *__mptr = (unsigned char *) ((n)->associated_APD_node.next);
+        n = ((stmt_t *) (__mptr - ((size_t) &(((stmt_t *) 0)->associated_APD_node))));
+        stmt_dissociate_APD(p);
+    }
+    desc_unref(desc);
+    return SQL_SUCCESS;
 }
 
-desc_t* desc_unref(desc_t *desc)
-{
-  int prev = atomic_fetch_sub(&desc->refc, 1);
-  if (prev>1) return desc;
-  OA_ILE(prev==1);
+static void _desc_header_init(desc_header_t *header) {
+    header->DESC_ARRAY_SIZE = 1;
+    header->DESC_ARRAY_STATUS_PTR = NULL;
+    header->DESC_BIND_OFFSET_PTR = NULL;
+    header->DESC_BIND_TYPE = SQL_BIND_BY_COLUMN;
+    header->DESC_ROWS_PROCESSED_PTR = NULL;
 
-  _desc_release(desc);
-  free(desc);
-
-  return NULL;
+    header->DESC_COUNT = 0;
 }
 
-SQLRETURN desc_free(desc_t *desc)
-{
-  stmt_t *p, *n;
-  tod_list_for_each_entry_safe(p, n, &desc->associated_stmts_as_ARD, associated_ARD_node) {
-    stmt_dissociate_ARD(p);
-  }
-
-  tod_list_for_each_entry_safe(p, n, &desc->associated_stmts_as_APD, associated_APD_node) {
-    stmt_dissociate_APD(p);
-  }
-
-  desc_unref(desc);
-
-  return SQL_SUCCESS;
+void descriptor_release(descriptor_t *desc) {
+    TOD_SAFE_FREE(desc->records);
 }
 
-static void _desc_header_init(desc_header_t *header)
-{
-  header->DESC_ARRAY_SIZE                = 1;
-  header->DESC_ARRAY_STATUS_PTR          = NULL;
-  header->DESC_BIND_OFFSET_PTR           = NULL;
-  header->DESC_BIND_TYPE                 = SQL_BIND_BY_COLUMN;
-  header->DESC_ROWS_PROCESSED_PTR        = NULL;
-
-  header->DESC_COUNT                     = 0;
+void descriptor_init(descriptor_t *desc) {
+    _desc_header_init(&desc->header);
 }
 
-void descriptor_release(descriptor_t *desc)
-{
-  TOD_SAFE_FREE(desc->records);
+void descriptor_reclaim_buffers(descriptor_t *APD) {
+    desc_header_t *APD_header = &APD->header;
+
+    for (SQLUSMALLINT i = 0; i < APD_header->DESC_COUNT; ++i) {
+        desc_record_t *record = APD->records + i;
+        desc_record_reclaim_buffers(record);
+        record->bound = 0;
+    }
 }
 
-void descriptor_init(descriptor_t *desc)
-{
-  _desc_header_init(&desc->header);
-}
-
-void descriptor_reclaim_buffers(descriptor_t *APD)
-{
-  desc_header_t *APD_header = &APD->header;
-
-  for (SQLUSMALLINT i=0; i<APD_header->DESC_COUNT; ++i) {
-    desc_record_t *record = APD->records + i;
-    desc_record_reclaim_buffers(record);
-    record->bound = 0;
-  }
-}
-
-void desc_record_reclaim_buffers(desc_record_t *record)
-{
-  buf_release(&record->data_buffer);
-  buf_release(&record->len_buffer);
-  buf_release(&record->ind_buffer);
+void desc_record_reclaim_buffers(desc_record_t *record) {
+    buf_release(&record->data_buffer);
+    buf_release(&record->len_buffer);
+    buf_release(&record->ind_buffer);
 }
 

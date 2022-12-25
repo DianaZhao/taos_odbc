@@ -26,27 +26,27 @@
 #define _enums_h_
 
 #include "macros.h"
-
+#include <windows.h>
 #include <sqlext.h>
 
 EXTERN_C_BEGIN
 
-const char *sql_c_data_type(SQLSMALLINT v) FA_HIDDEN;
-const char *sql_data_type(SQLSMALLINT v) FA_HIDDEN;
-const char *sql_handle_type(SQLSMALLINT v) FA_HIDDEN;
-const char *sql_driver_completion(SQLUSMALLINT v) FA_HIDDEN;
-const char *sql_odbc_version(SQLINTEGER v) FA_HIDDEN;
-const char *sql_info_type(SQLUSMALLINT v) FA_HIDDEN;
-const char *sql_completion_type(SQLSMALLINT v) FA_HIDDEN;
-const char *sql_conn_attr(SQLINTEGER v) FA_HIDDEN;
-const char *sql_cursor_type(SQLULEN v) FA_HIDDEN;
-const char *sql_free_statement_option(SQLUSMALLINT v) FA_HIDDEN;
-const char *sql_return_type(SQLRETURN v) FA_HIDDEN;
-const char *sql_env_attr(SQLINTEGER v) FA_HIDDEN;
-const char *sql_input_output_type(SQLSMALLINT v) FA_HIDDEN;
-const char *sql_stmt_attr(SQLINTEGER v) FA_HIDDEN;
-const char *sql_nullable(SQLSMALLINT v) FA_HIDDEN;
-const char *sql_fetch_orientation(SQLSMALLINT v) FA_HIDDEN;
+const char *sql_c_data_type(SQLSMALLINT v) ;
+const char *sql_data_type(SQLSMALLINT v) ;
+const char *sql_handle_type(SQLSMALLINT v) ;
+const char *sql_driver_completion(SQLUSMALLINT v) ;
+const char *sql_odbc_version(SQLINTEGER v) ;
+const char *sql_info_type(SQLUSMALLINT v) ;
+const char *sql_completion_type(SQLSMALLINT v) ;
+const char *sql_conn_attr(SQLINTEGER v) ;
+const char *sql_cursor_type(SQLULEN v) ;
+const char *sql_free_statement_option(SQLUSMALLINT v) ;
+const char *sql_return_type(SQLRETURN v) ;
+const char *sql_env_attr(SQLINTEGER v) ;
+const char *sql_input_output_type(SQLSMALLINT v) ;
+const char *sql_stmt_attr(SQLINTEGER v) ;
+const char *sql_nullable(SQLSMALLINT v) ;
+const char *sql_fetch_orientation(SQLSMALLINT v) ;
 
 EXTERN_C_END
 

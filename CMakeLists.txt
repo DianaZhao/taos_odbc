@@ -1,7 +1,7 @@
 ###############################################################################
 # MIT License
 #
-# Copyright (c) 2022 freemine <freemine@yeah.net>
+# Copyright (c) 2022 Diana Zhao <dianaz@outlook.com>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -22,37 +22,58 @@
 # SOFTWARE.
 ###############################################################################
 
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.8)
+
 project(taos_odbc)
 
 set(TODBC_VERSION 0.1)
 
-# add_compile_options(-Wall -Wextra -pedantic -Werror)
-add_compile_options(-Wall -Wextra -Werror -O0)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 11)
-
-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-  set(TODBC_LINUX TRUE)
-elseif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-  set(TODBC_WINDOWS TRUE)
-elseif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-  set(TODBC_DARWIN TRUE)
-else()
-  message(FATAL_ERROR "Not ported on `${CMAKE_SYSTEM_NAME}`")
+if (NOT DEFINED TD_SOURCE_DIR)
+    set( TD_SOURCE_DIR ${PROJECT_SOURCE_DIR} )
 endif()
+
+set(TD_WINDOWS TRUE)
+set(TD_SUPPORT_DIR "${TD_SOURCE_DIR}/cmake")
+set(TD_CONTRIB_DIR "${TD_SOURCE_DIR}/contrib")
+MESSAGE("C Compiler ID: ${CMAKE_C_COMPILER_ID}")
+
+add_subdirectory(contrib)
 
 include(CTest)
 include(cmake/macros.cmake)
+IF (TD_WINDOWS)
+    MESSAGE("${Yellow} set compiler flag for Windows! ${ColourReset}")
+    SET(COMMON_FLAGS "/w /D_WIN32 /DWIN32 /Zi /MTd")
+    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /MANIFEST:NO")
+    # IF (MSVC AND (MSVC_VERSION GREATER_EQUAL 1900))
+    #  SET(COMMON_FLAGS "${COMMON_FLAGS} /Wv:18")
+    # ENDIF ()
+    IF (CMAKE_DEPFILE_FLAGS_C)
+        SET(CMAKE_DEPFILE_FLAGS_C "")
+    ENDIF ()
+    IF (CMAKE_DEPFILE_FLAGS_CXX)
+        SET(CMAKE_DEPFILE_FLAGS_CXX "")
+    ENDIF ()
+    IF (CMAKE_C_FLAGS_DEBUG)
+        SET(CMAKE_C_FLAGS_DEBUG "" CACHE STRING "" FORCE)
+    ENDIF ()
+    IF (CMAKE_CXX_FLAGS_DEBUG)
+        SET(CMAKE_CXX_FLAGS_DEBUG "" CACHE STRING "" FORCE)
+    ENDIF ()
+
+    SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${COMMON_FLAGS}")
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMMON_FLAGS}")
+
+ENDIF ()
 
 check_requirements()
 
 include_directories(inc)
-if(TODBC_DARWIN)
-  include_directories(/usr/local/include)
-  link_directories(/usr/local/lib)
-  link_libraries(iconv)
-endif()
+include_directories("C:\\TDengine\\include")
+INCLUDE_DIRECTORIES(${TD_CONTRIB_DIR}/pthread)
+INCLUDE_DIRECTORIES(${TD_CONTRIB_DIR}/iconv)
 
 add_subdirectory(common)
 add_subdirectory(src)

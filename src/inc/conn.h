@@ -72,11 +72,11 @@ static inline void connection_cfg_transfer(connection_cfg_t *from, connection_cf
 typedef struct conn_s              conn_t;
 typedef struct desc_s              desc_t;
 
-conn_t* conn_create(env_t *env) FA_HIDDEN;
-conn_t* conn_ref(conn_t *conn) FA_HIDDEN;
-conn_t* conn_unref(conn_t *conn) FA_HIDDEN;
-SQLRETURN conn_free(conn_t *conn) FA_HIDDEN;
-void conn_clr_errs(conn_t *conn) FA_HIDDEN;
+conn_t* conn_create(env_t *env) ;
+conn_t* conn_ref(conn_t *conn) ;
+conn_t* conn_unref(conn_t *conn) ;
+SQLRETURN conn_free(conn_t *conn) ;
+void conn_clr_errs(conn_t *conn) ;
 
 SQLRETURN conn_driver_connect(
     conn_t         *conn,
@@ -86,9 +86,9 @@ SQLRETURN conn_driver_connect(
     SQLCHAR        *OutConnectionString,
     SQLSMALLINT     BufferLength,
     SQLSMALLINT    *StringLength2Ptr,
-    SQLUSMALLINT    DriverCompletion) FA_HIDDEN;
+    SQLUSMALLINT    DriverCompletion) ;
 
-void conn_disconnect(conn_t *conn) FA_HIDDEN;
+void conn_disconnect(conn_t *conn) ;
 
 SQLRETURN conn_get_diag_rec(
     conn_t         *conn,
@@ -97,11 +97,11 @@ SQLRETURN conn_get_diag_rec(
     SQLINTEGER     *NativeErrorPtr,
     SQLCHAR        *MessageText,
     SQLSMALLINT     BufferLength,
-    SQLSMALLINT    *TextLengthPtr) FA_HIDDEN;
+    SQLSMALLINT    *TextLengthPtr) ;
 
-SQLRETURN conn_alloc_stmt(conn_t *conn, SQLHANDLE *OutputHandle) FA_HIDDEN;
+SQLRETURN conn_alloc_stmt(conn_t *conn, SQLHANDLE *OutputHandle) ;
 
-SQLRETURN conn_alloc_desc(conn_t *conn, SQLHANDLE *OutputHandle) FA_HIDDEN;
+SQLRETURN conn_alloc_desc(conn_t *conn, SQLHANDLE *OutputHandle) ;
 
 SQLRETURN conn_connect(
     conn_t        *conn,
@@ -110,24 +110,24 @@ SQLRETURN conn_connect(
     SQLCHAR       *UserName,
     SQLSMALLINT    NameLength2,
     SQLCHAR       *Authentication,
-    SQLSMALLINT    NameLength3) FA_HIDDEN;
+    SQLSMALLINT    NameLength3) ;
 
 SQLRETURN conn_get_info(
     conn_t         *conn,
     SQLUSMALLINT    InfoType,
     SQLPOINTER      InfoValuePtr,
     SQLSMALLINT     BufferLength,
-    SQLSMALLINT    *StringLengthPtr) FA_HIDDEN;
+    SQLSMALLINT    *StringLengthPtr) ;
 
 SQLRETURN conn_end_tran(
     conn_t       *conn,
-    SQLSMALLINT   CompletionType) FA_HIDDEN;
+    SQLSMALLINT   CompletionType) ;
 
 SQLRETURN conn_set_attr(
     conn_t       *conn,
     SQLINTEGER    Attribute,
     SQLPOINTER    ValuePtr,
-    SQLINTEGER    StringLength) FA_HIDDEN;
+    SQLINTEGER    StringLength) ;
 
 EXTERN_C_END
 

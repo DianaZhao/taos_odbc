@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/contrib/cJson" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/contrib/crashdump" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/contrib/iconv" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/contrib/libuv" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/contrib/lz4" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/contrib/msvcregex" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/contrib/pthread" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/contrib/wcwidth" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/contrib/wingetopt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/contrib/zlib" vcs="Git" />
+  </component>
+</project>

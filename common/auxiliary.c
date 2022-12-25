@@ -25,7 +25,7 @@
 #define _XOPEN_SOURCE
 
 #include "helpers.h"
-
+#include "strptime.h"
 #include <time.h>
 
 char *tod_strptime(const char *s, const char *format, struct tm *tm)

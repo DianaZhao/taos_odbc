@@ -22,8 +22,9 @@
  * SOFTWARE.
  */
 
+#include <windows.h>
 #include "conn.h"
-#include "desc.h"
+//#include "desc.h"
 #include "env.h"
 #include "errs.h"
 #include "log.h"
@@ -40,22 +41,22 @@
 
 static atomic_int         nr_load = 0;
 
-int get_nr_load(void)
-{
-  return atomic_load(&nr_load);
-}
+//int get_nr_load(void)
+//{
+//  return atomic_load(&nr_load);
+//}
 
-__attribute__((constructor)) void _initialize(void)
-{
-  // yes, no check return value
-  atomic_fetch_add(&nr_load, 1);
-}
-
-__attribute__((destructor)) void _deinitialize(void)
-{
-  // yes, no check return value
-  atomic_fetch_sub(&nr_load, 1);
-}
+//__attribute__((constructor)) void _initialize(void)
+//{
+//  // yes, no check return value
+//  atomic_fetch_add(&nr_load, 1);
+//}
+//
+//__attribute__((destructor)) void _deinitialize(void)
+//{
+//  // yes, no check return value
+//  atomic_fetch_sub(&nr_load, 1);
+//}
 
 static SQLRETURN do_alloc_env(
     SQLHANDLE *OutputHandle)

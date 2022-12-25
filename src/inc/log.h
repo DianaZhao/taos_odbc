@@ -39,7 +39,7 @@
 
 EXTERN_C_BEGIN
 
-int tod_get_debug(void) FA_HIDDEN;
+int tod_get_debug(void) ;
 
 #define OD                        D
 

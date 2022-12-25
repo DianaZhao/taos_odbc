@@ -1,0 +1,15 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=git
+command=C:/App/CMake/bin/cmake.exe;-P;D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/tmp/wingetopt-gitclone.cmake
+source_dir=D:/workspaces/taos_odbc/contrib/wingetopt
+work_dir=D:/workspaces/taos_odbc/contrib
+repository=https://github.com/alex85k/wingetopt.git
+remote=origin
+init_submodules=TRUE
+recurse_submodules=--recursive
+submodules=
+CMP0097=
+

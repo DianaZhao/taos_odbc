@@ -7,6 +7,9 @@
     <ClCompile Include="D:\workspaces\taos_odbc\common\enums.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\workspaces\taos_odbc\common\strptime.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\workspaces\taos_odbc\common\CMakeLists.txt" />

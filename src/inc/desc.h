@@ -33,18 +33,18 @@ typedef struct descriptor_s        descriptor_t;
 typedef struct desc_s              desc_t;
 typedef struct desc_record_s       desc_record_t;
 
-desc_t* desc_create(conn_t *conn) FA_HIDDEN;
-desc_t* desc_ref(desc_t *desc) FA_HIDDEN;
-desc_t* desc_unref(desc_t *desc) FA_HIDDEN;
+desc_t* desc_create(conn_t *conn) ;
+desc_t* desc_ref(desc_t *desc) ;
+desc_t* desc_unref(desc_t *desc) ;
 
-SQLRETURN desc_free(desc_t *desc) FA_HIDDEN;
+SQLRETURN desc_free(desc_t *desc) ;
 
-void descriptor_init(descriptor_t *descriptor) FA_HIDDEN;
-void descriptor_release(descriptor_t *descriptor) FA_HIDDEN;
+void descriptor_init(descriptor_t *descriptor) ;
+void descriptor_release(descriptor_t *descriptor) ;
 
-void descriptor_reclaim_buffers(descriptor_t *APD) FA_HIDDEN;
+void descriptor_reclaim_buffers(descriptor_t *APD) ;
 
-void desc_record_reclaim_buffers(desc_record_t *record) FA_HIDDEN;
+void desc_record_reclaim_buffers(desc_record_t *record) ;
 
 EXTERN_C_END
 

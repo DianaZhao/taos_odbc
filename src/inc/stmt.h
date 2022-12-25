@@ -31,15 +31,15 @@ EXTERN_C_BEGIN
 
 typedef struct stmt_s              stmt_t;
 
-stmt_t* stmt_create(conn_t *conn) FA_HIDDEN;
-stmt_t* stmt_ref(stmt_t *stmt) FA_HIDDEN;
-stmt_t* stmt_unref(stmt_t *stmt) FA_HIDDEN;
-SQLRETURN stmt_free(stmt_t *stmt) FA_HIDDEN;
-void stmt_clr_errs(stmt_t *stmt) FA_HIDDEN;
+stmt_t* stmt_create(conn_t *conn) ;
+stmt_t* stmt_ref(stmt_t *stmt) ;
+stmt_t* stmt_unref(stmt_t *stmt) ;
+SQLRETURN stmt_free(stmt_t *stmt) ;
+void stmt_clr_errs(stmt_t *stmt) ;
 
-SQLRETURN stmt_exec_direct(stmt_t *stmt, const char *sql, int len) FA_HIDDEN;
-SQLRETURN stmt_get_row_count(stmt_t *stmt, SQLLEN *row_count_ptr) FA_HIDDEN;
-SQLRETURN stmt_get_col_count(stmt_t *stmt, SQLSMALLINT *col_count_ptr) FA_HIDDEN;
+SQLRETURN stmt_exec_direct(stmt_t *stmt, const char *sql, int len) ;
+SQLRETURN stmt_get_row_count(stmt_t *stmt, SQLLEN *row_count_ptr) ;
+SQLRETURN stmt_get_col_count(stmt_t *stmt, SQLSMALLINT *col_count_ptr) ;
 
 SQLRETURN stmt_describe_col(stmt_t *stmt,
     SQLUSMALLINT   ColumnNumber,
@@ -49,19 +49,19 @@ SQLRETURN stmt_describe_col(stmt_t *stmt,
     SQLSMALLINT   *DataTypePtr,
     SQLULEN       *ColumnSizePtr,
     SQLSMALLINT   *DecimalDigitsPtr,
-    SQLSMALLINT   *NullablePtr) FA_HIDDEN;
+    SQLSMALLINT   *NullablePtr) ;
 SQLRETURN stmt_bind_col(stmt_t *stmt,
     SQLUSMALLINT   ColumnNumber,
     SQLSMALLINT    TargetType,
     SQLPOINTER     TargetValuePtr,
     SQLLEN         BufferLength,
-    SQLLEN        *StrLen_or_IndPtr) FA_HIDDEN;
+    SQLLEN        *StrLen_or_IndPtr) ;
 
-SQLRETURN stmt_fetch(stmt_t *stmt) FA_HIDDEN;
+SQLRETURN stmt_fetch(stmt_t *stmt) ;
 
 SQLRETURN stmt_fetch_scroll(stmt_t *stmt,
     SQLSMALLINT   FetchOrientation,
-    SQLLEN        FetchOffset) FA_HIDDEN;
+    SQLLEN        FetchOffset) ;
 
 SQLRETURN stmt_get_diag_rec(
     stmt_t         *stmt,
@@ -70,7 +70,7 @@ SQLRETURN stmt_get_diag_rec(
     SQLINTEGER     *NativeErrorPtr,
     SQLCHAR        *MessageText,
     SQLSMALLINT     BufferLength,
-    SQLSMALLINT    *TextLengthPtr) FA_HIDDEN;
+    SQLSMALLINT    *TextLengthPtr) ;
 
 SQLRETURN stmt_get_data(
     stmt_t        *stmt,
@@ -78,15 +78,15 @@ SQLRETURN stmt_get_data(
     SQLSMALLINT    TargetType,
     SQLPOINTER     TargetValuePtr,
     SQLLEN         BufferLength,
-    SQLLEN        *StrLen_or_IndPtr) FA_HIDDEN;
+    SQLLEN        *StrLen_or_IndPtr) ;
 
 SQLRETURN stmt_prepare(stmt_t *stmt,
     SQLCHAR      *StatementText,
-    SQLINTEGER    TextLength) FA_HIDDEN;
+    SQLINTEGER    TextLength) ;
 
 SQLRETURN stmt_get_num_params(
     stmt_t         *stmt,
-    SQLSMALLINT    *ParameterCountPtr) FA_HIDDEN;
+    SQLSMALLINT    *ParameterCountPtr) ;
 
 SQLRETURN stmt_describe_param(
     stmt_t         *stmt,
@@ -94,7 +94,7 @@ SQLRETURN stmt_describe_param(
     SQLSMALLINT    *DataTypePtr,
     SQLULEN        *ParameterSizePtr,
     SQLSMALLINT    *DecimalDigitsPtr,
-    SQLSMALLINT    *NullablePtr) FA_HIDDEN;
+    SQLSMALLINT    *NullablePtr) ;
 
 SQLRETURN stmt_bind_param(
     stmt_t         *stmt,
@@ -106,17 +106,17 @@ SQLRETURN stmt_bind_param(
     SQLSMALLINT     DecimalDigits,
     SQLPOINTER      ParameterValuePtr,
     SQLLEN          BufferLength,
-    SQLLEN         *StrLen_or_IndPtr) FA_HIDDEN;
+    SQLLEN         *StrLen_or_IndPtr) ;
 
 SQLRETURN stmt_execute(
-    stmt_t         *stmt) FA_HIDDEN;
+    stmt_t         *stmt) ;
 
-void stmt_dissociate_APD(stmt_t *stmt) FA_HIDDEN;
-void stmt_dissociate_ARD(stmt_t *stmt) FA_HIDDEN;
+void stmt_dissociate_APD(stmt_t *stmt) ;
+void stmt_dissociate_ARD(stmt_t *stmt) ;
 
-SQLRETURN stmt_set_attr(stmt_t *stmt, SQLINTEGER Attribute, SQLPOINTER ValuePtr, SQLINTEGER StringLength) FA_HIDDEN;
+SQLRETURN stmt_set_attr(stmt_t *stmt, SQLINTEGER Attribute, SQLPOINTER ValuePtr, SQLINTEGER StringLength) ;
 
-SQLRETURN stmt_free_stmt(stmt_t *stmt, SQLUSMALLINT Option) FA_HIDDEN;
+SQLRETURN stmt_free_stmt(stmt_t *stmt, SQLUSMALLINT Option) ;
 
 SQLRETURN stmt_tables(stmt_t *stmt,
     SQLCHAR       *CatalogName,
@@ -126,7 +126,7 @@ SQLRETURN stmt_tables(stmt_t *stmt,
     SQLCHAR       *TableName,
     SQLSMALLINT    NameLength3,
     SQLCHAR       *TableType,
-    SQLSMALLINT    NameLength4) FA_HIDDEN;
+    SQLSMALLINT    NameLength4) ;
 
 EXTERN_C_END
 

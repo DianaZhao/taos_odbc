@@ -26,7 +26,7 @@
 #define _parser_h_
 
 // https://docs.microsoft.com/en-us/sql/odbc/reference/syntax/sqldriverconnect-function?view=sql-server-ver16
-
+#include <windows.h>
 #include "macros.h"
 
 #include "conn.h"
@@ -65,7 +65,7 @@ static inline void parser_param_release(parser_param_t *param)
 }
 
 int parser_parse(const char *input, size_t len,
-    parser_param_t *param) FA_HIDDEN;
+    parser_param_t *param);
 
 EXTERN_C_END
 

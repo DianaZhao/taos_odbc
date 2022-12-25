@@ -191,7 +191,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\ALL_BUILD.vcxproj">
+    <ProjectReference Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib\ALL_BUILD.vcxproj">
       <Project>{09890FF1-C6C2-3BBA-BDC6-FBB4E11DF4F9}</Project>
       <Name>ALL_BUILD</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

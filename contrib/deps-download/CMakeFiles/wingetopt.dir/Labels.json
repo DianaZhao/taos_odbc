@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/wingetopt"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/wingetopt.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/wingetopt-complete.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-build.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-configure.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-download.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-install.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-mkdir.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-patch.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-test.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"wingetopt"
+		],
+		"name" : "wingetopt"
+	}
+}

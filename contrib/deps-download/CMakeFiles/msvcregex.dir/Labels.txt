@@ -1,0 +1,14 @@
+# Target labels
+ msvcregex
+# Source files and their labels
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/msvcregex
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/msvcregex.rule
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/msvcregex-complete.rule
+D:/workspaces/taos_odbc/contrib/deps-download/msvcregex-prefix/src/msvcregex-stamp/msvcregex-build.rule
+D:/workspaces/taos_odbc/contrib/deps-download/msvcregex-prefix/src/msvcregex-stamp/msvcregex-configure.rule
+D:/workspaces/taos_odbc/contrib/deps-download/msvcregex-prefix/src/msvcregex-stamp/msvcregex-download.rule
+D:/workspaces/taos_odbc/contrib/deps-download/msvcregex-prefix/src/msvcregex-stamp/msvcregex-install.rule
+D:/workspaces/taos_odbc/contrib/deps-download/msvcregex-prefix/src/msvcregex-stamp/msvcregex-mkdir.rule
+D:/workspaces/taos_odbc/contrib/deps-download/msvcregex-prefix/src/msvcregex-stamp/msvcregex-patch.rule
+D:/workspaces/taos_odbc/contrib/deps-download/msvcregex-prefix/src/msvcregex-stamp/msvcregex-test.rule
+D:/workspaces/taos_odbc/contrib/deps-download/msvcregex-prefix/src/msvcregex-stamp/msvcregex-update.rule

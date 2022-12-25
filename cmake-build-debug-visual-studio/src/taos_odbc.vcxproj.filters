@@ -10,6 +10,9 @@
     <Object Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\common\common_obj.dir\$(Configuration)\enums.obj">
       <Filter>Object Libraries</Filter>
     </Object>
+    <Object Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\common\common_obj.dir\$(Configuration)\strptime.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
     <Object Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\src\core\core_obj.dir\$(Configuration)\desc.obj">
       <Filter>Object Libraries</Filter>
     </Object>

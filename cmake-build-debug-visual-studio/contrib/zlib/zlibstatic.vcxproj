@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7759D30E-B611-31DF-8830-7CB895D7EBB5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>zlibstatic</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">zlibstatic.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">zlibstaticd</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">zlibstatic.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">zlibstatic</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">zlibstatic.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">zlibstatic</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">zlibstatic.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">zlibstatic</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\contrib\zlib;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib;D:\workspaces\taos_odbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\contrib\zlib;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib;D:\workspaces\taos_odbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\contrib\zlib;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib;D:\workspaces\taos_odbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\contrib\zlib;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib;D:\workspaces\taos_odbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\contrib\zlib;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib;D:\workspaces\taos_odbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\contrib\zlib;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib;D:\workspaces\taos_odbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\contrib\zlib;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib;D:\workspaces\taos_odbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\contrib\zlib;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib;D:\workspaces\taos_odbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\contrib\zlib;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib;D:\workspaces\taos_odbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\contrib\zlib;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib;D:\workspaces\taos_odbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NO_FSEEKO;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\contrib\zlib;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib;D:\workspaces\taos_odbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\workspaces\taos_odbc\contrib\zlib;D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib;D:\workspaces\taos_odbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\workspaces\taos_odbc\contrib\zlib\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/workspaces/taos_odbc/contrib/zlib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -SD:/workspaces/taos_odbc -BD:/workspaces/taos_odbc/cmake-build-debug-visual-studio --check-stamp-file D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/contrib/zlib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\App\CMake\share\cmake-3.25\Modules\CheckCSourceCompiles.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckFunctionExists.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckIncludeFile.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckIncludeFileCXX.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckTypeSize.cmake;D:\workspaces\taos_odbc\cmake\EnableCMP0048.txt.in;D:\workspaces\taos_odbc\contrib\zlib\zconf.h.cmakein;D:\workspaces\taos_odbc\contrib\zlib\zlib.pc.cmakein;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/workspaces/taos_odbc/contrib/zlib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -SD:/workspaces/taos_odbc -BD:/workspaces/taos_odbc/cmake-build-debug-visual-studio --check-stamp-file D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/contrib/zlib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\App\CMake\share\cmake-3.25\Modules\CheckCSourceCompiles.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckFunctionExists.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckIncludeFile.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckIncludeFileCXX.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckTypeSize.cmake;D:\workspaces\taos_odbc\cmake\EnableCMP0048.txt.in;D:\workspaces\taos_odbc\contrib\zlib\zconf.h.cmakein;D:\workspaces\taos_odbc\contrib\zlib\zlib.pc.cmakein;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/workspaces/taos_odbc/contrib/zlib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -SD:/workspaces/taos_odbc -BD:/workspaces/taos_odbc/cmake-build-debug-visual-studio --check-stamp-file D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/contrib/zlib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\App\CMake\share\cmake-3.25\Modules\CheckCSourceCompiles.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckFunctionExists.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckIncludeFile.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckIncludeFileCXX.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckTypeSize.cmake;D:\workspaces\taos_odbc\cmake\EnableCMP0048.txt.in;D:\workspaces\taos_odbc\contrib\zlib\zconf.h.cmakein;D:\workspaces\taos_odbc\contrib\zlib\zlib.pc.cmakein;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/workspaces/taos_odbc/contrib/zlib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\App\CMake\bin\cmake.exe -SD:/workspaces/taos_odbc -BD:/workspaces/taos_odbc/cmake-build-debug-visual-studio --check-stamp-file D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/contrib/zlib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\App\CMake\share\cmake-3.25\Modules\CheckCSourceCompiles.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckFunctionExists.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckIncludeFile.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckIncludeFileCXX.cmake;C:\App\CMake\share\cmake-3.25\Modules\CheckTypeSize.cmake;D:\workspaces\taos_odbc\cmake\EnableCMP0048.txt.in;D:\workspaces\taos_odbc\contrib\zlib\zconf.h.cmakein;D:\workspaces\taos_odbc\contrib\zlib\zlib.pc.cmakein;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\workspaces\taos_odbc\contrib\zlib\adler32.c" />
+    <ClCompile Include="D:\workspaces\taos_odbc\contrib\zlib\compress.c" />
+    <ClCompile Include="D:\workspaces\taos_odbc\contrib\zlib\crc32.c" />
+    <ClCompile Include="D:\workspaces\taos_odbc\contrib\zlib\deflate.c" />
+    <ClCompile Include="D:\workspaces\taos_odbc\contrib\zlib\gzclose.c" />
+    <ClCompile Include="D:\workspaces\taos_odbc\contrib\zlib\gzlib.c" />
+    <ClCompile Include="D:\workspaces\taos_odbc\contrib\zlib\gzread.c" />
+    <ClCompile Include="D:\workspaces\taos_odbc\contrib\zlib\gzwrite.c" />
+    <ClCompile Include="D:\workspaces\taos_odbc\contrib\zlib\inflate.c" />
+    <ClCompile Include="D:\workspaces\taos_odbc\contrib\zlib\infback.c" />
+    <ClCompile Include="D:\workspaces\taos_odbc\contrib\zlib\inftrees.c" />
+    <ClCompile Include="D:\workspaces\taos_odbc\contrib\zlib\inffast.c" />
+    <ClCompile Include="D:\workspaces\taos_odbc\contrib\zlib\trees.c" />
+    <ClCompile Include="D:\workspaces\taos_odbc\contrib\zlib\uncompr.c" />
+    <ClCompile Include="D:\workspaces\taos_odbc\contrib\zlib\zutil.c" />
+    <ClInclude Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib\zlib\zconf.h" />
+    <ClInclude Include="D:\workspaces\taos_odbc\contrib\zlib\zlib.h" />
+    <ClInclude Include="D:\workspaces\taos_odbc\contrib\zlib\crc32.h" />
+    <ClInclude Include="D:\workspaces\taos_odbc\contrib\zlib\deflate.h" />
+    <ClInclude Include="D:\workspaces\taos_odbc\contrib\zlib\gzguts.h" />
+    <ClInclude Include="D:\workspaces\taos_odbc\contrib\zlib\inffast.h" />
+    <ClInclude Include="D:\workspaces\taos_odbc\contrib\zlib\inffixed.h" />
+    <ClInclude Include="D:\workspaces\taos_odbc\contrib\zlib\inflate.h" />
+    <ClInclude Include="D:\workspaces\taos_odbc\contrib\zlib\inftrees.h" />
+    <ClInclude Include="D:\workspaces\taos_odbc\contrib\zlib\trees.h" />
+    <ClInclude Include="D:\workspaces\taos_odbc\contrib\zlib\zutil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\ZERO_CHECK.vcxproj">
+      <Project>{3ED71B63-65E8-3E20-B5A6-CE4CFBD37FCA}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

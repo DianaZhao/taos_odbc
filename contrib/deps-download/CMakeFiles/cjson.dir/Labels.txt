@@ -1,0 +1,14 @@
+# Target labels
+ cjson
+# Source files and their labels
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/cjson
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/cjson.rule
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/cjson-complete.rule
+D:/workspaces/taos_odbc/contrib/deps-download/cjson-prefix/src/cjson-stamp/cjson-build.rule
+D:/workspaces/taos_odbc/contrib/deps-download/cjson-prefix/src/cjson-stamp/cjson-configure.rule
+D:/workspaces/taos_odbc/contrib/deps-download/cjson-prefix/src/cjson-stamp/cjson-download.rule
+D:/workspaces/taos_odbc/contrib/deps-download/cjson-prefix/src/cjson-stamp/cjson-install.rule
+D:/workspaces/taos_odbc/contrib/deps-download/cjson-prefix/src/cjson-stamp/cjson-mkdir.rule
+D:/workspaces/taos_odbc/contrib/deps-download/cjson-prefix/src/cjson-stamp/cjson-patch.rule
+D:/workspaces/taos_odbc/contrib/deps-download/cjson-prefix/src/cjson-stamp/cjson-test.rule
+D:/workspaces/taos_odbc/contrib/deps-download/cjson-prefix/src/cjson-stamp/cjson-update.rule

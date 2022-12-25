@@ -1,0 +1,12 @@
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/pthread.dir
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/iconv.dir
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/msvcregex.dir
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/wcwidth.dir
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/wingetopt.dir
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/lz4.dir
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/zlib.dir
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/cjson.dir
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/libuv.dir
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/crashdump.dir
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/edit_cache.dir
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/rebuild_cache.dir

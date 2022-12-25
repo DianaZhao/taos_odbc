@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/wcwidth"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/wcwidth.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/wcwidth-complete.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wcwidth-prefix/src/wcwidth-stamp/wcwidth-build.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wcwidth-prefix/src/wcwidth-stamp/wcwidth-configure.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wcwidth-prefix/src/wcwidth-stamp/wcwidth-download.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wcwidth-prefix/src/wcwidth-stamp/wcwidth-install.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wcwidth-prefix/src/wcwidth-stamp/wcwidth-mkdir.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wcwidth-prefix/src/wcwidth-stamp/wcwidth-patch.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wcwidth-prefix/src/wcwidth-stamp/wcwidth-test.rule"
+		},
+		{
+			"file" : "D:/workspaces/taos_odbc/contrib/deps-download/wcwidth-prefix/src/wcwidth-stamp/wcwidth-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"wcwidth"
+		],
+		"name" : "wcwidth"
+	}
+}

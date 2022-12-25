@@ -1,7 +1,7 @@
 ###############################################################################
 # MIT License
 #
-# Copyright (c) 2022 freemine <freemine@yeah.net>
+# Copyright (c) 2022 Diana Zhao <dianaz@outlook.com>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@ add_subdirectory(parser)
 add_subdirectory(utils)
 
 list(APPEND odbc_SOURCES odbc.c)
-if (TODBC_WINDOWS)
+if (TD_WINDOWS)
     list(APPEND odbc_SOURCES dsn.c)
 endif ()
 
@@ -64,5 +64,5 @@ set_target_properties(taos_odbc PROPERTIES
         VERSION 0.1)
 install(TARGETS taos_odbc)
 
-add_subdirectory(tests)
+#add_subdirectory(tests)
 

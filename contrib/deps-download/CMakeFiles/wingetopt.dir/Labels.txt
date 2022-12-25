@@ -1,0 +1,14 @@
+# Target labels
+ wingetopt
+# Source files and their labels
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/wingetopt
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/wingetopt.rule
+D:/workspaces/taos_odbc/contrib/deps-download/CMakeFiles/wingetopt-complete.rule
+D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-build.rule
+D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-configure.rule
+D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-download.rule
+D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-install.rule
+D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-mkdir.rule
+D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-patch.rule
+D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-test.rule
+D:/workspaces/taos_odbc/contrib/deps-download/wingetopt-prefix/src/wingetopt-stamp/wingetopt-update.rule

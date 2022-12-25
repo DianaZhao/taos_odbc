@@ -7,4 +7,3 @@
 subdirs("core")
 subdirs("parser")
 subdirs("utils")
-subdirs("tests")

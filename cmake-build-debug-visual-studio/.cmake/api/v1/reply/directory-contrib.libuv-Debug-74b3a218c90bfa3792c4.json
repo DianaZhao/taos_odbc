@@ -1,0 +1,156 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"contrib/libuv/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 680,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 681,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 682,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 684,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 688,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 690,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include",
+			"paths" : 
+			[
+				{
+					"from" : "contrib/libuv/include",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "share/doc/libuv",
+			"paths" : 
+			[
+				"contrib/libuv/LICENSE"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				"cmake-build-debug-visual-studio/contrib/libuv/libuv.pc",
+				"cmake-build-debug-visual-studio/contrib/libuv/libuv-static.pc"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"contrib/libuv/uv.lib"
+			],
+			"targetId" : "uv::@5a77165f7d65297ce34d",
+			"targetIndex" : 60,
+			"targetIsImportLibrary" : true,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "bin",
+			"paths" : 
+			[
+				"contrib/libuv/uv.dll"
+			],
+			"targetId" : "uv::@5a77165f7d65297ce34d",
+			"targetIndex" : 60,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"contrib/libuv/uv_a.lib"
+			],
+			"targetId" : "uv_a::@5a77165f7d65297ce34d",
+			"targetIndex" : 61,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/libuv",
+			"exportName" : "libuvConfig",
+			"exportTargets" : 
+			[
+				{
+					"id" : "uv::@5a77165f7d65297ce34d",
+					"index" : 60
+				},
+				{
+					"id" : "uv_a::@5a77165f7d65297ce34d",
+					"index" : 61
+				}
+			],
+			"paths" : 
+			[
+				"contrib/libuv/CMakeFiles/Export/71716f0ef7cdce382c73ee7afe0d26d3/libuvConfig.cmake"
+			],
+			"type" : "export"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "contrib/libuv",
+		"source" : "contrib/libuv"
+	}
+}

@@ -33,16 +33,16 @@ EXTERN_C_BEGIN
 
 typedef struct env_s              env_t;
 
-env_t* env_create(void) FA_HIDDEN;
-env_t* env_ref(env_t *env) FA_HIDDEN;
-env_t* env_unref(env_t *env) FA_HIDDEN;
-SQLRETURN env_free(env_t *env) FA_HIDDEN;
+env_t* env_create(void) ;
+env_t* env_ref(env_t *env) ;
+env_t* env_unref(env_t *env) ;
+SQLRETURN env_free(env_t *env) ;
 
-void env_clr_errs(env_t *env) FA_HIDDEN;
+void env_clr_errs(env_t *env) ;
 
-int env_get_debug(env_t *env) FA_HIDDEN;
-int env_get_debug_flex(env_t *env) FA_HIDDEN;
-int env_get_debug_bison(env_t *env) FA_HIDDEN;
+int env_get_debug(env_t *env) ;
+int env_get_debug_flex(env_t *env) ;
+int env_get_debug_bison(env_t *env) ;
 
 SQLRETURN env_get_diag_rec(
     env_t          *env,
@@ -51,17 +51,17 @@ SQLRETURN env_get_diag_rec(
     SQLINTEGER     *NativeErrorPtr,
     SQLCHAR        *MessageText,
     SQLSMALLINT     BufferLength,
-    SQLSMALLINT    *TextLengthPtr) FA_HIDDEN;
+    SQLSMALLINT    *TextLengthPtr) ;
 
 SQLRETURN env_set_attr(
     env_t       *env,
     SQLINTEGER   Attribute,
     SQLPOINTER   ValuePtr,
-    SQLINTEGER   StringLength) FA_HIDDEN;
+    SQLINTEGER   StringLength) ;
 
-SQLRETURN env_end_tran(env_t *env, SQLSMALLINT CompletionType) FA_HIDDEN;
+SQLRETURN env_end_tran(env_t *env, SQLSMALLINT CompletionType) ;
 
-SQLRETURN env_alloc_conn(env_t *env, SQLHANDLE *OutputHandle) FA_HIDDEN;
+SQLRETURN env_alloc_conn(env_t *env, SQLHANDLE *OutputHandle) ;
 
 EXTERN_C_END
 

@@ -1,0 +1,1 @@
+D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/contrib/wingetopt/wingetopt.dir/MinSizeRel/getopt.obj

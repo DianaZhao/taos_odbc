@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\6b9505acb1190dd2851c82d77d6f1a3b\ex_cjson-mkdir.rule">
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\f3041a74a66f3a8fc1a00435e9e4feb8\ex_cjson-mkdir.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\6b9505acb1190dd2851c82d77d6f1a3b\ex_cjson-download.rule">
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\f3041a74a66f3a8fc1a00435e9e4feb8\ex_cjson-download.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\6b9505acb1190dd2851c82d77d6f1a3b\ex_cjson-update.rule">
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\f3041a74a66f3a8fc1a00435e9e4feb8\ex_cjson-update.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\6b9505acb1190dd2851c82d77d6f1a3b\ex_cjson-patch.rule">
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\f3041a74a66f3a8fc1a00435e9e4feb8\ex_cjson-patch.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\6b9505acb1190dd2851c82d77d6f1a3b\ex_cjson-configure.rule">
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\f3041a74a66f3a8fc1a00435e9e4feb8\ex_cjson-configure.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\6b9505acb1190dd2851c82d77d6f1a3b\ex_cjson-build.rule">
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\f3041a74a66f3a8fc1a00435e9e4feb8\ex_cjson-build.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\6b9505acb1190dd2851c82d77d6f1a3b\ex_cjson-install.rule">
+    <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\f3041a74a66f3a8fc1a00435e9e4feb8\ex_cjson-install.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
     <CustomBuild Include="D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\1f0075998bd69884a70925254663b984\ex_cjson-complete.rule">

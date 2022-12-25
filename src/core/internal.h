@@ -91,22 +91,22 @@ struct errs_s {
   })
 
 #define conn_append_err(_conn, _sql_state, _e, _estr)                                \
-  ({                                                                                 \
+  {                                                                                 \
     conn_t *__conn = _conn;                                                          \
     errs_append(&__conn->errs, conn_data_source(__conn), _sql_state, _e, _estr);     \
-  })
+  }
 
 #define conn_append_err_format(_conn, _sql_state, _e, _fmt, ...)                                      \
-  ({                                                                                                  \
+  {                                                                                                  \
     conn_t *__conn = _conn;                                                                           \
     errs_append_format(&__conn->errs, conn_data_source(__conn), _sql_state, _e, _fmt, ##__VA_ARGS__); \
-  })
+  }
 
 #define conn_oom(_conn)                                  \
-  ({                                                     \
+                                                       \
     conn_t *__conn = _conn;                              \
     errs_oom(&__conn->errs, conn_data_source(__conn));   \
-  })
+
 
 #define conn_niy(_conn)                                        \
   ({                                                           \
@@ -121,24 +121,24 @@ struct errs_s {
   })
 
 #define stmt_append_err(_stmt, _sql_state, _e, _estr)                                \
-  ({                                                                                 \
+  {                                                                                 \
     stmt_t *__stmt = _stmt;                                                          \
     conn_t *__conn = __stmt->conn;                                                   \
     errs_append(&__stmt->errs, conn_data_source(__conn), _sql_state, _e, _estr);     \
-  })
+  }
 
 #define stmt_append_err_format(_stmt, _sql_state, _e, _fmt, ...)                                      \
-  ({                                                                                                  \
+  {                                                                                                  \
     stmt_t *__stmt = _stmt;                                                                           \
     conn_t *__conn = __stmt->conn;                                                                    \
     errs_append_format(&__stmt->errs, conn_data_source(__conn), _sql_state, _e, _fmt, ##__VA_ARGS__); \
-  })
+  }
 
 #define stmt_oom(_stmt)                                        \
-  ({                                                           \
+  {                                                           \
     stmt_t *__stmt = _stmt;                                    \
     errs_oom(&__stmt->errs, conn_data_source(__stmt->conn));   \
-  })
+  }
 
 #define stmt_niy(_stmt)                                        \
   ({                                                           \
@@ -154,7 +154,7 @@ struct errs_s {
 
 
 
-#define sql_succeeded(_sr) ({ SQLRETURN __sr = _sr; (__sr==SQL_SUCCESS || __sr==SQL_SUCCESS_WITH_INFO); })
+//#define sql_succeeded(_sr) { SQLRETURN __sr = _sr; (__sr==SQL_SUCCESS || __sr==SQL_SUCCESS_WITH_INFO); }
 
 
 struct env_s {
@@ -351,6 +351,14 @@ struct stmt_s {
 };
 
 EXTERN_C_END
+
+char *strndup( const char *s1, size_t n)
+{
+    char *copy= (char*)malloc( n+1 );
+    memcpy( copy, s1, n );
+    copy[n] = 0;
+    return copy;
+};
 
 #endif // _internal_h_
 

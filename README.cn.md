@@ -33,26 +33,15 @@ SQLSetEnvAttr
 SQLSetStmtAttr
 SQLTables (暂时使用post-filter来补救一下，等待taosc有新的实现后再移除)
 ```
-- **ODBC应用程序将可以利用该驱动实现对TDengine时序数据库的操作，但是，目前该驱动只有Linux平台的实现**
+- **ODBC应用程序将可以利用该驱动实现对TDengine时序数据库的操作，但是目前该驱动只有Windows平台的实现**
 - **相信，任何具有ODBC-绑定/插件的编程语言、框架，利用该驱动，也可实现对TDengine时序数据库的操作**
 - **持续开发中**...
 
 ### (目前)支持的平台
-- Linux
-- macOS
+- Windows
 
 ### 所需的依赖
-- flex, 2.6.4 或以上
-- bison, 3.5.1 或以上
-- odbc 驱动管理器, 例如Linux平台上的unixodbc(2.3.6 或以上)
 - iconv, 应该不需要单独安装了，基本上libc都已经内建了
-- valgrind, 如果您想对程序进行性能分析及内存泄漏探查的话
-- node, 如果您想同时跑nodejs测试程序的话
-  - node odbc, 2.4.4 或以上, https://www.npmjs.com/package/odbc
-- rust, 如果您想同时跑rust测试程序的话
-  - odbc, 0.17.0 或以上, https://docs.rs/odbc/latest/odbc/
-  - env_logger, 0.8.2 或以上, https://docs.rs/env_logger/latest/env_logger/
-  - json
 
 ### 安装TDengine 3.0
 - 请参考TDengine官方说明，https://tdengine.com
@@ -99,16 +88,11 @@ pushd debug >/dev/null && ctest --output-on-failure && echo -=Done=-; popd >/dev
 <root>
 ├── cmake
 ├── common
-├── examples
-├── inc
-├── samples
 ├── sh
-├── src
+├── taos_odbc_driver
 │   ├── core
 │   ├── inc
-│   ├── parser
-│   ├── tests
-│   └── utils
+│   └── dsn
 ├── templates
 ├── tests
 │   ├── c

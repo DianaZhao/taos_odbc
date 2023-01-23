@@ -1,3 +1,0 @@
-#cmakedefine ENABLE_MYSQL_TEST
-#cmakedefine ENABLE_SQLITE3_TEST
-

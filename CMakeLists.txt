@@ -1,82 +1,48 @@
-###############################################################################
-# MIT License
+﻿# CMakeList.txt : Top-level CMake project file, do global configuration
+# and include sub-projects here.
 #
-# Copyright (c) 2022 Diana Zhao <dianaz@outlook.com>
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-###############################################################################
+cmake_minimum_required(VERSION 3.0)
 
-cmake_minimum_required(VERSION 3.8)
+project("taos_odbc_driver" C)
 
-project(taos_odbc)
+#SET(DSN_DIALOG_FILES ${CMAKE_SOURCE_DIR}/taos_odbc_driver/dsn/odbc_dsn.c
+#                     ${CMAKE_SOURCE_DIR}/taos_odbc_driver/dsn/odbc_dsn.rc
+#                     ${CMAKE_SOURCE_DIR}/taos_odbc_driver/dsn/resource.h
+#                     ${CMAKE_SOURCE_DIR}/taos_odbc_driver/dsn/td_dsn.c
+#                     ${CMAKE_SOURCE_DIR}/taos_odbc_driver/ma_common.c)
 
-set(TODBC_VERSION 0.1)
-
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_CXX_STANDARD 11)
-if (NOT DEFINED TD_SOURCE_DIR)
-    set( TD_SOURCE_DIR ${PROJECT_SOURCE_DIR} )
-endif()
-
-set(TD_WINDOWS TRUE)
-set(TD_SUPPORT_DIR "${TD_SOURCE_DIR}/cmake")
-set(TD_CONTRIB_DIR "${TD_SOURCE_DIR}/contrib")
-MESSAGE("C Compiler ID: ${CMAKE_C_COMPILER_ID}")
-
-add_subdirectory(contrib)
-
-include(CTest)
-include(cmake/macros.cmake)
-IF (TD_WINDOWS)
-    MESSAGE("${Yellow} set compiler flag for Windows! ${ColourReset}")
-    SET(COMMON_FLAGS "/w /D_WIN32 /DWIN32 /Zi /MTd")
-    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /MANIFEST:NO")
-    # IF (MSVC AND (MSVC_VERSION GREATER_EQUAL 1900))
-    #  SET(COMMON_FLAGS "${COMMON_FLAGS} /Wv:18")
-    # ENDIF ()
-    IF (CMAKE_DEPFILE_FLAGS_C)
-        SET(CMAKE_DEPFILE_FLAGS_C "")
+IF (MSVC)
+    SET(CONFIG_TYPES "DEBUG" "RELEASE" "RELWITHDEBINFO" "MINSIZEREL")
+    FOREACH (BUILD_TYPE ${CONFIG_TYPES})
+        FOREACH (COMPILER CXX C)
+            SET(COMPILER_FLAGS "${CMAKE_${COMPILER}_FLAGS_${BUILD_TYPE}}")
+            IF (NOT COMPILER_FLAGS STREQUAL "")
+                STRING(REPLACE "/MD" "/MT" COMPILER_FLAGS ${COMPILER_FLAGS})
+                IF (BUILD_TYPE STREQUAL "Debug")
+                    SET(COMPILER_FLAGS "${COMPILER_FLAGS} /RTC1 /RTCc")
+                    STRING(REPLACE "/Zi" "/ZI" COMPILER_FLAGS ${COMPILER_FLAGS})
+                ENDIF ()
+                MESSAGE(STATUS "CMAKE_${COMPILER}_FLAGS_${BUILD_TYPE}= ${COMPILER_FLAGS}")
+                SET(CMAKE_${COMPILER}_FLAGS_${BUILD_TYPE} ${COMPILER_FLAGS} CACHE
+                        STRING "overwritten by taos-odbc" FORCE)
+            ENDIF ()
+        ENDFOREACH ()
+    ENDFOREACH ()
+    IF (NOT (MSVC_VERSION LESS 1900))
+        MESSAGE(STATUS "Configuring to link connector against legacy_stdio_definitions")
+        SET(LEGACY_STDIO legacy_stdio_definitions)
+        SET(PLATFORM_DEPENDENCIES ${PLATFORM_DEPENDENCIES} ${LEGACY_STDIO})
     ENDIF ()
-    IF (CMAKE_DEPFILE_FLAGS_CXX)
-        SET(CMAKE_DEPFILE_FLAGS_CXX "")
-    ENDIF ()
-    IF (CMAKE_C_FLAGS_DEBUG)
-        SET(CMAKE_C_FLAGS_DEBUG "" CACHE STRING "" FORCE)
-    ENDIF ()
-    IF (CMAKE_CXX_FLAGS_DEBUG)
-        SET(CMAKE_CXX_FLAGS_DEBUG "" CACHE STRING "" FORCE)
-    ENDIF ()
-
-    SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${COMMON_FLAGS}")
-    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMMON_FLAGS}")
-
 ENDIF ()
-
-check_requirements()
-
-include_directories(inc)
+SET(ODBC_LIBS odbc32)
+SET(ODBC_INSTLIBS odbccp32)
+set(TD_LIB_DIR "C:\\TDengine\\driver")
 include_directories("C:\\TDengine\\include")
+set(TD_SUPPORT_DIR "${PROJECT_SOURCE_DIR}/cmake")
+set(TD_CONTRIB_DIR "${PROJECT_SOURCE_DIR}/contrib")
+add_subdirectory(contrib)
 INCLUDE_DIRECTORIES(${TD_CONTRIB_DIR}/pthread)
 INCLUDE_DIRECTORIES(${TD_CONTRIB_DIR}/iconv)
-
-add_subdirectory(common)
-add_subdirectory(src)
-add_subdirectory(templates)
-add_subdirectory(tests)
-
+# Include sub-projects.
+add_subdirectory("taos_odbc_driver")
+add_subdirectory("test")

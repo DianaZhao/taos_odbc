@@ -24,6 +24,7 @@ set(CMAKE_TARGET_DEFINITIONS_RC
 
 # The include file search paths:
 set(CMAKE_RC_TARGET_INCLUDE_PATH
+  "C:/TDengine/include"
   "D:/workspaces/taos_odbc/contrib/pthread/."
   )
 

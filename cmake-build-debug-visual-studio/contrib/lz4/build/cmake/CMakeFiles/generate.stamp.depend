@@ -1,5 +1,0 @@
-# CMake generation dependency list for this directory.
-C:/App/CMake/share/cmake-3.25/Modules/CMakeDependentOption.cmake
-C:/App/CMake/share/cmake-3.25/Modules/CheckCCompilerFlag.cmake
-D:/workspaces/taos_odbc/contrib/lz4/build/cmake/CMakeLists.txt
-D:/workspaces/taos_odbc/contrib/lz4/lib/liblz4.pc.in

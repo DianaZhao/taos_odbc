@@ -1,25 +1,9 @@
-Performing C SOURCE FILE Test FLAG_SUPPORTED_fvisibilityhidden failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-8qxv9t
-
-Run Build Command(s):nmake -f Makefile /nologo cmTC_7e66d\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_7e66d.dir\build.make /nologo -L                  CMakeFiles\cmTC_7e66d.dir\build
-Building C object CMakeFiles/cmTC_7e66d.dir/src.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_7e66d.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-8qxv9t --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm33A3.tmp
-cl : Command line warning D9025 : overriding '/W3' with '/W4'
-cl : Command line warning D9002 : ignoring unknown option '-fvisibility=hidden'
-src.c
-Linking C executable cmTC_7e66d.exe
-	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_7e66d.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_7e66d.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm33E3.tmp
-
-
-Source file was:
-int main(void) { return 0; }
-
 Performing C SOURCE FILE Test CFLAG_Wextra failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-hpcs0j
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-5br2ao
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_97ea0\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_97ea0.dir\build.make /nologo -L                  CMakeFiles\cmTC_97ea0.dir\build
-Building C object CMakeFiles/cmTC_97ea0.dir/src.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_97ea0.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-hpcs0j --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm36D0.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_8b123\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_8b123.dir\build.make /nologo -L                  CMakeFiles\cmTC_8b123.dir\build
+Building C object CMakeFiles/cmTC_8b123.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_8b123.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-5br2ao --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm3163.tmp
 cl : Command line error D8021 : invalid numeric argument '/Wextra'
 NMAKE : fatal error U1077: 'C:\App\CMake\bin\cmake.exe' : return code '0x2'
 Stop.
@@ -31,11 +15,11 @@ Source file was:
 int main(void) { return 0; }
 
 Performing C SOURCE FILE Test CFLAG_Wundef failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-ytiemv
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-b6ps92
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_190cb\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_190cb.dir\build.make /nologo -L                  CMakeFiles\cmTC_190cb.dir\build
-Building C object CMakeFiles/cmTC_190cb.dir/src.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_190cb.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-ytiemv --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm373D.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_7a7e7\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_7a7e7.dir\build.make /nologo -L                  CMakeFiles\cmTC_7a7e7.dir\build
+Building C object CMakeFiles/cmTC_7a7e7.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_7a7e7.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-b6ps92 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm320F.tmp
 cl : Command line error D8021 : invalid numeric argument '/Wundef'
 NMAKE : fatal error U1077: 'C:\App\CMake\bin\cmake.exe' : return code '0x2'
 Stop.
@@ -47,11 +31,11 @@ Source file was:
 int main(void) { return 0; }
 
 Performing C SOURCE FILE Test CFLAG_Wcast_qual failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-ojj6cx
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-3chb1c
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_50eb9\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_50eb9.dir\build.make /nologo -L                  CMakeFiles\cmTC_50eb9.dir\build
-Building C object CMakeFiles/cmTC_50eb9.dir/src.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_50eb9.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-ojj6cx --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm37BA.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_bf15c\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_bf15c.dir\build.make /nologo -L                  CMakeFiles\cmTC_bf15c.dir\build
+Building C object CMakeFiles/cmTC_bf15c.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_bf15c.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-3chb1c --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm32BB.tmp
 cl : Command line error D8021 : invalid numeric argument '/Wcast-qual'
 NMAKE : fatal error U1077: 'C:\App\CMake\bin\cmake.exe' : return code '0x2'
 Stop.
@@ -63,11 +47,11 @@ Source file was:
 int main(void) { return 0; }
 
 Performing C SOURCE FILE Test CFLAG_Wcast_align failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-uk2p9c
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-iiz8e2
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_c72b6\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_c72b6.dir\build.make /nologo -L                  CMakeFiles\cmTC_c72b6.dir\build
-Building C object CMakeFiles/cmTC_c72b6.dir/src.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_c72b6.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-uk2p9c --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm3827.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_09f62\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_09f62.dir\build.make /nologo -L                  CMakeFiles\cmTC_09f62.dir\build
+Building C object CMakeFiles/cmTC_09f62.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_09f62.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-iiz8e2 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm3376.tmp
 cl : Command line error D8021 : invalid numeric argument '/Wcast-align'
 NMAKE : fatal error U1077: 'C:\App\CMake\bin\cmake.exe' : return code '0x2'
 Stop.
@@ -79,11 +63,11 @@ Source file was:
 int main(void) { return 0; }
 
 Performing C SOURCE FILE Test CFLAG_Wshadow failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-p9622l
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-zryv6c
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_7c91d\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_7c91d.dir\build.make /nologo -L                  CMakeFiles\cmTC_7c91d.dir\build
-Building C object CMakeFiles/cmTC_7c91d.dir/src.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_7c91d.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-p9622l --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm3895.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_f1ce6\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_f1ce6.dir\build.make /nologo -L                  CMakeFiles\cmTC_f1ce6.dir\build
+Building C object CMakeFiles/cmTC_f1ce6.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_f1ce6.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-zryv6c --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm3422.tmp
 cl : Command line error D8021 : invalid numeric argument '/Wshadow'
 NMAKE : fatal error U1077: 'C:\App\CMake\bin\cmake.exe' : return code '0x2'
 Stop.
@@ -95,11 +79,11 @@ Source file was:
 int main(void) { return 0; }
 
 Performing C SOURCE FILE Test CFLAG_Wswitch_enum failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-yeidjg
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-1sxey8
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_e3044\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_e3044.dir\build.make /nologo -L                  CMakeFiles\cmTC_e3044.dir\build
-Building C object CMakeFiles/cmTC_e3044.dir/src.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_e3044.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-yeidjg --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm3912.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_cb461\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_cb461.dir\build.make /nologo -L                  CMakeFiles\cmTC_cb461.dir\build
+Building C object CMakeFiles/cmTC_cb461.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_cb461.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-1sxey8 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm34DE.tmp
 cl : Command line error D8021 : invalid numeric argument '/Wswitch-enum'
 NMAKE : fatal error U1077: 'C:\App\CMake\bin\cmake.exe' : return code '0x2'
 Stop.
@@ -111,11 +95,11 @@ Source file was:
 int main(void) { return 0; }
 
 Performing C SOURCE FILE Test CFLAG_Wdeclaration_after_statement failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-9fhqct
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-e1laok
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_23afa\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_23afa.dir\build.make /nologo -L                  CMakeFiles\cmTC_23afa.dir\build
-Building C object CMakeFiles/cmTC_23afa.dir/src.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_23afa.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-9fhqct --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm397F.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_f8dc0\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_f8dc0.dir\build.make /nologo -L                  CMakeFiles\cmTC_f8dc0.dir\build
+Building C object CMakeFiles/cmTC_f8dc0.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_f8dc0.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-e1laok --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm3589.tmp
 cl : Command line error D8021 : invalid numeric argument '/Wdeclaration-after-statement'
 NMAKE : fatal error U1077: 'C:\App\CMake\bin\cmake.exe' : return code '0x2'
 Stop.
@@ -127,11 +111,11 @@ Source file was:
 int main(void) { return 0; }
 
 Performing C SOURCE FILE Test CFLAG_Wstrict_prototypes failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-3m3bg8
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-xl9os6
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_af2eb\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_af2eb.dir\build.make /nologo -L                  CMakeFiles\cmTC_af2eb.dir\build
-Building C object CMakeFiles/cmTC_af2eb.dir/src.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_af2eb.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-3m3bg8 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm39FC.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_ae66b\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_ae66b.dir\build.make /nologo -L                  CMakeFiles\cmTC_ae66b.dir\build
+Building C object CMakeFiles/cmTC_ae66b.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_ae66b.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-xl9os6 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm3635.tmp
 cl : Command line error D8021 : invalid numeric argument '/Wstrict-prototypes'
 NMAKE : fatal error U1077: 'C:\App\CMake\bin\cmake.exe' : return code '0x2'
 Stop.
@@ -143,11 +127,11 @@ Source file was:
 int main(void) { return 0; }
 
 Performing C SOURCE FILE Test CFLAG_Wpointer_arith failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-kza429
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-ev3yos
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_8fe5b\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_8fe5b.dir\build.make /nologo -L                  CMakeFiles\cmTC_8fe5b.dir\build
-Building C object CMakeFiles/cmTC_8fe5b.dir/src.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_8fe5b.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-kza429 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm3A6A.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_0af4b\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_0af4b.dir\build.make /nologo -L                  CMakeFiles\cmTC_0af4b.dir\build
+Building C object CMakeFiles/cmTC_0af4b.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_0af4b.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-ev3yos --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm36E1.tmp
 cl : Command line error D8021 : invalid numeric argument '/Wpointer-arith'
 NMAKE : fatal error U1077: 'C:\App\CMake\bin\cmake.exe' : return code '0x2'
 Stop.
@@ -159,17 +143,17 @@ Source file was:
 int main(void) { return 0; }
 
 Determining size of off64_t failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-g87qsc
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-w57q9n
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_a9db2\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_a9db2.dir\build.make /nologo -L                  CMakeFiles\cmTC_a9db2.dir\build
-Building C object CMakeFiles/cmTC_a9db2.dir/OFF64_T.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_a9db2.dir\OFF64_T.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-g87qsc --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm4111.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_8d7a2\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_8d7a2.dir\build.make /nologo -L                  CMakeFiles\cmTC_8d7a2.dir\build
+Building C object CMakeFiles/cmTC_8d7a2.dir/OFF64_T.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_8d7a2.dir\OFF64_T.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-w57q9n --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm3F8C.tmp
 OFF64_T.c
-D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-g87qsc\OFF64_T.c(29): error C2065: 'off64_t': undeclared identifier
-D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-g87qsc\OFF64_T.c(30): error C2065: 'off64_t': undeclared identifier
-D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-g87qsc\OFF64_T.c(31): error C2065: 'off64_t': undeclared identifier
-D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-g87qsc\OFF64_T.c(32): error C2065: 'off64_t': undeclared identifier
-D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-g87qsc\OFF64_T.c(33): error C2065: 'off64_t': undeclared identifier
+D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-w57q9n\OFF64_T.c(29): error C2065: 'off64_t': undeclared identifier
+D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-w57q9n\OFF64_T.c(30): error C2065: 'off64_t': undeclared identifier
+D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-w57q9n\OFF64_T.c(31): error C2065: 'off64_t': undeclared identifier
+D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-w57q9n\OFF64_T.c(32): error C2065: 'off64_t': undeclared identifier
+D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-w57q9n\OFF64_T.c(33): error C2065: 'off64_t': undeclared identifier
 NMAKE : fatal error U1077: 'C:\App\CMake\bin\cmake.exe' : return code '0x2'
 Stop.
 NMAKE : fatal error U1077: '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"' : return code '0x2'
@@ -230,17 +214,17 @@ int main(int argc, char *argv[])
 
 
 Determining if the function fseeko exists failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-iduulp
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-lgyg9e
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_71354\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_71354.dir\build.make /nologo -L                  CMakeFiles\cmTC_71354.dir\build
-Building C object CMakeFiles/cmTC_71354.dir/CheckFunctionExists.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_71354.dir\CheckFunctionExists.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-iduulp --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm419D.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_a1083\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_a1083.dir\build.make /nologo -L                  CMakeFiles\cmTC_a1083.dir\build
+Building C object CMakeFiles/cmTC_a1083.dir/CheckFunctionExists.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_a1083.dir\CheckFunctionExists.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-lgyg9e --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm4028.tmp
 CheckFunctionExists.c
-Linking C executable cmTC_71354.exe
-	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_71354.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_71354.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm41EC.tmp
-LINK Pass 1: command "C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_71354.dir\objects1 /out:cmTC_71354.exe /implib:cmTC_71354.lib /pdb:D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-iduulp\cmTC_71354.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\cmTC_71354.dir/intermediate.manifest CMakeFiles\cmTC_71354.dir/manifest.res" failed (exit code 1120) with the following output:
+Linking C executable cmTC_a1083.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_a1083.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_a1083.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm4077.tmp
+LINK Pass 1: command "C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_a1083.dir\objects1 /out:cmTC_a1083.exe /implib:cmTC_a1083.lib /pdb:D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-lgyg9e\cmTC_a1083.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\cmTC_a1083.dir/intermediate.manifest CMakeFiles\cmTC_a1083.dir/manifest.res" failed (exit code 1120) with the following output:
 CheckFunctionExists.c.obj : error LNK2019: unresolved external symbol fseeko referenced in function main
-cmTC_71354.exe : fatal error LNK1120: 1 unresolved externals
+cmTC_a1083.exe : fatal error LNK1120: 1 unresolved externals
 NMAKE : fatal error U1077: 'C:\App\CMake\bin\cmake.exe' : return code '0xffffffff'
 Stop.
 NMAKE : fatal error U1077: '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"' : return code '0x2'
@@ -249,13 +233,13 @@ Stop.
 
 
 Determining if the include file unistd.h exists failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-npxp3f
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-ghnqh2
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_63b91\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_63b91.dir\build.make /nologo -L                  CMakeFiles\cmTC_63b91.dir\build
-Building C object CMakeFiles/cmTC_63b91.dir/CheckIncludeFile.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_63b91.dir\CheckIncludeFile.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-npxp3f --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm4288.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_f6d1c\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_f6d1c.dir\build.make /nologo -L                  CMakeFiles\cmTC_f6d1c.dir\build
+Building C object CMakeFiles/cmTC_f6d1c.dir/CheckIncludeFile.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_f6d1c.dir\CheckIncludeFile.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-ghnqh2 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm4132.tmp
 CheckIncludeFile.c
-D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-npxp3f\CheckIncludeFile.c(1): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-ghnqh2\CheckIncludeFile.c(1): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
 NMAKE : fatal error U1077: 'C:\App\CMake\bin\cmake.exe' : return code '0x2'
 Stop.
 NMAKE : fatal error U1077: '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"' : return code '0x2'
@@ -264,11 +248,11 @@ Stop.
 
 
 Performing C SOURCE FILE Test UV_LINT_NO_UNUSED_PARAMETER failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-zkkcpv
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-0rr8g6
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_562fc\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_562fc.dir\build.make /nologo -L                  CMakeFiles\cmTC_562fc.dir\build
-Building C object CMakeFiles/cmTC_562fc.dir/src.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_562fc.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-zkkcpv --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm59D8.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_35882\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_35882.dir\build.make /nologo -L                  CMakeFiles\cmTC_35882.dir\build
+Building C object CMakeFiles/cmTC_35882.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_35882.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-0rr8g6 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm6C2A.tmp
 cl : Command line error D8021 : invalid numeric argument '/Wno-unused-parameter'
 NMAKE : fatal error U1077: 'C:\App\CMake\bin\cmake.exe' : return code '0x2'
 Stop.
@@ -280,11 +264,11 @@ Source file was:
 int main(void) { return 0; }
 
 Performing C SOURCE FILE Test UV_LINT_STRICT_PROTOTYPES failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-ihusgl
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-pt3gnx
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_3f5be\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_3f5be.dir\build.make /nologo -L                  CMakeFiles\cmTC_3f5be.dir\build
-Building C object CMakeFiles/cmTC_3f5be.dir/src.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_3f5be.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-ihusgl --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm5A55.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_1a521\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_1a521.dir\build.make /nologo -L                  CMakeFiles\cmTC_1a521.dir\build
+Building C object CMakeFiles/cmTC_1a521.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_1a521.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-pt3gnx --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm6CC6.tmp
 cl : Command line error D8021 : invalid numeric argument '/Wstrict-prototypes'
 NMAKE : fatal error U1077: 'C:\App\CMake\bin\cmake.exe' : return code '0x2'
 Stop.
@@ -296,11 +280,11 @@ Source file was:
 int main(void) { return 0; }
 
 Performing C SOURCE FILE Test UV_LINT_EXTRA failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-j93aql
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-bzmjb9
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_d2f03\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_d2f03.dir\build.make /nologo -L                  CMakeFiles\cmTC_d2f03.dir\build
-Building C object CMakeFiles/cmTC_d2f03.dir/src.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_d2f03.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-j93aql --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm5AD2.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_2bb86\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_2bb86.dir\build.make /nologo -L                  CMakeFiles\cmTC_2bb86.dir\build
+Building C object CMakeFiles/cmTC_2bb86.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_2bb86.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-bzmjb9 --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm6D62.tmp
 cl : Command line error D8021 : invalid numeric argument '/Wextra'
 NMAKE : fatal error U1077: 'C:\App\CMake\bin\cmake.exe' : return code '0x2'
 Stop.
@@ -312,15 +296,15 @@ Source file was:
 int main(void) { return 0; }
 
 Performing C SOURCE FILE Test UV_F_STRICT_ALIASING failed with the following output:
-Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-u11zhc
+Change Dir: D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/CMakeFiles/CMakeScratch/TryCompile-fhjcxo
 
-Run Build Command(s):nmake -f Makefile /nologo cmTC_db33b\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_db33b.dir\build.make /nologo -L                  CMakeFiles\cmTC_db33b.dir\build
-Building C object CMakeFiles/cmTC_db33b.dir/src.c.obj
-	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_db33b.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-u11zhc --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm5CD6.tmp
+Run Build Command(s):nmake -f Makefile /nologo cmTC_a954d\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64\nmake.exe"  -f CMakeFiles\cmTC_a954d.dir\build.make /nologo -L                  CMakeFiles\cmTC_a954d.dir\build
+Building C object CMakeFiles/cmTC_a954d.dir/src.c.obj
+	C:\App\CMake\bin\cmake.exe -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_a954d.dir\src.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles\CMakeScratch\TryCompile-fhjcxo --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @C:\Users\diana\AppData\Local\Temp\nm6FE3.tmp
 cl : Command line warning D9002 : ignoring unknown option '-fno-strict-aliasing'
 src.c
-Linking C executable cmTC_db33b.exe
-	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_db33b.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_db33b.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm5D16.tmp
+Linking C executable cmTC_a954d.exe
+	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_a954d.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\cmTC_a954d.dir\objects1 @C:\Users\diana\AppData\Local\Temp\nm7032.tmp
 
 
 Source file was:

@@ -1,8 +1,8 @@
-prefix=C:/Program Files (x86)/taos_odbc
-exec_prefix=C:/Program Files (x86)/taos_odbc
-libdir=C:/Program Files (x86)/taos_odbc/lib
-sharedlibdir=C:/Program Files (x86)/taos_odbc/lib
-includedir=C:/Program Files (x86)/taos_odbc/include
+prefix=C:/Program Files (x86)/taos_odbc_driver
+exec_prefix=C:/Program Files (x86)/taos_odbc_driver
+libdir=C:/Program Files (x86)/taos_odbc_driver/lib
+sharedlibdir=C:/Program Files (x86)/taos_odbc_driver/lib
+includedir=C:/Program Files (x86)/taos_odbc_driver/include
 
 Name: zlib
 Description: zlib compression library

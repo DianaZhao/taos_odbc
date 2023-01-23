@@ -1,0 +1,259 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "contrib/pthread/pthreadVC3d.dll"
+		},
+		{
+			"path" : "contrib/pthread/pthreadVC3d.lib"
+		},
+		{
+			"path" : "contrib/pthread/pthreadVC3d.pdb"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"shared_lib",
+			"add_definitions",
+			"target_compile_definitions",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"contrib/pthread/CMakeLists.txt",
+			"contrib/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 158,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 120,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 99,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 41,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 84,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 123,
+				"parent" : 1
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 26,
+				"parent" : 7
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 40,
+				"parent" : 9
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 27,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /errorReport:none /nologo  /MTd /Zi /Ob0 /Od /RTC1"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 3,
+					"define" : "HAVE_CONFIG_H"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "PTW32_ARCHAMD64"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "PTW32_BUILD_INLINED"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "PTW32_CLEANUP_C"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "PTW32_RC_MSC"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "PTW32_STATIC_LIB"
+				},
+				{
+					"define" : "pthreadVC3_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 10,
+					"path" : "C:/TDengine/include"
+				},
+				{
+					"backtrace" : 11,
+					"path" : "D:/workspaces/taos_odbc/contrib/pthread/."
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-DWIN32 -D_DEBUG"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 3,
+					"define" : "HAVE_CONFIG_H"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "PTW32_ARCHAMD64"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "PTW32_BUILD_INLINED"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "PTW32_CLEANUP_C"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "PTW32_RC_MSC"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "PTW32_STATIC_LIB"
+				},
+				{
+					"define" : "pthreadVC3_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 10,
+					"path" : "C:/TDengine/include"
+				},
+				{
+					"backtrace" : 11,
+					"path" : "D:/workspaces/taos_odbc/contrib/pthread/."
+				}
+			],
+			"language" : "RC",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"id" : "pthreadVC3::@67e1cd471a073ee882f0",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/machine:x64 /debug /INCREMENTAL",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "C"
+	},
+	"name" : "pthreadVC3",
+	"nameOnDisk" : "pthreadVC3d.dll",
+	"paths" : 
+	{
+		"build" : "contrib/pthread",
+		"source" : "contrib/pthread"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "contrib/pthread/pthread-JMP.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "cmake-build-debug-visual-studio/contrib/pthread/version.rc",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "SHARED_LIBRARY"
+}

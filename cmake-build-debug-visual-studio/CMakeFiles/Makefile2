@@ -52,55 +52,28 @@ CMAKE_BINARY_DIR = D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles\ex_cjson.dir\all
 all: contrib\all
-all: common\all
-all: src\all
-all: templates\all
-all: tests\all
+all: taos_odbc_driver\all
+all: test\all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: contrib\preinstall
-preinstall: common\preinstall
-preinstall: src\preinstall
-preinstall: templates\preinstall
-preinstall: tests\preinstall
+preinstall: taos_odbc_driver\preinstall
+preinstall: test\preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles\ex_cjson.dir\clean
 clean: contrib\clean
-clean: common\clean
-clean: src\clean
-clean: templates\clean
-clean: tests\clean
+clean: taos_odbc_driver\clean
+clean: test\clean
 .PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory common
-
-# Recursive "all" directory target.
-common\all: common\CMakeFiles\common_obj.dir\all
-.PHONY : common\all
-
-# Recursive "preinstall" directory target.
-common\preinstall:
-.PHONY : common\preinstall
-
-# Recursive "clean" directory target.
-common\clean: common\CMakeFiles\common_obj.dir\clean
-.PHONY : common\clean
 
 #=============================================================================
 # Directory level rules for directory contrib
 
 # Recursive "all" directory target.
-contrib\all: contrib\CMakeFiles\dumper.dir\all
-contrib\all: contrib\CMakeFiles\crashdump.dir\all
 contrib\all: contrib\CMakeFiles\iconv.dir\all
-contrib\all: contrib\CMakeFiles\msvcregex.dir\all
-contrib\all: contrib\CMakeFiles\wcwidth.dir\all
 .PHONY : contrib\all
 
 # Recursive "preinstall" directory target.
@@ -108,133 +81,9 @@ contrib\preinstall:
 .PHONY : contrib\preinstall
 
 # Recursive "clean" directory target.
-contrib\clean: contrib\CMakeFiles\dumper.dir\clean
-contrib\clean: contrib\CMakeFiles\crashdump.dir\clean
 contrib\clean: contrib\CMakeFiles\iconv.dir\clean
-contrib\clean: contrib\CMakeFiles\msvcregex.dir\clean
-contrib\clean: contrib\CMakeFiles\wcwidth.dir\clean
-contrib\clean: contrib\cJson\clean
-contrib\clean: contrib\lz4\build\cmake\clean
-contrib\clean: contrib\zlib\clean
 contrib\clean: contrib\pthread\clean
-contrib\clean: contrib\wingetopt\clean
-contrib\clean: contrib\libuv\clean
 .PHONY : contrib\clean
-
-#=============================================================================
-# Directory level rules for directory contrib\cJson
-
-# Recursive "all" directory target.
-contrib\cJson\all: contrib\cJson\CMakeFiles\cjson.dir\all
-contrib\cJson\all: contrib\cJson\tests\all
-contrib\cJson\all: contrib\cJson\fuzzing\all
-.PHONY : contrib\cJson\all
-
-# Recursive "preinstall" directory target.
-contrib\cJson\preinstall: contrib\cJson\tests\preinstall
-contrib\cJson\preinstall: contrib\cJson\fuzzing\preinstall
-.PHONY : contrib\cJson\preinstall
-
-# Recursive "clean" directory target.
-contrib\cJson\clean: contrib\cJson\CMakeFiles\cjson.dir\clean
-contrib\cJson\clean: contrib\cJson\CMakeFiles\uninstall.dir\clean
-contrib\cJson\clean: contrib\cJson\tests\clean
-contrib\cJson\clean: contrib\cJson\fuzzing\clean
-.PHONY : contrib\cJson\clean
-
-#=============================================================================
-# Directory level rules for directory contrib\cJson\fuzzing
-
-# Recursive "all" directory target.
-contrib\cJson\fuzzing\all:
-.PHONY : contrib\cJson\fuzzing\all
-
-# Recursive "preinstall" directory target.
-contrib\cJson\fuzzing\preinstall:
-.PHONY : contrib\cJson\fuzzing\preinstall
-
-# Recursive "clean" directory target.
-contrib\cJson\fuzzing\clean:
-.PHONY : contrib\cJson\fuzzing\clean
-
-#=============================================================================
-# Directory level rules for directory contrib\cJson\tests
-
-# Recursive "all" directory target.
-contrib\cJson\tests\all:
-.PHONY : contrib\cJson\tests\all
-
-# Recursive "preinstall" directory target.
-contrib\cJson\tests\preinstall:
-.PHONY : contrib\cJson\tests\preinstall
-
-# Recursive "clean" directory target.
-contrib\cJson\tests\clean:
-.PHONY : contrib\cJson\tests\clean
-
-#=============================================================================
-# Directory level rules for directory contrib\libuv
-
-# Recursive "all" directory target.
-contrib\libuv\all: contrib\libuv\CMakeFiles\uv.dir\all
-contrib\libuv\all: contrib\libuv\CMakeFiles\uv_a.dir\all
-.PHONY : contrib\libuv\all
-
-# Recursive "preinstall" directory target.
-contrib\libuv\preinstall:
-.PHONY : contrib\libuv\preinstall
-
-# Recursive "clean" directory target.
-contrib\libuv\clean: contrib\libuv\CMakeFiles\Experimental.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\Nightly.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\Continuous.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\NightlyStart.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\NightlyUpdate.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\NightlyConfigure.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\NightlyBuild.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\NightlyTest.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\NightlyCoverage.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\NightlyMemCheck.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\NightlySubmit.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ExperimentalStart.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ExperimentalBuild.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ExperimentalTest.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ContinuousStart.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ContinuousUpdate.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ContinuousConfigure.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ContinuousBuild.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ContinuousTest.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ContinuousCoverage.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\ContinuousSubmit.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\uv.dir\clean
-contrib\libuv\clean: contrib\libuv\CMakeFiles\uv_a.dir\clean
-.PHONY : contrib\libuv\clean
-
-#=============================================================================
-# Directory level rules for directory contrib\lz4\build\cmake
-
-# Recursive "all" directory target.
-contrib\lz4\build\cmake\all: contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\all
-contrib\lz4\build\cmake\all: contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\all
-contrib\lz4\build\cmake\all: contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\all
-.PHONY : contrib\lz4\build\cmake\all
-
-# Recursive "preinstall" directory target.
-contrib\lz4\build\cmake\preinstall:
-.PHONY : contrib\lz4\build\cmake\preinstall
-
-# Recursive "clean" directory target.
-contrib\lz4\build\cmake\clean: contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\clean
-contrib\lz4\build\cmake\clean: contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\clean
-contrib\lz4\build\cmake\clean: contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\clean
-.PHONY : contrib\lz4\build\cmake\clean
 
 #=============================================================================
 # Directory level rules for directory contrib\pthread
@@ -262,328 +111,40 @@ contrib\pthread\clean: contrib\pthread\CMakeFiles\libpthreadVC3.dir\clean
 .PHONY : contrib\pthread\clean
 
 #=============================================================================
-# Directory level rules for directory contrib\wingetopt
+# Directory level rules for directory taos_odbc_driver
 
 # Recursive "all" directory target.
-contrib\wingetopt\all: contrib\wingetopt\CMakeFiles\wingetopt.dir\all
-.PHONY : contrib\wingetopt\all
+taos_odbc_driver\all: taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\all
+taos_odbc_driver\all: taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\all
+.PHONY : taos_odbc_driver\all
 
 # Recursive "preinstall" directory target.
-contrib\wingetopt\preinstall:
-.PHONY : contrib\wingetopt\preinstall
+taos_odbc_driver\preinstall:
+.PHONY : taos_odbc_driver\preinstall
 
 # Recursive "clean" directory target.
-contrib\wingetopt\clean: contrib\wingetopt\CMakeFiles\wingetopt.dir\clean
-.PHONY : contrib\wingetopt\clean
+taos_odbc_driver\clean: taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\clean
+taos_odbc_driver\clean: taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\clean
+.PHONY : taos_odbc_driver\clean
 
 #=============================================================================
-# Directory level rules for directory contrib\zlib
+# Directory level rules for directory test
 
 # Recursive "all" directory target.
-contrib\zlib\all: contrib\zlib\CMakeFiles\zlib.dir\all
-contrib\zlib\all: contrib\zlib\CMakeFiles\zlibstatic.dir\all
-contrib\zlib\all: contrib\zlib\CMakeFiles\example.dir\all
-contrib\zlib\all: contrib\zlib\CMakeFiles\minigzip.dir\all
-.PHONY : contrib\zlib\all
+test\all: test\CMakeFiles\taos_test.dir\all
+test\all: test\CMakeFiles\odbc_test.dir\all
+test\all: test\CMakeFiles\dsn_test.dir\all
+.PHONY : test\all
 
 # Recursive "preinstall" directory target.
-contrib\zlib\preinstall:
-.PHONY : contrib\zlib\preinstall
+test\preinstall:
+.PHONY : test\preinstall
 
 # Recursive "clean" directory target.
-contrib\zlib\clean: contrib\zlib\CMakeFiles\zlib.dir\clean
-contrib\zlib\clean: contrib\zlib\CMakeFiles\zlibstatic.dir\clean
-contrib\zlib\clean: contrib\zlib\CMakeFiles\example.dir\clean
-contrib\zlib\clean: contrib\zlib\CMakeFiles\minigzip.dir\clean
-.PHONY : contrib\zlib\clean
-
-#=============================================================================
-# Directory level rules for directory src
-
-# Recursive "all" directory target.
-src\all: src\CMakeFiles\odbc_obj.dir\all
-src\all: src\CMakeFiles\taos_odbc_a.dir\all
-src\all: src\CMakeFiles\taos_odbc.dir\all
-src\all: src\core\all
-src\all: src\parser\all
-src\all: src\utils\all
-.PHONY : src\all
-
-# Recursive "preinstall" directory target.
-src\preinstall: src\core\preinstall
-src\preinstall: src\parser\preinstall
-src\preinstall: src\utils\preinstall
-.PHONY : src\preinstall
-
-# Recursive "clean" directory target.
-src\clean: src\CMakeFiles\odbc_obj.dir\clean
-src\clean: src\CMakeFiles\taos_odbc_a.dir\clean
-src\clean: src\CMakeFiles\taos_odbc.dir\clean
-src\clean: src\core\clean
-src\clean: src\parser\clean
-src\clean: src\utils\clean
-.PHONY : src\clean
-
-#=============================================================================
-# Directory level rules for directory src\core
-
-# Recursive "all" directory target.
-src\core\all: src\core\CMakeFiles\core_obj.dir\all
-.PHONY : src\core\all
-
-# Recursive "preinstall" directory target.
-src\core\preinstall:
-.PHONY : src\core\preinstall
-
-# Recursive "clean" directory target.
-src\core\clean: src\core\CMakeFiles\core_obj.dir\clean
-.PHONY : src\core\clean
-
-#=============================================================================
-# Directory level rules for directory src\parser
-
-# Recursive "all" directory target.
-src\parser\all: src\parser\CMakeFiles\parser_obj.dir\all
-.PHONY : src\parser\all
-
-# Recursive "preinstall" directory target.
-src\parser\preinstall:
-.PHONY : src\parser\preinstall
-
-# Recursive "clean" directory target.
-src\parser\clean: src\parser\CMakeFiles\parser_obj.dir\clean
-.PHONY : src\parser\clean
-
-#=============================================================================
-# Directory level rules for directory src\utils
-
-# Recursive "all" directory target.
-src\utils\all: src\utils\CMakeFiles\utils_obj.dir\all
-.PHONY : src\utils\all
-
-# Recursive "preinstall" directory target.
-src\utils\preinstall:
-.PHONY : src\utils\preinstall
-
-# Recursive "clean" directory target.
-src\utils\clean: src\utils\CMakeFiles\utils_obj.dir\clean
-.PHONY : src\utils\clean
-
-#=============================================================================
-# Directory level rules for directory templates
-
-# Recursive "all" directory target.
-templates\all:
-.PHONY : templates\all
-
-# Recursive "preinstall" directory target.
-templates\preinstall:
-.PHONY : templates\preinstall
-
-# Recursive "clean" directory target.
-templates\clean: templates\CMakeFiles\install_templates.dir\clean
-.PHONY : templates\clean
-
-#=============================================================================
-# Directory level rules for directory tests
-
-# Recursive "all" directory target.
-tests\all: tests\c\all
-tests\all: tests\cpp\all
-tests\all: tests\node\all
-tests\all: tests\rust\all
-tests\all: tests\taos\all
-.PHONY : tests\all
-
-# Recursive "preinstall" directory target.
-tests\preinstall: tests\c\preinstall
-tests\preinstall: tests\cpp\preinstall
-tests\preinstall: tests\node\preinstall
-tests\preinstall: tests\rust\preinstall
-tests\preinstall: tests\taos\preinstall
-.PHONY : tests\preinstall
-
-# Recursive "clean" directory target.
-tests\clean: tests\c\clean
-tests\clean: tests\cpp\clean
-tests\clean: tests\node\clean
-tests\clean: tests\rust\clean
-tests\clean: tests\taos\clean
-.PHONY : tests\clean
-
-#=============================================================================
-# Directory level rules for directory tests\c
-
-# Recursive "all" directory target.
-tests\c\all: tests\c\CMakeFiles\conformance_test.dir\all
-tests\c\all: tests\c\CMakeFiles\api_test.dir\all
-tests\c\all: tests\c\CMakeFiles\edge_cases_test.dir\all
-tests\c\all: tests\c\CMakeFiles\odbc_test.dir\all
-.PHONY : tests\c\all
-
-# Recursive "preinstall" directory target.
-tests\c\preinstall:
-.PHONY : tests\c\preinstall
-
-# Recursive "clean" directory target.
-tests\c\clean: tests\c\CMakeFiles\conformance_test.dir\clean
-tests\c\clean: tests\c\CMakeFiles\api_test.dir\clean
-tests\c\clean: tests\c\CMakeFiles\edge_cases_test.dir\clean
-tests\c\clean: tests\c\CMakeFiles\odbc_test.dir\clean
-.PHONY : tests\c\clean
-
-#=============================================================================
-# Directory level rules for directory tests\cpp
-
-# Recursive "all" directory target.
-tests\cpp\all: tests\cpp\CMakeFiles\SQLBindCol.dir\all
-.PHONY : tests\cpp\all
-
-# Recursive "preinstall" directory target.
-tests\cpp\preinstall:
-.PHONY : tests\cpp\preinstall
-
-# Recursive "clean" directory target.
-tests\cpp\clean: tests\cpp\CMakeFiles\SQLBindCol.dir\clean
-.PHONY : tests\cpp\clean
-
-#=============================================================================
-# Directory level rules for directory tests\node
-
-# Recursive "all" directory target.
-tests\node\all:
-.PHONY : tests\node\all
-
-# Recursive "preinstall" directory target.
-tests\node\preinstall:
-.PHONY : tests\node\preinstall
-
-# Recursive "clean" directory target.
-tests\node\clean:
-.PHONY : tests\node\clean
-
-#=============================================================================
-# Directory level rules for directory tests\rust
-
-# Recursive "all" directory target.
-tests\rust\all: tests\rust\main\all
-.PHONY : tests\rust\all
-
-# Recursive "preinstall" directory target.
-tests\rust\preinstall: tests\rust\main\preinstall
-.PHONY : tests\rust\preinstall
-
-# Recursive "clean" directory target.
-tests\rust\clean: tests\rust\main\clean
-.PHONY : tests\rust\clean
-
-#=============================================================================
-# Directory level rules for directory tests\rust\main
-
-# Recursive "all" directory target.
-tests\rust\main\all:
-.PHONY : tests\rust\main\all
-
-# Recursive "preinstall" directory target.
-tests\rust\main\preinstall:
-.PHONY : tests\rust\main\preinstall
-
-# Recursive "clean" directory target.
-tests\rust\main\clean:
-.PHONY : tests\rust\main\clean
-
-#=============================================================================
-# Directory level rules for directory tests\taos
-
-# Recursive "all" directory target.
-tests\taos\all: tests\taos\CMakeFiles\taos_test.dir\all
-.PHONY : tests\taos\all
-
-# Recursive "preinstall" directory target.
-tests\taos\preinstall:
-.PHONY : tests\taos\preinstall
-
-# Recursive "clean" directory target.
-tests\taos\clean: tests\taos\CMakeFiles\taos_test.dir\clean
-.PHONY : tests\taos\clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/ex_cjson.dir
-
-# All Build rule for target.
-CMakeFiles\ex_cjson.dir\all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex_cjson.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex_cjson.dir\depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex_cjson.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex_cjson.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=12,13,14,15 "Built target ex_cjson"
-.PHONY : CMakeFiles\ex_cjson.dir\all
-
-# Build rule for subdir invocation for target.
-CMakeFiles\ex_cjson.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\ex_cjson.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : CMakeFiles\ex_cjson.dir\rule
-
-# Convenience name for target.
-ex_cjson: CMakeFiles\ex_cjson.dir\rule
-.PHONY : ex_cjson
-
-# clean rule for target.
-CMakeFiles\ex_cjson.dir\clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex_cjson.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex_cjson.dir\clean
-.PHONY : CMakeFiles\ex_cjson.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/CMakeFiles/dumper.dir
-
-# All Build rule for target.
-contrib\CMakeFiles\dumper.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\dumper.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\dumper.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\dumper.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\dumper.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=10 "Built target dumper"
-.PHONY : contrib\CMakeFiles\dumper.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\CMakeFiles\dumper.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 1
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\CMakeFiles\dumper.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\CMakeFiles\dumper.dir\rule
-
-# Convenience name for target.
-dumper: contrib\CMakeFiles\dumper.dir\rule
-.PHONY : dumper
-
-# clean rule for target.
-contrib\CMakeFiles\dumper.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\dumper.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\dumper.dir\clean
-.PHONY : contrib\CMakeFiles\dumper.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/CMakeFiles/crashdump.dir
-
-# All Build rule for target.
-contrib\CMakeFiles\crashdump.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\crashdump.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\crashdump.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\crashdump.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\crashdump.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=9 "Built target crashdump"
-.PHONY : contrib\CMakeFiles\crashdump.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\CMakeFiles\crashdump.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 1
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\CMakeFiles\crashdump.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\CMakeFiles\crashdump.dir\rule
-
-# Convenience name for target.
-crashdump: contrib\CMakeFiles\crashdump.dir\rule
-.PHONY : crashdump
-
-# clean rule for target.
-contrib\CMakeFiles\crashdump.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\crashdump.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\crashdump.dir\clean
-.PHONY : contrib\CMakeFiles\crashdump.dir\clean
+test\clean: test\CMakeFiles\taos_test.dir\clean
+test\clean: test\CMakeFiles\odbc_test.dir\clean
+test\clean: test\CMakeFiles\dsn_test.dir\clean
+.PHONY : test\clean
 
 #=============================================================================
 # Target rules for target contrib/CMakeFiles/iconv.dir
@@ -592,12 +153,12 @@ contrib\CMakeFiles\crashdump.dir\clean:
 contrib\CMakeFiles\iconv.dir\all:
 	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\iconv.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\iconv.dir\depend
 	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\iconv.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\iconv.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=17 "Built target iconv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=3,4 "Built target iconv"
 .PHONY : contrib\CMakeFiles\iconv.dir\all
 
 # Build rule for subdir invocation for target.
 contrib\CMakeFiles\iconv.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\CMakeFiles\iconv.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
 .PHONY : contrib\CMakeFiles\iconv.dir\rule
@@ -612,304 +173,18 @@ contrib\CMakeFiles\iconv.dir\clean:
 .PHONY : contrib\CMakeFiles\iconv.dir\clean
 
 #=============================================================================
-# Target rules for target contrib/CMakeFiles/msvcregex.dir
-
-# All Build rule for target.
-contrib\CMakeFiles\msvcregex.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\msvcregex.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\msvcregex.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\msvcregex.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\msvcregex.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=30 "Built target msvcregex"
-.PHONY : contrib\CMakeFiles\msvcregex.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\CMakeFiles\msvcregex.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 1
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\CMakeFiles\msvcregex.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\CMakeFiles\msvcregex.dir\rule
-
-# Convenience name for target.
-msvcregex: contrib\CMakeFiles\msvcregex.dir\rule
-.PHONY : msvcregex
-
-# clean rule for target.
-contrib\CMakeFiles\msvcregex.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\msvcregex.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\msvcregex.dir\clean
-.PHONY : contrib\CMakeFiles\msvcregex.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/CMakeFiles/wcwidth.dir
-
-# All Build rule for target.
-contrib\CMakeFiles\wcwidth.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\wcwidth.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\wcwidth.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\wcwidth.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\wcwidth.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=81 "Built target wcwidth"
-.PHONY : contrib\CMakeFiles\wcwidth.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\CMakeFiles\wcwidth.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 1
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\CMakeFiles\wcwidth.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\CMakeFiles\wcwidth.dir\rule
-
-# Convenience name for target.
-wcwidth: contrib\CMakeFiles\wcwidth.dir\rule
-.PHONY : wcwidth
-
-# clean rule for target.
-contrib\CMakeFiles\wcwidth.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\wcwidth.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\wcwidth.dir\clean
-.PHONY : contrib\CMakeFiles\wcwidth.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/cJson/CMakeFiles/cjson.dir
-
-# All Build rule for target.
-contrib\cJson\CMakeFiles\cjson.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\cJson\CMakeFiles\cjson.dir\build.make /nologo -$(MAKEFLAGS) contrib\cJson\CMakeFiles\cjson.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\cJson\CMakeFiles\cjson.dir\build.make /nologo -$(MAKEFLAGS) contrib\cJson\CMakeFiles\cjson.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=3 "Built target cjson"
-.PHONY : contrib\cJson\CMakeFiles\cjson.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\cJson\CMakeFiles\cjson.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 1
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\cJson\CMakeFiles\cjson.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\cJson\CMakeFiles\cjson.dir\rule
-
-# Convenience name for target.
-cjson: contrib\cJson\CMakeFiles\cjson.dir\rule
-.PHONY : cjson
-
-# clean rule for target.
-contrib\cJson\CMakeFiles\cjson.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\cJson\CMakeFiles\cjson.dir\build.make /nologo -$(MAKEFLAGS) contrib\cJson\CMakeFiles\cjson.dir\clean
-.PHONY : contrib\cJson\CMakeFiles\cjson.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/cJson/CMakeFiles/uninstall.dir
-
-# All Build rule for target.
-contrib\cJson\CMakeFiles\uninstall.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\cJson\CMakeFiles\uninstall.dir\build.make /nologo -$(MAKEFLAGS) contrib\cJson\CMakeFiles\uninstall.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\cJson\CMakeFiles\uninstall.dir\build.make /nologo -$(MAKEFLAGS) contrib\cJson\CMakeFiles\uninstall.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target uninstall"
-.PHONY : contrib\cJson\CMakeFiles\uninstall.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\cJson\CMakeFiles\uninstall.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\cJson\CMakeFiles\uninstall.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\cJson\CMakeFiles\uninstall.dir\rule
-
-# Convenience name for target.
-uninstall: contrib\cJson\CMakeFiles\uninstall.dir\rule
-.PHONY : uninstall
-
-# clean rule for target.
-contrib\cJson\CMakeFiles\uninstall.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\cJson\CMakeFiles\uninstall.dir\build.make /nologo -$(MAKEFLAGS) contrib\cJson\CMakeFiles\uninstall.dir\clean
-.PHONY : contrib\cJson\CMakeFiles\uninstall.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/lz4/build/cmake/CMakeFiles/lz4_static.dir
-
-# All Build rule for target.
-contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\build.make /nologo -$(MAKEFLAGS) contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\build.make /nologo -$(MAKEFLAGS) contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=21,22,23 "Built target lz4_static"
-.PHONY : contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\rule
-
-# Convenience name for target.
-lz4_static: contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\rule
-.PHONY : lz4_static
-
-# clean rule for target.
-contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\build.make /nologo -$(MAKEFLAGS) contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\clean
-.PHONY : contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/lz4/build/cmake/CMakeFiles/lz4cli.dir
-
-# All Build rule for target.
-contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\all: contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\all
-	$(MAKE) $(MAKESILENT) -f contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\build.make /nologo -$(MAKEFLAGS) contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\build.make /nologo -$(MAKEFLAGS) contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=27,28 "Built target lz4cli"
-.PHONY : contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\rule
-
-# Convenience name for target.
-lz4cli: contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\rule
-.PHONY : lz4cli
-
-# clean rule for target.
-contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\build.make /nologo -$(MAKEFLAGS) contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\clean
-.PHONY : contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/lz4/build/cmake/CMakeFiles/lz4c.dir
-
-# All Build rule for target.
-contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\all: contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\all
-	$(MAKE) $(MAKESILENT) -f contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\build.make /nologo -$(MAKEFLAGS) contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\build.make /nologo -$(MAKEFLAGS) contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=24,25,26 "Built target lz4c"
-.PHONY : contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\rule
-
-# Convenience name for target.
-lz4c: contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\rule
-.PHONY : lz4c
-
-# clean rule for target.
-contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\build.make /nologo -$(MAKEFLAGS) contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\clean
-.PHONY : contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/zlib/CMakeFiles/zlib.dir
-
-# All Build rule for target.
-contrib\zlib\CMakeFiles\zlib.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\zlib.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\zlib.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\zlib.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\zlib.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=83,84,85,86,87,88,89,90,91 "Built target zlib"
-.PHONY : contrib\zlib\CMakeFiles\zlib.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\zlib\CMakeFiles\zlib.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\zlib.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\zlib\CMakeFiles\zlib.dir\rule
-
-# Convenience name for target.
-zlib: contrib\zlib\CMakeFiles\zlib.dir\rule
-.PHONY : zlib
-
-# clean rule for target.
-contrib\zlib\CMakeFiles\zlib.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\zlib.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\zlib.dir\clean
-.PHONY : contrib\zlib\CMakeFiles\zlib.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/zlib/CMakeFiles/zlibstatic.dir
-
-# All Build rule for target.
-contrib\zlib\CMakeFiles\zlibstatic.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\zlibstatic.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\zlibstatic.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\zlibstatic.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\zlibstatic.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=92,93,94,95,96,97,98,99,100 "Built target zlibstatic"
-.PHONY : contrib\zlib\CMakeFiles\zlibstatic.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\zlib\CMakeFiles\zlibstatic.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\zlibstatic.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\zlib\CMakeFiles\zlibstatic.dir\rule
-
-# Convenience name for target.
-zlibstatic: contrib\zlib\CMakeFiles\zlibstatic.dir\rule
-.PHONY : zlibstatic
-
-# clean rule for target.
-contrib\zlib\CMakeFiles\zlibstatic.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\zlibstatic.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\zlibstatic.dir\clean
-.PHONY : contrib\zlib\CMakeFiles\zlibstatic.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/zlib/CMakeFiles/example.dir
-
-# All Build rule for target.
-contrib\zlib\CMakeFiles\example.dir\all: contrib\zlib\CMakeFiles\zlib.dir\all
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\example.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\example.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\example.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\example.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=16 "Built target example"
-.PHONY : contrib\zlib\CMakeFiles\example.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\zlib\CMakeFiles\example.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\example.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\zlib\CMakeFiles\example.dir\rule
-
-# Convenience name for target.
-example: contrib\zlib\CMakeFiles\example.dir\rule
-.PHONY : example
-
-# clean rule for target.
-contrib\zlib\CMakeFiles\example.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\example.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\example.dir\clean
-.PHONY : contrib\zlib\CMakeFiles\example.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/zlib/CMakeFiles/minigzip.dir
-
-# All Build rule for target.
-contrib\zlib\CMakeFiles\minigzip.dir\all: contrib\zlib\CMakeFiles\zlib.dir\all
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\minigzip.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\minigzip.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\minigzip.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\minigzip.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=29 "Built target minigzip"
-.PHONY : contrib\zlib\CMakeFiles\minigzip.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\zlib\CMakeFiles\minigzip.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\minigzip.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\zlib\CMakeFiles\minigzip.dir\rule
-
-# Convenience name for target.
-minigzip: contrib\zlib\CMakeFiles\minigzip.dir\rule
-.PHONY : minigzip
-
-# clean rule for target.
-contrib\zlib\CMakeFiles\minigzip.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\minigzip.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\minigzip.dir\clean
-.PHONY : contrib\zlib\CMakeFiles\minigzip.dir\clean
-
-#=============================================================================
 # Target rules for target contrib/pthread/CMakeFiles/pthreadVCE3.dir
 
 # All Build rule for target.
 contrib\pthread\CMakeFiles\pthreadVCE3.dir\all:
 	$(MAKE) $(MAKESILENT) -f contrib\pthread\CMakeFiles\pthreadVCE3.dir\build.make /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\pthreadVCE3.dir\depend
 	$(MAKE) $(MAKESILENT) -f contrib\pthread\CMakeFiles\pthreadVCE3.dir\build.make /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\pthreadVCE3.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=37 "Built target pthreadVCE3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=16,17,18 "Built target pthreadVCE3"
 .PHONY : contrib\pthread\CMakeFiles\pthreadVCE3.dir\all
 
 # Build rule for subdir invocation for target.
 contrib\pthread\CMakeFiles\pthreadVCE3.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\pthreadVCE3.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
 .PHONY : contrib\pthread\CMakeFiles\pthreadVCE3.dir\rule
@@ -930,12 +205,12 @@ contrib\pthread\CMakeFiles\pthreadVCE3.dir\clean:
 contrib\pthread\CMakeFiles\pthreadVSE3.dir\all:
 	$(MAKE) $(MAKESILENT) -f contrib\pthread\CMakeFiles\pthreadVSE3.dir\build.make /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\pthreadVSE3.dir\depend
 	$(MAKE) $(MAKESILENT) -f contrib\pthread\CMakeFiles\pthreadVSE3.dir\build.make /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\pthreadVSE3.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=38,39 "Built target pthreadVSE3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=19,20,21 "Built target pthreadVSE3"
 .PHONY : contrib\pthread\CMakeFiles\pthreadVSE3.dir\all
 
 # Build rule for subdir invocation for target.
 contrib\pthread\CMakeFiles\pthreadVSE3.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\pthreadVSE3.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
 .PHONY : contrib\pthread\CMakeFiles\pthreadVSE3.dir\rule
@@ -956,12 +231,12 @@ contrib\pthread\CMakeFiles\pthreadVSE3.dir\clean:
 contrib\pthread\CMakeFiles\pthreadVC3.dir\all:
 	$(MAKE) $(MAKESILENT) -f contrib\pthread\CMakeFiles\pthreadVC3.dir\build.make /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\pthreadVC3.dir\depend
 	$(MAKE) $(MAKESILENT) -f contrib\pthread\CMakeFiles\pthreadVC3.dir\build.make /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\pthreadVC3.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=35,36 "Built target pthreadVC3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=13,14,15 "Built target pthreadVC3"
 .PHONY : contrib\pthread\CMakeFiles\pthreadVC3.dir\all
 
 # Build rule for subdir invocation for target.
 contrib\pthread\CMakeFiles\pthreadVC3.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\pthreadVC3.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
 .PHONY : contrib\pthread\CMakeFiles\pthreadVC3.dir\rule
@@ -982,12 +257,12 @@ contrib\pthread\CMakeFiles\pthreadVC3.dir\clean:
 contrib\pthread\CMakeFiles\libpthreadVCE3.dir\all:
 	$(MAKE) $(MAKESILENT) -f contrib\pthread\CMakeFiles\libpthreadVCE3.dir\build.make /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\libpthreadVCE3.dir\depend
 	$(MAKE) $(MAKESILENT) -f contrib\pthread\CMakeFiles\libpthreadVCE3.dir\build.make /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\libpthreadVCE3.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=19 "Built target libpthreadVCE3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=7,8 "Built target libpthreadVCE3"
 .PHONY : contrib\pthread\CMakeFiles\libpthreadVCE3.dir\all
 
 # Build rule for subdir invocation for target.
 contrib\pthread\CMakeFiles\libpthreadVCE3.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\libpthreadVCE3.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
 .PHONY : contrib\pthread\CMakeFiles\libpthreadVCE3.dir\rule
@@ -1008,12 +283,12 @@ contrib\pthread\CMakeFiles\libpthreadVCE3.dir\clean:
 contrib\pthread\CMakeFiles\libpthreadVSE3.dir\all:
 	$(MAKE) $(MAKESILENT) -f contrib\pthread\CMakeFiles\libpthreadVSE3.dir\build.make /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\libpthreadVSE3.dir\depend
 	$(MAKE) $(MAKESILENT) -f contrib\pthread\CMakeFiles\libpthreadVSE3.dir\build.make /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\libpthreadVSE3.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=20 "Built target libpthreadVSE3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=9,10 "Built target libpthreadVSE3"
 .PHONY : contrib\pthread\CMakeFiles\libpthreadVSE3.dir\all
 
 # Build rule for subdir invocation for target.
 contrib\pthread\CMakeFiles\libpthreadVSE3.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\libpthreadVSE3.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
 .PHONY : contrib\pthread\CMakeFiles\libpthreadVSE3.dir\rule
@@ -1034,12 +309,12 @@ contrib\pthread\CMakeFiles\libpthreadVSE3.dir\clean:
 contrib\pthread\CMakeFiles\libpthreadVC3.dir\all:
 	$(MAKE) $(MAKESILENT) -f contrib\pthread\CMakeFiles\libpthreadVC3.dir\build.make /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\libpthreadVC3.dir\depend
 	$(MAKE) $(MAKESILENT) -f contrib\pthread\CMakeFiles\libpthreadVC3.dir\build.make /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\libpthreadVC3.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=18 "Built target libpthreadVC3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=5,6 "Built target libpthreadVC3"
 .PHONY : contrib\pthread\CMakeFiles\libpthreadVC3.dir\all
 
 # Build rule for subdir invocation for target.
 contrib\pthread\CMakeFiles\libpthreadVC3.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\pthread\CMakeFiles\libpthreadVC3.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
 .PHONY : contrib\pthread\CMakeFiles\libpthreadVC3.dir\rule
@@ -1054,1189 +329,135 @@ contrib\pthread\CMakeFiles\libpthreadVC3.dir\clean:
 .PHONY : contrib\pthread\CMakeFiles\libpthreadVC3.dir\clean
 
 #=============================================================================
-# Target rules for target contrib/wingetopt/CMakeFiles/wingetopt.dir
+# Target rules for target taos_odbc_driver/CMakeFiles/taos_odbc_driver.dir
 
 # All Build rule for target.
-contrib\wingetopt\CMakeFiles\wingetopt.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\wingetopt\CMakeFiles\wingetopt.dir\build.make /nologo -$(MAKEFLAGS) contrib\wingetopt\CMakeFiles\wingetopt.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\wingetopt\CMakeFiles\wingetopt.dir\build.make /nologo -$(MAKEFLAGS) contrib\wingetopt\CMakeFiles\wingetopt.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=82 "Built target wingetopt"
-.PHONY : contrib\wingetopt\CMakeFiles\wingetopt.dir\all
+taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\all: contrib\CMakeFiles\iconv.dir\all
+taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\all: contrib\pthread\CMakeFiles\libpthreadVC3.dir\all
+	$(MAKE) $(MAKESILENT) -f taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\build.make /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\depend
+	$(MAKE) $(MAKESILENT) -f taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\build.make /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=22,23,24,25,26,27,28,29,30,31 "Built target taos_odbc_driver"
+.PHONY : taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\all
 
 # Build rule for subdir invocation for target.
-contrib\wingetopt\CMakeFiles\wingetopt.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 1
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\wingetopt\CMakeFiles\wingetopt.dir\all
+taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 14
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\wingetopt\CMakeFiles\wingetopt.dir\rule
+.PHONY : taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\rule
 
 # Convenience name for target.
-wingetopt: contrib\wingetopt\CMakeFiles\wingetopt.dir\rule
-.PHONY : wingetopt
+taos_odbc_driver: taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\rule
+.PHONY : taos_odbc_driver
 
 # clean rule for target.
-contrib\wingetopt\CMakeFiles\wingetopt.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\wingetopt\CMakeFiles\wingetopt.dir\build.make /nologo -$(MAKEFLAGS) contrib\wingetopt\CMakeFiles\wingetopt.dir\clean
-.PHONY : contrib\wingetopt\CMakeFiles\wingetopt.dir\clean
+taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\clean:
+	$(MAKE) $(MAKESILENT) -f taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\build.make /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\clean
+.PHONY : taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\clean
 
 #=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/Experimental.dir
+# Target rules for target taos_odbc_driver/CMakeFiles/taos_odbc_setup.dir
 
 # All Build rule for target.
-contrib\libuv\CMakeFiles\Experimental.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\Experimental.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\Experimental.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\Experimental.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\Experimental.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target Experimental"
-.PHONY : contrib\libuv\CMakeFiles\Experimental.dir\all
+taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\all:
+	$(MAKE) $(MAKESILENT) -f taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\build.make /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\depend
+	$(MAKE) $(MAKESILENT) -f taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\build.make /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=32,33,34,35 "Built target taos_odbc_setup"
+.PHONY : taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\all
 
 # Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\Experimental.dir\rule: cmake_check_build_system
+taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\Experimental.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\Experimental.dir\rule
+.PHONY : taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\rule
 
 # Convenience name for target.
-Experimental: contrib\libuv\CMakeFiles\Experimental.dir\rule
-.PHONY : Experimental
+taos_odbc_setup: taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\rule
+.PHONY : taos_odbc_setup
 
 # clean rule for target.
-contrib\libuv\CMakeFiles\Experimental.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\Experimental.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\Experimental.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\Experimental.dir\clean
+taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\clean:
+	$(MAKE) $(MAKESILENT) -f taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\build.make /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\clean
+.PHONY : taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\clean
 
 #=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/Nightly.dir
+# Target rules for target test/CMakeFiles/taos_test.dir
 
 # All Build rule for target.
-contrib\libuv\CMakeFiles\Nightly.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\Nightly.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\Nightly.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\Nightly.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\Nightly.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target Nightly"
-.PHONY : contrib\libuv\CMakeFiles\Nightly.dir\all
+test\CMakeFiles\taos_test.dir\all:
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\taos_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\taos_test.dir\depend
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\taos_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\taos_test.dir\build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=36,37 "Built target taos_test"
+.PHONY : test\CMakeFiles\taos_test.dir\all
 
 # Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\Nightly.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\Nightly.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\Nightly.dir\rule
-
-# Convenience name for target.
-Nightly: contrib\libuv\CMakeFiles\Nightly.dir\rule
-.PHONY : Nightly
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\Nightly.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\Nightly.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\Nightly.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\Nightly.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/Continuous.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\Continuous.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\Continuous.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\Continuous.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\Continuous.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\Continuous.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target Continuous"
-.PHONY : contrib\libuv\CMakeFiles\Continuous.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\Continuous.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\Continuous.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\Continuous.dir\rule
-
-# Convenience name for target.
-Continuous: contrib\libuv\CMakeFiles\Continuous.dir\rule
-.PHONY : Continuous
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\Continuous.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\Continuous.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\Continuous.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\Continuous.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/NightlyMemoryCheck.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target NightlyMemoryCheck"
-.PHONY : contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\rule
-
-# Convenience name for target.
-NightlyMemoryCheck: contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\rule
-.PHONY : NightlyMemoryCheck
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/NightlyStart.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\NightlyStart.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyStart.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyStart.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyStart.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyStart.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target NightlyStart"
-.PHONY : contrib\libuv\CMakeFiles\NightlyStart.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\NightlyStart.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyStart.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\NightlyStart.dir\rule
-
-# Convenience name for target.
-NightlyStart: contrib\libuv\CMakeFiles\NightlyStart.dir\rule
-.PHONY : NightlyStart
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\NightlyStart.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyStart.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyStart.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\NightlyStart.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/NightlyUpdate.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\NightlyUpdate.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyUpdate.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyUpdate.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyUpdate.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyUpdate.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target NightlyUpdate"
-.PHONY : contrib\libuv\CMakeFiles\NightlyUpdate.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\NightlyUpdate.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyUpdate.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\NightlyUpdate.dir\rule
-
-# Convenience name for target.
-NightlyUpdate: contrib\libuv\CMakeFiles\NightlyUpdate.dir\rule
-.PHONY : NightlyUpdate
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\NightlyUpdate.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyUpdate.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyUpdate.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\NightlyUpdate.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/NightlyConfigure.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\NightlyConfigure.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyConfigure.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyConfigure.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyConfigure.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyConfigure.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target NightlyConfigure"
-.PHONY : contrib\libuv\CMakeFiles\NightlyConfigure.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\NightlyConfigure.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyConfigure.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\NightlyConfigure.dir\rule
-
-# Convenience name for target.
-NightlyConfigure: contrib\libuv\CMakeFiles\NightlyConfigure.dir\rule
-.PHONY : NightlyConfigure
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\NightlyConfigure.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyConfigure.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyConfigure.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\NightlyConfigure.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/NightlyBuild.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\NightlyBuild.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyBuild.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyBuild.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyBuild.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyBuild.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target NightlyBuild"
-.PHONY : contrib\libuv\CMakeFiles\NightlyBuild.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\NightlyBuild.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyBuild.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\NightlyBuild.dir\rule
-
-# Convenience name for target.
-NightlyBuild: contrib\libuv\CMakeFiles\NightlyBuild.dir\rule
-.PHONY : NightlyBuild
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\NightlyBuild.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyBuild.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyBuild.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\NightlyBuild.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/NightlyTest.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\NightlyTest.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyTest.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyTest.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyTest.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyTest.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target NightlyTest"
-.PHONY : contrib\libuv\CMakeFiles\NightlyTest.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\NightlyTest.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyTest.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\NightlyTest.dir\rule
-
-# Convenience name for target.
-NightlyTest: contrib\libuv\CMakeFiles\NightlyTest.dir\rule
-.PHONY : NightlyTest
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\NightlyTest.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyTest.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyTest.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\NightlyTest.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/NightlyCoverage.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\NightlyCoverage.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyCoverage.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyCoverage.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyCoverage.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyCoverage.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target NightlyCoverage"
-.PHONY : contrib\libuv\CMakeFiles\NightlyCoverage.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\NightlyCoverage.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyCoverage.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\NightlyCoverage.dir\rule
-
-# Convenience name for target.
-NightlyCoverage: contrib\libuv\CMakeFiles\NightlyCoverage.dir\rule
-.PHONY : NightlyCoverage
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\NightlyCoverage.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyCoverage.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyCoverage.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\NightlyCoverage.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/NightlyMemCheck.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\NightlyMemCheck.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyMemCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyMemCheck.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyMemCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyMemCheck.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target NightlyMemCheck"
-.PHONY : contrib\libuv\CMakeFiles\NightlyMemCheck.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\NightlyMemCheck.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyMemCheck.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\NightlyMemCheck.dir\rule
-
-# Convenience name for target.
-NightlyMemCheck: contrib\libuv\CMakeFiles\NightlyMemCheck.dir\rule
-.PHONY : NightlyMemCheck
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\NightlyMemCheck.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyMemCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyMemCheck.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\NightlyMemCheck.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/NightlySubmit.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\NightlySubmit.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlySubmit.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlySubmit.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlySubmit.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlySubmit.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target NightlySubmit"
-.PHONY : contrib\libuv\CMakeFiles\NightlySubmit.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\NightlySubmit.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlySubmit.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\NightlySubmit.dir\rule
-
-# Convenience name for target.
-NightlySubmit: contrib\libuv\CMakeFiles\NightlySubmit.dir\rule
-.PHONY : NightlySubmit
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\NightlySubmit.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlySubmit.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlySubmit.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\NightlySubmit.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ExperimentalStart.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ExperimentalStart.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalStart.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalStart.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalStart.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalStart.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ExperimentalStart"
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalStart.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ExperimentalStart.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalStart.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalStart.dir\rule
-
-# Convenience name for target.
-ExperimentalStart: contrib\libuv\CMakeFiles\ExperimentalStart.dir\rule
-.PHONY : ExperimentalStart
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ExperimentalStart.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalStart.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalStart.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalStart.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ExperimentalUpdate.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ExperimentalUpdate"
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\rule
-
-# Convenience name for target.
-ExperimentalUpdate: contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\rule
-.PHONY : ExperimentalUpdate
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ExperimentalConfigure.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ExperimentalConfigure"
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\rule
-
-# Convenience name for target.
-ExperimentalConfigure: contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\rule
-.PHONY : ExperimentalConfigure
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ExperimentalBuild.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ExperimentalBuild.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalBuild.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalBuild.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalBuild.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalBuild.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ExperimentalBuild"
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalBuild.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ExperimentalBuild.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalBuild.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalBuild.dir\rule
-
-# Convenience name for target.
-ExperimentalBuild: contrib\libuv\CMakeFiles\ExperimentalBuild.dir\rule
-.PHONY : ExperimentalBuild
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ExperimentalBuild.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalBuild.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalBuild.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalBuild.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ExperimentalTest.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ExperimentalTest.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalTest.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalTest.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalTest.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalTest.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ExperimentalTest"
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalTest.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ExperimentalTest.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalTest.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalTest.dir\rule
-
-# Convenience name for target.
-ExperimentalTest: contrib\libuv\CMakeFiles\ExperimentalTest.dir\rule
-.PHONY : ExperimentalTest
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ExperimentalTest.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalTest.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalTest.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalTest.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ExperimentalCoverage.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ExperimentalCoverage"
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\rule
-
-# Convenience name for target.
-ExperimentalCoverage: contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\rule
-.PHONY : ExperimentalCoverage
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ExperimentalMemCheck.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ExperimentalMemCheck"
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\rule
-
-# Convenience name for target.
-ExperimentalMemCheck: contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\rule
-.PHONY : ExperimentalMemCheck
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ExperimentalSubmit.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ExperimentalSubmit"
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\rule
-
-# Convenience name for target.
-ExperimentalSubmit: contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\rule
-.PHONY : ExperimentalSubmit
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ContinuousStart.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ContinuousStart.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousStart.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousStart.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousStart.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousStart.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ContinuousStart"
-.PHONY : contrib\libuv\CMakeFiles\ContinuousStart.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ContinuousStart.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousStart.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ContinuousStart.dir\rule
-
-# Convenience name for target.
-ContinuousStart: contrib\libuv\CMakeFiles\ContinuousStart.dir\rule
-.PHONY : ContinuousStart
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ContinuousStart.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousStart.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousStart.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ContinuousStart.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ContinuousUpdate.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ContinuousUpdate.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousUpdate.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousUpdate.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousUpdate.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousUpdate.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ContinuousUpdate"
-.PHONY : contrib\libuv\CMakeFiles\ContinuousUpdate.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ContinuousUpdate.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousUpdate.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ContinuousUpdate.dir\rule
-
-# Convenience name for target.
-ContinuousUpdate: contrib\libuv\CMakeFiles\ContinuousUpdate.dir\rule
-.PHONY : ContinuousUpdate
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ContinuousUpdate.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousUpdate.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousUpdate.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ContinuousUpdate.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ContinuousConfigure.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ContinuousConfigure.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousConfigure.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousConfigure.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousConfigure.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousConfigure.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ContinuousConfigure"
-.PHONY : contrib\libuv\CMakeFiles\ContinuousConfigure.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ContinuousConfigure.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousConfigure.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ContinuousConfigure.dir\rule
-
-# Convenience name for target.
-ContinuousConfigure: contrib\libuv\CMakeFiles\ContinuousConfigure.dir\rule
-.PHONY : ContinuousConfigure
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ContinuousConfigure.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousConfigure.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousConfigure.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ContinuousConfigure.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ContinuousBuild.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ContinuousBuild.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousBuild.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousBuild.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousBuild.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousBuild.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ContinuousBuild"
-.PHONY : contrib\libuv\CMakeFiles\ContinuousBuild.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ContinuousBuild.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousBuild.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ContinuousBuild.dir\rule
-
-# Convenience name for target.
-ContinuousBuild: contrib\libuv\CMakeFiles\ContinuousBuild.dir\rule
-.PHONY : ContinuousBuild
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ContinuousBuild.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousBuild.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousBuild.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ContinuousBuild.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ContinuousTest.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ContinuousTest.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousTest.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousTest.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousTest.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousTest.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ContinuousTest"
-.PHONY : contrib\libuv\CMakeFiles\ContinuousTest.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ContinuousTest.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousTest.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ContinuousTest.dir\rule
-
-# Convenience name for target.
-ContinuousTest: contrib\libuv\CMakeFiles\ContinuousTest.dir\rule
-.PHONY : ContinuousTest
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ContinuousTest.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousTest.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousTest.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ContinuousTest.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ContinuousCoverage.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ContinuousCoverage.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousCoverage.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousCoverage.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousCoverage.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousCoverage.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ContinuousCoverage"
-.PHONY : contrib\libuv\CMakeFiles\ContinuousCoverage.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ContinuousCoverage.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousCoverage.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ContinuousCoverage.dir\rule
-
-# Convenience name for target.
-ContinuousCoverage: contrib\libuv\CMakeFiles\ContinuousCoverage.dir\rule
-.PHONY : ContinuousCoverage
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ContinuousCoverage.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousCoverage.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousCoverage.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ContinuousCoverage.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ContinuousMemCheck.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ContinuousMemCheck"
-.PHONY : contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\rule
-
-# Convenience name for target.
-ContinuousMemCheck: contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\rule
-.PHONY : ContinuousMemCheck
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/ContinuousSubmit.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\ContinuousSubmit.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousSubmit.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousSubmit.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousSubmit.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousSubmit.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target ContinuousSubmit"
-.PHONY : contrib\libuv\CMakeFiles\ContinuousSubmit.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\ContinuousSubmit.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousSubmit.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\ContinuousSubmit.dir\rule
-
-# Convenience name for target.
-ContinuousSubmit: contrib\libuv\CMakeFiles\ContinuousSubmit.dir\rule
-.PHONY : ContinuousSubmit
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\ContinuousSubmit.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousSubmit.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousSubmit.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\ContinuousSubmit.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/uv.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\uv.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\uv.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\uv.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\uv.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\uv.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61 "Built target uv"
-.PHONY : contrib\libuv\CMakeFiles\uv.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\uv.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 20
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\uv.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\uv.dir\rule
-
-# Convenience name for target.
-uv: contrib\libuv\CMakeFiles\uv.dir\rule
-.PHONY : uv
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\uv.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\uv.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\uv.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\uv.dir\clean
-
-#=============================================================================
-# Target rules for target contrib/libuv/CMakeFiles/uv_a.dir
-
-# All Build rule for target.
-contrib\libuv\CMakeFiles\uv_a.dir\all:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\uv_a.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\uv_a.dir\depend
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\uv_a.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\uv_a.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80 "Built target uv_a"
-.PHONY : contrib\libuv\CMakeFiles\uv_a.dir\all
-
-# Build rule for subdir invocation for target.
-contrib\libuv\CMakeFiles\uv_a.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 19
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\uv_a.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : contrib\libuv\CMakeFiles\uv_a.dir\rule
-
-# Convenience name for target.
-uv_a: contrib\libuv\CMakeFiles\uv_a.dir\rule
-.PHONY : uv_a
-
-# clean rule for target.
-contrib\libuv\CMakeFiles\uv_a.dir\clean:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\uv_a.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\uv_a.dir\clean
-.PHONY : contrib\libuv\CMakeFiles\uv_a.dir\clean
-
-#=============================================================================
-# Target rules for target common/CMakeFiles/common_obj.dir
-
-# All Build rule for target.
-common\CMakeFiles\common_obj.dir\all:
-	$(MAKE) $(MAKESILENT) -f common\CMakeFiles\common_obj.dir\build.make /nologo -$(MAKEFLAGS) common\CMakeFiles\common_obj.dir\depend
-	$(MAKE) $(MAKESILENT) -f common\CMakeFiles\common_obj.dir\build.make /nologo -$(MAKEFLAGS) common\CMakeFiles\common_obj.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=4 "Built target common_obj"
-.PHONY : common\CMakeFiles\common_obj.dir\all
-
-# Build rule for subdir invocation for target.
-common\CMakeFiles\common_obj.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 1
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) common\CMakeFiles\common_obj.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : common\CMakeFiles\common_obj.dir\rule
-
-# Convenience name for target.
-common_obj: common\CMakeFiles\common_obj.dir\rule
-.PHONY : common_obj
-
-# clean rule for target.
-common\CMakeFiles\common_obj.dir\clean:
-	$(MAKE) $(MAKESILENT) -f common\CMakeFiles\common_obj.dir\build.make /nologo -$(MAKEFLAGS) common\CMakeFiles\common_obj.dir\clean
-.PHONY : common\CMakeFiles\common_obj.dir\clean
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/odbc_obj.dir
-
-# All Build rule for target.
-src\CMakeFiles\odbc_obj.dir\all:
-	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\odbc_obj.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\odbc_obj.dir\depend
-	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\odbc_obj.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\odbc_obj.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=31 "Built target odbc_obj"
-.PHONY : src\CMakeFiles\odbc_obj.dir\all
-
-# Build rule for subdir invocation for target.
-src\CMakeFiles\odbc_obj.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 1
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) src\CMakeFiles\odbc_obj.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : src\CMakeFiles\odbc_obj.dir\rule
-
-# Convenience name for target.
-odbc_obj: src\CMakeFiles\odbc_obj.dir\rule
-.PHONY : odbc_obj
-
-# clean rule for target.
-src\CMakeFiles\odbc_obj.dir\clean:
-	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\odbc_obj.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\odbc_obj.dir\clean
-.PHONY : src\CMakeFiles\odbc_obj.dir\clean
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/taos_odbc_a.dir
-
-# All Build rule for target.
-src\CMakeFiles\taos_odbc_a.dir\all: contrib\pthread\CMakeFiles\libpthreadVC3.dir\all
-src\CMakeFiles\taos_odbc_a.dir\all: src\CMakeFiles\odbc_obj.dir\all
-src\CMakeFiles\taos_odbc_a.dir\all: common\CMakeFiles\common_obj.dir\all
-src\CMakeFiles\taos_odbc_a.dir\all: src\parser\CMakeFiles\parser_obj.dir\all
-src\CMakeFiles\taos_odbc_a.dir\all: src\core\CMakeFiles\core_obj.dir\all
-src\CMakeFiles\taos_odbc_a.dir\all: src\utils\CMakeFiles\utils_obj.dir\all
-	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\taos_odbc_a.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\taos_odbc_a.dir\depend
-	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\taos_odbc_a.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\taos_odbc_a.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=40 "Built target taos_odbc_a"
-.PHONY : src\CMakeFiles\taos_odbc_a.dir\all
-
-# Build rule for subdir invocation for target.
-src\CMakeFiles\taos_odbc_a.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) src\CMakeFiles\taos_odbc_a.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : src\CMakeFiles\taos_odbc_a.dir\rule
-
-# Convenience name for target.
-taos_odbc_a: src\CMakeFiles\taos_odbc_a.dir\rule
-.PHONY : taos_odbc_a
-
-# clean rule for target.
-src\CMakeFiles\taos_odbc_a.dir\clean:
-	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\taos_odbc_a.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\taos_odbc_a.dir\clean
-.PHONY : src\CMakeFiles\taos_odbc_a.dir\clean
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/taos_odbc.dir
-
-# All Build rule for target.
-src\CMakeFiles\taos_odbc.dir\all: contrib\pthread\CMakeFiles\libpthreadVC3.dir\all
-src\CMakeFiles\taos_odbc.dir\all: src\CMakeFiles\odbc_obj.dir\all
-src\CMakeFiles\taos_odbc.dir\all: common\CMakeFiles\common_obj.dir\all
-src\CMakeFiles\taos_odbc.dir\all: src\parser\CMakeFiles\parser_obj.dir\all
-src\CMakeFiles\taos_odbc.dir\all: src\core\CMakeFiles\core_obj.dir\all
-src\CMakeFiles\taos_odbc.dir\all: src\utils\CMakeFiles\utils_obj.dir\all
-	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\taos_odbc.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\taos_odbc.dir\depend
-	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\taos_odbc.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\taos_odbc.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target taos_odbc"
-.PHONY : src\CMakeFiles\taos_odbc.dir\all
-
-# Build rule for subdir invocation for target.
-src\CMakeFiles\taos_odbc.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 8
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) src\CMakeFiles\taos_odbc.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : src\CMakeFiles\taos_odbc.dir\rule
-
-# Convenience name for target.
-taos_odbc: src\CMakeFiles\taos_odbc.dir\rule
-.PHONY : taos_odbc
-
-# clean rule for target.
-src\CMakeFiles\taos_odbc.dir\clean:
-	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\taos_odbc.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\taos_odbc.dir\clean
-.PHONY : src\CMakeFiles\taos_odbc.dir\clean
-
-#=============================================================================
-# Target rules for target src/core/CMakeFiles/core_obj.dir
-
-# All Build rule for target.
-src\core\CMakeFiles\core_obj.dir\all:
-	$(MAKE) $(MAKESILENT) -f src\core\CMakeFiles\core_obj.dir\build.make /nologo -$(MAKEFLAGS) src\core\CMakeFiles\core_obj.dir\depend
-	$(MAKE) $(MAKESILENT) -f src\core\CMakeFiles\core_obj.dir\build.make /nologo -$(MAKEFLAGS) src\core\CMakeFiles\core_obj.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=6,7,8 "Built target core_obj"
-.PHONY : src\core\CMakeFiles\core_obj.dir\all
-
-# Build rule for subdir invocation for target.
-src\core\CMakeFiles\core_obj.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) src\core\CMakeFiles\core_obj.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : src\core\CMakeFiles\core_obj.dir\rule
-
-# Convenience name for target.
-core_obj: src\core\CMakeFiles\core_obj.dir\rule
-.PHONY : core_obj
-
-# clean rule for target.
-src\core\CMakeFiles\core_obj.dir\clean:
-	$(MAKE) $(MAKESILENT) -f src\core\CMakeFiles\core_obj.dir\build.make /nologo -$(MAKEFLAGS) src\core\CMakeFiles\core_obj.dir\clean
-.PHONY : src\core\CMakeFiles\core_obj.dir\clean
-
-#=============================================================================
-# Target rules for target src/parser/CMakeFiles/parser_obj.dir
-
-# All Build rule for target.
-src\parser\CMakeFiles\parser_obj.dir\all:
-	$(MAKE) $(MAKESILENT) -f src\parser\CMakeFiles\parser_obj.dir\build.make /nologo -$(MAKEFLAGS) src\parser\CMakeFiles\parser_obj.dir\depend
-	$(MAKE) $(MAKESILENT) -f src\parser\CMakeFiles\parser_obj.dir\build.make /nologo -$(MAKEFLAGS) src\parser\CMakeFiles\parser_obj.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=33,34 "Built target parser_obj"
-.PHONY : src\parser\CMakeFiles\parser_obj.dir\all
-
-# Build rule for subdir invocation for target.
-src\parser\CMakeFiles\parser_obj.dir\rule: cmake_check_build_system
+test\CMakeFiles\taos_test.dir\rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) src\parser\CMakeFiles\parser_obj.dir\all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) test\CMakeFiles\taos_test.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : src\parser\CMakeFiles\parser_obj.dir\rule
+.PHONY : test\CMakeFiles\taos_test.dir\rule
 
 # Convenience name for target.
-parser_obj: src\parser\CMakeFiles\parser_obj.dir\rule
-.PHONY : parser_obj
-
-# clean rule for target.
-src\parser\CMakeFiles\parser_obj.dir\clean:
-	$(MAKE) $(MAKESILENT) -f src\parser\CMakeFiles\parser_obj.dir\build.make /nologo -$(MAKEFLAGS) src\parser\CMakeFiles\parser_obj.dir\clean
-.PHONY : src\parser\CMakeFiles\parser_obj.dir\clean
-
-#=============================================================================
-# Target rules for target src/utils/CMakeFiles/utils_obj.dir
-
-# All Build rule for target.
-src\utils\CMakeFiles\utils_obj.dir\all:
-	$(MAKE) $(MAKESILENT) -f src\utils\CMakeFiles\utils_obj.dir\build.make /nologo -$(MAKEFLAGS) src\utils\CMakeFiles\utils_obj.dir\depend
-	$(MAKE) $(MAKESILENT) -f src\utils\CMakeFiles\utils_obj.dir\build.make /nologo -$(MAKEFLAGS) src\utils\CMakeFiles\utils_obj.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target utils_obj"
-.PHONY : src\utils\CMakeFiles\utils_obj.dir\all
-
-# Build rule for subdir invocation for target.
-src\utils\CMakeFiles\utils_obj.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) src\utils\CMakeFiles\utils_obj.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : src\utils\CMakeFiles\utils_obj.dir\rule
-
-# Convenience name for target.
-utils_obj: src\utils\CMakeFiles\utils_obj.dir\rule
-.PHONY : utils_obj
-
-# clean rule for target.
-src\utils\CMakeFiles\utils_obj.dir\clean:
-	$(MAKE) $(MAKESILENT) -f src\utils\CMakeFiles\utils_obj.dir\build.make /nologo -$(MAKEFLAGS) src\utils\CMakeFiles\utils_obj.dir\clean
-.PHONY : src\utils\CMakeFiles\utils_obj.dir\clean
-
-#=============================================================================
-# Target rules for target templates/CMakeFiles/install_templates.dir
-
-# All Build rule for target.
-templates\CMakeFiles\install_templates.dir\all:
-	$(MAKE) $(MAKESILENT) -f templates\CMakeFiles\install_templates.dir\build.make /nologo -$(MAKEFLAGS) templates\CMakeFiles\install_templates.dir\depend
-	$(MAKE) $(MAKESILENT) -f templates\CMakeFiles\install_templates.dir\build.make /nologo -$(MAKEFLAGS) templates\CMakeFiles\install_templates.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num= "Built target install_templates"
-.PHONY : templates\CMakeFiles\install_templates.dir\all
-
-# Build rule for subdir invocation for target.
-templates\CMakeFiles\install_templates.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) templates\CMakeFiles\install_templates.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : templates\CMakeFiles\install_templates.dir\rule
-
-# Convenience name for target.
-install_templates: templates\CMakeFiles\install_templates.dir\rule
-.PHONY : install_templates
-
-# clean rule for target.
-templates\CMakeFiles\install_templates.dir\clean:
-	$(MAKE) $(MAKESILENT) -f templates\CMakeFiles\install_templates.dir\build.make /nologo -$(MAKEFLAGS) templates\CMakeFiles\install_templates.dir\clean
-.PHONY : templates\CMakeFiles\install_templates.dir\clean
-
-#=============================================================================
-# Target rules for target tests/c/CMakeFiles/conformance_test.dir
-
-# All Build rule for target.
-tests\c\CMakeFiles\conformance_test.dir\all: CMakeFiles\ex_cjson.dir\all
-tests\c\CMakeFiles\conformance_test.dir\all: contrib\cJson\CMakeFiles\cjson.dir\all
-tests\c\CMakeFiles\conformance_test.dir\all: common\CMakeFiles\common_obj.dir\all
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\conformance_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\conformance_test.dir\depend
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\conformance_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\conformance_test.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=5 "Built target conformance_test"
-.PHONY : tests\c\CMakeFiles\conformance_test.dir\all
-
-# Build rule for subdir invocation for target.
-tests\c\CMakeFiles\conformance_test.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 7
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\conformance_test.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : tests\c\CMakeFiles\conformance_test.dir\rule
-
-# Convenience name for target.
-conformance_test: tests\c\CMakeFiles\conformance_test.dir\rule
-.PHONY : conformance_test
-
-# clean rule for target.
-tests\c\CMakeFiles\conformance_test.dir\clean:
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\conformance_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\conformance_test.dir\clean
-.PHONY : tests\c\CMakeFiles\conformance_test.dir\clean
-
-#=============================================================================
-# Target rules for target tests/c/CMakeFiles/api_test.dir
-
-# All Build rule for target.
-tests\c\CMakeFiles\api_test.dir\all: common\CMakeFiles\common_obj.dir\all
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\api_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\api_test.dir\depend
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\api_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\api_test.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=2 "Built target api_test"
-.PHONY : tests\c\CMakeFiles\api_test.dir\all
-
-# Build rule for subdir invocation for target.
-tests\c\CMakeFiles\api_test.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\api_test.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : tests\c\CMakeFiles\api_test.dir\rule
-
-# Convenience name for target.
-api_test: tests\c\CMakeFiles\api_test.dir\rule
-.PHONY : api_test
-
-# clean rule for target.
-tests\c\CMakeFiles\api_test.dir\clean:
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\api_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\api_test.dir\clean
-.PHONY : tests\c\CMakeFiles\api_test.dir\clean
-
-#=============================================================================
-# Target rules for target tests/c/CMakeFiles/edge_cases_test.dir
-
-# All Build rule for target.
-tests\c\CMakeFiles\edge_cases_test.dir\all: common\CMakeFiles\common_obj.dir\all
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\edge_cases_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\edge_cases_test.dir\depend
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\edge_cases_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\edge_cases_test.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=11 "Built target edge_cases_test"
-.PHONY : tests\c\CMakeFiles\edge_cases_test.dir\all
-
-# Build rule for subdir invocation for target.
-tests\c\CMakeFiles\edge_cases_test.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\edge_cases_test.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : tests\c\CMakeFiles\edge_cases_test.dir\rule
-
-# Convenience name for target.
-edge_cases_test: tests\c\CMakeFiles\edge_cases_test.dir\rule
-.PHONY : edge_cases_test
-
-# clean rule for target.
-tests\c\CMakeFiles\edge_cases_test.dir\clean:
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\edge_cases_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\edge_cases_test.dir\clean
-.PHONY : tests\c\CMakeFiles\edge_cases_test.dir\clean
-
-#=============================================================================
-# Target rules for target tests/c/CMakeFiles/odbc_test.dir
-
-# All Build rule for target.
-tests\c\CMakeFiles\odbc_test.dir\all: CMakeFiles\ex_cjson.dir\all
-tests\c\CMakeFiles\odbc_test.dir\all: contrib\cJson\CMakeFiles\cjson.dir\all
-tests\c\CMakeFiles\odbc_test.dir\all: common\CMakeFiles\common_obj.dir\all
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\odbc_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\odbc_test.dir\depend
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\odbc_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\odbc_test.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=32 "Built target odbc_test"
-.PHONY : tests\c\CMakeFiles\odbc_test.dir\all
-
-# Build rule for subdir invocation for target.
-tests\c\CMakeFiles\odbc_test.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 7
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\odbc_test.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : tests\c\CMakeFiles\odbc_test.dir\rule
-
-# Convenience name for target.
-odbc_test: tests\c\CMakeFiles\odbc_test.dir\rule
-.PHONY : odbc_test
-
-# clean rule for target.
-tests\c\CMakeFiles\odbc_test.dir\clean:
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\odbc_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\odbc_test.dir\clean
-.PHONY : tests\c\CMakeFiles\odbc_test.dir\clean
-
-#=============================================================================
-# Target rules for target tests/cpp/CMakeFiles/SQLBindCol.dir
-
-# All Build rule for target.
-tests\cpp\CMakeFiles\SQLBindCol.dir\all: common\CMakeFiles\common_obj.dir\all
-	$(MAKE) $(MAKESILENT) -f tests\cpp\CMakeFiles\SQLBindCol.dir\build.make /nologo -$(MAKEFLAGS) tests\cpp\CMakeFiles\SQLBindCol.dir\depend
-	$(MAKE) $(MAKESILENT) -f tests\cpp\CMakeFiles\SQLBindCol.dir\build.make /nologo -$(MAKEFLAGS) tests\cpp\CMakeFiles\SQLBindCol.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=1 "Built target SQLBindCol"
-.PHONY : tests\cpp\CMakeFiles\SQLBindCol.dir\all
-
-# Build rule for subdir invocation for target.
-tests\cpp\CMakeFiles\SQLBindCol.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) tests\cpp\CMakeFiles\SQLBindCol.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : tests\cpp\CMakeFiles\SQLBindCol.dir\rule
-
-# Convenience name for target.
-SQLBindCol: tests\cpp\CMakeFiles\SQLBindCol.dir\rule
-.PHONY : SQLBindCol
-
-# clean rule for target.
-tests\cpp\CMakeFiles\SQLBindCol.dir\clean:
-	$(MAKE) $(MAKESILENT) -f tests\cpp\CMakeFiles\SQLBindCol.dir\build.make /nologo -$(MAKEFLAGS) tests\cpp\CMakeFiles\SQLBindCol.dir\clean
-.PHONY : tests\cpp\CMakeFiles\SQLBindCol.dir\clean
-
-#=============================================================================
-# Target rules for target tests/taos/CMakeFiles/taos_test.dir
-
-# All Build rule for target.
-tests\taos\CMakeFiles\taos_test.dir\all: CMakeFiles\ex_cjson.dir\all
-tests\taos\CMakeFiles\taos_test.dir\all: contrib\cJson\CMakeFiles\cjson.dir\all
-	$(MAKE) $(MAKESILENT) -f tests\taos\CMakeFiles\taos_test.dir\build.make /nologo -$(MAKEFLAGS) tests\taos\CMakeFiles\taos_test.dir\depend
-	$(MAKE) $(MAKESILENT) -f tests\taos\CMakeFiles\taos_test.dir\build.make /nologo -$(MAKEFLAGS) tests\taos\CMakeFiles\taos_test.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=41 "Built target taos_test"
-.PHONY : tests\taos\CMakeFiles\taos_test.dir\all
-
-# Build rule for subdir invocation for target.
-tests\taos\CMakeFiles\taos_test.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) tests\taos\CMakeFiles\taos_test.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
-.PHONY : tests\taos\CMakeFiles\taos_test.dir\rule
-
-# Convenience name for target.
-taos_test: tests\taos\CMakeFiles\taos_test.dir\rule
+taos_test: test\CMakeFiles\taos_test.dir\rule
 .PHONY : taos_test
 
 # clean rule for target.
-tests\taos\CMakeFiles\taos_test.dir\clean:
-	$(MAKE) $(MAKESILENT) -f tests\taos\CMakeFiles\taos_test.dir\build.make /nologo -$(MAKEFLAGS) tests\taos\CMakeFiles\taos_test.dir\clean
-.PHONY : tests\taos\CMakeFiles\taos_test.dir\clean
+test\CMakeFiles\taos_test.dir\clean:
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\taos_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\taos_test.dir\clean
+.PHONY : test\CMakeFiles\taos_test.dir\clean
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/odbc_test.dir
+
+# All Build rule for target.
+test\CMakeFiles\odbc_test.dir\all:
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\odbc_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\odbc_test.dir\depend
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\odbc_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\odbc_test.dir\build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=11,12 "Built target odbc_test"
+.PHONY : test\CMakeFiles\odbc_test.dir\all
+
+# Build rule for subdir invocation for target.
+test\CMakeFiles\odbc_test.dir\rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) test\CMakeFiles\odbc_test.dir\all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
+.PHONY : test\CMakeFiles\odbc_test.dir\rule
+
+# Convenience name for target.
+odbc_test: test\CMakeFiles\odbc_test.dir\rule
+.PHONY : odbc_test
+
+# clean rule for target.
+test\CMakeFiles\odbc_test.dir\clean:
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\odbc_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\odbc_test.dir\clean
+.PHONY : test\CMakeFiles\odbc_test.dir\clean
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/dsn_test.dir
+
+# All Build rule for target.
+test\CMakeFiles\dsn_test.dir\all:
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\dsn_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\dsn_test.dir\depend
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\dsn_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\dsn_test.dir\build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=1,2 "Built target dsn_test"
+.PHONY : test\CMakeFiles\dsn_test.dir\all
+
+# Build rule for subdir invocation for target.
+test\CMakeFiles\dsn_test.dir\rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) test\CMakeFiles\dsn_test.dir\all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles 0
+.PHONY : test\CMakeFiles\dsn_test.dir\rule
+
+# Convenience name for target.
+dsn_test: test\CMakeFiles\dsn_test.dir\rule
+.PHONY : dsn_test
+
+# clean rule for target.
+test\CMakeFiles\dsn_test.dir\clean:
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\dsn_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\dsn_test.dir\clean
+.PHONY : test\CMakeFiles\dsn_test.dir\clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

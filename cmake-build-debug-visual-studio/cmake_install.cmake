@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/taos_odbc")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/taos_odbc_driver")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -35,10 +35,8 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/contrib/cmake_install.cmake")
-  include("D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/common/cmake_install.cmake")
-  include("D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/src/cmake_install.cmake")
-  include("D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/templates/cmake_install.cmake")
-  include("D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/tests/cmake_install.cmake")
+  include("D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/taos_odbc_driver/cmake_install.cmake")
+  include("D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/test/cmake_install.cmake")
 
 endif()
 

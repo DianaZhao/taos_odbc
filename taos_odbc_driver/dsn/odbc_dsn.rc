@@ -1,0 +1,174 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "WinResrc.h"
+
+#ifndef IDC_STATIC
+# define IDC_STATIC (-1)
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOGEX 0, 0, 385, 173
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Create a new Data Source to TDengine"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         Tab_Metadata,IDC_STATIC,"Static",SS_BITMAP,0,0,80,170
+END
+
+Page_0 DIALOGEX 0, 0, 299, 182
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU | WS_TABSTOP
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Welcome to the TDengine ODBC Data Source Wizard!",IDC_STATIC,7,7,287,25,0,WS_EX_TRANSPARENT
+    LTEXT           "This wizard will help you to create an ODBC data source that you can use to connect to a TDengine server.",IDC_STATIC,7,33,287,21,0,WS_EX_TRANSPARENT
+    LTEXT           "What name do you want to use to refer to your data source ?",IDC_STATIC,7,60,287,12,0,WS_EX_TRANSPARENT
+    LTEXT           "Name:",IDC_STATIC,44,78,22,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        txtDsnName,73,77,169,14,ES_AUTOHSCROLL | WS_GROUP
+    LTEXT           "How do you want to describe the data source ?",IDC_STATIC,7,101,287,12,0,WS_EX_TRANSPARENT
+    LTEXT           "Description:",IDC_STATIC,27,117,39,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        txtDSNDescription,73,116,169,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "< Previous",PB_PREV,50,149,50,14,WS_DISABLED
+    PUSHBUTTON      "Next >",PB_NEXT,104,149,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,178,149,50,14
+    PUSHBUTTON      "Help",IDCANCEL4,236,149,50,14
+    EDITTEXT        txtDriver,233,7,53,15,ES_AUTOHSCROLL | NOT WS_VISIBLE
+END
+
+Page_1 DIALOGEX 0, 0, 299, 182
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "How do you want to connect to TDengine",IDC_STATIC,9,7,130,10,0,WS_EX_TRANSPARENT
+    LTEXT           "Server Name:",lblServerName,86,21,49,11,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "Please specify a user name and password to connect to TDengine",IDC_STATIC,9,54,207,8,0,WS_EX_TRANSPARENT
+    LTEXT           "Please specify a database to use",IDC_STATIC,9,105,207,8,0,WS_EX_TRANSPARENT
+    LTEXT           "User name:",IDC_STATIC,26,70,38,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "Password:",IDC_STATIC,30,88,34,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "Database:",IDC_STATIC,20,121,34,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    EDITTEXT        txtServerName,139,18,141,14,ES_AUTOHSCROLL
+    EDITTEXT        txtPort,140,34,40,14,ES_AUTOHSCROLL
+    LTEXT           "Port:",lblPort,86,35,49,11,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    EDITTEXT        txtUserName,71,68,141,14,ES_AUTOHSCROLL
+    EDITTEXT        txtPassword,71,86,142,14,ES_PASSWORD | ES_AUTOHSCROLL
+    PUSHBUTTON      "&Test DSN",pbTestDSN,223,86,50,14
+    COMBOBOX        cbDatabase,71,119,93,80,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "< Previous",PB_PREV,50,149,50,14
+    PUSHBUTTON      "Finish",PB_FINISH,104,149,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,178,149,50,14
+    PUSHBUTTON      "Help",IDCANCEL4,236,149,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        BOTTOMMARGIN, 172
+    END
+
+    Page_0, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 294
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+
+    Page_1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 294
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "logo.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+Page_1 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

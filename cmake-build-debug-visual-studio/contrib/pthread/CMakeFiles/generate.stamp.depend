@@ -1,6 +1,0 @@
-# CMake generation dependency list for this directory.
-D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/target_arch_detect.c
-D:/workspaces/taos_odbc/contrib/pthread/CMakeLists.txt
-D:/workspaces/taos_odbc/contrib/pthread/cmake/get_version.cmake
-D:/workspaces/taos_odbc/contrib/pthread/cmake/target_arch.cmake
-D:/workspaces/taos_odbc/contrib/pthread/cmake/version.rc.in

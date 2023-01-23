@@ -54,16 +54,6 @@ CMAKE_BINARY_DIR = D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	C:\App\CMake\bin\ctest.exe --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test\fast: test
-.PHONY : test\fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -149,45 +139,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ex_cjson
-
-# Build rule for target.
-ex_cjson: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ex_cjson
-.PHONY : ex_cjson
-
-# fast build rule for target.
-ex_cjson\fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex_cjson.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ex_cjson.dir\build
-.PHONY : ex_cjson\fast
-
-#=============================================================================
-# Target rules for targets named dumper
-
-# Build rule for target.
-dumper: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) dumper
-.PHONY : dumper
-
-# fast build rule for target.
-dumper\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\dumper.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\dumper.dir\build
-.PHONY : dumper\fast
-
-#=============================================================================
-# Target rules for targets named crashdump
-
-# Build rule for target.
-crashdump: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) crashdump
-.PHONY : crashdump
-
-# fast build rule for target.
-crashdump\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\crashdump.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\crashdump.dir\build
-.PHONY : crashdump\fast
-
-#=============================================================================
 # Target rules for targets named iconv
 
 # Build rule for target.
@@ -199,149 +150,6 @@ iconv: cmake_check_build_system
 iconv\fast:
 	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\iconv.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\iconv.dir\build
 .PHONY : iconv\fast
-
-#=============================================================================
-# Target rules for targets named msvcregex
-
-# Build rule for target.
-msvcregex: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) msvcregex
-.PHONY : msvcregex
-
-# fast build rule for target.
-msvcregex\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\msvcregex.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\msvcregex.dir\build
-.PHONY : msvcregex\fast
-
-#=============================================================================
-# Target rules for targets named wcwidth
-
-# Build rule for target.
-wcwidth: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) wcwidth
-.PHONY : wcwidth
-
-# fast build rule for target.
-wcwidth\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\wcwidth.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\wcwidth.dir\build
-.PHONY : wcwidth\fast
-
-#=============================================================================
-# Target rules for targets named cjson
-
-# Build rule for target.
-cjson: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) cjson
-.PHONY : cjson
-
-# fast build rule for target.
-cjson\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\cJson\CMakeFiles\cjson.dir\build.make /nologo -$(MAKEFLAGS) contrib\cJson\CMakeFiles\cjson.dir\build
-.PHONY : cjson\fast
-
-#=============================================================================
-# Target rules for targets named uninstall
-
-# Build rule for target.
-uninstall: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) uninstall
-.PHONY : uninstall
-
-# fast build rule for target.
-uninstall\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\cJson\CMakeFiles\uninstall.dir\build.make /nologo -$(MAKEFLAGS) contrib\cJson\CMakeFiles\uninstall.dir\build
-.PHONY : uninstall\fast
-
-#=============================================================================
-# Target rules for targets named lz4_static
-
-# Build rule for target.
-lz4_static: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) lz4_static
-.PHONY : lz4_static
-
-# fast build rule for target.
-lz4_static\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\build.make /nologo -$(MAKEFLAGS) contrib\lz4\build\cmake\CMakeFiles\lz4_static.dir\build
-.PHONY : lz4_static\fast
-
-#=============================================================================
-# Target rules for targets named lz4cli
-
-# Build rule for target.
-lz4cli: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) lz4cli
-.PHONY : lz4cli
-
-# fast build rule for target.
-lz4cli\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\build.make /nologo -$(MAKEFLAGS) contrib\lz4\build\cmake\CMakeFiles\lz4cli.dir\build
-.PHONY : lz4cli\fast
-
-#=============================================================================
-# Target rules for targets named lz4c
-
-# Build rule for target.
-lz4c: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) lz4c
-.PHONY : lz4c
-
-# fast build rule for target.
-lz4c\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\build.make /nologo -$(MAKEFLAGS) contrib\lz4\build\cmake\CMakeFiles\lz4c.dir\build
-.PHONY : lz4c\fast
-
-#=============================================================================
-# Target rules for targets named zlib
-
-# Build rule for target.
-zlib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) zlib
-.PHONY : zlib
-
-# fast build rule for target.
-zlib\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\zlib.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\zlib.dir\build
-.PHONY : zlib\fast
-
-#=============================================================================
-# Target rules for targets named zlibstatic
-
-# Build rule for target.
-zlibstatic: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) zlibstatic
-.PHONY : zlibstatic
-
-# fast build rule for target.
-zlibstatic\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\zlibstatic.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\zlibstatic.dir\build
-.PHONY : zlibstatic\fast
-
-#=============================================================================
-# Target rules for targets named example
-
-# Build rule for target.
-example: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) example
-.PHONY : example
-
-# fast build rule for target.
-example\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\example.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\example.dir\build
-.PHONY : example\fast
-
-#=============================================================================
-# Target rules for targets named minigzip
-
-# Build rule for target.
-minigzip: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) minigzip
-.PHONY : minigzip
-
-# fast build rule for target.
-minigzip\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\zlib\CMakeFiles\minigzip.dir\build.make /nologo -$(MAKEFLAGS) contrib\zlib\CMakeFiles\minigzip.dir\build
-.PHONY : minigzip\fast
 
 #=============================================================================
 # Target rules for targets named pthreadVCE3
@@ -422,576 +230,30 @@ libpthreadVC3\fast:
 .PHONY : libpthreadVC3\fast
 
 #=============================================================================
-# Target rules for targets named wingetopt
+# Target rules for targets named taos_odbc_driver
 
 # Build rule for target.
-wingetopt: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) wingetopt
-.PHONY : wingetopt
+taos_odbc_driver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) taos_odbc_driver
+.PHONY : taos_odbc_driver
 
 # fast build rule for target.
-wingetopt\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\wingetopt\CMakeFiles\wingetopt.dir\build.make /nologo -$(MAKEFLAGS) contrib\wingetopt\CMakeFiles\wingetopt.dir\build
-.PHONY : wingetopt\fast
+taos_odbc_driver\fast:
+	$(MAKE) $(MAKESILENT) -f taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\build.make /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\build
+.PHONY : taos_odbc_driver\fast
 
 #=============================================================================
-# Target rules for targets named Experimental
+# Target rules for targets named taos_odbc_setup
 
 # Build rule for target.
-Experimental: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) Experimental
-.PHONY : Experimental
+taos_odbc_setup: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) taos_odbc_setup
+.PHONY : taos_odbc_setup
 
 # fast build rule for target.
-Experimental\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\Experimental.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\Experimental.dir\build
-.PHONY : Experimental\fast
-
-#=============================================================================
-# Target rules for targets named Nightly
-
-# Build rule for target.
-Nightly: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) Nightly
-.PHONY : Nightly
-
-# fast build rule for target.
-Nightly\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\Nightly.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\Nightly.dir\build
-.PHONY : Nightly\fast
-
-#=============================================================================
-# Target rules for targets named Continuous
-
-# Build rule for target.
-Continuous: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) Continuous
-.PHONY : Continuous
-
-# fast build rule for target.
-Continuous\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\Continuous.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\Continuous.dir\build
-.PHONY : Continuous\fast
-
-#=============================================================================
-# Target rules for targets named NightlyMemoryCheck
-
-# Build rule for target.
-NightlyMemoryCheck: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) NightlyMemoryCheck
-.PHONY : NightlyMemoryCheck
-
-# fast build rule for target.
-NightlyMemoryCheck\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyMemoryCheck.dir\build
-.PHONY : NightlyMemoryCheck\fast
-
-#=============================================================================
-# Target rules for targets named NightlyStart
-
-# Build rule for target.
-NightlyStart: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) NightlyStart
-.PHONY : NightlyStart
-
-# fast build rule for target.
-NightlyStart\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyStart.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyStart.dir\build
-.PHONY : NightlyStart\fast
-
-#=============================================================================
-# Target rules for targets named NightlyUpdate
-
-# Build rule for target.
-NightlyUpdate: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) NightlyUpdate
-.PHONY : NightlyUpdate
-
-# fast build rule for target.
-NightlyUpdate\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyUpdate.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyUpdate.dir\build
-.PHONY : NightlyUpdate\fast
-
-#=============================================================================
-# Target rules for targets named NightlyConfigure
-
-# Build rule for target.
-NightlyConfigure: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) NightlyConfigure
-.PHONY : NightlyConfigure
-
-# fast build rule for target.
-NightlyConfigure\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyConfigure.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyConfigure.dir\build
-.PHONY : NightlyConfigure\fast
-
-#=============================================================================
-# Target rules for targets named NightlyBuild
-
-# Build rule for target.
-NightlyBuild: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) NightlyBuild
-.PHONY : NightlyBuild
-
-# fast build rule for target.
-NightlyBuild\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyBuild.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyBuild.dir\build
-.PHONY : NightlyBuild\fast
-
-#=============================================================================
-# Target rules for targets named NightlyTest
-
-# Build rule for target.
-NightlyTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) NightlyTest
-.PHONY : NightlyTest
-
-# fast build rule for target.
-NightlyTest\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyTest.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyTest.dir\build
-.PHONY : NightlyTest\fast
-
-#=============================================================================
-# Target rules for targets named NightlyCoverage
-
-# Build rule for target.
-NightlyCoverage: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) NightlyCoverage
-.PHONY : NightlyCoverage
-
-# fast build rule for target.
-NightlyCoverage\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyCoverage.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyCoverage.dir\build
-.PHONY : NightlyCoverage\fast
-
-#=============================================================================
-# Target rules for targets named NightlyMemCheck
-
-# Build rule for target.
-NightlyMemCheck: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) NightlyMemCheck
-.PHONY : NightlyMemCheck
-
-# fast build rule for target.
-NightlyMemCheck\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlyMemCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlyMemCheck.dir\build
-.PHONY : NightlyMemCheck\fast
-
-#=============================================================================
-# Target rules for targets named NightlySubmit
-
-# Build rule for target.
-NightlySubmit: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) NightlySubmit
-.PHONY : NightlySubmit
-
-# fast build rule for target.
-NightlySubmit\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\NightlySubmit.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\NightlySubmit.dir\build
-.PHONY : NightlySubmit\fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalStart
-
-# Build rule for target.
-ExperimentalStart: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ExperimentalStart
-.PHONY : ExperimentalStart
-
-# fast build rule for target.
-ExperimentalStart\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalStart.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalStart.dir\build
-.PHONY : ExperimentalStart\fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalUpdate
-
-# Build rule for target.
-ExperimentalUpdate: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ExperimentalUpdate
-.PHONY : ExperimentalUpdate
-
-# fast build rule for target.
-ExperimentalUpdate\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalUpdate.dir\build
-.PHONY : ExperimentalUpdate\fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalConfigure
-
-# Build rule for target.
-ExperimentalConfigure: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ExperimentalConfigure
-.PHONY : ExperimentalConfigure
-
-# fast build rule for target.
-ExperimentalConfigure\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalConfigure.dir\build
-.PHONY : ExperimentalConfigure\fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalBuild
-
-# Build rule for target.
-ExperimentalBuild: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ExperimentalBuild
-.PHONY : ExperimentalBuild
-
-# fast build rule for target.
-ExperimentalBuild\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalBuild.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalBuild.dir\build
-.PHONY : ExperimentalBuild\fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalTest
-
-# Build rule for target.
-ExperimentalTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ExperimentalTest
-.PHONY : ExperimentalTest
-
-# fast build rule for target.
-ExperimentalTest\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalTest.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalTest.dir\build
-.PHONY : ExperimentalTest\fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalCoverage
-
-# Build rule for target.
-ExperimentalCoverage: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ExperimentalCoverage
-.PHONY : ExperimentalCoverage
-
-# fast build rule for target.
-ExperimentalCoverage\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalCoverage.dir\build
-.PHONY : ExperimentalCoverage\fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalMemCheck
-
-# Build rule for target.
-ExperimentalMemCheck: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ExperimentalMemCheck
-.PHONY : ExperimentalMemCheck
-
-# fast build rule for target.
-ExperimentalMemCheck\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalMemCheck.dir\build
-.PHONY : ExperimentalMemCheck\fast
-
-#=============================================================================
-# Target rules for targets named ExperimentalSubmit
-
-# Build rule for target.
-ExperimentalSubmit: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ExperimentalSubmit
-.PHONY : ExperimentalSubmit
-
-# fast build rule for target.
-ExperimentalSubmit\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ExperimentalSubmit.dir\build
-.PHONY : ExperimentalSubmit\fast
-
-#=============================================================================
-# Target rules for targets named ContinuousStart
-
-# Build rule for target.
-ContinuousStart: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ContinuousStart
-.PHONY : ContinuousStart
-
-# fast build rule for target.
-ContinuousStart\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousStart.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousStart.dir\build
-.PHONY : ContinuousStart\fast
-
-#=============================================================================
-# Target rules for targets named ContinuousUpdate
-
-# Build rule for target.
-ContinuousUpdate: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ContinuousUpdate
-.PHONY : ContinuousUpdate
-
-# fast build rule for target.
-ContinuousUpdate\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousUpdate.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousUpdate.dir\build
-.PHONY : ContinuousUpdate\fast
-
-#=============================================================================
-# Target rules for targets named ContinuousConfigure
-
-# Build rule for target.
-ContinuousConfigure: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ContinuousConfigure
-.PHONY : ContinuousConfigure
-
-# fast build rule for target.
-ContinuousConfigure\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousConfigure.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousConfigure.dir\build
-.PHONY : ContinuousConfigure\fast
-
-#=============================================================================
-# Target rules for targets named ContinuousBuild
-
-# Build rule for target.
-ContinuousBuild: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ContinuousBuild
-.PHONY : ContinuousBuild
-
-# fast build rule for target.
-ContinuousBuild\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousBuild.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousBuild.dir\build
-.PHONY : ContinuousBuild\fast
-
-#=============================================================================
-# Target rules for targets named ContinuousTest
-
-# Build rule for target.
-ContinuousTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ContinuousTest
-.PHONY : ContinuousTest
-
-# fast build rule for target.
-ContinuousTest\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousTest.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousTest.dir\build
-.PHONY : ContinuousTest\fast
-
-#=============================================================================
-# Target rules for targets named ContinuousCoverage
-
-# Build rule for target.
-ContinuousCoverage: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ContinuousCoverage
-.PHONY : ContinuousCoverage
-
-# fast build rule for target.
-ContinuousCoverage\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousCoverage.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousCoverage.dir\build
-.PHONY : ContinuousCoverage\fast
-
-#=============================================================================
-# Target rules for targets named ContinuousMemCheck
-
-# Build rule for target.
-ContinuousMemCheck: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ContinuousMemCheck
-.PHONY : ContinuousMemCheck
-
-# fast build rule for target.
-ContinuousMemCheck\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousMemCheck.dir\build
-.PHONY : ContinuousMemCheck\fast
-
-#=============================================================================
-# Target rules for targets named ContinuousSubmit
-
-# Build rule for target.
-ContinuousSubmit: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ContinuousSubmit
-.PHONY : ContinuousSubmit
-
-# fast build rule for target.
-ContinuousSubmit\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\ContinuousSubmit.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\ContinuousSubmit.dir\build
-.PHONY : ContinuousSubmit\fast
-
-#=============================================================================
-# Target rules for targets named uv
-
-# Build rule for target.
-uv: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) uv
-.PHONY : uv
-
-# fast build rule for target.
-uv\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\uv.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\uv.dir\build
-.PHONY : uv\fast
-
-#=============================================================================
-# Target rules for targets named uv_a
-
-# Build rule for target.
-uv_a: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) uv_a
-.PHONY : uv_a
-
-# fast build rule for target.
-uv_a\fast:
-	$(MAKE) $(MAKESILENT) -f contrib\libuv\CMakeFiles\uv_a.dir\build.make /nologo -$(MAKEFLAGS) contrib\libuv\CMakeFiles\uv_a.dir\build
-.PHONY : uv_a\fast
-
-#=============================================================================
-# Target rules for targets named common_obj
-
-# Build rule for target.
-common_obj: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) common_obj
-.PHONY : common_obj
-
-# fast build rule for target.
-common_obj\fast:
-	$(MAKE) $(MAKESILENT) -f common\CMakeFiles\common_obj.dir\build.make /nologo -$(MAKEFLAGS) common\CMakeFiles\common_obj.dir\build
-.PHONY : common_obj\fast
-
-#=============================================================================
-# Target rules for targets named odbc_obj
-
-# Build rule for target.
-odbc_obj: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) odbc_obj
-.PHONY : odbc_obj
-
-# fast build rule for target.
-odbc_obj\fast:
-	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\odbc_obj.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\odbc_obj.dir\build
-.PHONY : odbc_obj\fast
-
-#=============================================================================
-# Target rules for targets named taos_odbc_a
-
-# Build rule for target.
-taos_odbc_a: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) taos_odbc_a
-.PHONY : taos_odbc_a
-
-# fast build rule for target.
-taos_odbc_a\fast:
-	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\taos_odbc_a.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\taos_odbc_a.dir\build
-.PHONY : taos_odbc_a\fast
-
-#=============================================================================
-# Target rules for targets named taos_odbc
-
-# Build rule for target.
-taos_odbc: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) taos_odbc
-.PHONY : taos_odbc
-
-# fast build rule for target.
-taos_odbc\fast:
-	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\taos_odbc.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\taos_odbc.dir\build
-.PHONY : taos_odbc\fast
-
-#=============================================================================
-# Target rules for targets named core_obj
-
-# Build rule for target.
-core_obj: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) core_obj
-.PHONY : core_obj
-
-# fast build rule for target.
-core_obj\fast:
-	$(MAKE) $(MAKESILENT) -f src\core\CMakeFiles\core_obj.dir\build.make /nologo -$(MAKEFLAGS) src\core\CMakeFiles\core_obj.dir\build
-.PHONY : core_obj\fast
-
-#=============================================================================
-# Target rules for targets named parser_obj
-
-# Build rule for target.
-parser_obj: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) parser_obj
-.PHONY : parser_obj
-
-# fast build rule for target.
-parser_obj\fast:
-	$(MAKE) $(MAKESILENT) -f src\parser\CMakeFiles\parser_obj.dir\build.make /nologo -$(MAKEFLAGS) src\parser\CMakeFiles\parser_obj.dir\build
-.PHONY : parser_obj\fast
-
-#=============================================================================
-# Target rules for targets named utils_obj
-
-# Build rule for target.
-utils_obj: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) utils_obj
-.PHONY : utils_obj
-
-# fast build rule for target.
-utils_obj\fast:
-	$(MAKE) $(MAKESILENT) -f src\utils\CMakeFiles\utils_obj.dir\build.make /nologo -$(MAKEFLAGS) src\utils\CMakeFiles\utils_obj.dir\build
-.PHONY : utils_obj\fast
-
-#=============================================================================
-# Target rules for targets named install_templates
-
-# Build rule for target.
-install_templates: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) install_templates
-.PHONY : install_templates
-
-# fast build rule for target.
-install_templates\fast:
-	$(MAKE) $(MAKESILENT) -f templates\CMakeFiles\install_templates.dir\build.make /nologo -$(MAKEFLAGS) templates\CMakeFiles\install_templates.dir\build
-.PHONY : install_templates\fast
-
-#=============================================================================
-# Target rules for targets named conformance_test
-
-# Build rule for target.
-conformance_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) conformance_test
-.PHONY : conformance_test
-
-# fast build rule for target.
-conformance_test\fast:
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\conformance_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\conformance_test.dir\build
-.PHONY : conformance_test\fast
-
-#=============================================================================
-# Target rules for targets named api_test
-
-# Build rule for target.
-api_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) api_test
-.PHONY : api_test
-
-# fast build rule for target.
-api_test\fast:
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\api_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\api_test.dir\build
-.PHONY : api_test\fast
-
-#=============================================================================
-# Target rules for targets named edge_cases_test
-
-# Build rule for target.
-edge_cases_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) edge_cases_test
-.PHONY : edge_cases_test
-
-# fast build rule for target.
-edge_cases_test\fast:
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\edge_cases_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\edge_cases_test.dir\build
-.PHONY : edge_cases_test\fast
-
-#=============================================================================
-# Target rules for targets named odbc_test
-
-# Build rule for target.
-odbc_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) odbc_test
-.PHONY : odbc_test
-
-# fast build rule for target.
-odbc_test\fast:
-	$(MAKE) $(MAKESILENT) -f tests\c\CMakeFiles\odbc_test.dir\build.make /nologo -$(MAKEFLAGS) tests\c\CMakeFiles\odbc_test.dir\build
-.PHONY : odbc_test\fast
-
-#=============================================================================
-# Target rules for targets named SQLBindCol
-
-# Build rule for target.
-SQLBindCol: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) SQLBindCol
-.PHONY : SQLBindCol
-
-# fast build rule for target.
-SQLBindCol\fast:
-	$(MAKE) $(MAKESILENT) -f tests\cpp\CMakeFiles\SQLBindCol.dir\build.make /nologo -$(MAKEFLAGS) tests\cpp\CMakeFiles\SQLBindCol.dir\build
-.PHONY : SQLBindCol\fast
+taos_odbc_setup\fast:
+	$(MAKE) $(MAKESILENT) -f taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\build.make /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\build
+.PHONY : taos_odbc_setup\fast
 
 #=============================================================================
 # Target rules for targets named taos_test
@@ -1003,8 +265,34 @@ taos_test: cmake_check_build_system
 
 # fast build rule for target.
 taos_test\fast:
-	$(MAKE) $(MAKESILENT) -f tests\taos\CMakeFiles\taos_test.dir\build.make /nologo -$(MAKEFLAGS) tests\taos\CMakeFiles\taos_test.dir\build
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\taos_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\taos_test.dir\build
 .PHONY : taos_test\fast
+
+#=============================================================================
+# Target rules for targets named odbc_test
+
+# Build rule for target.
+odbc_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) odbc_test
+.PHONY : odbc_test
+
+# fast build rule for target.
+odbc_test\fast:
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\odbc_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\odbc_test.dir\build
+.PHONY : odbc_test\fast
+
+#=============================================================================
+# Target rules for targets named dsn_test
+
+# Build rule for target.
+dsn_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) dsn_test
+.PHONY : dsn_test
+
+# fast build rule for target.
+dsn_test\fast:
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\dsn_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\dsn_test.dir\build
+.PHONY : dsn_test\fast
 
 # Help Target
 help:
@@ -1017,73 +305,18 @@ help:
 	@echo ... install/local
 	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... test
-	@echo ... Continuous
-	@echo ... ContinuousBuild
-	@echo ... ContinuousConfigure
-	@echo ... ContinuousCoverage
-	@echo ... ContinuousMemCheck
-	@echo ... ContinuousStart
-	@echo ... ContinuousSubmit
-	@echo ... ContinuousTest
-	@echo ... ContinuousUpdate
-	@echo ... Experimental
-	@echo ... ExperimentalBuild
-	@echo ... ExperimentalConfigure
-	@echo ... ExperimentalCoverage
-	@echo ... ExperimentalMemCheck
-	@echo ... ExperimentalStart
-	@echo ... ExperimentalSubmit
-	@echo ... ExperimentalTest
-	@echo ... ExperimentalUpdate
-	@echo ... Nightly
-	@echo ... NightlyBuild
-	@echo ... NightlyConfigure
-	@echo ... NightlyCoverage
-	@echo ... NightlyMemCheck
-	@echo ... NightlyMemoryCheck
-	@echo ... NightlyStart
-	@echo ... NightlySubmit
-	@echo ... NightlyTest
-	@echo ... NightlyUpdate
-	@echo ... ex_cjson
-	@echo ... install_templates
-	@echo ... uninstall
-	@echo ... SQLBindCol
-	@echo ... api_test
-	@echo ... cjson
-	@echo ... common_obj
-	@echo ... conformance_test
-	@echo ... core_obj
-	@echo ... crashdump
-	@echo ... dumper
-	@echo ... edge_cases_test
-	@echo ... example
+	@echo ... dsn_test
 	@echo ... iconv
 	@echo ... libpthreadVC3
 	@echo ... libpthreadVCE3
 	@echo ... libpthreadVSE3
-	@echo ... lz4_static
-	@echo ... lz4c
-	@echo ... lz4cli
-	@echo ... minigzip
-	@echo ... msvcregex
-	@echo ... odbc_obj
 	@echo ... odbc_test
-	@echo ... parser_obj
 	@echo ... pthreadVC3
 	@echo ... pthreadVCE3
 	@echo ... pthreadVSE3
-	@echo ... taos_odbc
-	@echo ... taos_odbc_a
+	@echo ... taos_odbc_driver
+	@echo ... taos_odbc_setup
 	@echo ... taos_test
-	@echo ... utils_obj
-	@echo ... uv
-	@echo ... uv_a
-	@echo ... wcwidth
-	@echo ... wingetopt
-	@echo ... zlib
-	@echo ... zlibstatic
 .PHONY : help
 
 

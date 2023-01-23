@@ -1,0 +1,275 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "taos_odbc_driver/taos_odbc_setup.dll"
+		},
+		{
+			"path" : "taos_odbc_driver/taos_odbc_setup.lib"
+		},
+		{
+			"path" : "taos_odbc_driver/taos_odbc_setup.pdb"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"ADD_LIBRARY",
+			"TARGET_LINK_LIBRARIES",
+			"include_directories",
+			"INCLUDE_DIRECTORIES"
+		],
+		"files" : 
+		[
+			"taos_odbc_driver/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 31,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 33,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 40,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 44,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 45,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 5,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /MTd /Zi /Ob0 /Od /RTC1"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "taos_odbc_setup_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "C:/TDengine/include"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "D:/workspaces/taos_odbc/contrib/pthread"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "D:/workspaces/taos_odbc/contrib/iconv"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "D:/workspaces/taos_odbc"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "D:/workspaces/taos_odbc/taos_odbc_driver"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "D:/workspaces/taos_odbc/taos_odbc_driver/inc"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				0,
+				3
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-DWIN32 -D_DEBUG"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "taos_odbc_setup_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "C:/TDengine/include"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "D:/workspaces/taos_odbc/contrib/pthread"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "D:/workspaces/taos_odbc/contrib/iconv"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "D:/workspaces/taos_odbc"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "D:/workspaces/taos_odbc/taos_odbc_driver"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "D:/workspaces/taos_odbc/taos_odbc_driver/inc"
+				}
+			],
+			"language" : "RC",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"id" : "taos_odbc_setup::@fa07086ab171fa28aabf",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/machine:x64 /debug /INCREMENTAL",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/DEF:D:\\workspaces\\taos_odbc\\taos_odbc_driver\\dsn\\taos_odbc_setup.def",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "comctl32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "legacy_stdio_definitions.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "Shlwapi.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "odbc32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "odbccp32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "C"
+	},
+	"name" : "taos_odbc_setup",
+	"nameOnDisk" : "taos_odbc_setup.dll",
+	"paths" : 
+	{
+		"build" : "taos_odbc_driver",
+		"source" : "taos_odbc_driver"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				3,
+				4
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "taos_odbc_driver/dsn/odbc_dsn.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "taos_odbc_driver/dsn/odbc_dsn.rc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "taos_odbc_driver/dsn/resource.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "taos_odbc_driver/dsn/td_dsn.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "taos_odbc_driver/dsn/taos_odbc_setup.def",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "SHARED_LIBRARY"
+}

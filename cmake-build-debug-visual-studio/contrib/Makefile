@@ -54,16 +54,6 @@ CMAKE_BINARY_DIR = D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	C:\App\CMake\bin\ctest.exe --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test\fast: test
-.PHONY : test\fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -159,42 +149,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-contrib\CMakeFiles\dumper.dir\rule:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\CMakeFiles\dumper.dir\rule
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : contrib\CMakeFiles\dumper.dir\rule
-
-# Convenience name for target.
-dumper: contrib\CMakeFiles\dumper.dir\rule
-.PHONY : dumper
-
-# fast build rule for target.
-dumper\fast:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\dumper.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\dumper.dir\build
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : dumper\fast
-
-# Convenience name for target.
-contrib\CMakeFiles\crashdump.dir\rule:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\CMakeFiles\crashdump.dir\rule
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : contrib\CMakeFiles\crashdump.dir\rule
-
-# Convenience name for target.
-crashdump: contrib\CMakeFiles\crashdump.dir\rule
-.PHONY : crashdump
-
-# fast build rule for target.
-crashdump\fast:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\crashdump.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\crashdump.dir\build
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : crashdump\fast
-
-# Convenience name for target.
 contrib\CMakeFiles\iconv.dir\rule:
 	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\CMakeFiles\iconv.dir\rule
@@ -211,102 +165,6 @@ iconv\fast:
 	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\iconv.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\iconv.dir\build
 	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
 .PHONY : iconv\fast
-
-# Convenience name for target.
-contrib\CMakeFiles\msvcregex.dir\rule:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\CMakeFiles\msvcregex.dir\rule
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : contrib\CMakeFiles\msvcregex.dir\rule
-
-# Convenience name for target.
-msvcregex: contrib\CMakeFiles\msvcregex.dir\rule
-.PHONY : msvcregex
-
-# fast build rule for target.
-msvcregex\fast:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\msvcregex.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\msvcregex.dir\build
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : msvcregex\fast
-
-# Convenience name for target.
-contrib\CMakeFiles\wcwidth.dir\rule:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) contrib\CMakeFiles\wcwidth.dir\rule
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : contrib\CMakeFiles\wcwidth.dir\rule
-
-# Convenience name for target.
-wcwidth: contrib\CMakeFiles\wcwidth.dir\rule
-.PHONY : wcwidth
-
-# fast build rule for target.
-wcwidth\fast:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\wcwidth.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\wcwidth.dir\build
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : wcwidth\fast
-
-crashdump\crasher\crasher.obj: crashdump\crasher\crasher.c.obj
-.PHONY : crashdump\crasher\crasher.obj
-
-# target to build an object file
-crashdump\crasher\crasher.c.obj:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\crashdump.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\crashdump.dir\crashdump\crasher\crasher.c.obj
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : crashdump\crasher\crasher.c.obj
-
-crashdump\crasher\crasher.i: crashdump\crasher\crasher.c.i
-.PHONY : crashdump\crasher\crasher.i
-
-# target to preprocess a source file
-crashdump\crasher\crasher.c.i:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\crashdump.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\crashdump.dir\crashdump\crasher\crasher.c.i
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : crashdump\crasher\crasher.c.i
-
-crashdump\crasher\crasher.s: crashdump\crasher\crasher.c.s
-.PHONY : crashdump\crasher\crasher.s
-
-# target to generate assembly for a file
-crashdump\crasher\crasher.c.s:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\crashdump.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\crashdump.dir\crashdump\crasher\crasher.c.s
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : crashdump\crasher\crasher.c.s
-
-crashdump\dumper\dumper.obj: crashdump\dumper\dumper.c.obj
-.PHONY : crashdump\dumper\dumper.obj
-
-# target to build an object file
-crashdump\dumper\dumper.c.obj:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\dumper.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\dumper.dir\crashdump\dumper\dumper.c.obj
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : crashdump\dumper\dumper.c.obj
-
-crashdump\dumper\dumper.i: crashdump\dumper\dumper.c.i
-.PHONY : crashdump\dumper\dumper.i
-
-# target to preprocess a source file
-crashdump\dumper\dumper.c.i:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\dumper.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\dumper.dir\crashdump\dumper\dumper.c.i
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : crashdump\dumper\dumper.c.i
-
-crashdump\dumper\dumper.s: crashdump\dumper\dumper.c.s
-.PHONY : crashdump\dumper\dumper.s
-
-# target to generate assembly for a file
-crashdump\dumper\dumper.c.s:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\dumper.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\dumper.dir\crashdump\dumper\dumper.c.s
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : crashdump\dumper\dumper.c.s
 
 iconv\win_iconv.obj: iconv\win_iconv.c.obj
 .PHONY : iconv\win_iconv.obj
@@ -338,66 +196,6 @@ iconv\win_iconv.c.s:
 	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
 .PHONY : iconv\win_iconv.c.s
 
-msvcregex\regex.obj: msvcregex\regex.c.obj
-.PHONY : msvcregex\regex.obj
-
-# target to build an object file
-msvcregex\regex.c.obj:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\msvcregex.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\msvcregex.dir\msvcregex\regex.c.obj
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : msvcregex\regex.c.obj
-
-msvcregex\regex.i: msvcregex\regex.c.i
-.PHONY : msvcregex\regex.i
-
-# target to preprocess a source file
-msvcregex\regex.c.i:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\msvcregex.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\msvcregex.dir\msvcregex\regex.c.i
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : msvcregex\regex.c.i
-
-msvcregex\regex.s: msvcregex\regex.c.s
-.PHONY : msvcregex\regex.s
-
-# target to generate assembly for a file
-msvcregex\regex.c.s:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\msvcregex.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\msvcregex.dir\msvcregex\regex.c.s
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : msvcregex\regex.c.s
-
-wcwidth\wcwidth.obj: wcwidth\wcwidth.c.obj
-.PHONY : wcwidth\wcwidth.obj
-
-# target to build an object file
-wcwidth\wcwidth.c.obj:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\wcwidth.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\wcwidth.dir\wcwidth\wcwidth.c.obj
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : wcwidth\wcwidth.c.obj
-
-wcwidth\wcwidth.i: wcwidth\wcwidth.c.i
-.PHONY : wcwidth\wcwidth.i
-
-# target to preprocess a source file
-wcwidth\wcwidth.c.i:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\wcwidth.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\wcwidth.dir\wcwidth\wcwidth.c.i
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : wcwidth\wcwidth.c.i
-
-wcwidth\wcwidth.s: wcwidth\wcwidth.c.s
-.PHONY : wcwidth\wcwidth.s
-
-# target to generate assembly for a file
-wcwidth\wcwidth.c.s:
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
-	$(MAKE) $(MAKESILENT) -f contrib\CMakeFiles\wcwidth.dir\build.make /nologo -$(MAKEFLAGS) contrib\CMakeFiles\wcwidth.dir\wcwidth\wcwidth.c.s
-	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\contrib
-.PHONY : wcwidth\wcwidth.c.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -409,27 +207,10 @@ help:
 	@echo ... install/local
 	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... test
-	@echo ... crashdump
-	@echo ... dumper
 	@echo ... iconv
-	@echo ... msvcregex
-	@echo ... wcwidth
-	@echo ... crashdump/crasher/crasher.obj
-	@echo ... crashdump/crasher/crasher.i
-	@echo ... crashdump/crasher/crasher.s
-	@echo ... crashdump/dumper/dumper.obj
-	@echo ... crashdump/dumper/dumper.i
-	@echo ... crashdump/dumper/dumper.s
 	@echo ... iconv/win_iconv.obj
 	@echo ... iconv/win_iconv.i
 	@echo ... iconv/win_iconv.s
-	@echo ... msvcregex/regex.obj
-	@echo ... msvcregex/regex.i
-	@echo ... msvcregex/regex.s
-	@echo ... wcwidth/wcwidth.obj
-	@echo ... wcwidth/wcwidth.i
-	@echo ... wcwidth/wcwidth.s
 .PHONY : help
 
 

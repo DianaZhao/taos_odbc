@@ -23,17 +23,11 @@ ASAN:BOOL=OFF
 //Enable building i686 assembly implementation
 ASM686:BOOL=OFF
 
-//path to the bison executable
-BISON_EXECUTABLE:FILEPATH=C:/App/CMake/bin/win_bison.exe
-
-//Build both shared and static libraries
-BUILD_SHARED_AND_STATIC_LIBS:BOOL=OFF
+//Build the shared library
+BUILD_SHARED_LIBS:BOOL=OFF
 
 //Build the testing tree.
 BUILD_TESTING:BOOL=ON
-
-//Path to a program.
-CARGO:FILEPATH=CARGO-NOTFOUND
 
 //Overrides BUILD_SHARED_LIBS if CJSON_OVERRIDE_BUILD_SHARED_LIBS
 // is enabled
@@ -62,16 +56,17 @@ CMAKE_CXX_COMPILER:FILEPATH=C:/Program Files (x86)/Microsoft Visual Studio/2019/
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=/DWIN32 /D_WINDOWS /W3 /GR /EHsc
 
-CMAKE_CXX_FLAGS_DEBUG:STRING=
+//overwritten by taos-odbc
+CMAKE_CXX_FLAGS_DEBUG:STRING=/MTd /Zi /Ob0 /Od /RTC1
 
-//Flags used by the CXX compiler during MINSIZEREL builds.
-CMAKE_CXX_FLAGS_MINSIZEREL:STRING=/MD /O1 /Ob1 /DNDEBUG
+//overwritten by taos-odbc
+CMAKE_CXX_FLAGS_MINSIZEREL:STRING=/MT /O1 /Ob1 /DNDEBUG
 
-//Flags used by the CXX compiler during RELEASE builds.
-CMAKE_CXX_FLAGS_RELEASE:STRING=/MD /O2 /Ob2 /DNDEBUG
+//overwritten by taos-odbc
+CMAKE_CXX_FLAGS_RELEASE:STRING=/MT /O2 /Ob2 /DNDEBUG
 
-//Flags used by the CXX compiler during RELWITHDEBINFO builds.
-CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=/MD /Zi /O2 /Ob1 /DNDEBUG
+//overwritten by taos-odbc
+CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=/MT /Zi /O2 /Ob1 /DNDEBUG
 
 //Libraries linked by default with all C++ applications.
 CMAKE_CXX_STANDARD_LIBRARIES:STRING=kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
@@ -82,16 +77,17 @@ CMAKE_C_COMPILER:FILEPATH=C:/Program Files (x86)/Microsoft Visual Studio/2019/Co
 //Flags used by the C compiler during all build types.
 CMAKE_C_FLAGS:STRING=/DWIN32 /D_WINDOWS /W3
 
-CMAKE_C_FLAGS_DEBUG:STRING=
+//overwritten by taos-odbc
+CMAKE_C_FLAGS_DEBUG:STRING=/MTd /Zi /Ob0 /Od /RTC1
 
-//Flags used by the C compiler during MINSIZEREL builds.
-CMAKE_C_FLAGS_MINSIZEREL:STRING=/MD /O1 /Ob1 /DNDEBUG
+//overwritten by taos-odbc
+CMAKE_C_FLAGS_MINSIZEREL:STRING=/MT /O1 /Ob1 /DNDEBUG
 
-//Flags used by the C compiler during RELEASE builds.
-CMAKE_C_FLAGS_RELEASE:STRING=/MD /O2 /Ob2 /DNDEBUG
+//overwritten by taos-odbc
+CMAKE_C_FLAGS_RELEASE:STRING=/MT /O2 /Ob2 /DNDEBUG
 
-//Flags used by the C compiler during RELWITHDEBINFO builds.
-CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=/MD /Zi /O2 /Ob1 /DNDEBUG
+//overwritten by taos-odbc
+CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=/MT /Zi /O2 /Ob1 /DNDEBUG
 
 //Libraries linked by default with all C applications.
 CMAKE_C_STANDARD_LIBRARIES:STRING=kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
@@ -151,7 +147,7 @@ CMAKE_INSTALL_MANDIR:PATH=
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/taos_odbc
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/taos_odbc_driver
 
 //Run-time variable data (LOCALSTATEDIR/run)
 CMAKE_INSTALL_RUNSTATEDIR:PATH=
@@ -201,7 +197,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=taos_odbc
+CMAKE_PROJECT_NAME:STATIC=taos_odbc_driver
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=1.9.3
@@ -308,69 +304,26 @@ DART_TESTING_TIMEOUT:STRING=1500
 //Enable building cJSON test
 ENABLE_CJSON_TEST:BOOL=OFF
 
-//Enable building the cJSON_Utils library.
-ENABLE_CJSON_UTILS:BOOL=OFF
-
-//Enables custom compiler flags
-ENABLE_CUSTOM_COMPILER_FLAGS:BOOL=ON
-
-//Create executables and targets for fuzzing cJSON with afl.
-ENABLE_FUZZING:BOOL=OFF
-
-//Hide library symbols.
-ENABLE_HIDDEN_SYMBOLS:BOOL=OFF
-
-//Enable the use of locales
-ENABLE_LOCALES:BOOL=ON
-
-//Export library symbols.
-ENABLE_PUBLIC_SYMBOLS:BOOL=ON
-
-//Enables the SafeStack instrumentation pass by the Code Pointer
-// Integrity Project
-ENABLE_SAFE_STACK:BOOL=OFF
-
-//Enables AddressSanitizer and UndefinedBehaviorSanitizer.
-ENABLE_SANITIZERS:BOOL=OFF
-
-//Enable exporting of CMake targets. Disable when it causes problems!
-ENABLE_TARGET_EXPORT:BOOL=ON
-
 //Enable Test code build
 ENABLE_TESTS:BOOL=OFF
 
 //Single output directory for building all executables.
 EXECUTABLE_OUTPUT_PATH:PATH=
 
-//path to the flex executable
-FLEX_EXECUTABLE:FILEPATH=C:/App/CMake/bin/win_flex.exe
-
-//Path to the flex headers
-FLEX_INCLUDE_DIR:PATH=C:/App/CMake/bin
-
-//Path to the fl library
-FL_LIBRARY:FILEPATH=FL_LIBRARY-NOTFOUND
-
-//Path to a program.
-GITCOMMAND:FILEPATH=C:/App/Git/cmd/git.exe
-
-//Git command line client
-GIT_EXECUTABLE:FILEPATH=C:/App/Git/cmd/git.exe
-
 //Installation directory for executables
-INSTALL_BIN_DIR:PATH=C:/Program Files (x86)/taos_odbc/bin
+INSTALL_BIN_DIR:PATH=C:/Program Files (x86)/taos_odbc_driver/bin
 
 //Installation directory for headers
-INSTALL_INC_DIR:PATH=C:/Program Files (x86)/taos_odbc/include
+INSTALL_INC_DIR:PATH=C:/Program Files (x86)/taos_odbc_driver/include
 
 //Installation directory for libraries
-INSTALL_LIB_DIR:PATH=C:/Program Files (x86)/taos_odbc/lib
+INSTALL_LIB_DIR:PATH=C:/Program Files (x86)/taos_odbc_driver/lib
 
 //Installation directory for manual pages
-INSTALL_MAN_DIR:PATH=C:/Program Files (x86)/taos_odbc/share/man
+INSTALL_MAN_DIR:PATH=C:/Program Files (x86)/taos_odbc_driver/share/man
 
 //Installation directory for pkgconfig (.pc) files
-INSTALL_PKGCONFIG_DIR:PATH=C:/Program Files (x86)/taos_odbc/share/pkgconfig
+INSTALL_PKGCONFIG_DIR:PATH=C:/Program Files (x86)/taos_odbc_driver/share/pkgconfig
 
 //Single output directory for building all libraries.
 LIBRARY_OUTPUT_PATH:PATH=
@@ -402,9 +355,6 @@ MEMORYCHECK_COMMAND:FILEPATH=C:/App/CUDA/bin/cuda-memcheck.exe
 //File that contains suppressions for the memory checker
 MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 
-//Path to a file.
-ODBC_INCLUDE_DIR:PATH=C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
-
 //build for qemu
 QEMU:BOOL=OFF
 
@@ -413,15 +363,6 @@ SITE:STRING=LAPTOP-93BOJ22L
 
 //Enable ThreadSanitizer (TSan)
 TSAN:BOOL=OFF
-
-//Value Computed by CMake
-cJSON_BINARY_DIR:STATIC=D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/contrib/cJson
-
-//Value Computed by CMake
-cJSON_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-cJSON_SOURCE_DIR:STATIC=D:/workspaces/taos_odbc/contrib/cJson
 
 //Value Computed by CMake
 libuv_BINARY_DIR:STATIC=D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/contrib/libuv
@@ -442,19 +383,19 @@ pthreads4w_IS_TOP_LEVEL:STATIC=OFF
 pthreads4w_SOURCE_DIR:STATIC=D:/workspaces/taos_odbc/contrib/pthread
 
 //Value Computed by CMake
-taos_odbc_BINARY_DIR:STATIC=D:/workspaces/taos_odbc/cmake-build-debug-visual-studio
+taos_odbc_driver_BINARY_DIR:STATIC=D:/workspaces/taos_odbc/cmake-build-debug-visual-studio
 
 //Value Computed by CMake
-taos_odbc_IS_TOP_LEVEL:STATIC=ON
+taos_odbc_driver_IS_TOP_LEVEL:STATIC=ON
 
 //Dependencies for the target
-taos_odbc_LIB_DEPENDS:STATIC=general;taos;general;odbcinst;
+taos_odbc_driver_LIB_DEPENDS:STATIC=general;iconv;general;C:\TDengine\driver/taos.lib;general;legacy_stdio_definitions;general;odbc32;general;odbccp32;
 
 //Value Computed by CMake
-taos_odbc_SOURCE_DIR:STATIC=D:/workspaces/taos_odbc
+taos_odbc_driver_SOURCE_DIR:STATIC=D:/workspaces/taos_odbc
 
 //Dependencies for the target
-taos_odbc_a_LIB_DEPENDS:STATIC=general;taos;general;odbcinst;
+taos_odbc_setup_LIB_DEPENDS:STATIC=general;comctl32;general;legacy_stdio_definitions;general;Shlwapi;general;odbc32;general;odbccp32;
 
 //Dependencies for the target
 uv_LIB_DEPENDS:STATIC=general;psapi;general;user32;general;advapi32;general;iphlpapi;general;userenv;general;ws2_32;
@@ -485,10 +426,6 @@ zlib_SOURCE_DIR:STATIC=D:/workspaces/taos_odbc/contrib/zlib
 # INTERNAL cache entries
 ########################
 
-//ADVANCED property for variable: BISON_EXECUTABLE
-BISON_EXECUTABLE-ADVANCED:INTERNAL=1
-//Build the shared library
-BUILD_SHARED_LIBS:INTERNAL=ON
 //Test CFLAG_W4
 CFLAG_W4:INTERNAL=1
 //Test CFLAG_Wall
@@ -525,8 +462,6 @@ CMAKE_CACHE_PATCH_VERSION:INTERNAL=0
 CMAKE_COMMAND:INTERNAL=C:/App/CMake/bin/cmake.exe
 //Path to cpack program executable.
 CMAKE_CPACK_COMMAND:INTERNAL=C:/App/CMake/bin/cpack.exe
-//ADVANCED property for variable: CMAKE_CTEST_COMMAND
-CMAKE_CTEST_COMMAND-ADVANCED:INTERNAL=1
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=C:/App/CMake/bin/ctest.exe
 //ADVANCED property for variable: CMAKE_CXX_COMPILER
@@ -633,7 +568,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MT
 CMAKE_MT-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=23
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //noop for ranlib
@@ -689,36 +624,6 @@ CTEST_SUBMIT_RETRY_COUNT-ADVANCED:INTERNAL=1
 CTEST_SUBMIT_RETRY_DELAY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DART_TESTING_TIMEOUT
 DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
-//Details about finding BISON
-FIND_PACKAGE_MESSAGE_DETAILS_BISON:INTERNAL=[C:/App/CMake/bin/win_bison.exe][v3.8.2()]
-//Details about finding FLEX
-FIND_PACKAGE_MESSAGE_DETAILS_FLEX:INTERNAL=[C:/App/CMake/bin/win_flex.exe][v2.6.4()]
-//Details about finding ODBC
-FIND_PACKAGE_MESSAGE_DETAILS_ODBC:INTERNAL=[odbc32.lib][v()]
-//Test FLAG_SUPPORTED_DCRTSECURENOWARNINGS
-FLAG_SUPPORTED_DCRTSECURENOWARNINGS:INTERNAL=1
-//Test FLAG_SUPPORTED_GS
-FLAG_SUPPORTED_GS:INTERNAL=1
-//Test FLAG_SUPPORTED_W4
-FLAG_SUPPORTED_W4:INTERNAL=1
-//Test FLAG_SUPPORTED_Za
-FLAG_SUPPORTED_Za:INTERNAL=1
-//Test FLAG_SUPPORTED_fvisibilityhidden
-FLAG_SUPPORTED_fvisibilityhidden:INTERNAL=
-//Test FLAG_SUPPORTED_sdl
-FLAG_SUPPORTED_sdl:INTERNAL=1
-//Test FLAG_SUPPORTED_wd4001
-FLAG_SUPPORTED_wd4001:INTERNAL=1
-//ADVANCED property for variable: FLEX_EXECUTABLE
-FLEX_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: FLEX_INCLUDE_DIR
-FLEX_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: FL_LIBRARY
-FL_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GITCOMMAND
-GITCOMMAND-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GIT_EXECUTABLE
-GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 //Have function fseeko
 HAVE_FSEEKO:INTERNAL=
 //Result of TRY_COMPILE
@@ -735,8 +640,6 @@ MAKECOMMAND-ADVANCED:INTERNAL=1
 MEMORYCHECK_COMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MEMORYCHECK_SUPPRESSIONS_FILE
 MEMORYCHECK_SUPPRESSIONS_FILE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: ODBC_INCLUDE_DIR
-ODBC_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //CHECK_TYPE_SIZE: off64_t unknown
 OFF64_T:INTERNAL=
 //ADVANCED property for variable: SITE
@@ -780,7 +683,7 @@ UV_LINT_WALL:INTERNAL=1
 //Have include unistd.h
 Z_HAVE_UNISTD_H:INTERNAL=
 //CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/taos_odbc
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/taos_odbc_driver
 //Result of TRY_COMPILE
 compile_result_unused:INTERNAL=TRUE
 //Result of try_run()

@@ -470,6 +470,7 @@ dsn\td_dsn.obj: dsn\td_dsn.c.obj
 # target to build an object file
 dsn\td_dsn.c.obj:
 	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
+	$(MAKE) $(MAKESILENT) -f taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\build.make /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\dsn\td_dsn.c.obj
 	$(MAKE) $(MAKESILENT) -f taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\build.make /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\dsn\td_dsn.c.obj
 	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\taos_odbc_driver
 .PHONY : dsn\td_dsn.c.obj
@@ -480,6 +481,7 @@ dsn\td_dsn.i: dsn\td_dsn.c.i
 # target to preprocess a source file
 dsn\td_dsn.c.i:
 	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
+	$(MAKE) $(MAKESILENT) -f taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\build.make /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\dsn\td_dsn.c.i
 	$(MAKE) $(MAKESILENT) -f taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\build.make /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\dsn\td_dsn.c.i
 	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\taos_odbc_driver
 .PHONY : dsn\td_dsn.c.i
@@ -490,6 +492,7 @@ dsn\td_dsn.s: dsn\td_dsn.c.s
 # target to generate assembly for a file
 dsn\td_dsn.c.s:
 	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
+	$(MAKE) $(MAKESILENT) -f taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\build.make /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\dsn\td_dsn.c.s
 	$(MAKE) $(MAKESILENT) -f taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\build.make /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\dsn\td_dsn.c.s
 	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\taos_odbc_driver
 .PHONY : dsn\td_dsn.c.s

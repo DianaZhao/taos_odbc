@@ -1187,7 +1187,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "5"
+			"value" : "4"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -2427,7 +2427,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "general;iconv;general;C:\\TDengine\\driver/taos.lib;general;legacy_stdio_definitions;general;odbc32;general;odbccp32;"
+			"value" : "general;iconv;general;C:\\TDengine\\driver/taos.lib;general;legacy_stdio_definitions;general;odbc32;general;odbccp32;general;Shlwapi;"
 		},
 		{
 			"name" : "taos_odbc_driver_SOURCE_DIR",

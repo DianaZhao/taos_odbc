@@ -46,10 +46,6 @@ SQLTables (暂时使用post-filter来补救一下，等待taosc有新的实现�
 ### 安装TDengine 3.0
 - 请参考TDengine官方说明，https://tdengine.com
 
-### 安装必需的依赖项，以Ubuntu 20.04为例
-```
-sudo apt install flex bison unixodbc unixodbc-dev && echo -=Done=-
-```
 
 ### 编译及安装, 以Ubuntu 20.04为例
 ```
@@ -93,17 +89,7 @@ pushd debug >/dev/null && ctest --output-on-failure && echo -=Done=-; popd >/dev
 │   ├── core
 │   ├── inc
 │   └── dsn
-├── templates
-├── tests
-│   ├── c
-│   ├── cpp
-│   ├── node
-│   ├── rust
-│   │   └── main
-│   │       └── src
-│   └── taos
-├── tools
-└── valgrind
+└── test
 ```
 
 ## TDengine 引用及出处

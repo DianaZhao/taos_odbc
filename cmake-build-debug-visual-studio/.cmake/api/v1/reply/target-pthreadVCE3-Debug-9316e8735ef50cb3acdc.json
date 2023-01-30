@@ -2,13 +2,13 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "contrib/pthread/pthreadVC3d.dll"
+			"path" : "contrib/pthread/pthreadVCE3d.dll"
 		},
 		{
-			"path" : "contrib/pthread/pthreadVC3d.lib"
+			"path" : "contrib/pthread/pthreadVCE3d.lib"
 		},
 		{
-			"path" : "contrib/pthread/pthreadVC3d.pdb"
+			"path" : "contrib/pthread/pthreadVCE3d.pdb"
 		}
 	],
 	"backtrace" : 2,
@@ -36,13 +36,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 158,
+				"line" : 156,
 				"parent" : 0
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 120,
+				"line" : 117,
 				"parent" : 1
 			},
 			{
@@ -84,7 +84,7 @@
 			{
 				"command" : 4,
 				"file" : 2,
-				"line" : 40,
+				"line" : 34,
 				"parent" : 9
 			},
 			{
@@ -101,7 +101,10 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /errorReport:none /nologo  /MTd /Zi /Ob0 /Od /RTC1"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MTd /Zi /Ob0 /Od /RTC1"
+				},
+				{
+					"fragment" : "/EHs "
 				}
 			],
 			"defines" : 
@@ -120,7 +123,7 @@
 				},
 				{
 					"backtrace" : 6,
-					"define" : "PTW32_CLEANUP_C"
+					"define" : "PTW32_CLEANUP_CXX"
 				},
 				{
 					"backtrace" : 3,
@@ -131,7 +134,7 @@
 					"define" : "PTW32_STATIC_LIB"
 				},
 				{
-					"define" : "pthreadVC3_EXPORTS"
+					"define" : "pthreadVCE3_EXPORTS"
 				}
 			],
 			"includes" : 
@@ -145,7 +148,7 @@
 					"path" : "D:/workspaces/taos_odbc/contrib/pthread/."
 				}
 			],
-			"language" : "C",
+			"language" : "CXX",
 			"sourceIndexes" : 
 			[
 				0
@@ -174,7 +177,7 @@
 				},
 				{
 					"backtrace" : 6,
-					"define" : "PTW32_CLEANUP_C"
+					"define" : "PTW32_CLEANUP_CXX"
 				},
 				{
 					"backtrace" : 3,
@@ -185,7 +188,7 @@
 					"define" : "PTW32_STATIC_LIB"
 				},
 				{
-					"define" : "pthreadVC3_EXPORTS"
+					"define" : "pthreadVCE3_EXPORTS"
 				}
 			],
 			"includes" : 
@@ -206,7 +209,7 @@
 			]
 		}
 	],
-	"id" : "pthreadVC3::@67e1cd471a073ee882f0",
+	"id" : "pthreadVCE3::@67e1cd471a073ee882f0",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -220,10 +223,10 @@
 				"role" : "libraries"
 			}
 		],
-		"language" : "C"
+		"language" : "CXX"
 	},
-	"name" : "pthreadVC3",
-	"nameOnDisk" : "pthreadVC3d.dll",
+	"name" : "pthreadVCE3",
+	"nameOnDisk" : "pthreadVCE3d.dll",
 	"paths" : 
 	{
 		"build" : "contrib/pthread",
@@ -245,7 +248,7 @@
 		{
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "contrib/pthread/pthread-JMP.c",
+			"path" : "contrib/pthread/pthread-EH.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

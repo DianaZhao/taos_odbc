@@ -25,7 +25,7 @@ BOOL CSFilled = FALSE;
 BOOL ConnectionOK = FALSE;
 BOOL notCanceled = TRUE;
 
-char DSNStr[2048];
+SQLCHAR DSNStr[2048];
 HWND hwndTab[7], hwndMain;
 const int *EffectiveDisabledPages = NULL,
         *EffectiveDisabledControls = NULL;
@@ -52,13 +52,13 @@ const int *DisabledControls[] = {
 };
 
 TAOS_DsnMap DsnMap[] = {
-        {&DsnKeys[0], 0, txtDsnName,        64,  1},
-        {&DsnKeys[1], 0, txtDSNDescription, 64,  0},
-        {&DsnKeys[2], 1, txtServerName,     128, 0},
-        {&DsnKeys[3], 1, txtUserName,       64,  0},
-        {&DsnKeys[4], 1, txtPassword,       64,  0},
-        {&DsnKeys[5], 1, cbDatabase,        0,   0},
-        {&DsnKeys[6], 1, txtPort,           5,   0},
+        {&DsnKeys[1], 0, txtDsnName,        64,  1},
+        {&DsnKeys[2], 0, txtDSNDescription, 64,  0},
+        {&DsnKeys[3], 1, txtServerName,     128, 0},
+        {&DsnKeys[4], 1, txtUserName,       64,  0},
+        {&DsnKeys[5], 1, txtPassword,       64,  0},
+        {&DsnKeys[6], 1, cbDatabase,        0,   0},
+        {&DsnKeys[7], 1, txtPort,           5,   0},
         {NULL,        0, 0,                 0,   0}
 };
 
@@ -67,20 +67,28 @@ TAOS_DsnMap DsnMap[] = {
 #define CBGROUP_SETBIT(_Dsn, MapIdx)    *GET_FIELD_PTR(_Dsn, DsnMap[MapIdx].Key, char)|= CBGROUP_BIT(MapIdx)
 #define CBGROUP_RESETBIT(_Dsn, MapIdx)  *GET_FIELD_PTR(_Dsn, DsnMap[MapIdx].Key, char)&= ~CBGROUP_BIT(MapIdx)
 
-TAOS_OptionsMap OptionsMap[] = {
-        {1,        rbPipe,              TAOS_OPT_FLAG_NAMED_PIPE},
-        {LASTPAGE, ckPadCharFullLength, TAOS_OPT_FLAG_PAD_SPACE},
-        /* last element */
-        {0, 0, 0}
-};
-
 void GetDialogFields(void);
 
 HBRUSH hbrBg = NULL;
 
 
 void DsnApplyDefaults(TAOS_Dsn *Dsn) {
-    Dsn->Port = 6030;
+    Dsn->Driver = "TAOS_ODBC";
+    if (Dsn->Description == NULL) {
+        Dsn->Description = "";
+    }
+    if (Dsn->Database == NULL) {
+        Dsn->Database = "";
+    }
+    if (Dsn->UserName == NULL) {
+        Dsn->UserName = "";
+    }
+    if (Dsn->Password == NULL) {
+        Dsn->Password = "";
+    }
+    if (Dsn->Port == NULL || Dsn->Port == 0) {
+        Dsn->Port = 6030;
+    }
 }
 
 
@@ -96,18 +104,18 @@ BOOL SetDialogFields() {
         switch (DsnMap[i].Key->Type) {
             case DSN_TYPE_STRING:
             case DSN_TYPE_COMBO: {
-                char *Val = *(char **) ((char *) Dsn + DsnMap[i].Key->DsnOffset);
+                SQLCHAR *Val = *(SQLCHAR **) ((SQLCHAR *) Dsn + DsnMap[i].Key->DsnOffset);
                 if (Val && Val[0])
                     SetDlgItemText(hwndTab[DsnMap[i].Page], DsnMap[i].Item, Val);
                 break;
             }
             case DSN_TYPE_INT: {
-                int Val = *(int *) ((char *) Dsn + DsnMap[i].Key->DsnOffset);
+                int Val = *(int *) ((SQLCHAR *) Dsn + DsnMap[i].Key->DsnOffset);
                 SetDlgItemInt(hwndTab[DsnMap[i].Page], DsnMap[i].Item, Val, 0);
             }
                 break;
             case DSN_TYPE_BOOL: {
-                BOOL Val = *(BOOL *) ((char *) Dsn + DsnMap[i].Key->DsnOffset);
+                BOOL Val = *(BOOL *) ((SQLCHAR *) Dsn + DsnMap[i].Key->DsnOffset);
                 SendDlgItemMessage(hwndTab[DsnMap[i].Page], DsnMap[i].Item, BM_SETCHECK,
                                    Val ? BST_CHECKED : BST_UNCHECKED, 0);
             }
@@ -121,30 +129,19 @@ BOOL SetDialogFields() {
         i++;
     }
     i = 0;
-    while (OptionsMap[i].Item != 0) {
-        BOOL Val = (Dsn->Options & OptionsMap[i].value) ? 1 : 0;
-        SendDlgItemMessage(hwndTab[OptionsMap[i].Page], OptionsMap[i].Item, BM_SETCHECK,
-                           Val ? BST_CHECKED : BST_UNCHECKED, 0);
-        if (Val && OptionsMap[i].Item == rbPipe) {
-            SendMessage(GetDlgItem(hwndTab[OptionsMap[i].Page], lblServerName), WM_SETTEXT, 0, (LPARAM) "Named pipe:");
-            ShowWindow(GetDlgItem(hwndTab[OptionsMap[i].Page], lblPort), SW_HIDE);
-            ShowWindow(GetDlgItem(hwndTab[OptionsMap[i].Page], txtPort), SW_HIDE);
-        }
-        i++;
-    }
     return TRUE;
 
 }
 
-char *GetFieldStrVal(int Dialog, int Field, char *(*allocator)(size_t)) {
+SQLCHAR *GetFieldStrVal(int Dialog, int Field, SQLCHAR *(*allocator)(size_t)) {
     int rc;
     int len = Edit_GetTextLength(GetDlgItem(hwndTab[Dialog], Field));
-    char *p;
+    SQLCHAR *p;
 
     if (allocator) {
         p = allocator(len * sizeof(char) + 2);
     } else {
-        p = (char *) malloc(len * sizeof(char) + 2);
+        p = (SQLCHAR *) malloc(len * sizeof(char) + 2);
     }
 
     if (p)
@@ -154,7 +151,7 @@ char *GetFieldStrVal(int Dialog, int Field, char *(*allocator)(size_t)) {
 
 int GetFieldIntVal(int Dialog, int Field) {
     int rc = 0;
-    char *p = GetFieldStrVal(Dialog, Field, NULL);
+    SQLCHAR *p = GetFieldStrVal(Dialog, Field, NULL);
     if (p) {
         rc = atoi(p);
         free(p);
@@ -217,7 +214,6 @@ void DisableControls(TAOS_Dsn *Dsn) {
     int i;
 
     DISABLE_CONTROLS(DsnMap);
-    DISABLE_CONTROLS(OptionsMap);
 }
 
 
@@ -263,13 +259,12 @@ void SetPage(HWND hDlg, int value) {
 void GetDialogFields() {
     int i = 0;
     TAOS_Dsn *Dsn = (TAOS_Dsn *) GetWindowLongPtr(GetParent(hwndTab[0]), DWLP_USER);
-
     while (DsnMap[i].Key) {
         printf("DsnOffset%d\n", DsnMap[i].Key->DsnOffset);
         switch (DsnMap[i].Key->Type) {
             case DSN_TYPE_STRING:
             case DSN_TYPE_COMBO: {
-                char **p = (char **) ((char *) Dsn + DsnMap[i].Key->DsnOffset);
+                SQLCHAR **p = (SQLCHAR **) ((SQLCHAR *) Dsn + DsnMap[i].Key->DsnOffset);
 
                 if (Dsn->isPrompt != 0 && Dsn->free != NULL) {
                     Dsn->free(*p);
@@ -279,7 +274,7 @@ void GetDialogFields() {
             }
                 break;
             case DSN_TYPE_INT:
-                *(int *) ((char *) Dsn + DsnMap[i].Key->DsnOffset) = GetFieldIntVal(DsnMap[i].Page, DsnMap[i].Item);
+                *(int *) ((SQLCHAR *) Dsn + DsnMap[i].Key->DsnOffset) = GetFieldIntVal(DsnMap[i].Page, DsnMap[i].Item);
                 break;
             case DSN_TYPE_BOOL:
                 *GET_FIELD_PTR(Dsn, DsnMap[i].Key, BOOL) = IS_CB_CHECKED(i);
@@ -293,19 +288,15 @@ void GetDialogFields() {
         }
         ++i;
     }
+    DsnApplyDefaults(Dsn);
     i = 0;
     Dsn->Options = 0;
-    while (OptionsMap[i].Item != 0) {
-        if (GetButtonState(OptionsMap[i].Page, OptionsMap[i].Item))
-            Dsn->Options |= OptionsMap[i].value;
-        i++;
-    }
 }
 
 void DSN_Set_Database(SQLHANDLE Connection) {
     TAOS_STMT *Stmt = NULL;
     SQLRETURN ret = SQL_ERROR;
-    char Database[65];
+    SQLCHAR Database[65];
     TAOS_Dsn *Dsn = (TAOS_Dsn *) GetWindowLongPtr(GetParent(hwndTab[0]), DWLP_USER);
     HWND DbCombobox = GetDlgItem(hwndTab[1], cbDatabase);
 
@@ -338,123 +329,21 @@ void DSN_Set_Database(SQLHANDLE Connection) {
         SQLFreeHandle(SQL_HANDLE_STMT, (SQLHANDLE) Stmt);
 }
 
-//void DSN_Set_CharacterSets(SQLHANDLE Connection)
-//{
-//  TAOS_STMT *Stmt= NULL;
-//  SQLRETURN ret= SQL_ERROR;
-//  char Charset[65];
-//  TAOS_Dsn *Dsn= (TAOS_Dsn *)GetWindowLongPtr(GetParent(hwndTab[0]), DWLP_USER);
-//
-//  if (CSFilled)
-//    return;
-//
-//  GetDialogFields();
-//
-//  if (SQLAllocHandle(SQL_HANDLE_STMT, Connection, (SQLHANDLE *)&Stmt) != SQL_SUCCESS)
-//    goto end;
-//
-//  if (SQLExecDirect((SQLHSTMT)Stmt,
-//                    (SQLCHAR *)"select character_set_name from information_schema.collations "
-//                               "WHERE character_set_name NOT LIKE 'utf16%' AND "
-//                               "character_set_name NOT LIKE 'utf32%' AND "
-//                               "character_set_name NOT LIKE 'ucs2' "
-//                               "group by character_set_name order by character_set_name"
-//                               , SQL_NTS) != SQL_SUCCESS)
-//    goto end;
-//
-//  SQLBindCol(Stmt, 1, SQL_C_CHAR, Charset, 65, 0);
-//  ComboBox_ResetContent(GetDlgItem(hwndTab[2], cbCharset));
-//
-//  while (SQLFetch(Stmt) == SQL_SUCCESS)
-//    ComboBox_InsertString(GetDlgItem(hwndTab[2], cbCharset), -1, Charset);
-//  if (Dsn->CharacterSet)
-//  {
-//    int Idx= ComboBox_FindString(GetDlgItem(hwndTab[2], cbCharset), 0, Dsn->CharacterSet);
-//    ComboBox_SetCurSel(GetDlgItem(hwndTab[2], cbCharset), Idx);
-//  }
-//  ComboBox_SetMinVisible(GetDlgItem(hwndTab[2], cbCharset),5);
-//  CSFilled= TRUE;
-//
-//end:
-//  if (Stmt)
-//	  SQLFreeHandle(SQL_HANDLE_STMT, (SQLHANDLE)Stmt);
-//}
 
-typedef struct connection_cfg_s connection_cfg_t;
+static SQLCHAR *conn_str_varkeys[] = {"dsn", "dsnname", "server", "ip", "addr", "port",
+                                      "user", "uid", "password", "pwd", "database", "db"};
 
-struct connection_cfg_s {
-    char *driver;
-    char *dsn;
-    char *uid;
-    char *pwd;
-    char *ip;
-    char *db;
-    int port;
-
-    // NOTE: 1.this is to hack node.odbc, which maps SQL_TINYINT to SQL_C_UTINYINT
-    //       2.node.odbc does not call SQLGetInfo/SQLColAttribute to get signess of integers
-    unsigned int unsigned_promotion: 1;
-    unsigned int cache_sql: 1;
-};
-
-static char *conn_str_varkeys[] = {"dsn", "dsnname", "server", "ip", "addr", "port",
-                                   "user", "uid", "password", "pwd", "database", "db"};
-
-static char *conn_str_keys[] = {"dsn", "dsn", "ip", "ip", "ip", "port",
-                                "uid", "uid", "pwd", "pwd", "db", "db"};
-
-int parse_conn_str(SQLCHAR *conn_str, const char *delim, connection_cfg_t *cfg) {
-    int i = 0;
-    char *kv = strtok(conn_str, delim);
-    printf("conn_str %s\n", conn_str);
-    while (kv != NULL) {
-        char *vs = strchr(kv, '=');
-        if (vs != NULL) {
-            int ks = (vs - kv) * sizeof(char) + 1;
-            printf("kv %s\n", kv);
-            char *key = malloc(ks);
-            memcpy(key, kv, ks);
-            key[ks - 1] = '\0';
-            printf("key %s\n", key);
-            for (int j = 0; j < 11; j++) {
-                if (_stricmp(key, conn_str_varkeys[j]) == 0) {
-                    char *val = vs + 1;
-                    printf("real key %s\n", conn_str_keys[j]);
-                    printf("val %s\n", val);
-                    if (strcmp(conn_str_keys[j], "ip") == 0) {
-                        cfg->ip = val;
-                    } else if (strcmp(conn_str_keys[j], "dsn") == 0) {
-                        cfg->dsn = val;
-                    } else if (strcmp(conn_str_keys[j], "db") == 0) {
-                        cfg->db = val;
-                    } else if (strcmp(conn_str_keys[j], "uid") == 0) {
-                        cfg->uid = val;
-                    } else if (strcmp(conn_str_keys[j], "pwd") == 0) {
-                        cfg->pwd = val;
-                    } else if (strcmp(conn_str_keys[j], "port") == 0) {
-                        cfg->port = atoi(val);
-                    }
-                    i++;
-                    break;
-                }
-            }
-        }
-        kv = strtok(NULL, delim);
-    }
-    printf("pairs %d\n", i);
-    return i;
-}
+static SQLCHAR *conn_str_keys[] = {"dsn", "dsn", "ip", "ip", "ip", "port",
+                                   "uid", "uid", "pwd", "pwd", "db", "db"};
 
 
 static SQLRETURN TestDSN(TAOS_Dsn *Dsn, SQLHANDLE *Conn, SQLCHAR *ConnStrBuffer) {
     SQLHANDLE Connection = NULL;
     SQLRETURN Result = SQL_ERROR;
     SQLCHAR LocalBuffer[CONNSTR_BUFFER_SIZE], *ConnStr = LocalBuffer;
-    char *DsName = Dsn->DSNName;
-    char *Description = Dsn->Description;
-
-    Dsn->DSNName = NULL;
-    Dsn->Description = NULL;
+    SQLCHAR *Description = Dsn->Description;
+    SQLCHAR Info[1024];
+    Dsn->Description = "";
 
     if (ConnStrBuffer != NULL) {
         ConnStr = ConnStrBuffer;
@@ -465,40 +354,34 @@ static SQLRETURN TestDSN(TAOS_Dsn *Dsn, SQLHANDLE *Conn, SQLCHAR *ConnStrBuffer)
        cares about that) */
     SetDialogFields();
     TAOS_DsnToString(Dsn, ConnStr, CONNSTR_BUFFER_SIZE);
-    connection_cfg_t cfg;
-    cfg.dsn = "";
-    int r = parse_conn_str(ConnStr, ";", &cfg);
-    if (r >= 2) {
-        printf("dsn: %s, ip: %s, port: %d\n", cfg.dsn, cfg.ip, cfg.port);
+    _snprintf(Info, sizeof(Info), "dsn: %s, ip: %s, port: %d\n", Dsn->DSNName, Dsn->ServerName, Dsn->Port);
+    SQLAllocHandle(SQL_HANDLE_DBC, Environment, (SQLHANDLE *) &Connection);
+    if (Connection == NULL) {
+        return Result;
+    }
+    MessageBox(hwndTab[CurrentPage], Info, "Connection test", MB_ICONINFORMATION | MB_OK);
+    Result = SQLDriverConnect(Connection, NULL, ConnStr, CONNSTR_BUFFER_SIZE, NULL, 0, NULL, SQL_DRIVER_NOPROMPT);
 
-        SQLAllocHandle(SQL_HANDLE_DBC, Environment, (SQLHANDLE *) &Connection);
-        if (Connection == NULL) {
-            return Result;
-        }
-        Result = SQLDriverConnect(Connection, NULL, ConnStr, CONNSTR_BUFFER_SIZE, NULL, 0, NULL, SQL_DRIVER_NOPROMPT);
+    Dsn->Description = Description;
 
-        Dsn->DSNName = DsName;
-        Dsn->Description = Description;
-
-        if (Conn != NULL) {
-            *Conn = Connection;
-        } else {
-            SQLDisconnect(Connection);
-            SQLFreeHandle(SQL_HANDLE_DBC, Connection);
-        }
+    if (Conn != NULL) {
+        *Conn = Connection;
+    } else {
+        SQLDisconnect(Connection);
+        SQLFreeHandle(SQL_HANDLE_DBC, Connection);
     }
     return Result;
 }
 
 
 /* Connstr has to be null-terminated */
-char *HidePwd(char *ConnStr) {
-    char *Ptr = ConnStr;
+SQLCHAR *HidePwd(SQLCHAR *ConnStr) {
+    SQLCHAR *Ptr = ConnStr;
 
     while (*Ptr) {
         BOOL IsPwd = FALSE;
-        char *KeyValBorder = strchr(Ptr, '=');
-        char StopChr = ';';
+        SQLCHAR *KeyValBorder = strchr(Ptr, '=');
+        SQLCHAR StopChr = ';';
 
         Ptr = ltrim(Ptr);
 
@@ -527,20 +410,19 @@ char *HidePwd(char *ConnStr) {
 void TAOS_WIN_TestDsn(BOOL ShowSuccess) {
     SQLHANDLE Connection;
     SQLRETURN ret;
+    GetDialogFields();
     TAOS_Dsn *Dsn = (TAOS_Dsn *) GetWindowLongPtr(GetParent(hwndTab[0]), DWLP_USER);
     SQLCHAR ConnStr[CONNSTR_BUFFER_SIZE];
-
-    GetDialogFields();
 
     ret = TestDSN(Dsn, &Connection, ConnStr);
 
     if (ShowSuccess) {
-        char Info[1024];
+        SQLCHAR Info[1024];
 
         HidePwd(ConnStr);
 
         if (SQL_SUCCEEDED(ret)) {
-            char DbmsName[16], DbmsVer[16];
+            SQLCHAR DbmsName[16], DbmsVer[16];
             SQLGetInfo(Connection, SQL_DBMS_NAME, DbmsName, sizeof(DbmsName), NULL);
             SQLGetInfo(Connection, SQL_DBMS_VER, DbmsVer, sizeof(DbmsVer), NULL);
             _snprintf(Info, sizeof(Info),
@@ -771,9 +653,9 @@ BOOL DSNDialog(HWND hwndParent,
                TAOS_Dsn *Dsn) {
     MSG msg;
     BOOL ret;
-    char *DsnName = NULL;
+    SQLCHAR *DsnName = NULL;
     BOOL DsnExists = FALSE;
-    char Delimiter = ';';
+    SQLCHAR Delimiter = ';';
 
     if (Dsn->isPrompt < 0 || Dsn->isPrompt > ODBC_PROMPT_REQUIRED) {
         Dsn->isPrompt = ODBC_CONFIG;
@@ -781,7 +663,7 @@ BOOL DSNDialog(HWND hwndParent,
 
     if (lpszAttributes) {
         Delimiter = '\0';
-        DsnName = strchr((char *) lpszAttributes, '=');
+        DsnName = strchr((SQLCHAR *) lpszAttributes, '=');
     }
 
     if (DsnName) {
@@ -818,7 +700,7 @@ BOOL DSNDialog(HWND hwndParent,
                 }
             }
 
-            TAOS_ParseConnString(Dsn, (char *) lpszAttributes, SQL_NTS, Delimiter);
+            TAOS_ParseConnString(Dsn, (SQLCHAR *) lpszAttributes, SQL_NTS, Delimiter);
 
             /* Need to set driver after connstring parsing, and before saving */
             if (lpszDriver) {
@@ -846,7 +728,7 @@ BOOL DSNDialog(HWND hwndParent,
                         MessageBox(0, "Data source name not found", "Error", MB_ICONERROR | MB_OK);
                     }
                     return FALSE;
-                } else if (!TAOS_ReadConnString(Dsn, (char *) lpszAttributes, SQL_NTS, Delimiter)) {
+                } else if (!TAOS_ReadConnString(Dsn, (SQLCHAR *) lpszAttributes, SQL_NTS, Delimiter)) {
                     SQLPostInstallerError(ODBC_ERROR_INVALID_DSN, Dsn->ErrorMsg);
                     return FALSE;
                 }
@@ -901,6 +783,25 @@ BOOL DSNDialog(HWND hwndParent,
     return notCanceled;
 }
 
+BOOL __stdcall ConfigDSNCmd(const SQLCHAR *connstr) {
+    printf("ConfigDSNCmd, connstr=%s", connstr);
+    TAOS_Dsn Dsn;
+    memset(&Dsn, 0, sizeof(TAOS_Dsn));
+    TAOS_ParseConnString(&Dsn, connstr, strlen(connstr), ";");
+    DsnApplyDefaults(&Dsn);
+    SQLCHAR *cfgStr = malloc(CONNSTR_BUFFER_SIZE * sizeof(char));
+    memset(cfgStr, 0, CONNSTR_BUFFER_SIZE * sizeof(char));
+    printf("DSN DSNName=%s, ServerName=%s, Driver=%s \n", Dsn.DSNName, Dsn.ServerName, Dsn.Driver);
+    if (TAOS_SaveDSN(&Dsn)) {
+        TAOS_DsnToString(&Dsn, cfgStr, CONNSTR_BUFFER_SIZE);
+        printf("DSN %s saved %s\n", Dsn.DSNName, cfgStr);
+        return TRUE;
+    } else {
+        printf("DSN %s can not be saved\n", Dsn.DSNName);
+    }
+    free(cfgStr);
+}
+
 
 BOOL INSTAPI ConfigDSN(
         HWND hwndParent,
@@ -920,7 +821,7 @@ BOOL INSTAPI ConfigDSN(
             memset(&Dsn, 0, sizeof(TAOS_Dsn));
             return DSNDialog(hwndParent, fRequest, lpszDriver, lpszAttributes, &Dsn);
         case ODBC_REMOVE_DSN: {
-            char *Val = strchr((char *) lpszAttributes, '=');
+            SQLCHAR *Val = strchr((SQLCHAR *) lpszAttributes, '=');
             if (Val) {
                 ++Val;
                 return SQLRemoveDSNFromIni(Val);

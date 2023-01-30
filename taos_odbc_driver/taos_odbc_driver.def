@@ -1,7 +1,6 @@
 LIBRARY taos_odbc_driver.dll
 EXPORTS
 DllMain
-test_dll
 SQLAllocConnect
 SQLAllocEnv
 SQLAllocHandle

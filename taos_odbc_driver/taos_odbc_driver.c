@@ -129,11 +129,8 @@ SQLRETURN SQL_API SQLDriverConnect(
         SQLSMALLINT *StringLength2Ptr,
         SQLUSMALLINT DriverCompletion) {
     if (ConnectionHandle == SQL_NULL_HANDLE) return SQL_INVALID_HANDLE;
-
     conn_t *conn = (conn_t *) ConnectionHandle;
-
     conn_clr_errs(conn);
-
     return conn_driver_connect(conn, WindowHandle, InConnectionString, StringLength1, OutConnectionString, BufferLength,
                                StringLength2Ptr, DriverCompletion);
 }

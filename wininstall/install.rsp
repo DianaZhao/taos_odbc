@@ -1,0 +1,1 @@
+INSTALLDRIVER “TAOS_ODBC|Driver=taos_odbc_driver.dll|Setup=taos_odbc_setup.dll|”

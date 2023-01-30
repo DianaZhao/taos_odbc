@@ -32,6 +32,7 @@
 
 #include <odbcinst.h>
 #include <string.h>
+#include "taos_odbc_driver/dsn/td_dsn.h"
 
 static char *conn_str_varkeys[] = {"dsn", "dsnname", "server", "ip", "addr", "port",
                                    "user", "uid", "password", "pwd", "database", "db"};
@@ -303,6 +304,43 @@ int parse_conn_str(SQLCHAR *conn_str, const char *delim, connection_cfg_t *cfg) 
     return i;
 }
 
+BOOL dsnToCfg(TAOS_Dsn *dsn, connection_cfg_t *cfg) {
+    if (!dsn || !cfg) {
+        return FALSE;
+    }
+    if (dsn->ServerName != NULL) {
+        strcpy(cfg->ip, dsn->ServerName);
+    } else {
+        return FALSE;
+    }
+    if (dsn->Port != NULL && dsn->Port != 0) {
+        cfg->port = dsn->Port;
+    } else {
+        cfg->port = 6030;
+    }
+    if (dsn->Driver != NULL) {
+        strcpy(cfg->driver, dsn->Driver);
+    } else {
+        cfg->driver = "";
+    }
+    if (dsn->UserName != NULL) {
+        strcpy(cfg->uid, dsn->UserName);
+    } else {
+        cfg->uid = "";
+    }
+    if (dsn->Password != NULL) {
+        strcpy(cfg->pwd, dsn->Password);
+    } else {
+        cfg->pwd = "";
+    }
+    if (dsn->Database != NULL) {
+        strcpy(cfg->db, dsn->Database);
+    } else {
+        cfg->db = "";
+    }
+    return TRUE;
+}
+
 SQLRETURN conn_driver_connect(
         conn_t *conn,
         SQLHWND WindowHandle,
@@ -313,6 +351,8 @@ SQLRETURN conn_driver_connect(
         SQLSMALLINT *StringLength2Ptr,
         SQLUSMALLINT DriverCompletion) {
     (void) WindowHandle;
+    TAOS_Dsn *dsn = malloc(sizeof(TAOS_Dsn));
+    TAOS_ParseConnString(dsn, InConnectionString, strlen(InConnectionString), ";");
 
     switch (DriverCompletion) {
         case SQL_DRIVER_NOPROMPT:
@@ -348,8 +388,8 @@ SQLRETURN conn_driver_connect(
 //            break;
 //        }
 
-    int r = parse_conn_str(InConnectionString, ";", &conn->cfg);
-    if (r <= 0) {
+    BOOL r = dsnToCfg(dsn, &conn->cfg);
+    if (!r) {
         conn_append_err(conn, "HY000", 0, "Can not parse connection string");
         return SQL_ERROR;
     }

@@ -9,8 +9,7 @@
 					"childIndexes" : 
 					[
 						1,
-						3,
-						4
+						3
 					],
 					"hasInstallRule" : true,
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
@@ -38,7 +37,7 @@
 					"source" : "contrib",
 					"targetIndexes" : 
 					[
-						1
+						0
 					]
 				},
 				{
@@ -54,12 +53,12 @@
 					"source" : "contrib/pthread",
 					"targetIndexes" : 
 					[
+						1,
 						2,
 						3,
 						4,
-						6,
-						7,
-						8
+						5,
+						6
 					]
 				},
 				{
@@ -74,25 +73,8 @@
 					"source" : "taos_odbc_driver",
 					"targetIndexes" : 
 					[
-						9,
-						10
-					]
-				},
-				{
-					"build" : "test",
-					"jsonFile" : "directory-test-Debug-f18be1977b403cfd1a50.json",
-					"minimumCMakeVersion" : 
-					{
-						"string" : "3.0"
-					},
-					"parentIndex" : 0,
-					"projectIndex" : 0,
-					"source" : "test",
-					"targetIndexes" : 
-					[
-						0,
-						5,
-						11
+						7,
+						8
 					]
 				}
 			],
@@ -108,18 +90,14 @@
 					[
 						0,
 						1,
-						3,
-						4
+						3
 					],
 					"name" : "taos_odbc_driver",
 					"targetIndexes" : 
 					[
 						0,
-						1,
-						5,
-						9,
-						10,
-						11
+						7,
+						8
 					]
 				},
 				{
@@ -131,99 +109,78 @@
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
+						1,
 						2,
 						3,
 						4,
-						6,
-						7,
-						8
+						5,
+						6
 					]
 				}
 			],
 			"targets" : 
 			[
 				{
-					"directoryIndex" : 4,
-					"id" : "dsn_test::@36f028580bb02cc8272a",
-					"jsonFile" : "target-dsn_test-Debug-c48aa703915b87917ae4.json",
-					"name" : "dsn_test",
-					"projectIndex" : 0
-				},
-				{
 					"directoryIndex" : 1,
 					"id" : "iconv::@0c40c793bb09d8ef6800",
-					"jsonFile" : "target-iconv-Debug-fe0181d5ad6603d8cb48.json",
+					"jsonFile" : "target-iconv-Debug-7f85eb7a788fd3b80d81.json",
 					"name" : "iconv",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "libpthreadVC3::@67e1cd471a073ee882f0",
-					"jsonFile" : "target-libpthreadVC3-Debug-2cd62f43767616f356fe.json",
+					"jsonFile" : "target-libpthreadVC3-Debug-52544975330e8056b6ac.json",
 					"name" : "libpthreadVC3",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "libpthreadVCE3::@67e1cd471a073ee882f0",
-					"jsonFile" : "target-libpthreadVCE3-Debug-fa5494fe90c952cfb38d.json",
+					"jsonFile" : "target-libpthreadVCE3-Debug-90dc4c6fa04e5bf75ea3.json",
 					"name" : "libpthreadVCE3",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "libpthreadVSE3::@67e1cd471a073ee882f0",
-					"jsonFile" : "target-libpthreadVSE3-Debug-53187f1b23f5a5ef5fd7.json",
+					"jsonFile" : "target-libpthreadVSE3-Debug-3648fcb84aa8812755a6.json",
 					"name" : "libpthreadVSE3",
 					"projectIndex" : 1
 				},
 				{
-					"directoryIndex" : 4,
-					"id" : "odbc_test::@36f028580bb02cc8272a",
-					"jsonFile" : "target-odbc_test-Debug-4393fb6175fbe8e35755.json",
-					"name" : "odbc_test",
-					"projectIndex" : 0
-				},
-				{
 					"directoryIndex" : 2,
 					"id" : "pthreadVC3::@67e1cd471a073ee882f0",
-					"jsonFile" : "target-pthreadVC3-Debug-6d6ea8418cad96c59146.json",
+					"jsonFile" : "target-pthreadVC3-Debug-49daa56cf096175ab3a9.json",
 					"name" : "pthreadVC3",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "pthreadVCE3::@67e1cd471a073ee882f0",
-					"jsonFile" : "target-pthreadVCE3-Debug-e878107f935c87934c0b.json",
+					"jsonFile" : "target-pthreadVCE3-Debug-9316e8735ef50cb3acdc.json",
 					"name" : "pthreadVCE3",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "pthreadVSE3::@67e1cd471a073ee882f0",
-					"jsonFile" : "target-pthreadVSE3-Debug-2c302a1ecaf250fd40c4.json",
+					"jsonFile" : "target-pthreadVSE3-Debug-891a8f0bc6a6171f3b1a.json",
 					"name" : "pthreadVSE3",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "taos_odbc_driver::@fa07086ab171fa28aabf",
-					"jsonFile" : "target-taos_odbc_driver-Debug-7be130fde9ad799834ef.json",
+					"jsonFile" : "target-taos_odbc_driver-Debug-4ef5380389360278ec2b.json",
 					"name" : "taos_odbc_driver",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "taos_odbc_setup::@fa07086ab171fa28aabf",
-					"jsonFile" : "target-taos_odbc_setup-Debug-2928cad7559b01a90c37.json",
+					"jsonFile" : "target-taos_odbc_setup-Debug-d6acd0d48cd5f47aa2c9.json",
 					"name" : "taos_odbc_setup",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 4,
-					"id" : "taos_test::@36f028580bb02cc8272a",
-					"jsonFile" : "target-taos_test-Debug-08aafd074884b7ef6039.json",
-					"name" : "taos_test",
 					"projectIndex" : 0
 				}
 			]

@@ -41,6 +41,20 @@ typedef SQLRETURN (WINAPI
 SQLConnectW_Func _SQLConnectW = NULL;
 
 typedef SQLRETURN (WINAPI
+        *SQLDriverConnect_Func)(
+        SQLHDBC ConnectionHandle,
+        SQLHWND WindowHandle,
+        SQLCHAR *InConnectionString,
+        SQLSMALLINT StringLength1,
+        SQLCHAR *OutConnectionString,
+        SQLSMALLINT BufferLength,
+        SQLSMALLINT *StringLength2Ptr,
+        SQLUSMALLINT DriverCompletion
+);
+
+SQLDriverConnect_Func _SQLDriverConnect = NULL;
+
+typedef SQLRETURN (WINAPI
         *SQLDisconnect_Func)(
         SQLHDBC ConnectionHandle
 );
@@ -136,7 +150,7 @@ int test_connect(SQLHANDLE henv, const char *server, const char *uid, const char
         printf("connect [server:%s,uid:%s,pwd:%s] passed\n", server, uid, pwd);
     }
     const char *stmt = "create database odbc_test;";
-    int r = test_statement(hconn, stmt);
+//    int r = test_statement(hconn, stmt);
     sr = _SQLDisconnect(hconn);
     if (FAILED(sr)) {
         printf("disconnect [server:%s] failed\n", server);
@@ -147,15 +161,43 @@ int test_connect(SQLHANDLE henv, const char *server, const char *uid, const char
     return 0;
 }
 
+int test_driver_connect(SQLHANDLE henv, const char *connStr) {
+    SQLRETURN sr = SQL_SUCCESS;
+    SQLHANDLE hconn = SQL_NULL_HANDLE;
+    sr = _SQLAllocHandle(SQL_HANDLE_DBC, henv, &hconn);
+    if (FAILED(sr)) {
+        printf("_SQLAllocHandle SQL_HANDLE_DBC failed\n");
+        return -1;
+    } else {
+        printf("_SQLAllocHandle SQL_HANDLE_DBC success, %lld\n", (ULONG) hconn);
+    }
+    sr = _SQLDriverConnect(hconn, NULL, connStr, 1024, NULL, 0, NULL, SQL_DRIVER_NOPROMPT);
+    if (FAILED(sr)) {
+        printf("driver connect [%s] failed\n", connStr);
+        return -1;
+    } else {
+        printf("driver connect [%s] passed\n", connStr);
+    }
+    sr = _SQLDisconnect(hconn);
+    if (FAILED(sr)) {
+        printf("driver disconnect [server:%s] failed\n", connStr);
+    } else {
+        printf("driver disconnect [server:%s] passed\n", connStr);
+    }
+    _SQLFreeHandle(SQL_HANDLE_DBC, hconn);
+    return 0;
+}
+
 int main(int argc, char *argv[]) {
     HMODULE m = LoadLibrary(
-            "D:\\workspaces\\VSProjects\\taos_odbc_driver\\debug\\taos_odbc_driver\\taos_odbc_driver.dll");
+            "D:\\workspaces\\taos_odbc\\debug\\taos_odbc_driver\\taos_odbc_driver.dll");
     if (m != NULL) {
 //        test_dll_func test_dll = (test_dll_func) GetProcAddress(m, "test_dll");
 //        printf(test_dll("dll hello world\n"));
         _SQLAllocHandle = (SQLAllocHandle_Func) GetProcAddress(m, "SQLAllocHandle");
         _SQLFreeHandle = (SQLFreeHandle_Func) GetProcAddress(m, "SQLFreeHandle");
         _SQLConnectW = (SQLConnectW_Func) GetProcAddress(m, "SQLConnectW");
+        _SQLDriverConnect = (SQLDriverConnect_Func) GetProcAddress(m, "SQLDriverConnect");
         _SQLDisconnect = (SQLDisconnect_Func) GetProcAddress(m, "SQLDisconnect");
         _SQLPrepare = (SQLPrepare_Func) GetProcAddress(m, "SQLPrepare");
         _SQLFreeStmt = (SQLFreeStmt_Func) GetProcAddress(m, "SQLFreeStmt");
@@ -169,6 +211,7 @@ int main(int argc, char *argv[]) {
             if (r >= 0) {
 
             }
+            r = test_driver_connect(henv, "server=127.0.0.1;port=6030");
             SQLRETURN sr = _SQLFreeHandle(SQL_HANDLE_ENV, henv);
             if (FAILED(sr)) {
                 printf("SQLFreeHandle fail\n");

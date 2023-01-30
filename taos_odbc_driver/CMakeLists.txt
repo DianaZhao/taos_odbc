@@ -15,14 +15,16 @@ add_library(taos_odbc_driver SHARED
         "core/errs.c"
         "core/desc.c"
         "core/utils.c"
-        "core/strptime.c")
+        "core/strptime.c"
+        "dsn/td_dsn.c")
 target_link_libraries(taos_odbc_driver
         pthread
         iconv
         ${TD_LIB_DIR}/taos.lib
         ${PLATFORM_DEPENDENCIES}
         ${ODBC_LIBS}
-        ${ODBC_INSTLIBS})
+        ${ODBC_INSTLIBS}
+        Shlwapi)
 
 SET(DSN_DIALOG_FILES ${CMAKE_CURRENT_SOURCE_DIR}/dsn/odbc_dsn.c
         ${CMAKE_CURRENT_SOURCE_DIR}/dsn/odbc_dsn.rc

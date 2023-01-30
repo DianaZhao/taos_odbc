@@ -159,9 +159,6 @@
 		},
 		{
 			"path" : "taos_odbc_driver/CMakeLists.txt"
-		},
-		{
-			"path" : "test/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",

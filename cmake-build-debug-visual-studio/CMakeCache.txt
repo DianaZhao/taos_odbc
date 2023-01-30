@@ -389,7 +389,7 @@ taos_odbc_driver_BINARY_DIR:STATIC=D:/workspaces/taos_odbc/cmake-build-debug-vis
 taos_odbc_driver_IS_TOP_LEVEL:STATIC=ON
 
 //Dependencies for the target
-taos_odbc_driver_LIB_DEPENDS:STATIC=general;iconv;general;C:\TDengine\driver/taos.lib;general;legacy_stdio_definitions;general;odbc32;general;odbccp32;
+taos_odbc_driver_LIB_DEPENDS:STATIC=general;iconv;general;C:\TDengine\driver/taos.lib;general;legacy_stdio_definitions;general;odbc32;general;odbccp32;general;Shlwapi;
 
 //Value Computed by CMake
 taos_odbc_driver_SOURCE_DIR:STATIC=D:/workspaces/taos_odbc
@@ -568,7 +568,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MT
 CMAKE_MT-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //noop for ranlib

@@ -292,6 +292,32 @@ taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\core\strptime.c.s: cmake_force
 <<
 	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
 
+taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\dsn\td_dsn.c.obj: taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\flags.make
+taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\dsn\td_dsn.c.obj: D:\workspaces\taos_odbc\taos_odbc_driver\dsn\td_dsn.c
+taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\dsn\td_dsn.c.obj: taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object taos_odbc_driver/CMakeFiles/taos_odbc_driver.dir/dsn/td_dsn.c.obj"
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\taos_odbc_driver
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\taos_odbc_driver.dir\dsn\td_dsn.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\taos_odbc_driver --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /showIncludes /FoCMakeFiles\taos_odbc_driver.dir\dsn\td_dsn.c.obj /FdCMakeFiles\taos_odbc_driver.dir\ /FS -c D:\workspaces\taos_odbc\taos_odbc_driver\dsn\td_dsn.c
+<<
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
+
+taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\dsn\td_dsn.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/taos_odbc_driver.dir/dsn/td_dsn.c.i"
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\taos_odbc_driver
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe > CMakeFiles\taos_odbc_driver.dir\dsn\td_dsn.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspaces\taos_odbc\taos_odbc_driver\dsn\td_dsn.c
+<<
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
+
+taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\dsn\td_dsn.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/taos_odbc_driver.dir/dsn/td_dsn.c.s"
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\taos_odbc_driver
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\taos_odbc_driver.dir\dsn\td_dsn.c.s /c D:\workspaces\taos_odbc\taos_odbc_driver\dsn\td_dsn.c
+<<
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
+
 # Object files for target taos_odbc_driver
 taos_odbc_driver_OBJECTS = \
 "CMakeFiles\taos_odbc_driver.dir\taos_odbc_driver.c.obj" \
@@ -302,7 +328,8 @@ taos_odbc_driver_OBJECTS = \
 "CMakeFiles\taos_odbc_driver.dir\core\errs.c.obj" \
 "CMakeFiles\taos_odbc_driver.dir\core\desc.c.obj" \
 "CMakeFiles\taos_odbc_driver.dir\core\utils.c.obj" \
-"CMakeFiles\taos_odbc_driver.dir\core\strptime.c.obj"
+"CMakeFiles\taos_odbc_driver.dir\core\strptime.c.obj" \
+"CMakeFiles\taos_odbc_driver.dir\dsn\td_dsn.c.obj"
 
 # External object files for target taos_odbc_driver
 taos_odbc_driver_EXTERNAL_OBJECTS =
@@ -316,16 +343,17 @@ taos_odbc_driver\taos_odbc_driver.dll: taos_odbc_driver\CMakeFiles\taos_odbc_dri
 taos_odbc_driver\taos_odbc_driver.dll: taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\core\desc.c.obj
 taos_odbc_driver\taos_odbc_driver.dll: taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\core\utils.c.obj
 taos_odbc_driver\taos_odbc_driver.dll: taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\core\strptime.c.obj
+taos_odbc_driver\taos_odbc_driver.dll: taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\dsn\td_dsn.c.obj
 taos_odbc_driver\taos_odbc_driver.dll: taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\build.make
 taos_odbc_driver\taos_odbc_driver.dll: contrib\iconv.lib
 taos_odbc_driver\taos_odbc_driver.dll: C:\TDengine\driver\taos.lib
 taos_odbc_driver\taos_odbc_driver.dll: contrib\pthread\pthreadd.lib
 taos_odbc_driver\taos_odbc_driver.dll: D:\workspaces\taos_odbc\taos_odbc_driver\taos_odbc_driver.def
 taos_odbc_driver\taos_odbc_driver.dll: taos_odbc_driver\CMakeFiles\taos_odbc_driver.dir\objects1
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C shared library taos_odbc_driver.dll"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C shared library taos_odbc_driver.dll"
 	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\taos_odbc_driver
 	C:\App\CMake\bin\cmake.exe -E vs_link_dll --intdir=CMakeFiles\taos_odbc_driver.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\taos_odbc_driver.dir\objects1 @<<
- /out:taos_odbc_driver.dll /implib:taos_odbc_driver.lib /pdb:D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\taos_odbc_driver\taos_odbc_driver.pdb /dll /version:0.0 /machine:x64 /debug /INCREMENTAL /DEF:D:\workspaces\taos_odbc\taos_odbc_driver\taos_odbc_driver.def  ..\contrib\iconv.lib C:\TDengine\driver\taos.lib legacy_stdio_definitions.lib odbc32.lib odbccp32.lib ..\contrib\pthread\pthreadd.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib  
+ /out:taos_odbc_driver.dll /implib:taos_odbc_driver.lib /pdb:D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\taos_odbc_driver\taos_odbc_driver.pdb /dll /version:0.0 /machine:x64 /debug /INCREMENTAL /DEF:D:\workspaces\taos_odbc\taos_odbc_driver\taos_odbc_driver.def  ..\contrib\iconv.lib C:\TDengine\driver\taos.lib legacy_stdio_definitions.lib odbc32.lib odbccp32.lib Shlwapi.lib ..\contrib\pthread\pthreadd.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib  
 <<
 	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
 

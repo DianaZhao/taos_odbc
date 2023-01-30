@@ -12,7 +12,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "contrib/pthread/libpthreadVSE3d.lib"
+			"path" : "contrib/pthread/libpthreadVCE3d.lib"
 		}
 	],
 	"backtrace" : 2,
@@ -39,7 +39,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 161,
+				"line" : 160,
 				"parent" : 0
 			},
 			{
@@ -78,7 +78,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 40,
+				"line" : 34,
 				"parent" : 7
 			},
 			{
@@ -117,7 +117,7 @@
 				},
 				{
 					"backtrace" : 6,
-					"define" : "PTW32_CLEANUP_SEH"
+					"define" : "PTW32_CLEANUP_CXX"
 				},
 				{
 					"backtrace" : 3,
@@ -146,9 +146,9 @@
 			]
 		}
 	],
-	"id" : "libpthreadVSE3::@67e1cd471a073ee882f0",
-	"name" : "libpthreadVSE3",
-	"nameOnDisk" : "libpthreadVSE3d.lib",
+	"id" : "libpthreadVCE3::@67e1cd471a073ee882f0",
+	"name" : "libpthreadVCE3",
+	"nameOnDisk" : "libpthreadVCE3d.lib",
 	"paths" : 
 	{
 		"build" : "contrib/pthread",

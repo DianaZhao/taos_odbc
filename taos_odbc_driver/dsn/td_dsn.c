@@ -1,7 +1,6 @@
 
 #include "td_dsn.h"
 
-
 #define DSNKEY_OPTIONS_INDEX   3
 #define DSNKEY_OPTION_INDEX    4
 #define DSNKEY_NAMEDPIPE_INDEX 5
@@ -21,10 +20,9 @@
    DsnKeysSwitch below in this file, and index defines in this file, accordingly */
 TAOS_DsnKey DsnKeys[] =
         {
+                {"DRIVER",      offsetof(TAOS_Dsn, Driver),      DSN_TYPE_STRING, 0, 0},
                 {"DSN",         offsetof(TAOS_Dsn, DSNName),     DSN_TYPE_STRING, 0, 0}, /* 0 */
                 {"DESCRIPTION", offsetof(TAOS_Dsn, Description), DSN_TYPE_STRING, 0, 0},
-//                {"DRIVER",         offsetof(TAOS_Dsn,
-//                                            Driver),                DSN_TYPE_STRING, 0,                            0},
 //                /* OPTIONS should go above all DSN_TYPE_OPTION. They are not saved in DSN separately, and then DSN is read, corresponding
 //                   properties are filled from OPTIONS. Also putting its alias here - it should not appear on Windows(unless somebody edits
 //                   registry manually), but on *nix we can expect everything. Array index used in some places to decide if the key is OPTIONS */
@@ -77,11 +75,11 @@ const TAOS_DsnKeyDep DsnKeysSwitch[] =
                 {DSNKEY_TCPIP_INDEX,     DSNKEY_NAMEDPIPE_INDEX, 0}
         };
 
-const char TlsVersionName[][8] = {"TLSv1.1", "TLSv1.2", "TLSv1.3"};
-const char TlsVersionBits[] = {TAOS_TLSV11, TAOS_TLSV12, TAOS_TLSV13};
+const SQLCHAR TlsVersionName[][8] = {"TLSv1.1", "TLSv1.2", "TLSv1.3"};
+const SQLCHAR TlsVersionBits[] = {TAOS_TLSV11, TAOS_TLSV12, TAOS_TLSV13};
 
 /* {{{ ltrim */
-char *ltrim(char *Str) {
+SQLCHAR *ltrim(SQLCHAR *Str) {
     if (Str) {
         while (*Str && isspace(Str[0]))
             ++Str;
@@ -91,8 +89,8 @@ char *ltrim(char *Str) {
 /* }}} */
 
 /* {{{ trim */
-char *trim(char *Str) {
-    char *end;
+SQLCHAR *trim(SQLCHAR *Str) {
+    SQLCHAR *end;
 
     Str = ltrim(Str);
 
@@ -105,7 +103,7 @@ char *trim(char *Str) {
 
 
 /* {{{ strcasestr() */
-char *strcasestr(const char *HayStack, const char *Needle) {
+SQLCHAR *strcasestr(const SQLCHAR *HayStack, const SQLCHAR *Needle) {
     return StrStrIA(HayStack, Needle);
 }
 /* }}} */
@@ -152,7 +150,7 @@ void TAOS_SetOptionValue(TAOS_Dsn *Dsn, TAOS_DsnKey *DsnKey, BOOL value) {
 }
 
 
-BOOL TAOS_DsnStoreValue(TAOS_Dsn *Dsn, unsigned int DsnKeyIdx, char *Value, BOOL OverWrite);
+BOOL TAOS_DsnStoreValue(TAOS_Dsn *Dsn, unsigned int DsnKeyIdx, SQLCHAR *Value, BOOL OverWrite);
 
 /* {{{ TAOS_DsnSwitchDependents */
 /* If TCPIP selected, we have to reset NAMEDPIPE */
@@ -166,7 +164,7 @@ BOOL TAOS_DsnSwitchDependents(TAOS_Dsn *Dsn, unsigned int Changed) {
             switch (DsnKeys[Changed].Type) {
                 case DSN_TYPE_STRING:
                 case DSN_TYPE_COMBO: {
-                    char *str = *GET_FIELD_PTR(Dsn, &DsnKeys[Changed], char*);
+                    SQLCHAR *str = *GET_FIELD_PTR(Dsn, &DsnKeys[Changed], char*);
                     KeySet = str && *str;
                 }
                     break;
@@ -207,7 +205,7 @@ BOOL TAOS_DsnSwitchDependents(TAOS_Dsn *Dsn, unsigned int Changed) {
 
 
 /* {{{ TAOS_DsnStoreValue */
-BOOL TAOS_DsnStoreValue(TAOS_Dsn *Dsn, unsigned int DsnKeyIdx, char *Value, BOOL OverWrite) {
+BOOL TAOS_DsnStoreValue(TAOS_Dsn *Dsn, unsigned int DsnKeyIdx, SQLCHAR *Value, BOOL OverWrite) {
     TAOS_DsnKey *DsnKey = &DsnKeys[DsnKeyIdx];
     if (!Dsn || DsnKey->IsAlias)
         return FALSE;
@@ -215,7 +213,7 @@ BOOL TAOS_DsnStoreValue(TAOS_Dsn *Dsn, unsigned int DsnKeyIdx, char *Value, BOOL
     switch (DsnKey->Type) {
         case DSN_TYPE_STRING:
         case DSN_TYPE_COMBO: {
-            char **p = GET_FIELD_PTR(Dsn, DsnKey, char*);
+            SQLCHAR **p = GET_FIELD_PTR(Dsn, DsnKey, char*);
 
             if (*p && OverWrite == FALSE)
                 break;
@@ -232,7 +230,7 @@ BOOL TAOS_DsnStoreValue(TAOS_Dsn *Dsn, unsigned int DsnKeyIdx, char *Value, BOOL
         case DSN_TYPE_CBOXGROUP:
             /* If value is not set or we may overwrite it */
             if (!(*GET_FIELD_PTR(Dsn, DsnKey, char) && OverWrite == FALSE)) {
-                char IntValue = atoi(Value);
+                SQLCHAR IntValue = atoi(Value);
 
                 /* Atm we have only one DSN_TYPE_CBOXGROUP!!!, and following works only for it. If sometime another such field is added,
                    we will need another data structure array, that will bind DSN field with string values and bits for this field.
@@ -283,8 +281,8 @@ void TAOS_DsnUpdateOptionsFields(TAOS_Dsn *Dsn) {
 /* }}} */
 
 /* {{{ TAOS_ReadDSN */
-BOOL TAOS_ReadDSN(TAOS_Dsn *Dsn, const char *KeyValue, BOOL OverWrite) {
-    char *Value;
+BOOL TAOS_ReadDSN(TAOS_Dsn *Dsn, const SQLCHAR *KeyValue, BOOL OverWrite) {
+    SQLCHAR *Value;
     /* if no key/value pair was specified, we will try to read Dsn->DSNName */
     if (!KeyValue) {
         Value = Dsn->DSNName;
@@ -297,7 +295,7 @@ BOOL TAOS_ReadDSN(TAOS_Dsn *Dsn, const char *KeyValue, BOOL OverWrite) {
 
     if (Value) {
         int i = 1;
-        char KeyVal[1024];
+        SQLCHAR KeyVal[1024];
 
         while (DsnKeys[i].DsnKey) {
             unsigned int KeyIdx = DsnKeys[i].IsAlias ? DsnKeys[i].DsnOffset : i;
@@ -318,10 +316,10 @@ BOOL TAOS_ReadDSN(TAOS_Dsn *Dsn, const char *KeyValue, BOOL OverWrite) {
 
 /* }}} */
 
-BOOL TAOS_DSN_Exists(const char *DsnName) {
+BOOL TAOS_DSN_Exists(const SQLCHAR *DsnName) {
     BOOL ret;
-    char buffer[1024];
-    char *p = "";
+    SQLCHAR buffer[1024];
+    SQLCHAR *p = "";
 
     if (!DsnName)
         return FALSE;
@@ -333,7 +331,7 @@ BOOL TAOS_DSN_Exists(const char *DsnName) {
 /* {{{ TAOS_SaveDSN */
 BOOL TAOS_SaveDSN(TAOS_Dsn *Dsn) {
     int i = 1;
-    char Value[32];
+    SQLCHAR Value[32];
     BOOL ret;
     DWORD ErrNum;
 
@@ -355,27 +353,33 @@ BOOL TAOS_SaveDSN(TAOS_Dsn *Dsn) {
         /* Skipping aliases - options are saved by primary name only */
         if (!DsnKeys[i].IsAlias) {
             ret = TRUE;
+            printf("key: %s, idx: %d\n", DsnKeys[i].DsnKey, i);
             /* We do not save DSN_TYPE_OPTION - they are saved as OPTIONS bits */
             switch (DsnKeys[i].Type) {
                 case DSN_TYPE_BOOL:
+                    printf("Val %s \n", *GET_FIELD_PTR(Dsn, &DsnKeys[i], BOOL) ? "1" : "0");
                     ret = SQLWritePrivateProfileString(Dsn->DSNName, DsnKeys[i].DsnKey,
                                                        *GET_FIELD_PTR(Dsn, &DsnKeys[i], BOOL) ? "1" : "0", "ODBC.INI");
                     break;
                 case DSN_TYPE_INT: {
-                    snprintf(Value, 32, "%d", *(int *) ((char *) Dsn + DsnKeys[i].DsnOffset));
+                    snprintf(Value, 32, "%d", *(int *) ((SQLCHAR *) Dsn + DsnKeys[i].DsnOffset));
+                    printf("Val %s \n", Value);
                     ret = SQLWritePrivateProfileString(Dsn->DSNName, DsnKeys[i].DsnKey, Value, "ODBC.INI");
                 }
                     break;
                 case DSN_TYPE_CBOXGROUP: {
                     snprintf(Value, 32, "%hu", (short) *GET_FIELD_PTR(Dsn, &DsnKeys[i], char));
+                    printf("Val %s \n", Value);
                     ret = SQLWritePrivateProfileString(Dsn->DSNName, DsnKeys[i].DsnKey, Value, "ODBC.INI");
                 }
                     break;
                 case DSN_TYPE_STRING:
                 case DSN_TYPE_COMBO: {
-                    char *Val = *GET_FIELD_PTR(Dsn, &DsnKeys[i], char*);
-                    if (Val && Val[0])
+                    SQLCHAR *Val = *GET_FIELD_PTR(Dsn, &DsnKeys[i], char*);
+                    printf("Val %s \n", Val);
+                    if (Val && Val[0]) {
                         ret = SQLWritePrivateProfileString(Dsn->DSNName, DsnKeys[i].DsnKey, Val, "ODBC.INI");
+                    }
                 }
                 default:
                     /* To avoid warning with some compilers */
@@ -384,26 +388,29 @@ BOOL TAOS_SaveDSN(TAOS_Dsn *Dsn) {
 
             if (!ret) {
                 SQLInstallerError(1, &ErrNum, Dsn->ErrorMsg, SQL_MAX_MESSAGE_LENGTH, NULL);
+                printf("Key Err %s\n", Dsn->ErrorMsg);
                 return FALSE;
+            } else {
+                printf("Key %s saved\n", DsnKeys[i].DsnKey);
             }
         }
         i++;
     }
     /* Save Options */
-    snprintf(Value, 32, "%d", Dsn->Options);
-    if (!(ret = SQLWritePrivateProfileString(Dsn->DSNName, "OPTIONS", Value, "ODBC.INI"))) {
-        SQLInstallerError(1, &ErrNum, Dsn->ErrorMsg, SQL_MAX_MESSAGE_LENGTH, NULL);
-        return FALSE;
-    }
+//    snprintf(Value, 32, "%d", Dsn->Options);
+//    if (!(ret = SQLWritePrivateProfileString(Dsn->DSNName, "OPTIONS", Value, "ODBC.INI"))) {
+//        SQLInstallerError(1, &ErrNum, Dsn->ErrorMsg, SQL_MAX_MESSAGE_LENGTH, NULL);
+//        return FALSE;
+//    }
     return TRUE;
 }
 
 /* }}} */
 
 
-size_t ConnStringLength(const char *String, char Delimiter) {
+size_t ConnStringLength(const SQLCHAR *String, SQLCHAR Delimiter) {
     size_t result = strlen(String);
-    const char *p = String + result + 1;
+    const SQLCHAR *p = String + result + 1;
 
     if (Delimiter != '\0') {
         return result;
@@ -417,8 +424,8 @@ size_t ConnStringLength(const char *String, char Delimiter) {
 }
 
 /* {{{ TAOS_ParseConnString */
-BOOL TAOS_ParseConnString(TAOS_Dsn *Dsn, const char *String, size_t Length, char Delimiter) {
-    char *Buffer, *Key, *Value, *ValueBuf;
+BOOL TAOS_ParseConnString(TAOS_Dsn *Dsn, const SQLCHAR *String, size_t Length, SQLCHAR Delimiter) {
+    SQLCHAR *Buffer, *Key, *Value, *ValueBuf;
     BOOL ret = TRUE;
 
     if (!String)
@@ -433,7 +440,7 @@ BOOL TAOS_ParseConnString(TAOS_Dsn *Dsn, const char *String, size_t Length, char
     Key = Buffer;
     ValueBuf = malloc(Length - 4); /*DSN=<value> - DSN or DRIVER must be in */
 
-    while (Key && Key < ((char *) Buffer + Length)) {
+    while (Key && Key < ((SQLCHAR *) Buffer + Length)) {
         int i = 0;
 
         /* The case of ;; - "empty key/value pair. Probably that shouldn't be allowed. But parser uset to digest this, so leaving this as a feature so far
@@ -453,7 +460,7 @@ BOOL TAOS_ParseConnString(TAOS_Dsn *Dsn, const char *String, size_t Length, char
 
         while (DsnKeys[i].DsnKey) {
             if (_stricmp(DsnKeys[i].DsnKey, Key) == 0) {
-                char *p = NULL;
+                SQLCHAR *p = NULL;
 
                 if (DsnKeys[i].IsAlias) {
                     i = DsnKeys[i].DsnOffset; /* For aliases DsnOffset is index of aliased "main" key */
@@ -462,8 +469,8 @@ BOOL TAOS_ParseConnString(TAOS_Dsn *Dsn, const char *String, size_t Length, char
                 Value = ltrim(Value);
 
                 if (Value[0] == '{') {
-                    char *valueBufPtr = ValueBuf;
-                    char *prev = ++Value;
+                    SQLCHAR *valueBufPtr = ValueBuf;
+                    SQLCHAR *prev = ++Value;
                     *valueBufPtr = '\0';
                     while ((p = strchr(prev, '}')) != NULL) {
                         memcpy(valueBufPtr, prev, p - prev);
@@ -524,7 +531,7 @@ BOOL TAOS_ParseConnString(TAOS_Dsn *Dsn, const char *String, size_t Length, char
 /* {{{ TAOS_ReadConnString */
 /* Like ParseConnString, but expands DSN if needed, preserving connection string values precedence.
    Or in other words - it is combination of ReadDsn and ParseConnString */
-BOOL TAOS_ReadConnString(TAOS_Dsn *Dsn, const char *String, size_t Length, char Delimiter) {
+BOOL TAOS_ReadConnString(TAOS_Dsn *Dsn, const SQLCHAR *String, size_t Length, SQLCHAR Delimiter) {
     /* Basically at this point we need DSN name only */
     if (!TAOS_ParseConnString(Dsn, String, Length, Delimiter)) {
         return FALSE;
@@ -543,13 +550,13 @@ BOOL TAOS_ReadConnString(TAOS_Dsn *Dsn, const char *String, size_t Length, char 
 /* }}} */
 
 /* {{{ TAOS_DsnToString */
-SQLULEN TAOS_DsnToString(TAOS_Dsn *Dsn, char *OutString, SQLULEN OutLength) {
+SQLULEN TAOS_DsnToString(TAOS_Dsn *Dsn, SQLCHAR *OutString, SQLULEN OutLength) {
     int i = 0;
     SQLULEN TotalLength = 0;
-    char *p = OutString;
-    char *Value = NULL;
-    char TmpStr[1024] = {'\0'};
-    char IntVal[12];
+    SQLCHAR *p = OutString;
+    SQLCHAR *Value = NULL;
+    SQLCHAR TmpStr[1024] = {'\0'};
+    SQLCHAR IntVal[12];
     int CpyLength;
 
     if (OutLength && OutString)

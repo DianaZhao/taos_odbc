@@ -1,6 +1,6 @@
 # ODBC Driver for TDengine 3.0 (TAOS) #
 English | [简体中文](README.cn.md)
-- **on-going implementation of ODBC driver for TDengine 3.0 (TAOS)**
+- **ongoing implementation of ODBC driver for TDengine 3.0 (TAOS)**
 - **currently exported ODBC functions are**:
 ```
 SQLAllocHandle
@@ -32,34 +32,19 @@ SQLSetEnvAttr
 SQLSetStmtAttr
 SQLTables (post-filter workaround, to be removed when taosc is right in place)
 ```
-- **enable ODBC-aware software to communicate with TDengine, at this very beginning, we support linux only**
+- **enable ODBC-aware software to communicate with TDengine, at this very beginning, we support Windows only**
 - **enable any programming language with ODBC-bindings/ODBC-plugings to communicate with TDengine, potentially**
 - **still going on**...
 
 ### Supported platform
-- Linux
-- macOS
+- Windows
 
 ### Requirements
-- flex, 2.6.4 or above
-- bison, 3.5.1 or above
-- odbc driver manager, such as unixodbc(2.3.6 or above) in linux
 - iconv, should've been already included in libc
-- valgrind, if you wish to debug and profile executables, such as detecting potential memory leakages
-- node, if you wish to enable nodejs-test-cases
-  - node odbc, 2.4.4 or above, https://www.npmjs.com/package/odbc
-- rust, if you wish to enable rust-test-cases
-  - odbc, 0.17.0 or above, https://docs.rs/odbc/latest/odbc/
-  - env_logger, 0.8.2 or above, https://docs.rs/env_logger/latest/env_logger/
-  - json
 
 ### Installing TDengine 3.0
 - please visit https://tdengine.com
 
-### Installing prerequisites, use Ubuntu 20.04 as an example
-```
-sudo apt install flex bison unixodbc unixodbc-dev && echo -=Done=-
-```
 
 ### Building and Installing, use Ubuntu 20.04 as an example
 ```
@@ -98,27 +83,12 @@ pushd debug >/dev/null && ctest --output-on-failure && echo -=Done=-; popd >/dev
 <root>
 ├── cmake
 ├── common
-├── examples
-├── inc
-├── samples
 ├── sh
-├── src
+├── taos_odbc_driver
 │   ├── core
 │   ├── inc
-│   ├── parser
-│   ├── tests
-│   └── utils
-├── templates
-├── tests
-│   ├── c
-│   ├── cpp
-│   ├── node
-│   ├── rust
-│   │   └── main
-│   │       └── src
-│   └── taos
-├── tools
-└── valgrind
+│   └── dsn
+└── test
 ```
 
 ## TDengine references

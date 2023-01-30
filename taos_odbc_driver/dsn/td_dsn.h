@@ -57,7 +57,7 @@ typedef struct {
 } TAOS_OptionsMap;
 
 typedef struct {
-    char *DsnKey;
+    SQLCHAR *DsnKey;
     unsigned int DsnOffset;
     enum enum_dsn_item_type Type;
     unsigned long FlagValue;
@@ -89,28 +89,28 @@ typedef struct {
 #define TAOS_TLSV12 2
 #define TAOS_TLSV13 4
 
-extern const char TlsVersionName[3][8];
-extern const char TlsVersionBits[3];
+extern const SQLCHAR TlsVersionName[3][8];
+extern const SQLCHAR TlsVersionBits[3];
 
 typedef struct st_taos_dsn {
     /* TODO: Does it really matter to keep this array in the DSN structure? */
-    char ErrorMsg[SQL_MAX_MESSAGE_LENGTH];
+    SQLCHAR ErrorMsg[SQL_MAX_MESSAGE_LENGTH];
     /*** General ***/
-    char *DSNName;
-    char *Driver;
-    char *Description;
+    SQLCHAR *DSNName;
+    SQLCHAR *Driver;
+    SQLCHAR *Description;
     /*** Connection parameters ***/
-    char *ServerName;
-    char *UserName;
-    char *Password;
-    char *Database;
-    char *SaveFile;
+    SQLCHAR *ServerName;
+    SQLCHAR *UserName;
+    SQLCHAR *Password;
+    SQLCHAR *Database;
+    SQLCHAR *SaveFile;
     /* --- Internal --- */
     TAOS_DsnKey *Keys;
 
     /* Callbacke required for prompt to keep all memory de/allocation operations
        on same side of libraries */
-    char *(*allocator)(size_t);
+    SQLCHAR *(*allocator)(size_t);
 
     void (*free)(void *);
 
@@ -138,17 +138,17 @@ void TAOS_DSN_SetDefaults(TAOS_Dsn *Dsn);
 
 void TAOS_DSN_Free(TAOS_Dsn *Dsn);
 
-BOOL TAOS_ReadDSN(TAOS_Dsn *Dsn, const char *KeyValue, BOOL OverWrite);
+BOOL TAOS_ReadDSN(TAOS_Dsn *Dsn, const SQLCHAR *KeyValue, BOOL OverWrite);
 
 BOOL TAOS_SaveDSN(TAOS_Dsn *Dsn);
 
-BOOL TAOS_DSN_Exists(const char *DsnName);
+BOOL TAOS_DSN_Exists(const SQLCHAR *DsnName);
 
-BOOL TAOS_ParseConnString(TAOS_Dsn *Dsn, const char *String, size_t Length, char Delimiter);
+BOOL TAOS_ParseConnString(TAOS_Dsn *Dsn, const SQLCHAR *String, size_t Length, SQLCHAR Delimiter);
 
-BOOL TAOS_ReadConnString(TAOS_Dsn *Dsn, const char *String, size_t Length, char Delimiter);
+BOOL TAOS_ReadConnString(TAOS_Dsn *Dsn, const SQLCHAR *String, size_t Length, SQLCHAR Delimiter);
 
-SQLULEN TAOS_DsnToString(TAOS_Dsn *Dsn, char *OutString, SQLULEN OutLength);
+SQLULEN TAOS_DsnToString(TAOS_Dsn *Dsn, SQLCHAR *OutString, SQLULEN OutLength);
 
 void TAOS_DsnUpdateOptionsFields(TAOS_Dsn *Dsn);
 
@@ -170,7 +170,7 @@ BOOL TAOS_DSN_PossibleConnect(TAOS_Dsn *Dsn);
     if ((len) == SQL_NTS)\
       (len)=(SQLSMALLINT)strlen((value));\
     TAOS_FREE((dsn)->item);\
-    (dsn)->item= (char *)calloc(len + 1, sizeof(char));\
+    (dsn)->item= (SQLCHAR *)calloc(len + 1, sizeof(char));\
     memcpy((dsn)->item, (value),(len));\
   }
 #define TAOS_FREE(a) do { \
@@ -184,7 +184,7 @@ BOOL TAOS_DSN_PossibleConnect(TAOS_Dsn *Dsn);
 
 /* If required to free old memory pointed by current ptr, and set new value */
 #define TAOS_RESET(ptr, newptr) do {\
-  char *local_new_ptr= (newptr);\
+  SQLCHAR *local_new_ptr= (newptr);\
   if (local_new_ptr != ptr) {\
     free((char*)(ptr));\
     if (local_new_ptr != NULL)\
@@ -195,16 +195,16 @@ BOOL TAOS_DSN_PossibleConnect(TAOS_Dsn *Dsn);
 } while(0)
 
 /* {{{ ltrim */
-char *ltrim(char *Str);
+SQLCHAR *ltrim(SQLCHAR *Str);
 /* }}} */
 
 /* {{{ trim */
-char *trim(char *Str);
+SQLCHAR *trim(SQLCHAR *Str);
 /* }}} */
 
 
 /* {{{ strcasestr() */
-char *strcasestr(const char *HayStack, const char *Needle);
+SQLCHAR *strcasestr(const SQLCHAR *HayStack, const SQLCHAR *Needle);
 /* }}} */
 
 #define TAOS_IS_EMPTY(STR) ((STR)==NULL || *(STR)=='\0')

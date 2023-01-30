@@ -1,5 +1,6 @@
 LIBRARY taos_odbc_setup.dll
 EXPORTS
   ConfigDSN
+  ConfigDSNCmd
   DSNDialog
   DSNPrompt

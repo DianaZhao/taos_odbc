@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/taos_odbc_driver.dir/core/strptime.c.obj.d"
   "CMakeFiles/taos_odbc_driver.dir/core/utils.c.obj"
   "CMakeFiles/taos_odbc_driver.dir/core/utils.c.obj.d"
+  "CMakeFiles/taos_odbc_driver.dir/dsn/td_dsn.c.obj"
+  "CMakeFiles/taos_odbc_driver.dir/dsn/td_dsn.c.obj.d"
   "CMakeFiles/taos_odbc_driver.dir/taos_odbc_driver.c.obj"
   "CMakeFiles/taos_odbc_driver.dir/taos_odbc_driver.c.obj.d"
   "taos_odbc_driver.dll"

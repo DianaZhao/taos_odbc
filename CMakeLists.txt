@@ -5,12 +5,6 @@ cmake_minimum_required(VERSION 3.0)
 
 project("taos_odbc_driver" C)
 
-#SET(DSN_DIALOG_FILES ${CMAKE_SOURCE_DIR}/taos_odbc_driver/dsn/odbc_dsn.c
-#                     ${CMAKE_SOURCE_DIR}/taos_odbc_driver/dsn/odbc_dsn.rc
-#                     ${CMAKE_SOURCE_DIR}/taos_odbc_driver/dsn/resource.h
-#                     ${CMAKE_SOURCE_DIR}/taos_odbc_driver/dsn/td_dsn.c
-#                     ${CMAKE_SOURCE_DIR}/taos_odbc_driver/ma_common.c)
-
 IF (MSVC)
     SET(CONFIG_TYPES "DEBUG" "RELEASE" "RELWITHDEBINFO" "MINSIZEREL")
     FOREACH (BUILD_TYPE ${CONFIG_TYPES})
@@ -45,4 +39,4 @@ INCLUDE_DIRECTORIES(${TD_CONTRIB_DIR}/pthread)
 INCLUDE_DIRECTORIES(${TD_CONTRIB_DIR}/iconv)
 # Include sub-projects.
 add_subdirectory("taos_odbc_driver")
-add_subdirectory("test")
+#add_subdirectory("test")

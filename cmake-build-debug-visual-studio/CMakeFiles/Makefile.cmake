@@ -38,7 +38,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "D:/workspaces/taos_odbc/contrib/pthread/cmake/target_arch.cmake"
   "D:/workspaces/taos_odbc/contrib/pthread/cmake/version.rc.in"
   "D:/workspaces/taos_odbc/taos_odbc_driver/CMakeLists.txt"
-  "D:/workspaces/taos_odbc/test/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -55,7 +54,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "contrib/pthread/version.rc"
   "contrib/pthread/CMakeFiles/CMakeDirectoryInformation.cmake"
   "taos_odbc_driver/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "test/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -69,7 +67,4 @@ set(CMAKE_DEPEND_INFO_FILES
   "contrib/pthread/CMakeFiles/libpthreadVC3.dir/DependInfo.cmake"
   "taos_odbc_driver/CMakeFiles/taos_odbc_driver.dir/DependInfo.cmake"
   "taos_odbc_driver/CMakeFiles/taos_odbc_setup.dir/DependInfo.cmake"
-  "test/CMakeFiles/taos_test.dir/DependInfo.cmake"
-  "test/CMakeFiles/odbc_test.dir/DependInfo.cmake"
-  "test/CMakeFiles/dsn_test.dir/DependInfo.cmake"
   )

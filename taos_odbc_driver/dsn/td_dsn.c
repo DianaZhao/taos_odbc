@@ -150,8 +150,6 @@ void TAOS_SetOptionValue(TAOS_Dsn *Dsn, TAOS_DsnKey *DsnKey, BOOL value) {
 }
 
 
-BOOL TAOS_DsnStoreValue(TAOS_Dsn *Dsn, unsigned int DsnKeyIdx, SQLCHAR *Value, BOOL OverWrite);
-
 /* {{{ TAOS_DsnSwitchDependents */
 /* If TCPIP selected, we have to reset NAMEDPIPE */
 BOOL TAOS_DsnSwitchDependents(TAOS_Dsn *Dsn, unsigned int Changed) {
@@ -209,12 +207,10 @@ BOOL TAOS_DsnStoreValue(TAOS_Dsn *Dsn, unsigned int DsnKeyIdx, SQLCHAR *Value, B
     TAOS_DsnKey *DsnKey = &DsnKeys[DsnKeyIdx];
     if (!Dsn || DsnKey->IsAlias)
         return FALSE;
-
     switch (DsnKey->Type) {
         case DSN_TYPE_STRING:
         case DSN_TYPE_COMBO: {
             SQLCHAR **p = GET_FIELD_PTR(Dsn, DsnKey, char*);
-
             if (*p && OverWrite == FALSE)
                 break;
             /* For the case of making copy of currently stored values */
@@ -408,11 +404,11 @@ BOOL TAOS_SaveDSN(TAOS_Dsn *Dsn) {
 /* }}} */
 
 
-size_t ConnStringLength(const SQLCHAR *String, SQLCHAR Delimiter) {
+size_t ConnStringLength(const SQLCHAR *String, SQLCHAR *Delimiter) {
     size_t result = strlen(String);
     const SQLCHAR *p = String + result + 1;
 
-    if (Delimiter != '\0') {
+    if (Delimiter != "\0") {
         return result;
     }
     /* else - we have string with null terminated key=value pairs with additional NULL after last pair */
@@ -423,109 +419,150 @@ size_t ConnStringLength(const SQLCHAR *String, SQLCHAR Delimiter) {
     return p - String /* Length without ending NULL */;
 }
 
+
 /* {{{ TAOS_ParseConnString */
-BOOL TAOS_ParseConnString(TAOS_Dsn *Dsn, const SQLCHAR *String, size_t Length, SQLCHAR Delimiter) {
-    SQLCHAR *Buffer, *Key, *Value, *ValueBuf;
+BOOL TAOS_ParseConnString(TAOS_Dsn *Dsn, const SQLCHAR *connStr, size_t Length, const SQLCHAR *Delimiter) {
+    SQLCHAR *Buffer;
     BOOL ret = TRUE;
 
-    if (!String)
+    if (!connStr)
         return FALSE;
 
     if (Length == SQL_NTS) {
-        Length = ConnStringLength(String, Delimiter);
+        Length = ConnStringLength(connStr, Delimiter);
     }
-
     Buffer = malloc(Length + 1);
-    Buffer = memcpy(Buffer, String, Length + 1);
-    Key = Buffer;
-    ValueBuf = malloc(Length - 4); /*DSN=<value> - DSN or DRIVER must be in */
-
-    while (Key && Key < ((SQLCHAR *) Buffer + Length)) {
-        int i = 0;
-
-        /* The case of ;; - "empty key/value pair. Probably that shouldn't be allowed. But parser uset to digest this, so leaving this as a feature so far
-           TODO: check and maybe remove for the next version */
-        if (Delimiter != '\0' && *Key == Delimiter) {
-            ++Key;
-            continue;
-        }
-        if (!(Value = strchr(Key, '='))) {
-            ret = FALSE;
-            break;
-        }
-
-        *Value = 0;
-        ++Value;
-        Key = trim(Key);
-
-        while (DsnKeys[i].DsnKey) {
-            if (_stricmp(DsnKeys[i].DsnKey, Key) == 0) {
-                SQLCHAR *p = NULL;
-
-                if (DsnKeys[i].IsAlias) {
-                    i = DsnKeys[i].DsnOffset; /* For aliases DsnOffset is index of aliased "main" key */
-                }
-
-                Value = ltrim(Value);
-
-                if (Value[0] == '{') {
-                    SQLCHAR *valueBufPtr = ValueBuf;
-                    SQLCHAR *prev = ++Value;
-                    *valueBufPtr = '\0';
-                    while ((p = strchr(prev, '}')) != NULL) {
-                        memcpy(valueBufPtr, prev, p - prev);
-                        valueBufPtr += p - prev;
-                        if (*(p + 1) == '}') {
-                            *(valueBufPtr++) = '}';
-                            *valueBufPtr = '\0';
-                            prev = p + 2;
-                        } else {
-                            *valueBufPtr = '\0';
-                            ++p;
-                            break;
-                        }
+    memset(Buffer, 0, Length + 1);
+    Buffer = memcpy(Buffer, connStr, Length + 1);
+    printf("parsing conn str %s, deli %s\n", Buffer, Delimiter);
+    int i = 0;
+    char *kv = strtok(Buffer, Delimiter);
+    while (kv != NULL) {
+        char *vs = strchr(kv, '=');
+        if (vs != NULL) {
+            int ks = (vs - kv) * sizeof(char);
+            char *key = malloc(ks + 1);
+            memset(key, 0, ks + 1);
+            memcpy(key, kv, ks);
+            for (int j = 0; j < 8; j++) {
+                if (_stricmp(key, DsnKeys[j].DsnKey) == 0) {
+                    char *val = vs + 1;
+                    if (DsnKeys[j].IsAlias) {
+                        j = DsnKeys[j].DsnOffset; /* For aliases DsnOffset is index of aliased "main" key */
                     }
-                    Value = ValueBuf;
-                } else if ((p = strchr(Value, Delimiter))) {
-                    *p = 0;
+                    ret = TAOS_DsnStoreValue(Dsn, j, val, TRUE);
+                    i++;
+                    break;
                 }
-                /* TODO: 3.2 we should not trim enclosed in braces, I think */
-                Value = trim(Value);
-
-                /* Overwriting here - if an option repeated more than once in the string, its last entrance will determine the value */
-                if (!TAOS_DsnStoreValue(Dsn, i, Value, TRUE)) {
-                    ret = FALSE;
-                    goto end;
-                }
-                if (IS_OPTIONS_BITMAP(i)) {
-                    TAOS_DsnUpdateOptionsFields(Dsn);
-                }
-
-                if (p) {
-                    Key = p + 1;
-                } else {
-                    Key = NULL;
-                }
-                break;
-            }
-            ++i;
-        }
-        /* Unknown keyword */
-        if (DsnKeys[i].DsnKey == NULL) {
-            //TODO: shouldn't some error/warning be thrown?
-            Key = strchr(Value, Delimiter);
-            if (Key != NULL) {
-                ++Key;
             }
         }
+        kv = strtok(NULL, Delimiter);
     }
-
-    end:
     TAOS_FREE(Buffer);
-    TAOS_FREE(ValueBuf);
-
     return ret;
 }
+//BOOL TAOS_ParseConnString(TAOS_Dsn *Dsn, const SQLCHAR *String, size_t Length, SQLCHAR Delimiter) {
+//    SQLCHAR *Buffer, *Key, *Value, *ValueBuf;
+//    BOOL ret = TRUE;
+//
+//    if (!String)
+//        return FALSE;
+//
+//    if (Length == SQL_NTS) {
+//        Length = ConnStringLength(String, Delimiter);
+//    }
+//
+//    Buffer = malloc(Length + 1);
+//    Buffer = memcpy(Buffer, String, Length + 1);
+//    Key = Buffer;
+//    ValueBuf = malloc(Length - 4); /*DSN=<value> - DSN or DRIVER must be in */
+//
+//    while (Key && Key < ((SQLCHAR *) Buffer + Length)) {
+//        int i = 0;
+//
+//        /* The case of ;; - "empty key/value pair. Probably that shouldn't be allowed. But parser uset to digest this, so leaving this as a feature so far
+//           TODO: check and maybe remove for the next version */
+//        if (Delimiter != '\0' && *Key == Delimiter) {
+//            ++Key;
+//            continue;
+//        }
+//        if (!(Value = strchr(Key, '='))) {
+//            ret = FALSE;
+//            break;
+//        }
+//
+//        *Value = 0;
+//        ++Value;
+//        Key = trim(Key);
+//
+//        while (DsnKeys[i].DsnKey) {
+//            if (_stricmp(DsnKeys[i].DsnKey, Key) == 0) {
+//                SQLCHAR *p = NULL;
+//
+//                if (DsnKeys[i].IsAlias) {
+//                    i = DsnKeys[i].DsnOffset; /* For aliases DsnOffset is index of aliased "main" key */
+//                }
+//
+//                Value = ltrim(Value);
+//
+//                if (Value[0] == '{') {
+//                    SQLCHAR *valueBufPtr = ValueBuf;
+//                    SQLCHAR *prev = ++Value;
+//                    *valueBufPtr = '\0';
+//                    while ((p = strchr(prev, '}')) != NULL) {
+//                        memcpy(valueBufPtr, prev, p - prev);
+//                        valueBufPtr += p - prev;
+//                        if (*(p + 1) == '}') {
+//                            *(valueBufPtr++) = '}';
+//                            *valueBufPtr = '\0';
+//                            prev = p + 2;
+//                        } else {
+//                            *valueBufPtr = '\0';
+//                            ++p;
+//                            break;
+//                        }
+//                    }
+//                    Value = ValueBuf;
+//                } else if ((p = strchr(Value, Delimiter))) {
+//                    *p = 0;
+//                }
+//                /* TODO: 3.2 we should not trim enclosed in braces, I think */
+//                Value = trim(Value);
+//
+//                /* Overwriting here - if an option repeated more than once in the string, its last entrance will determine the value */
+//                if (!TAOS_DsnStoreValue(Dsn, i, Value, TRUE)) {
+//                    ret = FALSE;
+//                    goto end;
+//                }
+//                if (IS_OPTIONS_BITMAP(i)) {
+//                    TAOS_DsnUpdateOptionsFields(Dsn);
+//                }
+//
+//                if (p) {
+//                    Key = p + 1;
+//                } else {
+//                    Key = NULL;
+//                }
+//                break;
+//            }
+//            ++i;
+//        }
+//        /* Unknown keyword */
+//        if (DsnKeys[i].DsnKey == NULL) {
+//            //TODO: shouldn't some error/warning be thrown?
+//            Key = strchr(Value, Delimiter);
+//            if (Key != NULL) {
+//                ++Key;
+//            }
+//        }
+//    }
+//
+//    end:
+//    TAOS_FREE(Buffer);
+//    TAOS_FREE(ValueBuf);
+//
+//    return ret;
+//}
 /* }}} */
 
 /* {{{ TAOS_ReadConnString */

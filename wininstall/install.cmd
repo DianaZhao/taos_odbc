@@ -1,1 +1,1 @@
-odbcconf /A {INSTALLDRIVER "TAOS_ODBC|Driver=D:\workspaces\taos_odbc\debug\taos_odbc_driver\taos_odbc_driver.dll|ConnectFunctions=YYN|DriverODBCVer=03.00|FileUsage=0|SQLLevel=0|Setup=D:\workspaces\taos_odbc\debug\taos_odbc_driver\taos_odbc_setup.dll|"}
+odbcconf /A {INSTALLDRIVER "TAOSODBC|Driver=D:\workspaces\taos_odbc\debug\taos_odbc_driver\taos_odbc_driver.dll|Setup=D:\workspaces\taos_odbc\debug\taos_odbc_driver\taos_odbc_setup.dll|ConnectFunctions=YYN|DriverODBCVer=03.00|FileUsage=0|SQLLevel=0|APILevel=1|"}

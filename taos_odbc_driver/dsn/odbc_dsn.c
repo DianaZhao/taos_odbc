@@ -73,7 +73,7 @@ HBRUSH hbrBg = NULL;
 
 
 void DsnApplyDefaults(TAOS_Dsn *Dsn) {
-    Dsn->Driver = "TAOS_ODBC";
+    Dsn->Driver = "TAOSODBC";
     if (Dsn->Description == NULL) {
         Dsn->Description = "";
     }
@@ -260,7 +260,7 @@ void GetDialogFields() {
     int i = 0;
     TAOS_Dsn *Dsn = (TAOS_Dsn *) GetWindowLongPtr(GetParent(hwndTab[0]), DWLP_USER);
     while (DsnMap[i].Key) {
-        printf("DsnOffset%d\n", DsnMap[i].Key->DsnOffset);
+//        printf("DsnOffset%d\n", DsnMap[i].Key->DsnOffset);
         switch (DsnMap[i].Key->Type) {
             case DSN_TYPE_STRING:
             case DSN_TYPE_COMBO: {
@@ -341,6 +341,7 @@ static SQLRETURN TestDSN(TAOS_Dsn *Dsn, SQLHANDLE *Conn, SQLCHAR *ConnStrBuffer)
     SQLHANDLE Connection = NULL;
     SQLRETURN Result = SQL_ERROR;
     SQLCHAR LocalBuffer[CONNSTR_BUFFER_SIZE], *ConnStr = LocalBuffer;
+    memset(LocalBuffer, 0, CONNSTR_BUFFER_SIZE);
     SQLCHAR *Description = Dsn->Description;
     SQLCHAR Info[1024];
     Dsn->Description = "";
@@ -353,8 +354,9 @@ static SQLRETURN TestDSN(TAOS_Dsn *Dsn, SQLHANDLE *Conn, SQLCHAR *ConnStrBuffer)
     /* If defaults has changed actual values - let them be reflected in the dialog(if it exists - SetDialogFields
        cares about that) */
     SetDialogFields();
-    TAOS_DsnToString(Dsn, ConnStr, CONNSTR_BUFFER_SIZE);
-    _snprintf(Info, sizeof(Info), "dsn: %s, ip: %s, port: %d\n", Dsn->DSNName, Dsn->ServerName, Dsn->Port);
+    int len = TAOS_DsnToString(Dsn, ConnStr, CONNSTR_BUFFER_SIZE);
+    _snprintf(Info, sizeof(Info), "test env: %lld, dsn: %s, driver:%s, ip: %s, port: %d, connstr: %s, len: %d\n",
+              Environment, Dsn->DSNName, Dsn->Driver, Dsn->ServerName, Dsn->Port, ConnStr, len);
     SQLAllocHandle(SQL_HANDLE_DBC, Environment, (SQLHANDLE *) &Connection);
     if (Connection == NULL) {
         return Result;
@@ -362,6 +364,8 @@ static SQLRETURN TestDSN(TAOS_Dsn *Dsn, SQLHANDLE *Conn, SQLCHAR *ConnStrBuffer)
     MessageBox(hwndTab[CurrentPage], Info, "Connection test", MB_ICONINFORMATION | MB_OK);
     Result = SQLDriverConnect(Connection, NULL, ConnStr, CONNSTR_BUFFER_SIZE, NULL, 0, NULL, SQL_DRIVER_NOPROMPT);
 
+    _snprintf(Info, sizeof(Info), "err: %s\n", Environment, Dsn->DSNName, Dsn->Driver, Dsn->ServerName,
+              Dsn->Port);
     Dsn->Description = Description;
 
     if (Conn != NULL) {
@@ -420,7 +424,6 @@ void TAOS_WIN_TestDsn(BOOL ShowSuccess) {
         SQLCHAR Info[1024];
 
         HidePwd(ConnStr);
-
         if (SQL_SUCCEEDED(ret)) {
             SQLCHAR DbmsName[16], DbmsVer[16];
             SQLGetInfo(Connection, SQL_DBMS_NAME, DbmsName, sizeof(DbmsName), NULL);
@@ -655,14 +658,14 @@ BOOL DSNDialog(HWND hwndParent,
     BOOL ret;
     SQLCHAR *DsnName = NULL;
     BOOL DsnExists = FALSE;
-    SQLCHAR Delimiter = ';';
+    SQLCHAR *Delimiter = ";";
 
     if (Dsn->isPrompt < 0 || Dsn->isPrompt > ODBC_PROMPT_REQUIRED) {
         Dsn->isPrompt = ODBC_CONFIG;
     }
 
     if (lpszAttributes) {
-        Delimiter = '\0';
+        Delimiter = "\0";
         DsnName = strchr((SQLCHAR *) lpszAttributes, '=');
     }
 

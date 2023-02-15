@@ -37,6 +37,8 @@ set(TD_CONTRIB_DIR "${PROJECT_SOURCE_DIR}/contrib")
 add_subdirectory(contrib)
 INCLUDE_DIRECTORIES(${TD_CONTRIB_DIR}/pthread)
 INCLUDE_DIRECTORIES(${TD_CONTRIB_DIR}/iconv)
+
 # Include sub-projects.
 add_subdirectory("taos_odbc_driver")
-#add_subdirectory("test")
+add_subdirectory("test")
+add_subdirectory("wininstall")

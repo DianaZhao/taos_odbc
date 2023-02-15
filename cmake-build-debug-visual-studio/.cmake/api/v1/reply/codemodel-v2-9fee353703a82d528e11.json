@@ -1,0 +1,268 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3,
+						4,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "contrib",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-contrib-Debug-fba4a31fcf9da306c58e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "contrib",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "contrib/pthread",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-contrib.pthread-Debug-fefd6eb84f359b18c0cf.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "contrib/pthread",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5,
+						7,
+						8,
+						9
+					]
+				},
+				{
+					"build" : "taos_odbc_driver",
+					"jsonFile" : "directory-taos_odbc_driver-Debug-e0d7c910871cd1e23951.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "taos_odbc_driver",
+					"targetIndexes" : 
+					[
+						10,
+						11
+					]
+				},
+				{
+					"build" : "test",
+					"jsonFile" : "directory-test-Debug-f18be1977b403cfd1a50.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "test",
+					"targetIndexes" : 
+					[
+						1,
+						6,
+						12
+					]
+				},
+				{
+					"build" : "wininstall",
+					"jsonFile" : "directory-wininstall-Debug-c94db5fd5aef24af6923.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "wininstall",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						3,
+						4,
+						5
+					],
+					"name" : "taos_odbc_driver",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						6,
+						10,
+						11,
+						12
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "pthreads4w",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5,
+						7,
+						8,
+						9
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "change_dsns_driver::@e5fcb2b8ab786c67797d",
+					"jsonFile" : "target-change_dsns_driver-Debug-78a04a3bcebffd54cc2e.json",
+					"name" : "change_dsns_driver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "dsn_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-dsn_test-Debug-3d83f892c59af2061b98.json",
+					"name" : "dsn_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "iconv::@0c40c793bb09d8ef6800",
+					"jsonFile" : "target-iconv-Debug-7f85eb7a788fd3b80d81.json",
+					"name" : "iconv",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "libpthreadVC3::@67e1cd471a073ee882f0",
+					"jsonFile" : "target-libpthreadVC3-Debug-52544975330e8056b6ac.json",
+					"name" : "libpthreadVC3",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "libpthreadVCE3::@67e1cd471a073ee882f0",
+					"jsonFile" : "target-libpthreadVCE3-Debug-90dc4c6fa04e5bf75ea3.json",
+					"name" : "libpthreadVCE3",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "libpthreadVSE3::@67e1cd471a073ee882f0",
+					"jsonFile" : "target-libpthreadVSE3-Debug-3648fcb84aa8812755a6.json",
+					"name" : "libpthreadVSE3",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "odbc_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-odbc_test-Debug-f8402f996e4cc80a24d1.json",
+					"name" : "odbc_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "pthreadVC3::@67e1cd471a073ee882f0",
+					"jsonFile" : "target-pthreadVC3-Debug-49daa56cf096175ab3a9.json",
+					"name" : "pthreadVC3",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "pthreadVCE3::@67e1cd471a073ee882f0",
+					"jsonFile" : "target-pthreadVCE3-Debug-9316e8735ef50cb3acdc.json",
+					"name" : "pthreadVCE3",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "pthreadVSE3::@67e1cd471a073ee882f0",
+					"jsonFile" : "target-pthreadVSE3-Debug-891a8f0bc6a6171f3b1a.json",
+					"name" : "pthreadVSE3",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "taos_odbc_driver::@fa07086ab171fa28aabf",
+					"jsonFile" : "target-taos_odbc_driver-Debug-4ef5380389360278ec2b.json",
+					"name" : "taos_odbc_driver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "taos_odbc_setup::@fa07086ab171fa28aabf",
+					"jsonFile" : "target-taos_odbc_setup-Debug-d6acd0d48cd5f47aa2c9.json",
+					"name" : "taos_odbc_setup",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "taos_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-taos_test-Debug-51b3ec4c5aab5804aa4b.json",
+					"name" : "taos_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/workspaces/taos_odbc/cmake-build-debug-visual-studio",
+		"source" : "D:/workspaces/taos_odbc"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

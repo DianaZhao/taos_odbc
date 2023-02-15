@@ -255,6 +255,58 @@ taos_odbc_setup\fast:
 	$(MAKE) $(MAKESILENT) -f taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\build.make /nologo -$(MAKEFLAGS) taos_odbc_driver\CMakeFiles\taos_odbc_setup.dir\build
 .PHONY : taos_odbc_setup\fast
 
+#=============================================================================
+# Target rules for targets named taos_test
+
+# Build rule for target.
+taos_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) taos_test
+.PHONY : taos_test
+
+# fast build rule for target.
+taos_test\fast:
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\taos_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\taos_test.dir\build
+.PHONY : taos_test\fast
+
+#=============================================================================
+# Target rules for targets named odbc_test
+
+# Build rule for target.
+odbc_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) odbc_test
+.PHONY : odbc_test
+
+# fast build rule for target.
+odbc_test\fast:
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\odbc_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\odbc_test.dir\build
+.PHONY : odbc_test\fast
+
+#=============================================================================
+# Target rules for targets named dsn_test
+
+# Build rule for target.
+dsn_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) dsn_test
+.PHONY : dsn_test
+
+# fast build rule for target.
+dsn_test\fast:
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\dsn_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\dsn_test.dir\build
+.PHONY : dsn_test\fast
+
+#=============================================================================
+# Target rules for targets named change_dsns_driver
+
+# Build rule for target.
+change_dsns_driver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) change_dsns_driver
+.PHONY : change_dsns_driver
+
+# fast build rule for target.
+change_dsns_driver\fast:
+	$(MAKE) $(MAKESILENT) -f wininstall\CMakeFiles\change_dsns_driver.dir\build.make /nologo -$(MAKEFLAGS) wininstall\CMakeFiles\change_dsns_driver.dir\build
+.PHONY : change_dsns_driver\fast
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -266,15 +318,19 @@ help:
 	@echo ... install/local
 	@echo ... list_install_components
 	@echo ... rebuild_cache
+	@echo ... change_dsns_driver
+	@echo ... dsn_test
 	@echo ... iconv
 	@echo ... libpthreadVC3
 	@echo ... libpthreadVCE3
 	@echo ... libpthreadVSE3
+	@echo ... odbc_test
 	@echo ... pthreadVC3
 	@echo ... pthreadVCE3
 	@echo ... pthreadVSE3
 	@echo ... taos_odbc_driver
 	@echo ... taos_odbc_setup
+	@echo ... taos_test
 .PHONY : help
 
 

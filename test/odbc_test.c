@@ -6,6 +6,7 @@
 #include <Windows.h>
 #include <sqlext.h>
 #include <sqltypes.h>
+#include "platform_win.h"
 
 typedef char *(WINAPI
         *test_dll_func)(char *);
@@ -41,18 +42,18 @@ typedef SQLRETURN (WINAPI
 SQLConnectW_Func _SQLConnectW = NULL;
 
 typedef SQLRETURN (WINAPI
-        *SQLDriverConnect_Func)(
+        *SQLDriverConnectW_Func)(
         SQLHDBC ConnectionHandle,
         SQLHWND WindowHandle,
-        SQLCHAR *InConnectionString,
+        SQLWCHAR *InConnectionString,
         SQLSMALLINT StringLength1,
-        SQLCHAR *OutConnectionString,
+        SQLWCHAR *OutConnectionString,
         SQLSMALLINT BufferLength,
         SQLSMALLINT *StringLength2Ptr,
         SQLUSMALLINT DriverCompletion
 );
 
-SQLDriverConnect_Func _SQLDriverConnect = NULL;
+SQLDriverConnectW_Func _SQLDriverConnectW = NULL;
 
 typedef SQLRETURN (WINAPI
         *SQLDisconnect_Func)(
@@ -78,6 +79,15 @@ typedef SQLRETURN (WINAPI *SQLExecute_Func)(
         SQLHSTMT StatementHandle);
 
 SQLExecute_Func _SQLExecute = NULL;
+
+typedef SQLRETURN (SQL_API *SQLGetInfoW_Func)(
+        SQLHDBC ConnectionHandle,
+        SQLUSMALLINT InfoType,
+        SQLPOINTER InfoValuePtr,
+        SQLSMALLINT BufferLength,
+        SQLSMALLINT *StringLengthPtr);
+
+SQLGetInfoW_Func _SQLGetInfoW = NULL;
 
 SQLHANDLE test_env() {
     SQLRETURN sr = SQL_SUCCESS;
@@ -161,7 +171,22 @@ int test_connect(SQLHANDLE henv, const char *server, const char *uid, const char
     return 0;
 }
 
-int test_driver_connect(SQLHANDLE henv, const char *connStr) {
+int test_getinfo(SQLHANDLE hconn) {
+    SQLRETURN sr = SQL_SUCCESS;
+    char buf[10];
+    memset(buf, 0, 10);
+    int infoLen = 0;
+    sr = _SQLGetInfoW(hconn, SQL_DRIVER_ODBC_VER, buf, 10, &infoLen);
+    if (FAILED(sr)) {
+        printf("_SQLGetInfoW SQL_DRIVER_ODBC_VER failed\n");
+        return -1;
+    } else {
+        printf("_SQLGetInfoW SQL_DRIVER_ODBC_VER success, %s\n", buf);
+    }
+    return 0;
+}
+
+int test_driver_connect(SQLHANDLE henv, const SQLWCHAR *connStr) {
     SQLRETURN sr = SQL_SUCCESS;
     SQLHANDLE hconn = SQL_NULL_HANDLE;
     sr = _SQLAllocHandle(SQL_HANDLE_DBC, henv, &hconn);
@@ -171,18 +196,19 @@ int test_driver_connect(SQLHANDLE henv, const char *connStr) {
     } else {
         printf("_SQLAllocHandle SQL_HANDLE_DBC success, %lld\n", (ULONG) hconn);
     }
-    sr = _SQLDriverConnect(hconn, NULL, connStr, 1024, NULL, 0, NULL, SQL_DRIVER_NOPROMPT);
+    sr = _SQLDriverConnectW(hconn, NULL, connStr, SQL_NTS, NULL, 0, NULL, SQL_DRIVER_NOPROMPT);
     if (FAILED(sr)) {
-        printf("driver connect [%s] failed\n", connStr);
+        printf("driver connect [%ls] failed\n", connStr);
         return -1;
     } else {
-        printf("driver connect [%s] passed\n", connStr);
+        printf("driver connect [%ls] passed\n", connStr);
+        test_getinfo(hconn);
     }
     sr = _SQLDisconnect(hconn);
     if (FAILED(sr)) {
-        printf("driver disconnect [server:%s] failed\n", connStr);
+        printf("driver disconnect [server:%ls] failed\n", connStr);
     } else {
-        printf("driver disconnect [server:%s] passed\n", connStr);
+        printf("driver disconnect [server:%ls] passed\n", connStr);
     }
     _SQLFreeHandle(SQL_HANDLE_DBC, hconn);
     return 0;
@@ -197,21 +223,27 @@ int main(int argc, char *argv[]) {
         _SQLAllocHandle = (SQLAllocHandle_Func) GetProcAddress(m, "SQLAllocHandle");
         _SQLFreeHandle = (SQLFreeHandle_Func) GetProcAddress(m, "SQLFreeHandle");
         _SQLConnectW = (SQLConnectW_Func) GetProcAddress(m, "SQLConnectW");
-        _SQLDriverConnect = (SQLDriverConnect_Func) GetProcAddress(m, "SQLDriverConnect");
+        _SQLDriverConnectW = (SQLDriverConnectW_Func) GetProcAddress(m, "SQLDriverConnectW");
         _SQLDisconnect = (SQLDisconnect_Func) GetProcAddress(m, "SQLDisconnect");
         _SQLPrepare = (SQLPrepare_Func) GetProcAddress(m, "SQLPrepare");
         _SQLFreeStmt = (SQLFreeStmt_Func) GetProcAddress(m, "SQLFreeStmt");
         _SQLExecute = (SQLExecute_Func) GetProcAddress(m, "SQLExecute");
+        _SQLGetInfoW = (SQLGetInfoW_Func) GetProcAddress(m, "SQLGetInfoW");
         SQLHANDLE henv = test_env();
         if (henv == SQL_INVALID_HANDLE) {
             printf("env test fail, SQL_INVALID_HANDLE\n");
         } else {
             printf("env test passed, %lld\n", (ULONG) henv);
-            int r = test_connect(henv, "127.0.0.1", NULL, NULL);
+//            int r = test_connect(henv, "192.168.137.21", NULL, NULL);
+//            if (r >= 0) {
+//
+//            }
+            const SQLWCHAR *connStr = L"driver=TAOSODBC;server=192.168.137.21;port=6030";
+            printf("ConnStr: %ls\n", connStr);
+            int r = test_driver_connect(henv, connStr);
             if (r >= 0) {
 
             }
-            r = test_driver_connect(henv, "server=127.0.0.1;port=6030");
             SQLRETURN sr = _SQLFreeHandle(SQL_HANDLE_ENV, henv);
             if (FAILED(sr)) {
                 printf("SQLFreeHandle fail\n");
@@ -219,6 +251,7 @@ int main(int argc, char *argv[]) {
                 printf("SQLFreeHandle success\n");
             }
         }
+        FreeLibrary(m);
     } else {
         printf("can not load dll\n");
     }

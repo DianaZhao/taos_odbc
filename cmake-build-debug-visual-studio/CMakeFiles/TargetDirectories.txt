@@ -27,3 +27,17 @@ D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/taos_odbc_driver/CMakeFi
 D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/taos_odbc_driver/CMakeFiles/list_install_components.dir
 D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/taos_odbc_driver/CMakeFiles/install.dir
 D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/taos_odbc_driver/CMakeFiles/install/local.dir
+D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/test/CMakeFiles/taos_test.dir
+D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/test/CMakeFiles/odbc_test.dir
+D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/test/CMakeFiles/dsn_test.dir
+D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/test/CMakeFiles/edit_cache.dir
+D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/test/CMakeFiles/rebuild_cache.dir
+D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/test/CMakeFiles/list_install_components.dir
+D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/test/CMakeFiles/install.dir
+D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/test/CMakeFiles/install/local.dir
+D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/wininstall/CMakeFiles/change_dsns_driver.dir
+D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/wininstall/CMakeFiles/edit_cache.dir
+D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/wininstall/CMakeFiles/rebuild_cache.dir
+D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/wininstall/CMakeFiles/list_install_components.dir
+D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/wininstall/CMakeFiles/install.dir
+D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/wininstall/CMakeFiles/install/local.dir

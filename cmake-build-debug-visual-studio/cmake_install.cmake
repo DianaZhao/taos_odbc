@@ -36,6 +36,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/contrib/cmake_install.cmake")
   include("D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/taos_odbc_driver/cmake_install.cmake")
+  include("D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/test/cmake_install.cmake")
+  include("D:/workspaces/taos_odbc/cmake-build-debug-visual-studio/wininstall/cmake_install.cmake")
 
 endif()
 

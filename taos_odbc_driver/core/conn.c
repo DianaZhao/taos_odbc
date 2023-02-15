@@ -28,11 +28,11 @@
 #include "errs.h"
 #include "enums.h"
 #include "stmt.h"
-#include "td_platform_win32.h"
+#include "platform_win.h"
 
 #include <odbcinst.h>
 #include <string.h>
-#include "taos_odbc_driver/dsn/td_dsn.h"
+#include "taos_odbc_driver/inc/td_dsn.h"
 
 static char *conn_str_varkeys[] = {"dsn", "dsnname", "server", "ip", "addr", "port",
                                    "user", "uid", "password", "pwd", "database", "db"};
@@ -308,35 +308,43 @@ BOOL dsnToCfg(TAOS_Dsn *dsn, connection_cfg_t *cfg) {
     if (!dsn || !cfg) {
         return FALSE;
     }
+    printf("dsnToCfg begin\n");
     if (dsn->ServerName != NULL) {
+        cfg->ip = malloc(strlen(dsn->ServerName) * sizeof(char));
         strcpy(cfg->ip, dsn->ServerName);
     } else {
         return FALSE;
     }
+    printf("dsnToCfg 1\n");
     if (dsn->Port != NULL && dsn->Port != 0) {
         cfg->port = dsn->Port;
     } else {
         cfg->port = 6030;
     }
     if (dsn->Driver != NULL) {
+        cfg->driver = malloc(strlen(dsn->Driver) * sizeof(char));
         strcpy(cfg->driver, dsn->Driver);
     } else {
-        cfg->driver = "";
+        cfg->driver = malloc(9 * sizeof(char));
+        strcpy(cfg->driver, "TAOSODBC");
     }
     if (dsn->UserName != NULL) {
+        cfg->uid = malloc(strlen(dsn->UserName) * sizeof(char));
         strcpy(cfg->uid, dsn->UserName);
     } else {
-        cfg->uid = "";
+        cfg->uid = NULL;
     }
     if (dsn->Password != NULL) {
+        cfg->pwd = malloc(strlen(dsn->Password) * sizeof(char));
         strcpy(cfg->pwd, dsn->Password);
     } else {
-        cfg->pwd = "";
+        cfg->pwd = NULL;
     }
     if (dsn->Database != NULL) {
+        cfg->db = malloc(strlen(dsn->Database) * sizeof(char));
         strcpy(cfg->db, dsn->Database);
     } else {
-        cfg->db = "";
+        cfg->db = NULL;
     }
     return TRUE;
 }
@@ -352,8 +360,8 @@ SQLRETURN conn_driver_connect(
         SQLUSMALLINT DriverCompletion) {
     (void) WindowHandle;
     TAOS_Dsn *dsn = malloc(sizeof(TAOS_Dsn));
-    TAOS_ParseConnString(dsn, InConnectionString, strlen(InConnectionString), ";");
-
+    memset(dsn, 0, sizeof(TAOS_Dsn));
+    TAOS_ParseConnString(dsn, InConnectionString, SQL_NTS, ";");
     switch (DriverCompletion) {
         case SQL_DRIVER_NOPROMPT:
             break;
@@ -388,11 +396,14 @@ SQLRETURN conn_driver_connect(
 //            break;
 //        }
 
+    printf("dsn: %s, ServerName: %s, Port: %d\n", dsn->DSNName, dsn->ServerName, dsn->Port);
     BOOL r = dsnToCfg(dsn, &conn->cfg);
     if (!r) {
+//        printf("dsnToCfg failed\n");
         conn_append_err(conn, "HY000", 0, "Can not parse connection string");
         return SQL_ERROR;
     }
+    printf("dsn: %s, ip: %s, port: %d\n", conn->cfg.dsn, conn->cfg.ip, conn->cfg.port);
     sr = _do_conn_connect(conn);
     if (!(sr == SQL_SUCCESS || sr == SQL_SUCCESS_WITH_INFO)) return SQL_ERROR;
 
@@ -627,6 +638,10 @@ SQLRETURN conn_get_info(
             return SQL_SUCCESS;
         case SQL_MAX_TABLE_NAME_LEN:
             *(SQLUSMALLINT *) InfoValuePtr = MAX_TABLE_NAME_LEN;
+            return SQL_SUCCESS;
+        case SQL_DRIVER_ODBC_VER:
+            int n = snprintf(InfoValuePtr, BufferLength, "%s", "03.00");
+            *StringLengthPtr = (SQLUSMALLINT) n;
             return SQL_SUCCESS;
         default: conn_append_err_format(conn, "HY000", 0, "General error:`%s[%d/0x%x]` not implemented yet",
                                         sql_info_type(InfoType), InfoType, InfoType);

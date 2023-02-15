@@ -2,6 +2,7 @@
 //
 
 #include "taos_odbc_driver.h"
+#include "platform_win.h"
 
 int __stdcall tdengine_init(int argc, char **argv, char **groups) {
     return 0;
@@ -135,6 +136,59 @@ SQLRETURN SQL_API SQLDriverConnect(
                                StringLength2Ptr, DriverCompletion);
 }
 
+SQLRETURN SQL_API SQLDriverConnectW(
+        SQLHDBC ConnectionHandle,
+        SQLHWND WindowHandle,
+        SQLWCHAR *InConnectionString,
+        SQLSMALLINT StringLength1,
+        SQLWCHAR *OutConnectionString,
+        SQLSMALLINT BufferLength,
+        SQLSMALLINT *StringLength2Ptr,
+        SQLUSMALLINT DriverCompletion) {
+    printf("SQLDriverConnectW\n");
+    SQLRETURN ret = SQL_ERROR;
+    SQLULEN Length = 0; /* Since we need bigger(in bytes) buffer for utf8 string, the length may be > max SQLSMALLINT */
+    char *InConnStrA = NULL;
+    SQLULEN InStrAOctLen = 0;
+    char *OutConnStrA = NULL;
+
+    if (!ConnectionHandle) {
+        return SQL_INVALID_HANDLE;
+    }
+
+    InConnStrA = ConvertFromWChar(InConnectionString, StringLength1, &InStrAOctLen, &utf8, NULL);
+
+    /* Allocate buffer for Asc OutConnectionString */
+    if (OutConnectionString && BufferLength) {
+        Length = BufferLength * 4 /*Max bytes per utf8 character */;
+        OutConnStrA = (char *) calloc(Length, sizeof(char));
+
+        if (OutConnStrA == NULL) {
+            free(InConnStrA);
+            free(OutConnStrA);
+            return ret;
+        }
+    }
+
+    ret = SQLDriverConnect(ConnectionHandle, WindowHandle, (SQLCHAR *) InConnStrA, InStrAOctLen,
+                           (SQLCHAR *) OutConnStrA,
+                           Length, StringLength2Ptr, DriverCompletion);
+    if (!SQL_SUCCEEDED(ret)) {
+        free(InConnStrA);
+        free(OutConnStrA);
+        return ret;
+    }
+
+    if (OutConnectionString) {
+        Length = SetString(&utf8, OutConnectionString, BufferLength,
+                                OutConnStrA, SQL_NTS);
+        if (StringLength2Ptr)
+            *StringLength2Ptr = (SQLSMALLINT) Length;
+    }
+
+    return ret;
+}
+
 SQLRETURN SQL_API SQLDisconnect(
         SQLHDBC ConnectionHandle) {
     if (ConnectionHandle == SQL_NULL_HANDLE) return SQL_INVALID_HANDLE;
@@ -187,6 +241,15 @@ SQLRETURN SQL_API SQLGetInfo(
     conn_clr_errs(conn);
 
     return conn_get_info(conn, InfoType, InfoValuePtr, BufferLength, StringLengthPtr);
+}
+
+SQLRETURN SQL_API SQLGetInfoW(
+        SQLHDBC ConnectionHandle,
+        SQLUSMALLINT InfoType,
+        SQLPOINTER InfoValuePtr,
+        SQLSMALLINT BufferLength,
+        SQLSMALLINT *StringLengthPtr) {
+    return SQLGetInfo(ConnectionHandle, InfoType, InfoValuePtr, BufferLength, StringLengthPtr);
 }
 
 SQLRETURN SQL_API SQLEndTran(
@@ -370,6 +433,20 @@ SQLRETURN SQL_API SQLGetDiagRec(
     }
 
     return SQL_ERROR;
+}
+
+SQLRETURN SQL_API SQLGetDiagRecW(
+        SQLSMALLINT HandleType,
+        SQLHANDLE Handle,
+        SQLSMALLINT RecNumber,
+        SQLCHAR *SQLState,
+        SQLINTEGER *NativeErrorPtr,
+        SQLCHAR *MessageText,
+        SQLSMALLINT BufferLength,
+        SQLSMALLINT *TextLengthPtr) {
+
+    return SQLGetDiagRec(HandleType, Handle, RecNumber, SQLState, NativeErrorPtr, MessageText, BufferLength,
+                         TextLengthPtr);
 }
 
 SQLRETURN SQL_API SQLGetDiagField(

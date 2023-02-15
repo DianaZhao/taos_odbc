@@ -202,6 +202,36 @@ dsn_test\fast:
 	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\test
 .PHONY : dsn_test\fast
 
+__\taos_odbc_driver\dsn\platform_win.obj: __\taos_odbc_driver\dsn\platform_win.c.obj
+.PHONY : __\taos_odbc_driver\dsn\platform_win.obj
+
+# target to build an object file
+__\taos_odbc_driver\dsn\platform_win.c.obj:
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\odbc_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\odbc_test.dir\__\taos_odbc_driver\dsn\platform_win.c.obj
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\test
+.PHONY : __\taos_odbc_driver\dsn\platform_win.c.obj
+
+__\taos_odbc_driver\dsn\platform_win.i: __\taos_odbc_driver\dsn\platform_win.c.i
+.PHONY : __\taos_odbc_driver\dsn\platform_win.i
+
+# target to preprocess a source file
+__\taos_odbc_driver\dsn\platform_win.c.i:
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\odbc_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\odbc_test.dir\__\taos_odbc_driver\dsn\platform_win.c.i
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\test
+.PHONY : __\taos_odbc_driver\dsn\platform_win.c.i
+
+__\taos_odbc_driver\dsn\platform_win.s: __\taos_odbc_driver\dsn\platform_win.c.s
+.PHONY : __\taos_odbc_driver\dsn\platform_win.s
+
+# target to generate assembly for a file
+__\taos_odbc_driver\dsn\platform_win.c.s:
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\odbc_test.dir\build.make /nologo -$(MAKEFLAGS) test\CMakeFiles\odbc_test.dir\__\taos_odbc_driver\dsn\platform_win.c.s
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\test
+.PHONY : __\taos_odbc_driver\dsn\platform_win.c.s
+
 dsn_test.obj: dsn_test.c.obj
 .PHONY : dsn_test.obj
 
@@ -306,6 +336,9 @@ help:
 	@echo ... dsn_test
 	@echo ... odbc_test
 	@echo ... taos_test
+	@echo ... __/taos_odbc_driver/dsn/platform_win.obj
+	@echo ... __/taos_odbc_driver/dsn/platform_win.i
+	@echo ... __/taos_odbc_driver/dsn/platform_win.s
 	@echo ... dsn_test.obj
 	@echo ... dsn_test.i
 	@echo ... dsn_test.s

@@ -84,17 +84,45 @@ test\CMakeFiles\odbc_test.dir\odbc_test.c.s: cmake_force
 <<
 	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
 
+test\CMakeFiles\odbc_test.dir\__\taos_odbc_driver\dsn\platform_win.c.obj: test\CMakeFiles\odbc_test.dir\flags.make
+test\CMakeFiles\odbc_test.dir\__\taos_odbc_driver\dsn\platform_win.c.obj: D:\workspaces\taos_odbc\taos_odbc_driver\dsn\platform_win.c
+test\CMakeFiles\odbc_test.dir\__\taos_odbc_driver\dsn\platform_win.c.obj: test\CMakeFiles\odbc_test.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/CMakeFiles/odbc_test.dir/__/taos_odbc_driver/dsn/platform_win.c.obj"
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\test
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\odbc_test.dir\__\taos_odbc_driver\dsn\platform_win.c.obj.d --working-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\test --filter-prefix="Note: including file: " -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /showIncludes /FoCMakeFiles\odbc_test.dir\__\taos_odbc_driver\dsn\platform_win.c.obj /FdCMakeFiles\odbc_test.dir\ /FS -c D:\workspaces\taos_odbc\taos_odbc_driver\dsn\platform_win.c
+<<
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
+
+test\CMakeFiles\odbc_test.dir\__\taos_odbc_driver\dsn\platform_win.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/odbc_test.dir/__/taos_odbc_driver/dsn/platform_win.c.i"
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\test
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe > CMakeFiles\odbc_test.dir\__\taos_odbc_driver\dsn\platform_win.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\workspaces\taos_odbc\taos_odbc_driver\dsn\platform_win.c
+<<
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
+
+test\CMakeFiles\odbc_test.dir\__\taos_odbc_driver\dsn\platform_win.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/odbc_test.dir/__/taos_odbc_driver/dsn/platform_win.c.s"
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\test
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\odbc_test.dir\__\taos_odbc_driver\dsn\platform_win.c.s /c D:\workspaces\taos_odbc\taos_odbc_driver\dsn\platform_win.c
+<<
+	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio
+
 # Object files for target odbc_test
 odbc_test_OBJECTS = \
-"CMakeFiles\odbc_test.dir\odbc_test.c.obj"
+"CMakeFiles\odbc_test.dir\odbc_test.c.obj" \
+"CMakeFiles\odbc_test.dir\__\taos_odbc_driver\dsn\platform_win.c.obj"
 
 # External object files for target odbc_test
 odbc_test_EXTERNAL_OBJECTS =
 
 test\odbc_test.exe: test\CMakeFiles\odbc_test.dir\odbc_test.c.obj
+test\odbc_test.exe: test\CMakeFiles\odbc_test.dir\__\taos_odbc_driver\dsn\platform_win.c.obj
 test\odbc_test.exe: test\CMakeFiles\odbc_test.dir\build.make
 test\odbc_test.exe: test\CMakeFiles\odbc_test.dir\objects1
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable odbc_test.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable odbc_test.exe"
 	cd D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\test
 	C:\App\CMake\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\odbc_test.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\odbc_test.dir\objects1 @<<
  /out:odbc_test.exe /implib:odbc_test.lib /pdb:D:\workspaces\taos_odbc\cmake-build-debug-visual-studio\test\odbc_test.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 

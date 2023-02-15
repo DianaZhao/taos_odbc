@@ -16,7 +16,8 @@ add_library(taos_odbc_driver SHARED
         "core/desc.c"
         "core/utils.c"
         "core/strptime.c"
-        "dsn/td_dsn.c")
+        "dsn/td_dsn.c"
+        "dsn/platform_win.c")
 target_link_libraries(taos_odbc_driver
         pthread
         iconv
@@ -29,7 +30,8 @@ target_link_libraries(taos_odbc_driver
 SET(DSN_DIALOG_FILES ${CMAKE_CURRENT_SOURCE_DIR}/dsn/odbc_dsn.c
         ${CMAKE_CURRENT_SOURCE_DIR}/dsn/odbc_dsn.rc
         ${CMAKE_CURRENT_SOURCE_DIR}/dsn/resource.h
-        ${CMAKE_CURRENT_SOURCE_DIR}/dsn/td_dsn.c)
+        ${CMAKE_CURRENT_SOURCE_DIR}/dsn/td_dsn.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/dsn/platform_win.c)
 ADD_LIBRARY(taos_odbc_setup SHARED ${DSN_DIALOG_FILES} ${CMAKE_CURRENT_SOURCE_DIR}/dsn/taos_odbc_setup.def)
 SET_TARGET_PROPERTIES(taos_odbc_setup PROPERTIES LANGUAGE C)
 TARGET_LINK_LIBRARIES(taos_odbc_setup comctl32 ${LEGACY_STDIO} Shlwapi ${ODBC_LIBS} ${ODBC_INSTLIBS})

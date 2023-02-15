@@ -1,0 +1,10 @@
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/taos_odbc_driver/dsn)
+ADD_EXECUTABLE(change_dsns_driver
+        change_dsns_driver.c
+        ${CMAKE_SOURCE_DIR}/taos_odbc_driver/dsn/td_dsn.c)
+TARGET_LINK_LIBRARIES(change_dsns_driver
+        ${ODBC_LIBS}
+        ${ODBC_INSTLIBS}
+        legacy_stdio_definitions
+        Shlwapi
+        Pathcch)

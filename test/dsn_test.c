@@ -37,15 +37,16 @@ int main(int argc, char *argv[]) {
     ConfigDSNCmd cmdFunc = NULL;
     HWND hWnd;
     DWORD dwProcID = GetCurrentProcessId();
-    BOOL testCmd = TRUE;
-    const char *driver = getenv("TEST_DRIVER");
+    BOOL testCmd = FALSE;
+    const char *driver = "TAOSODBC";
+//    const char *driver = getenv("TEST_DRIVER");
 
-    if (driver == NULL) {
-        printf("Test requires environment variable TEST_DRIVER to be set!\n");
-        return 1;
-    } else {
-        printf("# Using Driver=%s for testing.\n", driver);
-    }
+//    if (driver == NULL) {
+//        printf("Test requires environment variable TEST_DRIVER to be set!\n");
+//        return 1;
+//    } else {
+//        printf("# Using Driver=%s for testing.\n", driver);
+//    }
     hWnd = GetConsoleWindow();
     if (hWnd == NULL) {
         hWnd = GetTopWindow(GetDesktopWindow());
@@ -59,13 +60,13 @@ int main(int argc, char *argv[]) {
     }
 
     if ((hmod = LoadLibrary(
-            "C:\\Windows\\System32\\taos_odbc_setup.dll"))) {
+            "D:\\workspaces\\taos_odbc\\debug\\taos_odbc_driver\\taos_odbc_setup.dll"))) {
         if (testCmd) {
             if (cmdFunc = (DSNDialog) GetProcAddress(hmod, "ConfigDSNCmd")) {
                 ret = cmdFunc("dsn=taos8;server=127.0.0.1");
-                if(ret){
+                if (ret) {
                     printf("DSN cmd ok\n");
-                }else{
+                } else {
                     printf("DSN cmd failed\n");
                 }
             }

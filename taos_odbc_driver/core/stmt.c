@@ -111,7 +111,7 @@ static void _stmt_init_descriptors(stmt_t *stmt) {
 static void _stmt_init(stmt_t *stmt, conn_t *conn) {
     stmt->conn = conn_ref(conn);
     int prev = atomic_fetch_add(&conn->stmts, 1);
-    assert(prev >= 0);
+    assert(prev >= 0, "_stmt_init");
 
     errs_init(&stmt->errs);
     _stmt_init_descriptors(stmt);
@@ -152,7 +152,7 @@ static void _stmt_release_stmt(stmt_t *stmt) {
     if (!stmt->stmt) return;
 
     int r = taos_stmt_close(stmt->stmt);
-    assert(r == 0);
+    assert(r == 0, "_stmt_release_stmt");
     stmt->stmt = NULL;
 }
 
@@ -282,6 +282,7 @@ static void _stmt_release_field_arrays(stmt_t *stmt) {
 }
 
 static void _stmt_release(stmt_t *stmt) {
+    OutputDebugStringA("[DBG] _stmt_release begin\n");
     rowset_release(&stmt->rowset);
     _stmt_release_post_filter(stmt);
     _stmt_release_result(stmt);
@@ -297,7 +298,7 @@ static void _stmt_release(stmt_t *stmt) {
     _stmt_release_current_for_get_data(stmt);
 
     int prev = atomic_fetch_sub(&stmt->conn->stmts, 1);
-    assert(prev >= 1);
+    assert(prev >= 1, "_stmt_release");
     conn_unref(stmt->conn);
     stmt->conn = NULL;
 
@@ -315,7 +316,7 @@ static void _stmt_release(stmt_t *stmt) {
     errs_release(&stmt->errs);
 
     buffer_release(&stmt->cache);
-
+    OutputDebugStringA("[DBG] _stmt_release end\n");
     return;
 }
 
@@ -333,14 +334,14 @@ stmt_t *stmt_create(conn_t *conn) {
 
 stmt_t *stmt_ref(stmt_t *stmt) {
     int prev = atomic_fetch_add(&stmt->refc, 1);
-    assert(prev > 0);
+    assert(prev > 0, "stmt_ref");
     return stmt;
 }
 
 stmt_t *stmt_unref(stmt_t *stmt) {
     int prev = atomic_fetch_sub(&stmt->refc, 1);
     if (prev > 1) return stmt;
-    assert(prev == 1);
+    assert(prev == 1, "stmt_unref");
 
     _stmt_release(stmt);
     free(stmt);
@@ -402,9 +403,9 @@ static SQLULEN *_stmt_get_rows_fetched_ptr(stmt_t *stmt) {
 }
 
 static SQLRETURN _stmt_exec_direct_sql(stmt_t *stmt, const char *sql) {
-    assert(stmt->conn);
-    assert(stmt->conn->taos);
-    assert(sql);
+    assert(stmt->conn, "_stmt_exec_direct_sql");
+    assert(stmt->conn->taos, "_stmt_exec_direct_sql");
+    assert(sql, "_stmt_exec_direct_sql");
 
     if (_stmt_get_rows_fetched_ptr(stmt)) *_stmt_get_rows_fetched_ptr(stmt) = 0;
     rowset_reset(&stmt->rowset);
@@ -461,15 +462,15 @@ static SQLRETURN _stmt_exec_direct(stmt_t *stmt, const char *sql, int len) {
 }
 
 SQLRETURN stmt_exec_direct(stmt_t *stmt, const char *sql, int len) {
-    assert(stmt->conn);
-    assert(stmt->conn->taos);
+    assert(stmt->conn, "stmt_exec_direct");
+    assert(stmt->conn->taos, "stmt_exec_direct");
 
     int prev = atomic_fetch_add(&stmt->conn->outstandings, 1);
-    assert(prev >= 0);
+    assert(prev >= 0, "stmt_exec_direct");
 
     SQLRETURN sr = _stmt_exec_direct(stmt, sql, len);
     prev = atomic_fetch_sub(&stmt->conn->outstandings, 1);
-    assert(prev >= 0);
+    assert(prev >= 0, "stmt_exec_direct");
 
     return sr;
 }
@@ -854,17 +855,17 @@ static int _tsdb_timestamp_to_string(stmt_t *stmt, int64_t val, char *buf) {
             w = 3;
             break;
         default:
-            assert(0);
+            assert(0, "_tsdb_timestamp_to_string");
             break;
     }
 
     if (tt <= 0 && ms < 0) {
-        assert(0);
+        assert(0, "_tsdb_timestamp_to_string");
     }
 
     struct tm ptm = {0};
     struct tm *p = localtime_s(&ptm, &tt);
-    assert(p == &ptm);
+    assert(p == &ptm, "_tsdb_timestamp_to_string");
 
     n = sprintf(buf,
                 "%04d-%02d-%02d %02d:%02d:%02d.%0*d",
@@ -872,7 +873,7 @@ static int _tsdb_timestamp_to_string(stmt_t *stmt, int64_t val, char *buf) {
                 ptm.tm_hour, ptm.tm_min, ptm.tm_sec,
                 w, ms);
 
-    assert(n > 0);
+    assert(n > 0, "_tsdb_timestamp_to_string");
 
     return n;
 }
@@ -1098,7 +1099,7 @@ static SQLRETURN _stmt_get_data_len(stmt_t *stmt, int row, int col, const char *
             break;
         case TSDB_DATA_TYPE_VARCHAR: {
             int *offsets = taos_get_column_data_offset(stmt->res, col);
-            assert(offsets);
+            assert(offsets, "_stmt_get_data_len");
             if (offsets[row] == -1) {
                 *data = NULL;
                 *len = 0;
@@ -1121,7 +1122,7 @@ static SQLRETURN _stmt_get_data_len(stmt_t *stmt, int row, int col, const char *
             break;
         case TSDB_DATA_TYPE_NCHAR: {
             int *offsets = taos_get_column_data_offset(stmt->res, col);
-            assert(offsets);
+            assert(offsets, "_stmt_get_data_len");
             if (offsets[row] == -1) {
                 *data = NULL;
                 *len = 0;
@@ -1183,7 +1184,7 @@ static SQLRETURN _stmt_fetch_next_rowset(stmt_t *stmt, TAOS_ROW *rows) {
     stmt->rowset.i_row = 0;
 
     stmt->lengths = taos_fetch_lengths(stmt->res);
-    assert(stmt->lengths);
+    assert(stmt->lengths, "_stmt_fetch_next_rowset");
 
     return SQL_SUCCESS;
 }
@@ -1265,7 +1266,7 @@ static SQLRETURN _stmt_conv_from_tsdb_timestamp_to_sql_c_char(stmt_t *stmt, tsdb
 
         char buf[64];
         int n = _tsdb_timestamp_to_string(stmt, v, buf);
-        assert(n > 0);
+        assert(n > 0, "_stmt_conv_from_tsdb_timestamp_to_sql_c_char");
 
         return _stmt_conv_to_sql_c_char(stmt, conv_state, buf, n);
     } else {
@@ -1324,7 +1325,7 @@ static SQLRETURN _stmt_conv_to_sql_c_wchar(stmt_t *stmt, tsdb_to_sql_c_state_t *
 
     SQLRETURN sr = _stmt_encode(stmt, "UTF8", &inbuf, &inbytes, "UCS-2LE", &outbuf, &outbytes);
     if (sr == SQL_ERROR) return SQL_ERROR;
-    assert(sr == SQL_SUCCESS || sr == SQL_SUCCESS_WITH_INFO);
+    assert(sr == SQL_SUCCESS || sr == SQL_SUCCESS_WITH_INFO, "_stmt_conv_to_sql_c_wchar");
     n = sizeof(wbuf) - outbytes;
 
     outbuf[0] = '\0';
@@ -1361,7 +1362,7 @@ static SQLRETURN _stmt_conv_from_tsdb_timestamp_to_sql_c_wchar(stmt_t *stmt, tsd
 
         char buf[64];
         int n = _tsdb_timestamp_to_string(stmt, v, buf);
-        assert(n > 0);
+        assert(n > 0, "_stmt_conv_from_tsdb_timestamp_to_sql_c_wchar");
 
         return _stmt_conv_to_sql_c_wchar(stmt, conv_state, buf, n);
     } else {
@@ -1479,7 +1480,7 @@ static SQLRETURN _stmt_conv_from_tsdb_int_to_sql_c_char(stmt_t *stmt, tsdb_to_sq
 
         char buf[64];
         int n = snprintf(buf, sizeof(buf), "%d", v);
-        assert(n > 0 && (size_t) n < sizeof(buf));
+        assert(n > 0 && (size_t) n < sizeof(buf), "_stmt_conv_from_tsdb_int_to_sql_c_char");
 
         return _stmt_conv_to_sql_c_char(stmt, conv_state, buf, n);
     } else {
@@ -1493,7 +1494,7 @@ static SQLRETURN _stmt_conv_from_tsdb_int_to_sql_c_wchar(stmt_t *stmt, tsdb_to_s
 
         char buf[64];
         int n = snprintf(buf, sizeof(buf), "%d", v);
-        assert(n > 0 && (size_t) n < sizeof(buf));
+        assert(n > 0 && (size_t) n < sizeof(buf), "_stmt_conv_from_tsdb_int_to_sql_c_wchar");
 
         return _stmt_conv_to_sql_c_wchar(stmt, conv_state, buf, n);
     } else {
@@ -1537,7 +1538,7 @@ static SQLRETURN _stmt_conv_from_tsdb_bigint_to_sql_c_char(stmt_t *stmt, tsdb_to
 
         char buf[64];
         int n = snprintf(buf, sizeof(buf), "%" PRId64 "", v);
-        assert(n > 0 && (size_t) n < sizeof(buf));
+        assert(n > 0 && (size_t) n < sizeof(buf), "_stmt_conv_from_tsdb_bigint_to_sql_c_char");
 
         return _stmt_conv_to_sql_c_char(stmt, conv_state, buf, n);
     } else {
@@ -1551,7 +1552,7 @@ static SQLRETURN _stmt_conv_from_tsdb_float_to_sql_c_char(stmt_t *stmt, tsdb_to_
 
         char buf[64];
         int n = snprintf(buf, sizeof(buf), "%g", v);
-        assert(n > 0 && (size_t) n < sizeof(buf));
+        assert(n > 0 && (size_t) n < sizeof(buf), "_stmt_conv_from_tsdb_float_to_sql_c_char");
 
         return _stmt_conv_to_sql_c_char(stmt, conv_state, buf, n);
     } else {
@@ -1595,7 +1596,7 @@ static SQLRETURN _stmt_conv_from_tsdb_double_to_sql_c_char(stmt_t *stmt, tsdb_to
 
         char buf[64];
         int n = snprintf(buf, sizeof(buf), "%g", v);
-        assert(n > 0 && (size_t) n < sizeof(buf));
+        assert(n > 0 && (size_t) n < sizeof(buf), "_stmt_conv_from_tsdb_double_to_sql_c_char");
 
         return _stmt_conv_to_sql_c_char(stmt, conv_state, buf, n);
     } else {
@@ -2080,8 +2081,8 @@ SQLRETURN stmt_get_data(
         SQLLEN *StrLen_or_IndPtr) {
     // https://learn.microsoft.com/en-us/sql/odbc/reference/syntax/sqlgetdata-function?view=sql-server-ver16
     // https://learn.microsoft.com/en-us/sql/odbc/reference/develop-app/getting-long-data?view=sql-server-ver16
-    assert(stmt->res);
-    assert(stmt->rows);
+    assert(stmt->res, "stmt_get_data");
+    assert(stmt->rows, "stmt_get_data");
 
     if (StrLen_or_IndPtr) StrLen_or_IndPtr[0] = SQL_NO_TOTAL;
 
@@ -2193,12 +2194,12 @@ static SQLRETURN _stmt_fill_rowset(stmt_t *stmt,
 
 SQLRETURN _stmt_fetch(stmt_t *stmt) {
     SQLULEN row_array_size = _stmt_get_row_array_size(stmt);
-    assert(row_array_size > 0);
+    assert(row_array_size > 0, "_stmt_fetch");
 
     SQLRETURN sr = SQL_SUCCESS;
 
     TAOS_ROW rows = NULL;
-    assert(stmt->res);
+    assert(stmt->res, "_stmt_fetch");
     stmt->rowset.i_row += row_array_size;
     if (stmt->rowset.i_row >= stmt->nr_rows) {
         sr = _stmt_fetch_next_rowset(stmt, &rows);
@@ -2228,7 +2229,7 @@ SQLRETURN _stmt_fetch(stmt_t *stmt) {
     descriptor_t *ARD = _stmt_ARD(stmt);
     desc_header_t *ARD_header = &ARD->header;
 
-    assert(ARD->cap >= ARD_header->DESC_COUNT);
+    assert(ARD->cap >= ARD_header->DESC_COUNT, "_stmt_fetch");
 
     for (int i_col = 0; (size_t) i_col < ARD->cap; ++i_col) {
         if (i_col >= ARD_header->DESC_COUNT) continue;
@@ -2940,8 +2941,8 @@ static SQLRETURN _stmt_conv_sql_c_sbigint_to_tsdb_varchar(stmt_t *stmt, sql_c_to
     int64_t v = *(int64_t *) meta->src_base;
     char buf[128];
     int n = snprintf(buf, sizeof(buf), "%"
-    PRId64
-    "", v);
+                                       PRId64
+                                       "", v);
     if (n < 0 || (size_t) n >= sizeof(buf)) {
         stmt_append_err(stmt, "HY000", 0, "General error:internal logic error");
         return SQL_ERROR;
@@ -3856,9 +3857,9 @@ SQLRETURN _stmt_execute(stmt_t *stmt) {
 }
 
 SQLRETURN stmt_execute(stmt_t *stmt) {
-    assert(stmt->conn);
-    assert(stmt->conn->taos);
-    assert(stmt->stmt);
+    assert(stmt->conn, "stmt_execute");
+    assert(stmt->conn->taos, "stmt_execute");
+    assert(stmt->stmt, "stmt_execute");
 
     SQLRETURN sr = _stmt_execute(stmt);
 

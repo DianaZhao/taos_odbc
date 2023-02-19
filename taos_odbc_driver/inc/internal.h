@@ -223,13 +223,12 @@ struct tsdb_to_sql_c_state_s {
     buffer_t cache;
 };
 
-typedef struct stmt_s              stmt_t;
+typedef struct stmt_s stmt_t;
 
 typedef SQLRETURN (*conv_from_tsdb_to_sql_c_f)(stmt_t *stmt, tsdb_to_sql_c_state_t *conv_state);
 
 
-
-typedef struct desc_record_s       desc_record_t;
+typedef struct desc_record_s desc_record_t;
 typedef struct sql_c_to_tsdb_meta_s sql_c_to_tsdb_meta_t;
 
 struct desc_record_s {
@@ -268,7 +267,7 @@ struct sql_c_to_tsdb_meta_s {
     int32_t *dst_len;
 };
 
-typedef struct descriptor_s        descriptor_t;
+typedef struct descriptor_s descriptor_t;
 struct descriptor_s {
     desc_header_t header;
 
@@ -421,16 +420,16 @@ static inline const char *color_reset(void) {
 
 static inline char *basename(char *fileName) {
     char *bn = fileName + strlen(fileName);
-    while ((char)(*bn) != "\\" && bn >= fileName) {
+    while ((char) (*bn) != "\\" && bn >= fileName) {
         bn--;
     }
-    if ((char)(*bn) != "\\") {
+    if ((char) (*bn) != "\\") {
         bn++;
     }
     return bn;
 }
 
-int tod_get_debug(void) ;
+int tod_get_debug(void);
 
 #define LOG_IMPL(fmt, ...) do {                  \
   if (!tod_get_debug()) break;                   \
@@ -468,11 +467,11 @@ int tod_get_debug(void) ;
       ##__VA_ARGS__)
 
 
-static inline void assert(BOOL _statement) {
+static inline void assert(BOOL _statement, const char *function_name) {
     if (!_statement) {
         fprintf((__acrt_iob_func(2)),
                 "%sA%s:%s[%d]:%s(): " "%sassertion failed%s: [%s]" "internal logic error" "" "\n", color_red(),
-                color_reset(), basename((char *) "_file_name_"), 48, "_function_name_", color_red(), color_reset(),
+                color_reset(), basename((char *) "_file_name_"), 48, function_name, color_red(), color_reset(),
                 "prev >= 1");
         abort();
     }

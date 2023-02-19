@@ -30,7 +30,7 @@
 static void _desc_init(desc_t *desc, conn_t *conn) {
     desc->conn = conn_ref(conn);
     int prev = atomic_fetch_add(&conn->descs, 1);
-    assert(prev >= 0);
+    assert(prev >= 0, "_desc_init");
 
     INIT_TOD_LIST_HEAD(&desc->associated_stmts_as_ARD);
     INIT_TOD_LIST_HEAD(&desc->associated_stmts_as_APD);
@@ -40,7 +40,7 @@ static void _desc_init(desc_t *desc, conn_t *conn) {
 
 static void _desc_release(desc_t *desc) {
     int prev = atomic_fetch_sub(&desc->conn->descs, 1);
-    assert(prev >= 1);
+    assert(prev >= 1, "_desc_release");
 
     descriptor_release(&desc->descriptor);
 
@@ -63,16 +63,16 @@ desc_t *desc_create(conn_t *conn) {
 }
 
 desc_t *desc_ref(desc_t *desc) {
-    assert(desc);
+    assert(desc, "desc_ref");
     int prev = atomic_fetch_add(&desc->refc, 1);
-    assert(prev > 0);
+    assert(prev > 0, "desc_ref");
     return desc;
 }
 
 desc_t *desc_unref(desc_t *desc) {
     int prev = atomic_fetch_sub(&desc->refc, 1);
     if (prev > 1) return desc;
-    assert(prev == 1);
+    assert(prev == 1, "_desc_release");
 
     _desc_release(desc);
     free(desc);

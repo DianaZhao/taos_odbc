@@ -109,7 +109,7 @@ env_t *env_create(void) {
 
 env_t *env_ref(env_t *env) {
     int prev = atomic_fetch_add(&env->refc, 1);
-    assert(prev > 0);
+    assert(prev > 0, "env_ref");
     return env;
 }
 
@@ -213,7 +213,7 @@ SQLRETURN env_set_attr(
 //                                  sql_env_attr(Attribute), Attribute, Attribute);
             char _buf[1024];
             snprintf(_buf, sizeof(_buf), "" "Optional value changed:`%s[0x%x/%d]` is substituted by default" "",
-                    Attribute, Attribute, Attribute);
+                     Attribute, Attribute, Attribute);
 //            errs_append_x(&env->errs, "_file_name_", 196, "_function_name_", "", "01S02", 0, _buf);
             return SQL_SUCCESS_WITH_INFO;
     }

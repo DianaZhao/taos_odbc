@@ -43,7 +43,7 @@ static char *conn_str_keys[] = {"dsn", "dsn", "ip", "ip", "ip", "port",
 static void _conn_init(conn_t *conn, env_t *env) {
     conn->env = env_ref(env);
     int prev = atomic_fetch_add(&env->conns, 1);
-    assert(prev >= 0);
+    assert(prev >= 0, "_conn_init");
 
     errs_init(&conn->errs);
 
@@ -51,12 +51,12 @@ static void _conn_init(conn_t *conn, env_t *env) {
 }
 
 static void _conn_release(conn_t *conn) {
-    assert(conn->taos == NULL);
+    assert(conn->taos == NULL, "_conn_release");
 
     int prev = atomic_fetch_sub(&conn->env->conns, 1);
-    assert(prev >= 1);
+    assert(prev >= 1, "_conn_release");
     int stmts = atomic_load(&conn->stmts);
-    assert(stmts == 0);
+    assert(stmts == 0, "_conn_release");
     env_unref(conn->env);
     conn->env = NULL;
 
@@ -82,14 +82,14 @@ conn_t *conn_create(env_t *env) {
 
 conn_t *conn_ref(conn_t *conn) {
     int prev = atomic_fetch_add(&conn->refc, 1);
-    assert(prev > 0);
+    assert(prev > 0, "conn_ref");
     return conn;
 }
 
 conn_t *conn_unref(conn_t *conn) {
     int prev = atomic_fetch_sub(&conn->refc, 1);
     if (prev > 1) return conn;
-    assert(prev == 1);
+    assert(prev == 1, "conn_ref");
 
     _conn_release(conn);
     free(conn);
@@ -139,7 +139,7 @@ SQLRETURN conn_free(conn_t *conn) {
 }
 
 static SQLRETURN _do_conn_connect(conn_t *conn) {
-    assert(conn->taos == NULL);
+    assert(conn->taos == NULL, "_do_conn_connect");
     const connection_cfg_t *cfg = &conn->cfg;
     printf("dsn: %s, ip: %s, port: %d\n", cfg->dsn, cfg->ip, cfg->port);
     conn->taos = taos_connect(cfg->ip, cfg->uid, cfg->pwd, cfg->db, cfg->port);
@@ -416,7 +416,7 @@ SQLRETURN conn_driver_connect(
 
 void conn_disconnect(conn_t *conn) {
     int stmts = atomic_load(&conn->stmts);
-    assert(stmts == 0);
+    assert(stmts == 0, "conn_disconnect");
 
     if (conn->taos) {
         taos_close(conn->taos);
@@ -426,7 +426,7 @@ void conn_disconnect(conn_t *conn) {
 }
 
 static void _conn_get_dbms_name(conn_t *conn, const char **name) {
-    assert(conn->taos);
+    assert(conn->taos, "_conn_get_dbms_name");
     const char *server = taos_get_server_info(conn->taos);
     if (name) *name = server;
 }

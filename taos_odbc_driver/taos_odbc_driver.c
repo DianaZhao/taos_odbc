@@ -51,14 +51,6 @@ static SQLRETURN do_alloc_env(
     return SQL_SUCCESS;
 }
 
-char *__stdcall test_dll(
-        char *msg) {
-    if (msg && *msg > 0) {
-        return strcat("from dll: ", msg);
-    } else {
-        return NULL;
-    }
-}
 
 SQLRETURN SQL_API SQLAllocHandle(
         SQLSMALLINT HandleType,
@@ -145,7 +137,6 @@ SQLRETURN SQL_API SQLDriverConnectW(
         SQLSMALLINT BufferLength,
         SQLSMALLINT *StringLength2Ptr,
         SQLUSMALLINT DriverCompletion) {
-    printf("SQLDriverConnectW\n");
     SQLRETURN ret = SQL_ERROR;
     SQLULEN Length = 0; /* Since we need bigger(in bytes) buffer for utf8 string, the length may be > max SQLSMALLINT */
     char *InConnStrA = NULL;
@@ -181,7 +172,7 @@ SQLRETURN SQL_API SQLDriverConnectW(
 
     if (OutConnectionString) {
         Length = SetString(&utf8, OutConnectionString, BufferLength,
-                                OutConnStrA, SQL_NTS);
+                           OutConnStrA, SQL_NTS);
         if (StringLength2Ptr)
             *StringLength2Ptr = (SQLSMALLINT) Length;
     }
@@ -212,6 +203,36 @@ SQLRETURN SQL_API SQLExecDirect(
 
     stmt_clr_errs(stmt);
     return stmt_exec_direct(stmt, (const char *) StatementText, TextLength);
+}
+
+SQLRETURN SQL_API SQLExecDirectW(
+        SQLHSTMT StatementHandle,
+        SQLWCHAR *StatementText,
+        SQLINTEGER TextLength) {
+
+    SQLRETURN ret = SQL_ERROR;
+    char *InStmtStrA = NULL;
+    SQLULEN InStrAOctLen = 0;
+    BOOL ConversionError;
+    if (!StatementHandle) {
+        return SQL_INVALID_HANDLE;
+    }
+
+    InStmtStrA = ConvertFromWChar(StatementText, TextLength, &InStrAOctLen, &utf8, &ConversionError);
+
+    /* Allocate buffer for Asc OutConnectionString */
+
+    if (ConversionError) {
+
+    } else {
+        ret = SQLExecDirect(StatementHandle, (SQLCHAR *) InStmtStrA, InStrAOctLen);
+        if (!SQL_SUCCEEDED(ret)) {
+            free(InStmtStrA);
+            return ret;
+        }
+    }
+
+    return ret;
 }
 
 SQLRETURN SQL_API SQLSetEnvAttr(
@@ -260,7 +281,6 @@ SQLRETURN SQL_API SQLEndTran(
 
     switch (HandleType) {
         case SQL_HANDLE_ENV:
-            assert(0);
             env_clr_errs((env_t *) Handle);
             return env_end_tran((env_t *) Handle, CompletionType);
         case SQL_HANDLE_DBC:
@@ -373,6 +393,7 @@ SQLRETURN SQL_API SQLBindCol(
 
 SQLRETURN SQL_API SQLFetch(
         SQLHSTMT StatementHandle) {
+    printf("SQLFetch Begin\n");
     if (StatementHandle == SQL_NULL_HANDLE) return SQL_INVALID_HANDLE;
 
     stmt_t *stmt = (stmt_t *) StatementHandle;
@@ -449,23 +470,149 @@ SQLRETURN SQL_API SQLGetDiagRecW(
                          TextLengthPtr);
 }
 
-SQLRETURN SQL_API SQLGetDiagField(
-        SQLSMALLINT HandleType,
-        SQLHANDLE Handle,
-        SQLSMALLINT RecNumber,
-        SQLSMALLINT DiagIdentifier,
-        SQLPOINTER DiagInfoPtr,
-        SQLSMALLINT BufferLength,
-        SQLSMALLINT *StringLengthPtr) {
-    if (Handle == SQL_NULL_HANDLE) return SQL_INVALID_HANDLE;
-
-    (void) HandleType;
-    (void) RecNumber;
-    (void) DiagIdentifier;
-    (void) DiagInfoPtr;
-    (void) BufferLength;
-    (void) StringLengthPtr;
-    assert(0);
+SQLRETURN SQL_API SQLGetDiagField(SQLSMALLINT HandleType,
+                                  SQLHANDLE Handle,
+                                  SQLSMALLINT RecNumber,
+                                  SQLSMALLINT DiagIdentifier,
+                                  SQLPOINTER DiagInfoPtr,
+                                  SQLSMALLINT BufferLength,
+                                  SQLSMALLINT *StringLengthPtr) {
+//    if (!Handle)
+//        return SQL_INVALID_HANDLE;
+//    MADB_Error *Err=  NULL;
+//    MADB_Stmt  *Stmt= NULL;
+//    MADB_Desc  *Desc= NULL;
+//    MADB_Dbc   *Dbc=  NULL;
+//    MADB_Env   *Env=  NULL;
+//    MADB_Error  Error;
+//    SQLLEN      Length;
+//
+//    if (StringLengthPtr)
+//        *StringLengthPtr= 0;
+//
+//    Error.PrefixLen= 0;
+//    MADB_CLEAR_ERROR(&Error);
+//
+//    if (RecNumber > 1)
+//        return SQL_NO_DATA;
+//
+//    switch(HandleType) {
+//        case SQL_HANDLE_DBC:
+//            Dbc= (MADB_Dbc *)Handle;
+//            Err= &Dbc->Error;
+//            break;
+//        case SQL_HANDLE_STMT:
+//            Stmt= (MADB_Stmt *)Handle;
+//            Err= &Stmt->Error;
+//            break;
+//        case SQL_HANDLE_ENV:
+//            Env= (MADB_Env *)Handle;
+//            Err= &Env->Error;
+//            break;
+//        case SQL_HANDLE_DESC:
+//            Desc= (MADB_Desc *)Handle;
+//            Err= &Desc->Error;
+//            break;
+//        default:
+//            return SQL_INVALID_HANDLE;
+//    }
+//
+//    switch(DiagIdentifier) {
+//        case SQL_DIAG_CURSOR_ROW_COUNT:
+//            if (!Stmt)
+//                return SQL_ERROR;
+//            *(SQLLEN *)DiagInfoPtr= (Stmt->result) ?(SQLLEN)mysql_stmt_num_rows(Stmt->stmt) : 0;
+//            break;
+//        case SQL_DIAG_DYNAMIC_FUNCTION:
+//            if (!Stmt)
+//                return SQL_ERROR;
+//            /* Todo */
+//            break;
+//        case SQL_DIAG_DYNAMIC_FUNCTION_CODE:
+//            if (!Stmt)
+//                return SQL_ERROR;
+//            *(SQLINTEGER *)DiagInfoPtr= 0;
+//            break;
+//        case SQL_DIAG_NUMBER:
+//            *(SQLINTEGER *)DiagInfoPtr= 1;
+//            break;
+//        case SQL_DIAG_RETURNCODE:
+//            *(SQLRETURN *)DiagInfoPtr= Err->ReturnValue;
+//            break;
+//        case SQL_DIAG_ROW_COUNT:
+//            if (HandleType != SQL_HANDLE_STMT ||
+//                !Stmt)
+//                return SQL_ERROR;
+//            *(SQLLEN *)DiagInfoPtr= (Stmt->stmt) ? (SQLLEN)mysql_stmt_affected_rows(Stmt->stmt) : 0;
+//            break;
+//        case SQL_DIAG_CLASS_ORIGIN:
+//            Length= MADB_SetString(isWChar ?  &utf8 : 0, DiagInfoPtr,  isWChar ? BufferLength / sizeof(SQLWCHAR) : BufferLength,
+//                                   strncmp(Err->SqlState, "IM", 2)== 0 ? "ODBC 3.0" : "ISO 9075", SQL_NTS, &Error);
+//            if (StringLengthPtr)
+//                *StringLengthPtr= (SQLSMALLINT)Length;
+//            break;
+//        case SQL_DIAG_COLUMN_NUMBER:
+//            *(SQLINTEGER *)DiagInfoPtr= SQL_COLUMN_NUMBER_UNKNOWN;
+//            break;
+//        case SQL_DIAG_CONNECTION_NAME:
+//            /* MariaDB ODBC Driver always returns an empty string */
+//            if (StringLengthPtr)
+//                *StringLengthPtr= 0;
+//            DiagInfoPtr= (isWChar) ? (SQLPOINTER)L"" : (SQLPOINTER)"";
+//            break;
+//        case SQL_DIAG_MESSAGE_TEXT:
+//            Length= MADB_SetString(isWChar ?  &utf8 : 0, DiagInfoPtr,  isWChar ? BufferLength / sizeof(SQLWCHAR) : BufferLength,
+//                                   Err->SqlErrorMsg, strlen(Err->SqlErrorMsg), &Error);
+//            if (StringLengthPtr)
+//                *StringLengthPtr= (SQLSMALLINT)Length;
+//            break;
+//        case SQL_DIAG_NATIVE:
+//            *(SQLINTEGER *)DiagInfoPtr= Err->NativeError;
+//            break;
+//        case SQL_DIAG_ROW_NUMBER:
+//            if (HandleType != SQL_HANDLE_STMT ||
+//                RecNumber < 1)
+//                return SQL_ERROR;
+//            *(SQLLEN*)DiagInfoPtr= SQL_ROW_NUMBER_UNKNOWN;
+//            break;
+//        case SQL_DIAG_SERVER_NAME:
+//        {
+//            char *ServerName= "";
+//            if (Stmt && Stmt->stmt)
+//            {
+//                mariadb_get_infov(Stmt->Connection->mariadb, MARIADB_CONNECTION_HOST, (void*)&ServerName);
+//            }
+//            else if (Dbc && Dbc->mariadb)
+//            {
+//                mariadb_get_infov(Dbc->mariadb, MARIADB_CONNECTION_HOST, (void*)&ServerName);
+//            }
+//            Length= MADB_SetString(isWChar ?  &utf8 : 0, DiagInfoPtr,
+//                                   isWChar ? BufferLength / sizeof(SQLWCHAR) : BufferLength,
+//                                   ServerName ? ServerName : "", ServerName ? strlen(ServerName) : 0, &Error);
+//            if (StringLengthPtr)
+//                *StringLengthPtr= (SQLSMALLINT)Length;
+//        }
+//            break;
+//        case SQL_DIAG_SQLSTATE:
+//            Length= MADB_SetString(isWChar ?  &utf8 : 0, DiagInfoPtr,
+//                                   isWChar ? BufferLength / sizeof(SQLWCHAR) : BufferLength, Err->SqlState, strlen(Err->SqlState), &Error);
+//            if (StringLengthPtr)
+//                *StringLengthPtr= (SQLSMALLINT)Length;
+//
+//            break;
+//        case SQL_DIAG_SUBCLASS_ORIGIN:
+//            Length= MADB_SetString(isWChar ?  &utf8 : 0, DiagInfoPtr,
+//                                   isWChar ? BufferLength / sizeof(SQLWCHAR) : BufferLength, "ODBC 3.0", 8, &Error);
+//            if (StringLengthPtr)
+//                *StringLengthPtr= (SQLSMALLINT)Length;
+//            break;
+//        default:
+//            return SQL_ERROR;
+//    }
+//    if (isWChar && StringLengthPtr)
+//        *StringLengthPtr*= sizeof(SQLWCHAR);
+//    return Error.ReturnValue;
+    return SQL_NO_DATA;
 }
 
 SQLRETURN SQL_API SQLGetData(
@@ -475,6 +622,7 @@ SQLRETURN SQL_API SQLGetData(
         SQLPOINTER TargetValuePtr,
         SQLLEN BufferLength,
         SQLLEN *StrLen_or_IndPtr) {
+    printf("SQLGetData Begin\n");
     if (StatementHandle == SQL_NULL_HANDLE) return SQL_INVALID_HANDLE;
 
     stmt_t *stmt = (stmt_t *) StatementHandle;
@@ -573,11 +721,11 @@ SQLRETURN SQL_API SQLExecute(
 
 SQLRETURN SQL_API SQLConnectW(
         SQLHDBC ConnectionHandle,
-        SQLCHAR *ServerName,
+        SQLWCHAR *ServerName,
         SQLSMALLINT NameLength1,
-        SQLCHAR *UserName,
+        SQLWCHAR *UserName,
         SQLSMALLINT NameLength2,
-        SQLCHAR *Authentication,
+        SQLWCHAR *Authentication,
         SQLSMALLINT NameLength3) {
     if (ConnectionHandle == SQL_NULL_HANDLE) return SQL_INVALID_HANDLE;
 
@@ -619,7 +767,6 @@ SQLRETURN SQL_API SQLColAttribute(
     (void) StringLengthPtr;
     (void) NumericAttributePtr;
 
-    assert(0);
     return SQL_ERROR;
 }
 

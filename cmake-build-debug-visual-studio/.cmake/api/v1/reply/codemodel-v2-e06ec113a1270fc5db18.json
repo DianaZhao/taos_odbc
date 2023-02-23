@@ -163,7 +163,7 @@
 				{
 					"directoryIndex" : 5,
 					"id" : "change_dsns_driver::@e5fcb2b8ab786c67797d",
-					"jsonFile" : "target-change_dsns_driver-Debug-78a04a3bcebffd54cc2e.json",
+					"jsonFile" : "target-change_dsns_driver-Debug-6f128239386fcf7b3b7f.json",
 					"name" : "change_dsns_driver",
 					"projectIndex" : 0
 				},
@@ -233,14 +233,14 @@
 				{
 					"directoryIndex" : 3,
 					"id" : "taos_odbc_driver::@fa07086ab171fa28aabf",
-					"jsonFile" : "target-taos_odbc_driver-Debug-4ef5380389360278ec2b.json",
+					"jsonFile" : "target-taos_odbc_driver-Debug-fb0990523858a4b3f6bf.json",
 					"name" : "taos_odbc_driver",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "taos_odbc_setup::@fa07086ab171fa28aabf",
-					"jsonFile" : "target-taos_odbc_setup-Debug-d6acd0d48cd5f47aa2c9.json",
+					"jsonFile" : "target-taos_odbc_setup-Debug-28ecc53a03c5d24fd80d.json",
 					"name" : "taos_odbc_setup",
 					"projectIndex" : 0
 				},

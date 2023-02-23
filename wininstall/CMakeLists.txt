@@ -1,4 +1,4 @@
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/taos_odbc_driver/dsn)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/taos_odbc_driver/inc)
 ADD_EXECUTABLE(change_dsns_driver
         change_dsns_driver.c
         ${CMAKE_SOURCE_DIR}/taos_odbc_driver/dsn/td_dsn.c)

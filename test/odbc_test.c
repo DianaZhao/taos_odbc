@@ -132,11 +132,6 @@ void ProcessLogMessages(SQLSMALLINT plm_handle_type, SQLHANDLE plm_handle) {
     SDWORD plm_pfNativeError = 0L;
     SWORD plm_pcbErrorMsg = 0;
     SQLSMALLINT plm_cRecNmbr = 1;
-    SDWORD plm_SS_MsgState = 0, plm_SS_Severity = 0;
-    SQLINTEGER plm_Rownumber = 0;
-    USHORT plm_SS_Line;
-    SQLSMALLINT plm_cbSS_Procname, plm_cbSS_Srvname;
-    SQLCHAR plm_SS_Procname[MAXBUFLEN], plm_SS_Srvname[MAXBUFLEN];
 
     while (plm_retcode != SQL_NO_DATA_FOUND) {
         plm_retcode = _SQLGetDiagRec(plm_handle_type, plm_handle, plm_cRecNmbr,
@@ -147,44 +142,12 @@ void ProcessLogMessages(SQLSMALLINT plm_handle_type, SQLHANDLE plm_handle) {
         // the SQLGetDiagField information has not yet been cached by ODBC Driver Manager and
         // these calls to SQLGetDiagField will fail.
         if (plm_retcode != SQL_NO_DATA_FOUND) {
-//            if (ConnInd) {
-//                plm_retcode = _SQLGetDiagField( plm_handle_type, plm_handle, plm_cRecNmbr,
-//                                               SQL_DIAG_ROW_NUMBER, &plm_Rownumber,
-//                                               SQL_IS_INTEGER, NULL);
-//
-//                plm_retcode = _SQLGetDiagField( plm_handle_type, plm_handle, plm_cRecNmbr,
-//                                               SQL_DIAG_SS_LINE, &plm_SS_Line, SQL_IS_INTEGER, NULL);
-//
-//                plm_retcode = _SQLGetDiagField( plm_handle_type, plm_handle, plm_cRecNmbr,
-//                                               SQL_DIAG_SS_MSGSTATE, &plm_SS_MsgState,
-//                                               SQL_IS_INTEGER, NULL);
-//
-//                plm_retcode = _SQLGetDiagField( plm_handle_type, plm_handle, plm_cRecNmbr,
-//                                               SQL_DIAG_SS_SEVERITY, &plm_SS_Severity,
-//                                               SQL_IS_INTEGER, NULL);
-//
-//                plm_retcode = _SQLGetDiagField( plm_handle_type, plm_handle, plm_cRecNmbr,
-//                                               SQL_DIAG_SS_PROCNAME, &plm_SS_Procname,
-//                                               sizeof(plm_SS_Procname), &plm_cbSS_Procname);
-//
-//                plm_retcode = _SQLGetDiagField( plm_handle_type, plm_handle, plm_cRecNmbr,
-//                                               SQL_DIAG_SS_SRVNAME, &plm_SS_Srvname,
-//                                               sizeof(plm_SS_Srvname), &plm_cbSS_Srvname);
-//            }
 
             printf("szSqlState = %s\n", plm_szSqlState);
             printf("pfNativeError = %d\n", plm_pfNativeError);
             printf("szErrorMsg = %s\n", plm_szErrorMsg);
             printf("pcbErrorMsg = %d\n\n", plm_pcbErrorMsg);
 
-//            if (ConnInd) {
-//                printf("ODBCRowNumber = %d\n", plm_Rownumber);
-//                printf("SSrvrLine = %d\n", plm_Rownumber);
-//                printf("SSrvrMsgState = %d\n", plm_SS_MsgState);
-//                printf("SSrvrSeverity = %d\n", plm_SS_Severity);
-//                printf("SSrvrProcname = %s\n", plm_SS_Procname);
-//                printf("SSrvrSrvname = %s\n\n", plm_SS_Srvname);
-//            }
         }
 
         plm_cRecNmbr++;   // Increment to next diagnostic record.
@@ -211,7 +174,7 @@ int test_data(SQLHANDLE hconn) {
     } else {
         printf("test_data _SQLAllocHandle SQL_HANDLE_STMT passed\n");
     }
-    sr = _SQLExecDirect(hstmt, "SELECT * FROM tbl_test;", SQL_NTS);
+    sr = _SQLExecDirect(hstmt, "SELECT * FROM tbl_test", SQL_NTS);
     if (FAILED(sr)) {
         printf("test_data _SQLExecDirect failed\n");
         ProcessLogMessages(SQL_HANDLE_STMT, hstmt);
@@ -225,21 +188,20 @@ int test_data(SQLHANDLE hconn) {
                 ProcessLogMessages(SQL_HANDLE_STMT, hstmt);
             }
             if (sr == SQL_SUCCESS || sr == SQL_SUCCESS_WITH_INFO) {
-
                 /* Get data for columns 1, 2, and 3 */
                 printf("test_data _SQLFetch passed\n");
-                _SQLGetData(hstmt, 1, SQL_C_ULONG, &ts, 0, &ts);
-                _SQLGetData(hstmt, 2, SQL_C_ULONG, &ti, 0, &ti);
-                _SQLGetData(hstmt, 3, SQL_C_ULONG, &si, 0, &si);
-                _SQLGetData(hstmt, 4, SQL_C_ULONG, &i, 0, &i);
-                _SQLGetData(hstmt, 5, SQL_C_ULONG, &bi, 0, &bi);
-                _SQLGetData(hstmt, 6, SQL_C_FLOAT, &f, 0, &f);
-                _SQLGetData(hstmt, 7, SQL_C_DOUBLE, &d, 0, &d);
-                _SQLGetData(hstmt, 8, SQL_C_CHAR, b, 10, &b);
+                _SQLGetData(hstmt, 1, SQL_C_ULONG, &ts, 0, NULL);
+//                _SQLGetData(hstmt, 2, SQL_C_ULONG, &ti, 0, &ti);
+//                _SQLGetData(hstmt, 3, SQL_C_ULONG, &si, 0, &si);
+//                _SQLGetData(hstmt, 4, SQL_C_ULONG, &i, 0, &i);
+//                _SQLGetData(hstmt, 5, SQL_C_ULONG, &bi, 0, &bi);
+//                _SQLGetData(hstmt, 6, SQL_C_FLOAT, &f, 0, &f);
+//                _SQLGetData(hstmt, 7, SQL_C_DOUBLE, &d, 0, &d);
+//                _SQLGetData(hstmt, 8, SQL_C_CHAR, b, 10, &b);
 
                 /* Print the row of data */
 
-                printf("%lld | %ld |  %ld | %ld | %ld | %f | %f | %*s\n", ts, ti, si, i, bi, f, d, b);
+//                printf("%lld | %ld |  %ld | %ld | %ld | %f | %f | %*s\n", ts, ti, si, i, bi, f, d, b);
             } else {
                 break;
             }
@@ -414,6 +376,7 @@ int main(int argc, char *argv[]) {
             }
         }
         FreeLibrary(m);
+
     } else {
         printf("can not load dll\n");
     }

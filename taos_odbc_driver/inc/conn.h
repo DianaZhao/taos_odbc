@@ -33,13 +33,16 @@
 
 static inline void connection_cfg_release(connection_cfg_t *conn_str) {
     if (!conn_str) return;
-
-    TOD_SAFE_FREE(conn_str->driver);
     TOD_SAFE_FREE(conn_str->dsn);
-    TOD_SAFE_FREE(conn_str->uid);
-    TOD_SAFE_FREE(conn_str->pwd);
-    TOD_SAFE_FREE(conn_str->ip);
-    TOD_SAFE_FREE(conn_str->db);
+    printf("connection_cfg_release dsn %lld\n",(unsigned long)conn_str->dsn);
+//    TOD_SAFE_FREE(conn_str->db);
+//    printf("connection_cfg_release db %lld\n",(unsigned long)conn_str->db);
+//    TOD_SAFE_FREE(conn_str->ip);
+//    printf("connection_cfg_release ip %lld\n",(unsigned long)conn_str->ip);
+//    TOD_SAFE_FREE(conn_str->driver);
+//    printf("connection_cfg_release driver %lld\n",(unsigned long)conn_str->driver);
+//    TOD_SAFE_FREE(conn_str->uid);
+//    TOD_SAFE_FREE(conn_str->pwd);
 }
 
 static inline void connection_cfg_transfer(connection_cfg_t *from, connection_cfg_t *to) {

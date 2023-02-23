@@ -94,7 +94,7 @@
 				},
 				{
 					"backtrace" : 7,
-					"path" : "D:/workspaces/taos_odbc/taos_odbc_driver/dsn"
+					"path" : "D:/workspaces/taos_odbc/taos_odbc_driver/inc"
 				}
 			],
 			"language" : "C",

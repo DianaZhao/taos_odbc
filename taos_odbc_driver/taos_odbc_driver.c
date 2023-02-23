@@ -187,9 +187,9 @@ SQLRETURN SQL_API SQLDisconnect(
     conn_t *conn = (conn_t *) ConnectionHandle;
 
     conn_clr_errs(conn);
-
+    printf("SQLDisconnect begin\n");
     conn_disconnect(conn);
-
+    printf("SQLDisconnect end\n");
     return SQL_SUCCESS;
 }
 
@@ -202,7 +202,9 @@ SQLRETURN SQL_API SQLExecDirect(
     stmt_t *stmt = (stmt_t *) StatementHandle;
 
     stmt_clr_errs(stmt);
-    return stmt_exec_direct(stmt, (const char *) StatementText, TextLength);
+    SQLRETURN sr = stmt_exec_direct(stmt, (const char *) StatementText, TextLength);
+    printf("SQLExecDirect col_count %d\n", stmt->col_count);
+    return sr;
 }
 
 SQLRETURN SQL_API SQLExecDirectW(
@@ -393,13 +395,11 @@ SQLRETURN SQL_API SQLBindCol(
 
 SQLRETURN SQL_API SQLFetch(
         SQLHSTMT StatementHandle) {
-    printf("SQLFetch Begin\n");
     if (StatementHandle == SQL_NULL_HANDLE) return SQL_INVALID_HANDLE;
 
     stmt_t *stmt = (stmt_t *) StatementHandle;
 
     stmt_clr_errs(stmt);
-
     return stmt_fetch(stmt);
 }
 
@@ -622,7 +622,6 @@ SQLRETURN SQL_API SQLGetData(
         SQLPOINTER TargetValuePtr,
         SQLLEN BufferLength,
         SQLLEN *StrLen_or_IndPtr) {
-    printf("SQLGetData Begin\n");
     if (StatementHandle == SQL_NULL_HANDLE) return SQL_INVALID_HANDLE;
 
     stmt_t *stmt = (stmt_t *) StatementHandle;

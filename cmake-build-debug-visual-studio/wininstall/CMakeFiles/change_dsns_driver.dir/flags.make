@@ -4,7 +4,7 @@
 # compile C with C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/cl.exe
 C_DEFINES = 
 
-C_INCLUDES = -IC:\TDengine\include -ID:\workspaces\taos_odbc\contrib\pthread -ID:\workspaces\taos_odbc\contrib\iconv -ID:\workspaces\taos_odbc\taos_odbc_driver\dsn
+C_INCLUDES = -IC:\TDengine\include -ID:\workspaces\taos_odbc\contrib\pthread -ID:\workspaces\taos_odbc\contrib\iconv -ID:\workspaces\taos_odbc\taos_odbc_driver\inc
 
 C_FLAGS = /DWIN32 /D_WINDOWS /W3 /MTd /Zi /Ob0 /Od /RTC1
 

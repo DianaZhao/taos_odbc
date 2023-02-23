@@ -270,7 +270,7 @@ static void _conn_fill_out_connection_str(
 
 int parse_conn_str(SQLCHAR *conn_str, const char *delim, connection_cfg_t *cfg) {
     int i = 0;
-    char *kv = strtok(conn_str, delim);;
+    char *kv = strtok(conn_str, delim);
     while (kv != NULL) {
         char *vs = strchr(kv, '=');
         if (vs != NULL) {
@@ -283,6 +283,8 @@ int parse_conn_str(SQLCHAR *conn_str, const char *delim, connection_cfg_t *cfg) 
                     key = conn_str_keys[j];
                     if (strcmp(key, "ip") == 0) {
                         cfg->ip = val;
+                    } else if (strcmp(key, "driver") == 0) {
+                        cfg->driver = val;
                     } else if (strcmp(key, "dsn") == 0) {
                         cfg->dsn = val;
                     } else if (strcmp(key, "db") == 0) {
@@ -310,7 +312,7 @@ BOOL dsnToCfg(TAOS_Dsn *dsn, connection_cfg_t *cfg) {
     }
     printf("dsnToCfg begin\n");
     if (dsn->ServerName != NULL) {
-        cfg->ip = malloc(strlen(dsn->ServerName) * sizeof(char));
+        cfg->ip = malloc(strlen(dsn->ServerName) * sizeof(SQLCHAR));
         strcpy(cfg->ip, dsn->ServerName);
     } else {
         return FALSE;
@@ -322,26 +324,25 @@ BOOL dsnToCfg(TAOS_Dsn *dsn, connection_cfg_t *cfg) {
         cfg->port = 6030;
     }
     if (dsn->Driver != NULL) {
-        cfg->driver = malloc(strlen(dsn->Driver) * sizeof(char));
+        cfg->driver = malloc(strlen(dsn->Driver) * sizeof(SQLCHAR));
         strcpy(cfg->driver, dsn->Driver);
     } else {
-        cfg->driver = malloc(9 * sizeof(char));
-        strcpy(cfg->driver, "TAOSODBC");
+        cfg->driver = NULL;
     }
     if (dsn->UserName != NULL) {
-        cfg->uid = malloc(strlen(dsn->UserName) * sizeof(char));
+        cfg->uid = malloc(strlen(dsn->UserName) * sizeof(SQLCHAR));
         strcpy(cfg->uid, dsn->UserName);
     } else {
         cfg->uid = NULL;
     }
     if (dsn->Password != NULL) {
-        cfg->pwd = malloc(strlen(dsn->Password) * sizeof(char));
+        cfg->pwd = malloc(strlen(dsn->Password) * sizeof(SQLCHAR));
         strcpy(cfg->pwd, dsn->Password);
     } else {
         cfg->pwd = NULL;
     }
     if (dsn->Database != NULL) {
-        cfg->db = malloc(strlen(dsn->Database) * sizeof(char));
+        cfg->db = malloc(strlen(dsn->Database) * sizeof(SQLCHAR));
         strcpy(cfg->db, dsn->Database);
     } else {
         cfg->db = NULL;
@@ -422,6 +423,7 @@ void conn_disconnect(conn_t *conn) {
         taos_close(conn->taos);
         conn->taos = NULL;
     }
+    printf("conn_disconnect taos close\n");
     connection_cfg_release(&conn->cfg);
 }
 

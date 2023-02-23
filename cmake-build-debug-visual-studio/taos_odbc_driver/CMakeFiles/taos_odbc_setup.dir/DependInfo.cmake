@@ -29,6 +29,7 @@ set(CMAKE_RC_TARGET_INCLUDE_PATH
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/workspaces/taos_odbc/taos_odbc_driver/dsn/odbc_dsn.c" "taos_odbc_driver/CMakeFiles/taos_odbc_setup.dir/dsn/odbc_dsn.c.obj" "msvc" "taos_odbc_driver/CMakeFiles/taos_odbc_setup.dir/dsn/odbc_dsn.c.obj.d"
+  "D:/workspaces/taos_odbc/taos_odbc_driver/dsn/platform_win.c" "taos_odbc_driver/CMakeFiles/taos_odbc_setup.dir/dsn/platform_win.c.obj" "msvc" "taos_odbc_driver/CMakeFiles/taos_odbc_setup.dir/dsn/platform_win.c.obj.d"
   "D:/workspaces/taos_odbc/taos_odbc_driver/dsn/td_dsn.c" "taos_odbc_driver/CMakeFiles/taos_odbc_setup.dir/dsn/td_dsn.c.obj" "msvc" "taos_odbc_driver/CMakeFiles/taos_odbc_setup.dir/dsn/td_dsn.c.obj.d"
   )
 

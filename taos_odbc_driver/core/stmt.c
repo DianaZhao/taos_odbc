@@ -70,8 +70,7 @@ static const char *taos_data_type(int type) {
 }
 
 static void tsdb_to_sql_c_state_reset(tsdb_to_sql_c_state_t *col) {
-    buffer_reset(&col->cache);
-
+//    buffer_reset(&col->cache);
     col->field = NULL;
     col->i_col = -1;
     col->data = NULL;
@@ -80,6 +79,7 @@ static void tsdb_to_sql_c_state_reset(tsdb_to_sql_c_state_t *col) {
 
 static void tsdb_to_sql_c_state_release(tsdb_to_sql_c_state_t *col) {
     tsdb_to_sql_c_state_reset(col);
+    printf("reset\n");
     buffer_release(&col->cache);
 }
 
@@ -282,28 +282,20 @@ static void _stmt_release_field_arrays(stmt_t *stmt) {
 }
 
 static void _stmt_release(stmt_t *stmt) {
-    OutputDebugStringA("[DBG] _stmt_release begin\n");
     rowset_release(&stmt->rowset);
     _stmt_release_post_filter(stmt);
     _stmt_release_result(stmt);
-
     _stmt_release_field_arrays(stmt);
-
     stmt_dissociate_APD(stmt);
-
     _stmt_release_stmt(stmt);
-
     stmt_dissociate_ARD(stmt);
-
     _stmt_release_current_for_get_data(stmt);
-
     int prev = atomic_fetch_sub(&stmt->conn->stmts, 1);
     assert(prev >= 1, "_stmt_release");
     conn_unref(stmt->conn);
     stmt->conn = NULL;
 
     _stmt_release_descriptors(stmt);
-
     _stmt_release_tag_fields(stmt);
     _stmt_release_col_fields(stmt);
     TOD_SAFE_FREE(stmt->mbs);
@@ -316,7 +308,7 @@ static void _stmt_release(stmt_t *stmt) {
     errs_release(&stmt->errs);
 
     buffer_release(&stmt->cache);
-    OutputDebugStringA("[DBG] _stmt_release end\n");
+    printf("[DBG] _stmt_release end\n");
     return;
 }
 
@@ -345,7 +337,7 @@ stmt_t *stmt_unref(stmt_t *stmt) {
 
     _stmt_release(stmt);
     free(stmt);
-
+    printf("stmt_unref end\n");
     return NULL;
 }
 
@@ -367,6 +359,7 @@ static SQLRETURN _stmt_post_exec(stmt_t *stmt) {
         stmt->time_precision = taos_result_precision(stmt->res);
         stmt->affected_row_count = taos_affected_rows(stmt->res);
         stmt->col_count = taos_field_count(stmt->res);
+        printf("_stmt_post_exec col_count %d\n", stmt->col_count);
         if (stmt->col_count > 0) {
             stmt->fields = taos_fetch_fields(stmt->res);
         }
@@ -2022,11 +2015,11 @@ static SQLRETURN _stmt_get_data(
         SQLLEN BufferLength,
         SQLLEN *StrLen_or_IndPtr) {
     SQLRETURN sr = SQL_SUCCESS;
-
+    printf("_stmt_get_data begin\n");
     conv_from_tsdb_to_sql_c_f conv = NULL;
     sr = _stmt_get_conv_from_tsdb_to_sql_c(stmt, Col_or_Param_Num, TargetType, &conv);
     if (sr == SQL_ERROR) return SQL_ERROR;
-
+    printf("_stmt_get_data conv\n");
     if (current->i_col + 1 != Col_or_Param_Num) {
         tsdb_to_sql_c_state_reset(current);
         current->i_col = Col_or_Param_Num - 1;
@@ -2036,6 +2029,7 @@ static SQLRETURN _stmt_get_data(
         int len;
 
         sr = _stmt_get_data_len(stmt, iRow, current->i_col, &data, &len);
+        printf("_stmt_get_data _stmt_get_data_len\n");
         if (!(sr == SQL_SUCCESS || sr == SQL_SUCCESS_WITH_INFO)) return sr;
 
         if (data == NULL && len == 0) {
@@ -2092,7 +2086,7 @@ SQLRETURN stmt_get_data(
     }
 
     tsdb_to_sql_c_state_t *current = &stmt->current_for_get_data;
-
+    printf("stmt_get_data %lld\n", current);
     return _stmt_get_data(stmt, current, stmt->rowset.i_row, Col_or_Param_Num, TargetType, TargetValuePtr, BufferLength,
                           StrLen_or_IndPtr);
 }
@@ -2144,15 +2138,17 @@ static SQLRETURN _stmt_fill_cell(stmt_t *stmt, int i_row, int i_col, tsdb_to_sql
     cache->StrLen_or_IndPtr = StrLen_or_IndPtr;
 
     cache->i_row = i_row + stmt->rowset.i_row;
-
-    return ARD_record->conv(stmt, cache);
+    if (ARD_record->conv) {
+        return ARD_record->conv(stmt, cache);
+    }
+    return cache;
 }
 
 static SQLRETURN _stmt_fill_rowset(stmt_t *stmt,
                                    SQLULEN row_array_size,
                                    post_filter_t *post_filter,
                                    tsdb_to_sql_c_state_t *cache) {
-    (void) cache;
+//    (void) cache;
     SQLRETURN sr = SQL_SUCCESS;
 
     descriptor_t *ARD = _stmt_ARD(stmt);
@@ -2161,7 +2157,6 @@ static SQLRETURN _stmt_fill_rowset(stmt_t *stmt,
     desc_header_t *IRD_header = &IRD->header;
 
     if (IRD_header->DESC_ROWS_PROCESSED_PTR) *IRD_header->DESC_ROWS_PROCESSED_PTR = 0;
-
     int iRow = 0;
     for (int i_row = 0; (SQLULEN) i_row < row_array_size; ++i_row) {
         if (i_row + stmt->rowset.i_row >= stmt->nr_rows) break;
@@ -2177,13 +2172,13 @@ static SQLRETURN _stmt_fill_rowset(stmt_t *stmt,
                 goto again;
             }
         }
-
-        for (int i_col = 0; (size_t) i_col < ARD->cap; ++i_col) {
-            cache->i_col = i_col - 1; // Yes, make it previous
-            sr = _stmt_fill_cell(stmt, i_row, i_col, cache, iRow);
-            if (sr == SQL_ERROR) return SQL_ERROR;
+        if (cache) {
+            for (int i_col = 0; (size_t) i_col < ARD->cap; ++i_col) {
+                cache->i_col = i_col - 1; // Yes, make it previous
+                sr = _stmt_fill_cell(stmt, i_row, i_col, cache, iRow);
+                if (sr == SQL_ERROR) return SQL_ERROR;
+            }
         }
-
         if (IRD_header->DESC_ARRAY_STATUS_PTR) IRD_header->DESC_ARRAY_STATUS_PTR[iRow] = SQL_ROW_SUCCESS;
         if (IRD_header->DESC_ROWS_PROCESSED_PTR) *IRD_header->DESC_ROWS_PROCESSED_PTR += 1;
         ++iRow;
@@ -2206,7 +2201,6 @@ SQLRETURN _stmt_fetch(stmt_t *stmt) {
         if (sr == SQL_ERROR) return SQL_ERROR;
         if (sr == SQL_NO_DATA) return SQL_NO_DATA;
     }
-
     post_filter_t *post_filter = &stmt->post_filter;
     if (post_filter->post_filter) {
         while (1) {
@@ -2223,14 +2217,12 @@ SQLRETURN _stmt_fetch(stmt_t *stmt) {
             }
         }
     }
-
     _stmt_reset_current_for_get_data(stmt);
 
     descriptor_t *ARD = _stmt_ARD(stmt);
     desc_header_t *ARD_header = &ARD->header;
 
     assert(ARD->cap >= ARD_header->DESC_COUNT, "_stmt_fetch");
-
     for (int i_col = 0; (size_t) i_col < ARD->cap; ++i_col) {
         if (i_col >= ARD_header->DESC_COUNT) continue;
         desc_record_t *ARD_record = ARD->records + i_col;
@@ -2249,10 +2241,13 @@ SQLRETURN _stmt_fetch(stmt_t *stmt) {
         stmt_append_err(stmt, "HY000", 0, "General error:only `SQL_BIND_BY_COLUMN` is supported now");
         return SQL_ERROR;
     }
-
-    tsdb_to_sql_c_state_t cache;
-    sr = _stmt_fill_rowset(stmt, row_array_size, post_filter, &cache);
-    tsdb_to_sql_c_state_release(&cache);
+    if (ARD->cap > 0) {
+        tsdb_to_sql_c_state_t cache;
+        sr = _stmt_fill_rowset(stmt, row_array_size, post_filter, &cache);
+        tsdb_to_sql_c_state_release(&cache);
+    } else {
+        sr = _stmt_fill_rowset(stmt, row_array_size, post_filter, NULL);
+    }
     return sr;
 }
 

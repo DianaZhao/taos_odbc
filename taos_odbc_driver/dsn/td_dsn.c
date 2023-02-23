@@ -440,10 +440,11 @@ BOOL TAOS_ParseConnString(TAOS_Dsn *Dsn, const SQLCHAR *connStr, size_t Length, 
     while (kv != NULL) {
         char *vs = strchr(kv, '=');
         if (vs != NULL) {
-            int ks = (vs - kv) * sizeof(char);
+            int ks = vs - kv;
             char *key = malloc(ks + 1);
             memset(key, 0, ks + 1);
             memcpy(key, kv, ks);
+            *(key + ks + 1) = '\0';
             for (int j = 0; j < 8; j++) {
                 if (_stricmp(key, DsnKeys[j].DsnKey) == 0) {
                     char *val = vs + 1;

@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/workspaces/taos_odbc/taos_odbc_driver/core/stmt.c" "taos_odbc_driver/CMakeFiles/taos_odbc_driver.dir/core/stmt.c.obj" "msvc" "taos_odbc_driver/CMakeFiles/taos_odbc_driver.dir/core/stmt.c.obj.d"
   "D:/workspaces/taos_odbc/taos_odbc_driver/core/strptime.c" "taos_odbc_driver/CMakeFiles/taos_odbc_driver.dir/core/strptime.c.obj" "msvc" "taos_odbc_driver/CMakeFiles/taos_odbc_driver.dir/core/strptime.c.obj.d"
   "D:/workspaces/taos_odbc/taos_odbc_driver/core/utils.c" "taos_odbc_driver/CMakeFiles/taos_odbc_driver.dir/core/utils.c.obj" "msvc" "taos_odbc_driver/CMakeFiles/taos_odbc_driver.dir/core/utils.c.obj.d"
+  "D:/workspaces/taos_odbc/taos_odbc_driver/dsn/platform_win.c" "taos_odbc_driver/CMakeFiles/taos_odbc_driver.dir/dsn/platform_win.c.obj" "msvc" "taos_odbc_driver/CMakeFiles/taos_odbc_driver.dir/dsn/platform_win.c.obj.d"
   "D:/workspaces/taos_odbc/taos_odbc_driver/dsn/td_dsn.c" "taos_odbc_driver/CMakeFiles/taos_odbc_driver.dir/dsn/td_dsn.c.obj" "msvc" "taos_odbc_driver/CMakeFiles/taos_odbc_driver.dir/dsn/td_dsn.c.obj.d"
   "D:/workspaces/taos_odbc/taos_odbc_driver/taos_odbc_driver.c" "taos_odbc_driver/CMakeFiles/taos_odbc_driver.dir/taos_odbc_driver.c.obj" "msvc" "taos_odbc_driver/CMakeFiles/taos_odbc_driver.dir/taos_odbc_driver.c.obj.d"
   )

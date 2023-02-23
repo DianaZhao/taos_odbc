@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/taos_odbc_setup.dir/dsn/odbc_dsn.c.obj"
   "CMakeFiles/taos_odbc_setup.dir/dsn/odbc_dsn.c.obj.d"
   "CMakeFiles/taos_odbc_setup.dir/dsn/odbc_dsn.rc.res"
+  "CMakeFiles/taos_odbc_setup.dir/dsn/platform_win.c.obj"
+  "CMakeFiles/taos_odbc_setup.dir/dsn/platform_win.c.obj.d"
   "CMakeFiles/taos_odbc_setup.dir/dsn/td_dsn.c.obj"
   "CMakeFiles/taos_odbc_setup.dir/dsn/td_dsn.c.obj.d"
   "taos_odbc_setup.dll"
